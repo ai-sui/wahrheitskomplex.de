@@ -53,26 +53,38 @@ const defaultSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect width="1200" height="630" fill="url(#hairline)"/>
   <rect x="0" y="0" width="1200" height="6" fill="#b8331f"/>
 
-  <g transform="translate(80, 120)">
+  <g transform="translate(80, 110)">
     <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="22" font-weight="600" fill="#6c665a" letter-spacing="3">WAHRHEITSKOMPLEX</text>
     <circle cx="356" cy="-7" r="6" fill="#b8331f"/>
   </g>
 
-  <g transform="translate(80, 290)">
-    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="92" font-weight="700" fill="#1a1a1a">Ein Atlas zum Buch</text>
-    <text x="0" y="100" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="92" font-weight="700" fill="#1a1a1a">von <tspan fill="#b8331f" font-style="italic">Norbert Häring</tspan>.</text>
+  <g transform="translate(80, 250)">
+    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">Ein Recherche-Atlas</text>
+    <text x="0" y="74" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">zum Buch von</text>
+    <text x="0" y="148" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" font-style="italic" fill="#b8331f">Norbert Häring.</text>
   </g>
 
-  <line x1="80" y1="500" x2="1120" y2="500" stroke="#d8d0c2" stroke-width="1"/>
-  <text x="80" y="540" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="24" fill="#4a4a4a" font-style="italic">
-    Faktenchecker, Stiftungen, Geldflüsse — durchsuchbar, mit Quellen.
+  <line x1="80" y1="540" x2="780" y2="540" stroke="#d8d0c2" stroke-width="1"/>
+  <text x="80" y="575" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="20" fill="#4a4a4a" font-style="italic">
+    Akteure, Geldflüsse, Quellen — durchsuchbar.
   </text>
-
-  <text x="80" y="585" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6c665a" letter-spacing="2">WESTEND VERLAG · 2026</text>
-  <text x="1120" y="585" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6c665a" letter-spacing="1">wahrheitskomplex.netlify.app</text>
 </svg>`;
 
+// Composite: paper background + book cover on the right.
+const coverPath = join(publicDir, 'cover-wahrheitskomplex.jpg');
+const coverHeight = 540;
+const coverY = (630 - coverHeight) / 2;
+
+const coverBuf = await sharp(coverPath)
+  .resize({ height: coverHeight, fit: 'contain' })
+  .toBuffer();
+const coverMeta = await sharp(coverBuf).metadata();
+const coverX = 1200 - coverMeta.width - 60;
+
 await sharp(Buffer.from(defaultSvg))
+  .composite([
+    { input: coverBuf, left: coverX, top: coverY },
+  ])
   .png({ compressionLevel: 9 })
   .toFile(join(publicDir, 'og.png'));
 console.log(`Wrote ${join(publicDir, 'og.png')}`);
