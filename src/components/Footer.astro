@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-line bg-paper-soft">
+  <div class="container-page py-12 grid gap-10 md:grid-cols-3 text-sm">
+    <div>
+      <p class="font-serif text-lg font-semibold mb-2">Wahrheits<span class="text-accent">komplex</span></p>
+      <p class="text-ink-soft leading-relaxed">
+        Schaufenster und Atlas zum Buch <em>Der Wahrheitskomplex</em> von Norbert Häring (Westend Verlag, 2026).
+      </p>
+    </div>
+
+    <div>
+      <p class="meta-label mb-3">Navigation</p>
+      <ul class="space-y-2 text-ink-soft">
+        <li><a href="/" class="hover:text-accent">Start</a></li>
+        <li><a href="/atlas" class="hover:text-accent">Atlas der Akteure</a></li>
+        <li><a href="https://norberthaering.de" rel="noopener" class="hover:text-accent">norberthaering.de &rarr;</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="meta-label mb-3">Rechtliches</p>
+      <ul class="space-y-2 text-ink-soft">
+        <li><a href="/impressum" class="hover:text-accent">Impressum</a></li>
+        <li><a href="/datenschutz" class="hover:text-accent">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-line">
+    <div class="container-page py-5 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-muted">
+      <p>&copy; {year} Wahrheitskomplex. Demo-Ausgabe — Inhalte vorläufig.</p>
+      <p>Keine Tracker. Keine Webfonts. Keine Analytics.</p>
+    </div>
+  </div>
+</footer>

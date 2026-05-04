@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import Topbar from '../components/Topbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Recherche-Atlas zum Buch „Der Wahrheitskomplex" von Norbert Häring (Westend Verlag, 2026). Faktenchecker, Stiftungen, Geldflüsse — durchsuchbar und mit Quellen.',
+  ogImage,
+} = Astro.props;
+
+const fullTitle = title === 'Wahrheitskomplex' ? title : `${title} — Wahrheitskomplex`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitskomplex.netlify.app');
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index,follow" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.toString()} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.toString()} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    <Topbar />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
