@@ -1,0 +1,159 @@
+---
+// Statisches Beziehungs-Diagramm: Auftraggeber → Internationale Strukturen → Deutsche Akteure.
+// Bewusst schematisch und unvollständig. Kanten-Stile:
+//   - durchgezogen: Finanzierung
+//   - gestrichelt: theoretische / politische Prägung
+//   - gepunktet:   Daten-/Methodik-Austausch
+---
+
+<figure class="border-y border-line bg-paper-soft py-8 md:py-12 my-12 -mx-5 px-5 md:-mx-0 md:px-0">
+  <figcaption class="container-page mb-6">
+    <p class="meta-label text-accent mb-2">Beziehungs-Skizze</p>
+    <h2 class="font-serif text-xl md:text-2xl leading-snug max-w-2xl mb-2">
+      Wer finanziert, wer prägt, wer prüft.
+    </h2>
+    <p class="text-sm text-ink-soft max-w-2xl">
+      Eine bewusst schematische Übersicht der 8 Akteure und ihrer Bindungen — ohne Anspruch auf Vollständigkeit.
+    </p>
+  </figcaption>
+
+  <div class="container-page overflow-x-auto">
+    <svg
+      viewBox="0 0 1200 760"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-labelledby="relations-title"
+      class="w-full h-auto min-w-[760px]"
+    >
+      <title id="relations-title">Beziehungs-Skizze: Auftraggeber, internationale Strukturen, deutsche Akteure des Wahrheitskomplex.</title>
+
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#6c665a" />
+        </marker>
+        <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b8331f" />
+        </marker>
+      </defs>
+
+      <!-- Zonenüberschriften -->
+      <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" letter-spacing="2" fill="#6c665a">AUFTRAGGEBER &amp; GELDQUELLEN</text>
+      <text x="20" y="252" font-family="system-ui, sans-serif" font-size="11" letter-spacing="2" fill="#6c665a">INTERNATIONALE STRUKTUREN</text>
+      <text x="20" y="552" font-family="system-ui, sans-serif" font-size="11" letter-spacing="2" fill="#6c665a">OPERATIVE AKTEURE IN DEUTSCHLAND</text>
+
+      <!-- Zone-Trennlinien -->
+      <line x1="20" y1="220" x2="1180" y2="220" stroke="#d8d0c2" stroke-dasharray="2 4" />
+      <line x1="20" y1="520" x2="1180" y2="520" stroke="#d8d0c2" stroke-dasharray="2 4" />
+
+      <!-- Auftraggeber-Reihe (y=80) -->
+      <g font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+        <rect x="60" y="60" width="170" height="50" rx="3" fill="#f5f1ea" stroke="#1a1a1a" />
+        <text x="145" y="91" fill="#1a1a1a">NATO</text>
+
+        <rect x="280" y="60" width="200" height="50" rx="3" fill="#f5f1ea" stroke="#1a1a1a" />
+        <text x="380" y="91" fill="#1a1a1a">US-Außen / USAID</text>
+
+        <rect x="530" y="60" width="170" height="50" rx="3" fill="#f5f1ea" stroke="#1a1a1a" />
+        <text x="615" y="91" fill="#1a1a1a">EU-Kommission</text>
+
+        <rect x="750" y="60" width="200" height="50" rx="3" fill="#f5f1ea" stroke="#1a1a1a" />
+        <text x="850" y="91" fill="#1a1a1a">Stiftungen (z.B. Tschira)</text>
+
+        <rect x="1000" y="60" width="160" height="50" rx="3" fill="#f5f1ea" stroke="#1a1a1a" />
+        <text x="1080" y="91" fill="#1a1a1a">Bundesmittel</text>
+      </g>
+
+      <!-- Internationale Strukturen (y=290) -->
+      <g font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+        <rect x="60" y="270" width="200" height="60" rx="3" fill="#1a1a1a" />
+        <text x="160" y="296" fill="#f5f1ea" font-weight="600">Atlantic Council</text>
+        <text x="160" y="316" fill="#f5f1ea" font-size="11" opacity="0.75">Think Tank · USA · 1961</text>
+
+        <rect x="320" y="270" width="200" height="60" rx="3" fill="#1a1a1a" />
+        <text x="420" y="296" fill="#f5f1ea" font-weight="600">ISD</text>
+        <text x="420" y="316" fill="#f5f1ea" font-size="11" opacity="0.75">Sicherheits-NGO · UK · 2006</text>
+
+        <rect x="580" y="270" width="200" height="60" rx="3" fill="#1a1a1a" />
+        <text x="680" y="296" fill="#f5f1ea" font-weight="600">Internews / EJN</text>
+        <text x="680" y="316" fill="#f5f1ea" font-size="11" opacity="0.75">Medien-NGO · USA · 1982</text>
+
+        <rect x="840" y="270" width="200" height="60" rx="3" fill="#1a1a1a" />
+        <text x="940" y="296" fill="#f5f1ea" font-weight="600">EDMO</text>
+        <text x="940" y="316" fill="#f5f1ea" font-size="11" opacity="0.75">Faktencheck-Hub · EU · 2020</text>
+      </g>
+
+      <!-- Deutsche Akteure (y=580) -->
+      <g font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">
+        <rect x="60" y="560" width="200" height="60" rx="3" fill="#f5f1ea" stroke="#1a1a1a" stroke-width="1.5" />
+        <text x="160" y="586" fill="#1a1a1a" font-weight="600">SMC Germany</text>
+        <text x="160" y="606" fill="#4a4a4a" font-size="11">Wissenschaftskomm. · 2015</text>
+
+        <rect x="320" y="560" width="200" height="60" rx="3" fill="#f5f1ea" stroke="#1a1a1a" stroke-width="1.5" />
+        <text x="420" y="586" fill="#1a1a1a" font-weight="600">Correctiv</text>
+        <text x="420" y="606" fill="#4a4a4a" font-size="11">Faktencheck · 2014</text>
+
+        <rect x="580" y="560" width="200" height="60" rx="3" fill="#f5f1ea" stroke="#1a1a1a" stroke-width="1.5" />
+        <text x="680" y="586" fill="#1a1a1a" font-weight="600">dpa-Faktencheck</text>
+        <text x="680" y="606" fill="#4a4a4a" font-size="11">Agentur · 2017</text>
+
+        <rect x="840" y="560" width="200" height="60" rx="3" fill="#f5f1ea" stroke="#1a1a1a" stroke-width="1.5" />
+        <text x="940" y="586" fill="#1a1a1a" font-weight="600">Amadeu Antonio</text>
+        <text x="940" y="606" fill="#4a4a4a" font-size="11">Stiftung · 1998</text>
+      </g>
+
+      <!-- Edges: Auftraggeber → International (durchgezogen = Finanzierung/Auftrag) -->
+      <g fill="none" stroke="#1a1a1a" stroke-width="1.2" marker-end="url(#arrow)">
+        <!-- NATO → Atlantic Council -->
+        <path d="M 130 110 C 130 180, 145 220, 160 270" />
+        <!-- NATO → ISD -->
+        <path d="M 180 110 C 220 180, 350 220, 410 270" />
+        <!-- US-Außen → Internews -->
+        <path d="M 380 110 C 380 200, 540 230, 660 270" />
+        <!-- EU → EDMO -->
+        <path d="M 615 110 C 700 200, 850 230, 925 270" />
+      </g>
+
+      <!-- Edges: Auftraggeber → Deutsche Akteure (skip mid-tier) -->
+      <g fill="none" stroke="#1a1a1a" stroke-width="1.2" marker-end="url(#arrow)">
+        <!-- Stiftungen → SMC (long curve) -->
+        <path d="M 800 110 C 600 200, 200 400, 160 560" />
+        <!-- Bundesmittel → Amadeu Antonio -->
+        <path d="M 1080 110 C 1080 300, 980 480, 940 560" />
+      </g>
+
+      <!-- Edges: International ↔ International (gestrichelt = Theorie/Prägung) -->
+      <g fill="none" stroke="#b8331f" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrow-accent)">
+        <!-- Atlantic Council → ISD (theoretische Prägung) -->
+        <path d="M 260 300 L 320 300" />
+        <!-- ISD → EDMO (politische Prägung) -->
+        <path d="M 520 300 C 600 250, 750 250, 840 300" />
+      </g>
+
+      <!-- Edges: International → Deutsche Akteure (gepunktet = Daten/Methodik) -->
+      <g fill="none" stroke="#6c665a" stroke-width="1.2" stroke-dasharray="2 4">
+        <!-- EDMO → Correctiv -->
+        <path d="M 900 330 C 700 430, 500 500, 460 560" marker-end="url(#arrow)" />
+        <!-- EDMO → dpa-Faktencheck -->
+        <path d="M 940 330 C 880 430, 720 500, 700 560" marker-end="url(#arrow)" />
+        <!-- ISD → Amadeu Antonio (Methodik NetzDG) -->
+        <path d="M 470 330 C 600 430, 850 500, 920 560" marker-end="url(#arrow)" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Legende -->
+  <div class="container-page mt-6 grid sm:grid-cols-3 gap-3 text-xs text-ink-soft">
+    <div class="flex items-center gap-2">
+      <svg width="40" height="6" aria-hidden="true"><line x1="0" y1="3" x2="40" y2="3" stroke="#1a1a1a" stroke-width="1.5"/></svg>
+      <span>Finanzierung / Auftrag</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg width="40" height="6" aria-hidden="true"><line x1="0" y1="3" x2="40" y2="3" stroke="#b8331f" stroke-width="1.5" stroke-dasharray="5 4"/></svg>
+      <span>theoretische / politische Prägung</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <svg width="40" height="6" aria-hidden="true"><line x1="0" y1="3" x2="40" y2="3" stroke="#6c665a" stroke-width="1.5" stroke-dasharray="2 4"/></svg>
+      <span>Daten- / Methodik-Austausch</span>
+    </div>
+  </div>
+</figure>

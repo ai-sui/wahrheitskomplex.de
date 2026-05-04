@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RechercheCard from '../components/RechercheCard.astro';
+import { recherchen } from '../data/recherchen';
+---
+
+<BaseLayout
+  title="Recherchen"
+  description="Sechs Recherche-Beispiele aus dem Buch „Der Wahrheitskomplex“ — Behauptung, Aktenlage, Quellen. Mit Verweis auf den Akteurs-Atlas und die Tiefenartikel auf norberthaering.de."
+>
+  <section class="container-page py-12 md:py-16">
+    <p class="meta-label text-accent mb-3">Recherchen</p>
+    <h1 class="font-serif text-3xl md:text-4xl leading-tight mb-4 max-w-3xl">
+      Sechs Beispiele, in denen sich Diskurs und Aktenlage trennen.
+    </h1>
+    <p class="max-w-2xl text-ink-soft text-lg leading-relaxed">
+      Jede Karte zeigt eine wiederkehrende Behauptung, die Aktenlage dahinter
+      und wo Sie weiterlesen können — im Akteurs-Atlas oder direkt bei den
+      Original-Recherchen von Norbert Häring.
+    </p>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {recherchen.map((r) => <RechercheCard recherche={r} />)}
+    </div>
+
+    <p class="mt-10 text-sm text-muted max-w-2xl leading-relaxed">
+      Hinweis: Die Recherche-Karten fassen Argumentationsstränge aus dem Buch
+      zusammen. Belege, Original-Dokumente und Detail-Fußnoten finden Sie in
+      den verlinkten Tiefenartikeln und im Buch selbst.
+    </p>
+  </section>
+</BaseLayout>

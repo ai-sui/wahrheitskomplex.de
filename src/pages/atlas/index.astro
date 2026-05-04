@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ActorCard from '../../components/ActorCard.astro';
 import FilterChips from '../../components/FilterChips.astro';
+import RelationsDiagram from '../../components/RelationsDiagram.astro';
 
 const actors = (await getCollection('actors')).sort(
   (a, b) => (a.data.order ?? 100) - (b.data.order ?? 100),
@@ -36,11 +37,13 @@ const akteurstypen = [
     <p class="meta-label mb-3 text-accent">Atlas</p>
     <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-4">Akteure im Wahrheitskomplex</h1>
     <p class="max-w-2xl text-ink-soft text-lg leading-relaxed">
-      Acht Akteure aus dem Buch — Faktenchecker, Stiftungen, Think Tanks. Drei Profile mit Volltext,
-      die übrigen folgen schrittweise. Filtern Sie nach Thema oder Akteurstyp.
+      Acht Akteure aus dem Buch — Faktenchecker, Stiftungen, Think Tanks. Alle mit Volltext-Profil,
+      Quellen und Verweis auf die Tiefenartikel von Norbert Häring. Filtern Sie nach Thema oder Akteurstyp.
     </p>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2 border-y border-line py-6">
+    <RelationsDiagram />
+
+    <div class="grid gap-6 md:grid-cols-2 border-y border-line py-6">
       <FilterChips legend="Thema" group="thema" options={themen} />
       <FilterChips legend="Akteurstyp" group="akteurstyp" options={akteurstypen} />
     </div>
