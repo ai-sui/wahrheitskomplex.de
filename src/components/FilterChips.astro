@@ -1,0 +1,57 @@
+---
+interface Props {
+  legend: string;
+  group: 'thema' | 'akteurstyp';
+  options: string[];
+  allLabel?: string;
+}
+
+const { legend, group, options, allLabel = 'Alle' } = Astro.props;
+---
+
+<fieldset class="flex flex-col gap-2.5" data-filter-group={group}>
+  <legend class="meta-label">{legend}</legend>
+  <div class="flex flex-wrap gap-2">
+    <button
+      type="button"
+      class="filter-chip is-active"
+      data-filter-value="__all__"
+      aria-pressed="true"
+    >
+      {allLabel}
+    </button>
+    {options.map((option) => (
+      <button
+        type="button"
+        class="filter-chip"
+        data-filter-value={option}
+        aria-pressed="false"
+      >
+        {option}
+      </button>
+    ))}
+  </div>
+</fieldset>
+
+<style>
+  .filter-chip {
+    font-size: 0.8125rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    color: var(--color-ink-soft);
+    cursor: pointer;
+    transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+    line-height: 1.2;
+  }
+  .filter-chip:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .filter-chip.is-active {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    border-color: var(--color-ink);
+  }
+</style>

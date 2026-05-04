@@ -1,0 +1,162 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ActorCard from '../../components/ActorCard.astro';
+import FilterChips from '../../components/FilterChips.astro';
+
+const actors = (await getCollection('actors')).sort(
+  (a, b) => (a.data.order ?? 100) - (b.data.order ?? 100),
+);
+
+const themen = [
+  'Pandemie',
+  'Klima',
+  'Ukraine & NATO',
+  'Wahlen',
+  'DSA & NetzDG',
+  'Hass und Hetze',
+];
+
+const akteurstypen = [
+  'Behörde',
+  'Faktenchecker',
+  'Stiftung',
+  'Plattform',
+  'Medienverbund',
+  'NGO',
+  'Think Tank',
+];
+---
+
+<BaseLayout
+  title="Atlas der Akteure"
+  description="Akteure des sogenannten Wahrheitskomplexes — Faktenchecker, Stiftungen, Think Tanks, Behörden. Durchsuchbar nach Thema und Typ, mit Quellen und Verweis auf die Tiefenartikel von Norbert Häring."
+>
+  <section class="container-page py-12 md:py-16">
+    <p class="meta-label mb-3 text-accent">Atlas</p>
+    <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-4">Akteure im Wahrheitskomplex</h1>
+    <p class="max-w-2xl text-ink-soft text-lg leading-relaxed">
+      Acht Akteure aus dem Buch — Faktenchecker, Stiftungen, Think Tanks. Drei Profile mit Volltext,
+      die übrigen folgen schrittweise. Filtern Sie nach Thema oder Akteurstyp.
+    </p>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 border-y border-line py-6">
+      <FilterChips legend="Thema" group="thema" options={themen} />
+      <FilterChips legend="Akteurstyp" group="akteurstyp" options={akteurstypen} />
+    </div>
+
+    <div class="mt-4 flex items-center justify-between text-sm text-muted">
+      <p data-actor-count>{actors.length} Akteure</p>
+      <button
+        type="button"
+        class="underline decoration-line hover:decoration-accent hover:text-accent"
+        data-reset-filters
+      >
+        Filter zurücksetzen
+      </button>
+    </div>
+
+    <div class="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3" data-actor-grid>
+      {actors.map((actor) => (
+        <ActorCard
+          name={actor.data.name}
+          slug={actor.id}
+          kategorie={actor.data.kategorie}
+          akteurstyp={actor.data.akteurstyp}
+          land={actor.data.land}
+          themen={actor.data.themen}
+          kurzbeschreibung={actor.data.kurzbeschreibung}
+          fulltext={actor.data.fulltext}
+        />
+      ))}
+    </div>
+
+    <p
+      class="mt-10 text-center text-sm text-muted hidden"
+      data-empty-state
+    >
+      Keine Akteure passen zur aktuellen Auswahl. <button type="button" class="underline text-accent" data-reset-filters>Filter zurücksetzen</button>.
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  type FilterGroup = 'thema' | 'akteurstyp';
+
+  const state: Record<FilterGroup, string> = {
+    thema: '__all__',
+    akteurstyp: '__all__',
+  };
+
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-actor-card]'),
+  );
+  const groups = Array.from(
+    document.querySelectorAll<HTMLFieldSetElement>('[data-filter-group]'),
+  );
+  const countEl = document.querySelector<HTMLElement>('[data-actor-count]');
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty-state]');
+  const resetButtons = document.querySelectorAll<HTMLButtonElement>(
+    '[data-reset-filters]',
+  );
+
+  function applyFilters() {
+    let visible = 0;
+    for (const card of cards) {
+      const akteurstyp = card.dataset.akteurstyp ?? '';
+      const themen = (card.dataset.themen ?? '').split('|').filter(Boolean);
+
+      const matchesTyp =
+        state.akteurstyp === '__all__' || akteurstyp === state.akteurstyp;
+      const matchesThema =
+        state.thema === '__all__' || themen.includes(state.thema);
+
+      const show = matchesTyp && matchesThema;
+      card.hidden = !show;
+      if (show) visible++;
+    }
+
+    if (countEl) {
+      countEl.textContent =
+        visible === cards.length
+          ? `${cards.length} Akteure`
+          : `${visible} von ${cards.length} Akteuren`;
+    }
+    if (emptyEl) emptyEl.classList.toggle('hidden', visible !== 0);
+  }
+
+  for (const group of groups) {
+    const groupName = group.dataset.filterGroup as FilterGroup;
+    const chips = group.querySelectorAll<HTMLButtonElement>('.filter-chip');
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const value = chip.dataset.filterValue ?? '__all__';
+        state[groupName] = value;
+
+        for (const c of chips) {
+          const isActive = c === chip;
+          c.classList.toggle('is-active', isActive);
+          c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        }
+        applyFilters();
+      });
+    }
+  }
+
+  for (const btn of resetButtons) {
+    btn.addEventListener('click', () => {
+      state.thema = '__all__';
+      state.akteurstyp = '__all__';
+      for (const group of groups) {
+        const chips = group.querySelectorAll<HTMLButtonElement>('.filter-chip');
+        for (const c of chips) {
+          const isAllChip = c.dataset.filterValue === '__all__';
+          c.classList.toggle('is-active', isAllChip);
+          c.setAttribute('aria-pressed', isAllChip ? 'true' : 'false');
+        }
+      }
+      applyFilters();
+    });
+  }
+</script>
