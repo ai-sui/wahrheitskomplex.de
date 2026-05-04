@@ -15,15 +15,15 @@ const { book } = Astro.props;
       href={book.buyUrl}
       rel="noopener"
       class="block w-44 md:w-52 shrink-0 mx-auto md:mx-0 group"
-      aria-label={`${book.title} — beim ${book.publisher}`}
     >
       <svg
         viewBox="0 0 200 280"
         xmlns="http://www.w3.org/2000/svg"
         class="w-full h-auto rounded-sm shadow-[0_15px_30px_-15px_rgba(26,26,26,0.35),0_5px_10px_-5px_rgba(26,26,26,0.15)] transition-transform group-hover:-translate-y-1"
         role="img"
-        aria-hidden="true"
+        aria-labelledby="book-cover-title"
       >
+        <title id="book-cover-title">{`Buchcover (Schmuck): ${book.title} — ${book.publisher}`}</title>
         <rect width="200" height="280" fill="#1a1a1a" />
         <rect x="14" y="14" width="172" height="252" fill="none" stroke="#b8331f" stroke-width="0.8" />
 
