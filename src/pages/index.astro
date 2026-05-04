@@ -1,26 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FactWeek from '../components/FactWeek.astro';
+import HookCard from '../components/HookCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { factOfTheWeek, hookCards } from '../data/homepage';
 ---
 
 <BaseLayout title="Wahrheitskomplex">
-  <section class="container-page py-16 md:py-24">
-    <p class="meta-label mb-4">Demo · Phase 1</p>
-    <h1>
-      Der <em class="text-accent not-italic">Wahrheits&shy;komplex</em><br />
-      &mdash; ein Atlas zum Buch.
-    </h1>
-    <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">
-      Eine ruhige Recherche-Plattform zum gleichnamigen Buch von Norbert Häring. Dies ist Phase 1: Design-System steht.
-      Hero, Hooks und Akteurs-Atlas folgen in den nächsten Schritten.
-    </p>
+  <FactWeek fact={factOfTheWeek} />
 
-    <div class="mt-10 flex flex-wrap gap-3">
-      <a href="/atlas" class="rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium no-underline hover:bg-accent transition-colors">
-        Zum Akteurs-Atlas
-      </a>
-      <a href="https://norberthaering.de" rel="noopener" class="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors">
-        norberthaering.de besuchen &rarr;
-      </a>
+  <section class="container-page py-12 md:py-16">
+    <div class="flex items-baseline justify-between mb-8 border-b border-line pb-4">
+      <h2 class="font-serif text-2xl md:text-3xl">Drei Einstiege</h2>
+      <p class="meta-label hidden sm:block">aus dem Buch</p>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {hookCards.map((card) => <HookCard card={card} />)}
     </div>
   </section>
+
+  <NewsletterForm />
 </BaseLayout>

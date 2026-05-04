@@ -1,0 +1,122 @@
+---
+// Frontend-only for now. /api/subscribe endpoint follows in Phase 3.
+---
+
+<section id="newsletter" class="border-y border-line bg-paper-soft mt-20">
+  <div class="container-page py-16 md:py-20 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <div>
+      <p class="meta-label text-accent mb-3">Newsletter</p>
+      <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-4">
+        Recherche-Updates per Mail.
+      </h2>
+      <p class="text-ink-soft leading-relaxed max-w-md">
+        Ein neuer Akteur, eine neue Geldspur, ein neuer Fakt — wir schreiben höchstens einmal pro Woche.
+        Keine Werbung, kein Tracking. Abmeldung jederzeit per Klick.
+      </p>
+    </div>
+
+    <form id="newsletter-form" class="flex flex-col gap-4" novalidate>
+      <label class="flex flex-col gap-2">
+        <span class="meta-label">E-Mail-Adresse</span>
+        <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="ihre@adresse.de"
+          class="bg-paper border border-line rounded-sm px-4 py-3 text-base focus:outline-none focus:border-accent"
+        />
+      </label>
+
+      <label class="flex items-start gap-2.5 text-sm text-ink-soft">
+        <input
+          id="newsletter-consent"
+          name="consent"
+          type="checkbox"
+          required
+          class="mt-1 accent-[var(--color-accent)]"
+        />
+        <span>
+          Ich stimme zu, dass meine E-Mail-Adresse zum Versand der Newsletter über Buttondown gespeichert wird.
+          Hinweise zur Verarbeitung in der <a href="/datenschutz" class="underline decoration-line hover:decoration-accent">Datenschutzerklärung</a>.
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center gap-2 bg-ink text-paper rounded-full px-6 py-3 font-medium text-sm hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed self-start"
+      >
+        <span data-label-default>Anmelden</span>
+        <span data-label-loading hidden>Wird gesendet …</span>
+      </button>
+
+      <p
+        id="newsletter-status"
+        class="text-sm min-h-5"
+        role="status"
+        aria-live="polite"
+      ></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const statusEl = document.getElementById('newsletter-status') as HTMLParagraphElement | null;
+  const button = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const labelDefault = button?.querySelector('[data-label-default]') as HTMLElement | null;
+  const labelLoading = button?.querySelector('[data-label-loading]') as HTMLElement | null;
+
+  if (form && statusEl && button && labelDefault && labelLoading) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+      const consent = (form.elements.namedItem('consent') as HTMLInputElement).checked;
+
+      statusEl.className = 'text-sm min-h-5 text-ink-soft';
+
+      if (!email || !email.includes('@')) {
+        statusEl.textContent = 'Bitte eine gültige E-Mail-Adresse eingeben.';
+        statusEl.className = 'text-sm min-h-5 text-accent';
+        return;
+      }
+      if (!consent) {
+        statusEl.textContent = 'Bitte der Speicherung zustimmen.';
+        statusEl.className = 'text-sm min-h-5 text-accent';
+        return;
+      }
+
+      button.disabled = true;
+      labelDefault.hidden = true;
+      labelLoading.hidden = false;
+      statusEl.textContent = '';
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok) {
+          statusEl.textContent =
+            data.message ?? 'Danke! Bitte bestätigen Sie Ihre Anmeldung in der E-Mail, die wir Ihnen geschickt haben.';
+          statusEl.className = 'text-sm min-h-5 text-verified';
+          form.reset();
+        } else {
+          statusEl.textContent = data.message ?? 'Anmeldung fehlgeschlagen. Bitte später erneut versuchen.';
+          statusEl.className = 'text-sm min-h-5 text-accent';
+        }
+      } catch {
+        statusEl.textContent = 'Netzwerkfehler. Bitte später erneut versuchen.';
+        statusEl.className = 'text-sm min-h-5 text-accent';
+      } finally {
+        button.disabled = false;
+        labelDefault.hidden = false;
+        labelLoading.hidden = true;
+      }
+    });
+  }
+</script>
