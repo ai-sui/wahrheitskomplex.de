@@ -1,0 +1,167 @@
+---
+type Source = { title: string; url?: string; publisher?: string; date?: string };
+
+interface Props {
+  name: string;
+  kategorie: string;
+  akteurstyp: string;
+  land: string;
+  gegruendet?: string | number;
+  themen: string[];
+  finanzierung: string;
+  reichweite?: string;
+  kernkritik: string;
+  stellungnahme?: string;
+  buchKapitel?: string;
+  haeringLink?: string;
+  libernetLink?: string;
+  quellen: Source[];
+}
+
+const {
+  name,
+  kategorie,
+  akteurstyp,
+  land,
+  gegruendet,
+  themen,
+  finanzierung,
+  reichweite,
+  kernkritik,
+  stellungnahme,
+  buchKapitel,
+  haeringLink,
+  libernetLink,
+  quellen,
+} = Astro.props;
+---
+
+<article class="container-page py-12 md:py-16 grid lg:grid-cols-[2fr_1fr] gap-12">
+  <div>
+    <p class="meta-label text-accent mb-3">{kategorie}</p>
+    <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-6">{name}</h1>
+
+    <div class="flex flex-wrap gap-1.5 mb-10">
+      {themen.map((thema) => (
+        <span class="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 bg-paper-soft border border-line rounded-full text-muted">
+          {thema}
+        </span>
+      ))}
+    </div>
+
+    <section class="prose-section">
+      <h2 class="font-serif text-2xl mb-3 mt-0">Kernkritik</h2>
+      <p class="text-ink-soft leading-relaxed text-lg">{kernkritik}</p>
+    </section>
+
+    <section class="prose-section mt-12">
+      <h2 class="font-serif text-2xl mb-3">Hintergrund</h2>
+      <div class="text-ink-soft leading-relaxed [&>p]:mb-4 [&>p:last-child]:mb-0">
+        <slot />
+      </div>
+    </section>
+
+    {stellungnahme && (
+      <section class="prose-section mt-12 border-l-2 border-line pl-5 py-1">
+        <p class="meta-label mb-2">Stellungnahme</p>
+        <p class="text-ink-soft leading-relaxed italic">{stellungnahme}</p>
+      </section>
+    )}
+
+    {quellen.length > 0 && (
+      <section class="mt-14 border-t border-line pt-8">
+        <p class="meta-label mb-4">Quellen</p>
+        <ol class="space-y-3 text-sm text-ink-soft list-decimal pl-5">
+          {quellen.map((quelle) => (
+            <li>
+              {quelle.url ? (
+                <a
+                  href={quelle.url}
+                  rel="noopener"
+                  class="underline decoration-line hover:decoration-accent hover:text-accent"
+                >
+                  {quelle.title}
+                </a>
+              ) : (
+                <span>{quelle.title}</span>
+              )}
+              {quelle.publisher && <span class="text-muted"> — {quelle.publisher}</span>}
+              {quelle.date && <span class="text-muted">, {quelle.date}</span>}
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+  </div>
+
+  <aside class="lg:sticky lg:top-24 lg:self-start space-y-6">
+    <div class="bg-paper-soft border border-line rounded-sm p-6">
+      <p class="meta-label mb-4">Profil</p>
+      <dl class="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2.5 text-sm">
+        <dt class="text-muted">Akteurstyp</dt>
+        <dd>{akteurstyp}</dd>
+
+        <dt class="text-muted">Land</dt>
+        <dd>{land}</dd>
+
+        {gegruendet && (
+          <>
+            <dt class="text-muted">Gegründet</dt>
+            <dd>{gegruendet}</dd>
+          </>
+        )}
+
+        {buchKapitel && (
+          <>
+            <dt class="text-muted">Buch</dt>
+            <dd class="text-ink-soft">{buchKapitel}</dd>
+          </>
+        )}
+      </dl>
+    </div>
+
+    <div class="bg-paper-soft border border-line rounded-sm p-6">
+      <p class="meta-label mb-3">Finanzierung</p>
+      <p class="text-sm text-ink-soft leading-relaxed">{finanzierung}</p>
+    </div>
+
+    {reichweite && (
+      <div class="bg-paper-soft border border-line rounded-sm p-6">
+        <p class="meta-label mb-3">Reichweite</p>
+        <p class="text-sm text-ink-soft leading-relaxed">{reichweite}</p>
+      </div>
+    )}
+
+    {(haeringLink || libernetLink) && (
+      <div class="border border-line rounded-sm p-6">
+        <p class="meta-label mb-4">Vertiefungen</p>
+        <ul class="space-y-3 text-sm">
+          {haeringLink && (
+            <li>
+              <a
+                href={haeringLink}
+                rel="noopener"
+                class="inline-flex items-center gap-2 text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+              >
+                Tiefenartikel auf norberthaering.de
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          )}
+          {libernetLink && (
+            <li>
+              <a
+                href={libernetLink}
+                rel="noopener"
+                class="inline-flex items-center gap-2 text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+              >
+                Profil bei Liber-Net
+                <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    )}
+  </aside>
+</article>

@@ -1,0 +1,49 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ActorDetail from '../../components/ActorDetail.astro';
+
+export async function getStaticPaths() {
+  const actors = await getCollection('actors', ({ data }) => data.fulltext);
+  return actors.map((actor) => ({
+    params: { slug: actor.id },
+    props: { actor },
+  }));
+}
+
+const { actor } = Astro.props;
+const { Content } = await render(actor);
+
+const description =
+  actor.data.kurzbeschreibung ?? actor.data.kernkritik.slice(0, 160);
+---
+
+<BaseLayout title={actor.data.name} description={description}>
+  <nav class="container-page pt-8 text-sm">
+    <a
+      href="/atlas"
+      class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+    >
+      ← Zur Übersicht
+    </a>
+  </nav>
+
+  <ActorDetail
+    name={actor.data.name}
+    kategorie={actor.data.kategorie}
+    akteurstyp={actor.data.akteurstyp}
+    land={actor.data.land}
+    gegruendet={actor.data.gegruendet}
+    themen={actor.data.themen}
+    finanzierung={actor.data.finanzierung}
+    reichweite={actor.data.reichweite}
+    kernkritik={actor.data.kernkritik}
+    stellungnahme={actor.data.stellungnahme}
+    buchKapitel={actor.data.buchKapitel}
+    haeringLink={actor.data.haeringLink}
+    libernetLink={actor.data.libernetLink}
+    quellen={actor.data.quellen}
+  >
+    <Content />
+  </ActorDetail>
+</BaseLayout>
