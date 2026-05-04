@@ -37,7 +37,12 @@ const orgSchema = {
 };
 ---
 
-<BaseLayout title={actor.data.name} description={description} jsonLd={orgSchema}>
+<BaseLayout
+  title={actor.data.name}
+  description={description}
+  ogImage={`/og/${actor.id}.png`}
+  jsonLd={orgSchema}
+>
   <nav class="container-page pt-8 text-sm">
     <a
       href="/atlas"
