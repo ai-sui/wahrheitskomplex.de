@@ -75,3 +75,75 @@
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
+
+@media print {
+  :root {
+    --color-paper: #ffffff;
+    --color-paper-soft: #ffffff;
+    --color-ink: #000000;
+    --color-ink-soft: #1a1a1a;
+    --color-muted: #444444;
+    --color-line: #cccccc;
+    --color-accent: #6e1c11;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000;
+    font-family: var(--font-serif);
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  header, footer,
+  nav,
+  [data-filter-group],
+  [data-reset-filters],
+  [data-actor-count],
+  #newsletter,
+  .filter-chip {
+    display: none !important;
+  }
+
+  /* Hide the demo banner (the small dark bar above the header) */
+  body > div:first-of-type:has(> div > span.bg-accent) {
+    display: none !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444;
+    word-break: break-all;
+  }
+
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 13pt; }
+
+  article, section {
+    page-break-inside: avoid;
+  }
+
+  ol, ul {
+    page-break-inside: auto;
+  }
+
+  ol > li, ul > li {
+    page-break-inside: avoid;
+  }
+
+  aside {
+    page-break-inside: avoid;
+  }
+
+  .container-page {
+    max-width: none;
+    padding-inline: 0;
+  }
+}
