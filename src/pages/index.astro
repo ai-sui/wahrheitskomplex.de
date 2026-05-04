@@ -6,9 +6,29 @@ import BookSection from '../components/BookSection.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import { factOfTheWeek, hookCards } from '../data/homepage';
 import { book } from '../data/book';
+
+const bookSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: book.title,
+  alternateName: book.subtitle,
+  author: {
+    '@type': 'Person',
+    name: book.author,
+    url: 'https://norberthaering.de',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: book.publisher,
+    url: book.buyUrl,
+  },
+  datePublished: '2026',
+  inLanguage: 'de',
+  description: book.blurb,
+};
 ---
 
-<BaseLayout title="Wahrheitskomplex">
+<BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
   <FactWeek fact={factOfTheWeek} />
 
   <section class="container-page py-12 md:py-16">

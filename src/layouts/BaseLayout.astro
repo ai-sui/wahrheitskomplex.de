@@ -2,20 +2,38 @@
 import '../styles/global.css';
 import Topbar from '../components/Topbar.astro';
 import Footer from '../components/Footer.astro';
+import JsonLd from '../components/JsonLd.astro';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title,
   description = 'Recherche-Atlas zum Buch „Der Wahrheitskomplex" von Norbert Häring (Westend Verlag, 2026). Faktenchecker, Stiftungen, Geldflüsse — durchsuchbar und mit Quellen.',
   ogImage = '/og.png',
+  jsonLd,
 } = Astro.props;
 
 const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://wahrheitskomplex.netlify.app');
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Wahrheitskomplex',
+  alternateName: 'Atlas zum Buch „Der Wahrheitskomplex"',
+  url: Astro.site?.toString() ?? 'https://wahrheitskomplex.netlify.app/',
+  description,
+  inLanguage: 'de-DE',
+  publisher: {
+    '@type': 'Person',
+    name: 'Norbert Häring',
+    url: 'https://norberthaering.de',
+  },
+};
 
 const fullTitle = title === 'Wahrheitskomplex' ? title : `${title} — Wahrheitskomplex`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitskomplex.netlify.app');
@@ -46,6 +64,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitsko
     <meta name="twitter:image" content={ogImageUrl.toString()} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <JsonLd data={websiteSchema} />
+    {jsonLd && <JsonLd data={jsonLd} />}
   </head>
   <body class="min-h-dvh flex flex-col">
     <Topbar />

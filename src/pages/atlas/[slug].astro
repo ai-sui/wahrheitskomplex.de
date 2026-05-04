@@ -16,9 +16,28 @@ const { Content } = await render(actor);
 
 const description =
   actor.data.kurzbeschreibung ?? actor.data.kernkritik.slice(0, 160);
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: actor.data.name,
+  description: actor.data.kurzbeschreibung,
+  foundingDate: actor.data.gegruendet ? String(actor.data.gegruendet) : undefined,
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: actor.data.land,
+  },
+  sameAs: [actor.data.haeringLink, actor.data.libernetLink].filter(Boolean),
+  funding: actor.data.finanzierung,
+  subjectOf: {
+    '@type': 'Book',
+    name: 'Der Wahrheitskomplex',
+    author: { '@type': 'Person', name: 'Norbert Häring' },
+  },
+};
 ---
 
-<BaseLayout title={actor.data.name} description={description}>
+<BaseLayout title={actor.data.name} description={description} jsonLd={orgSchema}>
   <nav class="container-page pt-8 text-sm">
     <a
       href="/atlas"

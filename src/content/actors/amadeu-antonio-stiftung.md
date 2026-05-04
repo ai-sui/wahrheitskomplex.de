@@ -7,13 +7,59 @@ gegruendet: 1998
 themen:
   - "Hass und Hetze"
   - "DSA & NetzDG"
+  - Wahlen
 finanzierung: >-
-  Bundesmittel, Stiftungsmittel; Detailanalyse folgt.
+  Bundesmittel über das Programm „Demokratie leben!" (BMFSFJ), zusätzlich
+  Projektmittel des Auswärtigen Amts und mehrerer Stiftungen
+  (u.a. Robert Bosch Stiftung, Freudenberg Stiftung), ergänzt durch
+  Spenden.
+reichweite: >-
+  Eine der einflussreichsten zivilgesellschaftlichen Stiftungen
+  Deutschlands im Themenfeld Rechtsextremismus, Rassismus und Antisemitismus.
+  Beratet Bundes- und Landesregierungen, betreibt mehrere Monitoring- und
+  Bildungsprojekte.
 kernkritik: >-
-  Pionierin der gesetzgeberischen Logik, die später ins NetzDG mündete.
-  Gegründet 1998 von Anetta Kahane.
+  Pionierin der gesetzgeberischen Logik, die ins Netzwerkdurchsetzungsgesetz
+  (NetzDG, 2017) und später in EU-Vorgaben (DSA) mündete. Häring kritisiert
+  die enge Verflechtung mit Bundesmitteln und die Rolle als Themen­agenda­setterin
+  bei gleichzeitiger Selbstdarstellung als unabhängige Zivilgesellschaft.
+stellungnahme: >-
+  Die Stiftung verweist auf öffentlich zugängliche Jahresberichte, die
+  Programmbeschreibungen unter „Demokratie leben!" und ihre Stellungnahmen
+  zu Gesetzgebungsvorhaben.
+buchKapitel: "Kapitel 3 — Vom NetzDG zum DSA"
+haeringLink: "https://norberthaering.de/propaganda-zensur/"
+libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
-  Stiftung, die früh die Logik des späteren NetzDG mitprägte.
-fulltext: false
+  Stiftung, die ab den 2010er Jahren die Logik des NetzDG mitprägte und heute
+  einflussreich in der DSA-Umsetzung ist.
+fulltext: true
 order: 70
+quellen:
+  - title: "Norbert Häring — Recherchen zu NetzDG und Stiftungsumfeld"
+    url: "https://norberthaering.de/propaganda-zensur/"
+    publisher: "norberthaering.de"
+  - title: "Der Wahrheitskomplex (Kapitel 3)"
+    publisher: "Westend Verlag, 2026"
+  - title: "Liber-Net — Profil Deutschland"
+    url: "https://liber-net.org/germany"
+    publisher: "Liber-Net"
 ---
+
+Die Amadeu Antonio Stiftung wurde 1998 von Anetta Kahane gegründet und
+trägt den Namen eines 1990 in Eberswalde von Rechtsextremen ermordeten
+mosambikanischen Vertragsarbeiters. Inhaltlich bündelt sie Projekte gegen
+Rechtsextremismus, Rassismus und Antisemitismus.
+
+In *Der Wahrheitskomplex* ist die Stiftung weniger als Träger einzelner
+Projekte interessant, sondern als prägende Stimme in der gesetzgeberischen
+Debatte: Aus jahrelanger Argumentation gegen „Hass im Netz" wurde 2017 das
+NetzDG; aus den dort gefundenen Mechanismen — Plattformen müssen melden,
+löschen, dokumentieren — wurden später Bausteine des EU-Digital-Services-Act.
+
+Häring rekonstruiert nicht die Inhalte der Stiftungsarbeit, sondern die
+Geometrie: Wer sich aus überwiegend öffentlichen Mitteln finanziert,
+gleichzeitig Gesetzesvorschläge prägt, deren Vollzug wiederum bei
+staatsnahen Stellen liegt — der ist aus seiner Sicht nicht
+„Zivilgesellschaft", sondern Teil eines staatlich-zivilgesellschaftlichen
+Hybrid-Komplexes, dessen Trennlinien für Außenstehende unkenntlich werden.
