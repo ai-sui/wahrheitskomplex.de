@@ -20,7 +20,7 @@ export const recherchen: Recherche[] = [
     recherche:
       'Antworten auf parlamentarische Anfragen zeigen rund 200 Mio. € pro Jahr (2021/2022). Die größten Empfänger sind exakt die Verlage, die im redaktionellen Teil über Regierungsarbeit berichten — Ad Alliance, Springer, FAZ, Funke, Burda, Süddeutsche.',
     quelle: 'Antworten der Bundesregierung auf parlamentarische Anfragen',
-    haeringLink: 'https://norberthaering.de/wahrheitskomplex/',
+    haeringLink: 'https://norberthaering.de/wahrheitskomplex/finanzierer/',
     buchKapitel: 'Kapitel 1',
   },
   {
@@ -44,8 +44,8 @@ export const recherchen: Recherche[] = [
       'Das NetzDG (2017) wurde als Reaktion auf „Hass im Netz" aus der Mitte der Gesellschaft beschrieben.',
     recherche:
       'Die argumentative Vorarbeit lieferten über Jahre staatlich kofinanzierte Stiftungen, allen voran die Amadeu Antonio Stiftung. Ihre Vorschläge — Plattformen müssen melden, löschen, dokumentieren — wanderten nahezu unverändert ins Gesetz und später in den DSA.',
-    quelle: 'Programmberichte „Demokratie leben!", Stiftungsdokumente',
-    haeringLink: 'https://norberthaering.de/propaganda-zensur/',
+    quelle: 'Programmberichte „Demokratie leben!“, Stiftungsdokumente',
+    haeringLink: 'https://norberthaering.de/wahrheitskomplex/finanzierer/',
     atlasLink: '/atlas/amadeu-antonio-stiftung',
     buchKapitel: 'Kapitel 3',
   },
@@ -71,6 +71,7 @@ export const recherchen: Recherche[] = [
     recherche:
       'Internews und sein Earth Journalism Network qualifizieren rund 25.000 Klimajournalist:innen weltweit. Finanziert wird das überwiegend aus US-Bundesmitteln (USAID, State Department) und großen Stiftungen — eine in den Beiträgen nicht ausgewiesene Förderkette.',
     quelle: 'Förderübersichten USAID, Internews-Jahresberichte',
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/internews/',
     atlasLink: '/atlas/internews-earth-journalism-network',
     buchKapitel: 'Kapitel 4',
   },
@@ -83,6 +84,7 @@ export const recherchen: Recherche[] = [
     recherche:
       'Das European Digital Media Observatory (EDMO) wird von der EU-Kommission finanziert, prüft Inhalte mit EU-Bezug und liefert seine Daten zugleich in den DSA-Vollzug. Auftraggeber, Prüfer und Vollzieher sitzen so eng beieinander, dass die Sphären verschwimmen.',
     quelle: 'EDMO-Charta, EU-Kommissions-Förderübersichten',
+    haeringLink: 'https://norberthaering.de/spinnen-im-netz/edmo/',
     atlasLink: '/atlas/edmo',
     buchKapitel: 'Kapitel 3',
   },

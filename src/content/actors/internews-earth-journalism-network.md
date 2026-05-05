@@ -27,7 +27,7 @@ stellungnahme: >-
   redaktioneller Entscheidungen der Stipendiat:innen und auf eigene
   Transparenz-Charta.
 buchKapitel: "Kapitel 4 — Klima-Wahrheitskomplex und Auslandsförderung"
-haeringLink: "https://norberthaering.de/propaganda-zensur/"
+haeringLink: "https://norberthaering.de/propaganda-zensur/internews/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Staatsfinanzierte US-Medien-NGO, deren Earth Journalism Network rund
@@ -35,8 +35,8 @@ kurzbeschreibung: >-
 fulltext: true
 order: 80
 quellen:
-  - title: "Norbert Häring — Klima-Berichterstattung und Auslandsförderung"
-    url: "https://norberthaering.de/propaganda-zensur/"
+  - title: "Norbert Häring — Internews / Earth Journalism Network"
+    url: "https://norberthaering.de/propaganda-zensur/internews/"
     publisher: "norberthaering.de"
   - title: "Der Wahrheitskomplex (Kapitel 4)"
     publisher: "Westend Verlag, 2026"

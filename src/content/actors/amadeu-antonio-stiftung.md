@@ -28,7 +28,7 @@ stellungnahme: >-
   Programmbeschreibungen unter „Demokratie leben!" und ihre Stellungnahmen
   zu Gesetzgebungsvorhaben.
 buchKapitel: "Kapitel 3 — Vom NetzDG zum DSA"
-haeringLink: "https://norberthaering.de/propaganda-zensur/"
+haeringLink: "https://norberthaering.de/wahrheitskomplex/finanzierer/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Stiftung, die ab den 2010er Jahren die Logik des NetzDG mitprägte und heute
@@ -36,8 +36,8 @@ kurzbeschreibung: >-
 fulltext: true
 order: 70
 quellen:
-  - title: "Norbert Häring — Recherchen zu NetzDG und Stiftungsumfeld"
-    url: "https://norberthaering.de/propaganda-zensur/"
+  - title: "Norbert Häring — Wahrheitskomplex / Finanzierer"
+    url: "https://norberthaering.de/wahrheitskomplex/finanzierer/"
     publisher: "norberthaering.de"
   - title: "Der Wahrheitskomplex (Kapitel 3)"
     publisher: "Westend Verlag, 2026"

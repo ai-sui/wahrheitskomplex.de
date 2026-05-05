@@ -27,7 +27,7 @@ stellungnahme: >-
   Die dpa verweist auf ihre Faktencheck-Methodik und auf das
   IFCN-Code-of-Principles-Verfahren als externen Prüfrahmen.
 buchKapitel: "Kapitel 2 — Stiftungs- und Agentur-Faktencheckerei"
-haeringLink: "https://norberthaering.de/propaganda-zensur/"
+haeringLink: "https://norberthaering.de/propaganda-zensur/dpa-faktencheck/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Faktencheck-Sparte der Deutschen Presse-Agentur, deren Trägerstruktur
@@ -35,8 +35,8 @@ kurzbeschreibung: >-
 fulltext: true
 order: 50
 quellen:
-  - title: "Norbert Häring — Recherchen zu Faktencheckern"
-    url: "https://norberthaering.de/propaganda-zensur/"
+  - title: "Norbert Häring — dpa-Faktencheck"
+    url: "https://norberthaering.de/propaganda-zensur/dpa-faktencheck/"
     publisher: "norberthaering.de"
   - title: "Der Wahrheitskomplex (Kapitel 2)"
     publisher: "Westend Verlag, 2026"

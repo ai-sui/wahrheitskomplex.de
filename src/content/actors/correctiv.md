@@ -26,7 +26,7 @@ stellungnahme: >-
   Auf wiederholte Anfrage verweist Correctiv auf öffentlich einsehbare
   Geschäftsberichte und die Methodik-Seiten des Faktencheck-Bereichs.
 buchKapitel: "Kapitel 2 — Stiftungs-Faktencheckerei in Deutschland"
-haeringLink: "https://norberthaering.de/propaganda-zensur/"
+haeringLink: "https://norberthaering.de/spinnen-im-netz/correctiv/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Größter deutscher Faktenchecker, finanziert über Stiftungen und Spenden;
@@ -34,8 +34,8 @@ kurzbeschreibung: >-
 fulltext: true
 order: 40
 quellen:
-  - title: "Norbert Häring — Beiträge zu Faktencheckern und Stiftungen"
-    url: "https://norberthaering.de/propaganda-zensur/"
+  - title: "Norbert Häring — Correctiv (Spinnen im Netz)"
+    url: "https://norberthaering.de/spinnen-im-netz/correctiv/"
     publisher: "norberthaering.de"
   - title: "Der Wahrheitskomplex (Kapitel 2)"
     publisher: "Westend Verlag, 2026"

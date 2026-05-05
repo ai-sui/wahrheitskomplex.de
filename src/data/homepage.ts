@@ -24,8 +24,8 @@ export const factOfTheWeek: FactOfTheWeek = {
   source: 'Antworten der Bundesregierung auf Anfragen der AfD-Bundestagsfraktion',
   bookChapter: 'Kapitel 1 — Wie etablierte Medien eingenordet werden',
   deepLink: {
-    label: 'Tiefenartikel auf norberthaering.de',
-    url: 'https://norberthaering.de/wahrheitskomplex/',
+    label: 'Finanzierer-Übersicht auf norberthaering.de',
+    url: 'https://norberthaering.de/wahrheitskomplex/finanzierer/',
   },
 };
 

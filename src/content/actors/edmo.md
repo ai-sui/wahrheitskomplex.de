@@ -27,7 +27,7 @@ stellungnahme: >-
   EDMO verweist auf seine Charta, die akademische Anbindung der Hubs und
   auf veröffentlichte Methodiken.
 buchKapitel: "Kapitel 3 — DSA und die Architektur der EU-Faktencheckerei"
-haeringLink: "https://norberthaering.de/propaganda-zensur/"
+haeringLink: "https://norberthaering.de/spinnen-im-netz/edmo/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   EU-finanziertes Dachnetzwerk aus Faktencheckern und Behörden im
@@ -35,8 +35,8 @@ kurzbeschreibung: >-
 fulltext: true
 order: 60
 quellen:
-  - title: "Norbert Häring — Beiträge zu DSA und EU-Faktencheckerei"
-    url: "https://norberthaering.de/propaganda-zensur/"
+  - title: "Norbert Häring — EDMO (Spinnen im Netz)"
+    url: "https://norberthaering.de/spinnen-im-netz/edmo/"
     publisher: "norberthaering.de"
   - title: "Der Wahrheitskomplex (Kapitel 3)"
     publisher: "Westend Verlag, 2026"
