@@ -54,8 +54,9 @@ sondern über die strukturelle Frage: Eine Nachrichtenagentur, deren
 Mehrheitsstruktur auf Mediengesellschafter und öffentlich-rechtliche
 Anstalten zurückgeht, prüft Aussagen, die häufig genau aus dieser Sphäre
 stammen oder ihr widersprechen. Die unter dpa-Kennung verbreitete Bewertung
-erscheint anschließend in Hunderten Redaktionen — die Interessenkollision
-zwischen Träger und Prüfer wird dort nicht mehr diskutiert.
+erscheint anschließend in Hunderten Redaktionen — eine Interessenkollision
+zwischen Träger und Prüfer, die in der Berichterstattung selbst kaum
+ausgewiesen wird.
 
 Anders als bei kleineren Faktencheck-Stellen liegt die Reichweite hier
 nicht im Direkt-Publikum, sondern im Multiplikator-Effekt: Was als

@@ -48,10 +48,21 @@ const { book } = Astro.props;
         <dd>{book.publicationDate.replace(/^Erschienen\s+/, '')}</dd>
       </dl>
 
-      <p class="text-sm text-ink-soft leading-relaxed mb-6 max-w-xl">
-        <span class="meta-label text-muted block mb-1.5">Über den Autor</span>
-        {book.authorBio}
-      </p>
+      <div class="flex gap-4 items-start mb-6 max-w-xl">
+        <img
+          src="/haering-portrait.jpg"
+          alt={`Porträt von ${book.author}`}
+          width="800"
+          height="1169"
+          loading="lazy"
+          decoding="async"
+          class="w-16 h-16 rounded-full object-cover shrink-0 grayscale border border-line"
+        />
+        <p class="text-sm text-ink-soft leading-relaxed">
+          <span class="meta-label text-muted block mb-1.5">Über den Autor</span>
+          {book.authorBio}
+        </p>
+      </div>
 
       {book.buyUrl && (
         <a

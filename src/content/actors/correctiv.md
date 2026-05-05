@@ -55,9 +55,9 @@ Häring nähert sich Correctiv in *Der Wahrheitskomplex* nicht über die einzeln
 Recherchen, sondern über die Struktur: Wer eine Stelle für „richtige" Fakten
 finanziert — Stiftungen mit klaren politischen Programmen, ergänzt durch
 Mittel staatsnaher Geber — bekommt eine Auswahl, die diesen Programmen nicht
-zufällig entspricht. Dass Correctiv journalistisch sauber arbeitet, wenn es
-arbeitet, schließt diese Struktur-Kritik nicht aus, sondern macht sie aus
-Härings Sicht erst interessant.
+zufällig entspricht. Die Qualität einzelner Recherchen — die Häring nicht
+in Frage stellt — schließt diese Struktur-Kritik nicht aus, sondern macht
+sie aus seiner Sicht erst interessant.
 
 Die Doppelrolle — eigene Recherchen veröffentlichen *und* die Recherchen
 anderer als Faktencheck einordnen — verstärkt die Frage, wer hier die

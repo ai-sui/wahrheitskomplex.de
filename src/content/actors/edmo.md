@@ -49,7 +49,7 @@ Das European Digital Media Observatory (EDMO) wurde 2020 als europäisches
 Dach für nationale Faktencheck- und Medienforschungs-Hubs gegründet. Es
 bündelt Faktenchecker, Universitäten und Medienkompetenz-Stellen unter
 einer gemeinsamen Plattform und ist eingebunden in das Beobachtungs- und
-Umsetzungssystem des Digital Services Act.
+Umsetzungssystem des [Digital Services Act](/glossar#dsa).
 
 In *Der Wahrheitskomplex* steht EDMO exemplarisch für eine spezifische
 EU-Konstruktion: Die Kommission finanziert eine Struktur, die ihrerseits

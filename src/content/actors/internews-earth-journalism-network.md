@@ -45,7 +45,7 @@ quellen:
 Internews ist eine 1982 in den USA gegründete Medien-NGO, die sich der
 Förderung „unabhängiger Medien in Entwicklungs- und Transformationsländern"
 verschrieben hat. Hauptauftraggeber sind US-Bundesbehörden — vor allem
-USAID und das State Department — sowie große private Stiftungen.
+[USAID](/glossar#usaid) und das State Department — sowie große private Stiftungen.
 
 Mit dem Earth Journalism Network unterhält Internews eines der weltweit
 größten Klimajournalismus-Programme: Schulungen, Stipendien, Reportage-Etats

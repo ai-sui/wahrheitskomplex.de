@@ -54,8 +54,9 @@ Rechtsextremismus, Rassismus und Antisemitismus.
 In *Der Wahrheitskomplex* ist die Stiftung weniger als Träger einzelner
 Projekte interessant, sondern als prägende Stimme in der gesetzgeberischen
 Debatte: Aus jahrelanger Argumentation gegen „Hass im Netz" wurde 2017 das
-NetzDG; aus den dort gefundenen Mechanismen — Plattformen müssen melden,
-löschen, dokumentieren — wurden später Bausteine des EU-Digital-Services-Act.
+[NetzDG](/glossar#netzdg); aus den dort gefundenen Mechanismen — Plattformen müssen melden,
+löschen, dokumentieren — wurden später Bausteine des EU-Digital-Services-Act
+([DSA](/glossar#dsa)).
 
 Häring rekonstruiert nicht die Inhalte der Stiftungsarbeit, sondern die
 Geometrie: Wer sich aus überwiegend öffentlichen Mitteln finanziert,
