@@ -31,19 +31,23 @@ export const GET: APIRoute = async () => {
     s.toLowerCase().replace(/\s+/g, '-');
 
   const index: SearchEntry[] = [
-    // ----- Akteure -----
-    ...actors
-      .filter((a) => a.data.fulltext)
-      .map<SearchEntry>((a) => ({
-        type: 'akteur',
-        title: a.data.name,
-        snippet: [a.data.kurzbeschreibung, a.data.kernkritik]
-          .filter(Boolean)
-          .join(' '),
-        url: `/atlas/${a.id}`,
-        meta: `${a.data.kategorie} · ${a.data.land}`,
-        tags: a.data.themen,
-      })),
+    // ----- Akteure (Volltext + Stubs) -----
+    ...actors.map<SearchEntry>((a) => ({
+      type: 'akteur',
+      title: a.data.name,
+      snippet: [a.data.kurzbeschreibung, a.data.kernkritik]
+        .filter(Boolean)
+        .join(' '),
+      // Volltext-Profile haben eigene Detail-Seite, Stubs verweisen auf
+      // Härings Tiefenartikel (oder als Fallback auf das Atlas-Grid).
+      url: a.data.fulltext
+        ? `/atlas/${a.id}`
+        : (a.data.haeringLink ?? `/atlas#${a.id}`),
+      meta:
+        `${a.data.kategorie} · ${a.data.land}` +
+        (a.data.fulltext ? '' : ' · Stub'),
+      tags: a.data.themen,
+    })),
 
     // ----- Faktenchecks -----
     ...faktenchecks.map<SearchEntry>((f) => ({

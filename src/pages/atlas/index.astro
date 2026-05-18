@@ -37,8 +37,10 @@ const akteurstypen = [
     <p class="meta-label mb-3 text-accent">Atlas</p>
     <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-4">Akteure im Wahrheitskomplex</h1>
     <p class="max-w-2xl text-ink-soft text-lg leading-relaxed">
-      Acht Akteure aus dem Buch — Faktenchecker, Stiftungen, Think Tanks. Alle mit Volltext-Profil,
-      Quellen und Verweis auf die Tiefenartikel von Norbert Häring. Filtern Sie nach Thema oder Akteurstyp.
+      Faktenchecker, Stiftungen, Think Tanks, Meldestellen — die zentralen
+      Akteure aus dem Buch. Acht davon haben eigene Volltext-Profile mit
+      Quellen, alle weiteren verlinken auf Härings Tiefenartikel unter
+      <em>Spinnen im Netz</em>. Filtern Sie nach Thema oder Akteurstyp.
     </p>
 
     <RelationsDiagram />
@@ -70,6 +72,7 @@ const akteurstypen = [
           themen={actor.data.themen}
           kurzbeschreibung={actor.data.kurzbeschreibung}
           fulltext={actor.data.fulltext}
+          haeringLink={actor.data.haeringLink}
         />
       ))}
     </div>

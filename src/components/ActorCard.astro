@@ -8,12 +8,29 @@ interface Props {
   themen: string[];
   kurzbeschreibung: string;
   fulltext: boolean;
+  haeringLink?: string;
 }
 
-const { name, slug, kategorie, akteurstyp, land, themen, kurzbeschreibung, fulltext } =
-  Astro.props;
+const {
+  name,
+  slug,
+  kategorie,
+  akteurstyp,
+  land,
+  themen,
+  kurzbeschreibung,
+  fulltext,
+  haeringLink,
+} = Astro.props;
 
 const themenAttr = themen.join('|');
+
+// Logik für Titel-Link und CTA:
+//   fulltext=true                  → eigenes Profil unter /atlas/{slug}
+//   fulltext=false + haeringLink   → externer Link zu Härings Tiefenartikel
+//   fulltext=false ohne Link       → ohne Verlinkung („Profil folgt")
+const detailHref = fulltext ? `/atlas/${slug}` : haeringLink;
+const isExternal = !fulltext && Boolean(haeringLink);
 ---
 
 <article
@@ -28,8 +45,14 @@ const themenAttr = themen.join('|');
   </div>
 
   <h3 class="font-serif text-xl md:text-2xl leading-snug mb-3 group-hover:text-accent transition-colors">
-    {fulltext ? (
-      <a href={`/atlas/${slug}`} class="no-underline">{name}</a>
+    {detailHref ? (
+      <a
+        href={detailHref}
+        rel={isExternal ? 'noopener' : undefined}
+        class="no-underline"
+      >
+        {name}
+      </a>
     ) : (
       <span>{name}</span>
     )}
@@ -49,6 +72,14 @@ const themenAttr = themen.join('|');
     {fulltext ? (
       <a href={`/atlas/${slug}`} class="text-accent no-underline hover:underline">
         Profil ansehen →
+      </a>
+    ) : haeringLink ? (
+      <a
+        href={haeringLink}
+        rel="noopener"
+        class="text-accent no-underline hover:underline"
+      >
+        Profil auf norberthaering.de ↗
       </a>
     ) : (
       <span>Profil folgt</span>
