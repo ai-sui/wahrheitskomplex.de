@@ -6,10 +6,15 @@ import HookCard from '../components/HookCard.astro';
 import BookSection from '../components/BookSection.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import MediaCard from '../components/MediaCard.astro';
+import FaktencheckCard from '../components/FaktencheckCard.astro';
 import { factOfTheWeek, hookCards } from '../data/homepage';
 import { book } from '../data/book';
 
 const recent = (await getCollection('medien'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+
+const recentFaktenchecks = (await getCollection('faktenchecks'))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 
@@ -75,6 +80,35 @@ const bookSchema = {
           themen={m.data.themen}
           pullquote={m.data.pullquote}
           showEmbed={true}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="container-page py-12 md:py-16 border-t border-line">
+    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
+      <h2 class="font-serif text-2xl md:text-3xl">Letzte Faktenchecks</h2>
+      <a
+        href="/faktenchecks"
+        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+      >
+        Alle Faktenchecks →
+      </a>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {recentFaktenchecks.map((fc) => (
+        <FaktencheckCard
+          title={fc.data.title}
+          faktenchecker={fc.data.faktenchecker}
+          actorSlug={fc.data.actorSlug}
+          slug={fc.id}
+          date={fc.data.date}
+          themen={fc.data.themen}
+          behauptung={fc.data.behauptung}
+          urteil={fc.data.urteil}
+          realitaet={fc.data.realitaet}
+          url={fc.data.url}
         />
       ))}
     </div>

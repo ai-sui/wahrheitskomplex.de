@@ -60,4 +60,20 @@ const medien = defineCollection({
   }),
 });
 
-export const collections = { actors, medien };
+const faktenchecks = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/faktenchecks' }),
+  schema: z.object({
+    title: z.string(),
+    faktenchecker: z.string(), // z.B. "Correctiv", "dpa", "ARD-Faktenfinder", "ZDF", "DW/NDR", "AFP"
+    actorSlug: z.string().optional(), // wenn Faktenchecker ein Atlas-Akteur ist
+    date: z.string(), // ISO YYYY-MM-DD
+    themen: z.array(z.string()).default([]),
+    behauptung: z.string(), // was wurde behauptet
+    urteil: z.string(), // welches Urteil hat der Faktenchecker gefällt
+    realitaet: z.string(), // was Härings Recherche zeigt
+    url: z.string().url(), // Link zum Häring-Artikel
+    quellen: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { actors, medien, faktenchecks };
