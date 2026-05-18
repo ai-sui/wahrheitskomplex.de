@@ -1,13 +1,13 @@
 // Einstiegs-Karten für das Startseiten-Karussell.
-// Speist sich aus Buchquellen (Atlas-Akteure, Recherchen) und aktuellen
-// Häring-Beiträgen. Bei Pflege: ältesten/passensten Eintrag rausnehmen,
-// neuen oben einfügen — Reihenfolge im Array = Reihenfolge im Karussell.
+// Reine Fakten/Punchline-Hooks — die Akteurs-Profile werden im
+// separaten Akteurs-Karussell präsentiert. Hier zeigen die Karten auf
+// Recherchen, Chronik, Buchkapitel oder direkt zu Häring-Artikeln.
 
 export type HookCard = {
   tag: string;
   punch: string;
   text: string;
-  meta: string; // Beleg-Hinweis (Quelle, Buchkapitel)
+  meta: string;
   href: string;
 };
 
@@ -16,79 +16,79 @@ export const hookCards: HookCard[] = [
     tag: 'Geldflüsse',
     punch: '200 Mio. €',
     text:
-      'gab die Bundesregierung 2021/2022 jährlich für Werbung in Medien aus — vor allem an Ad Alliance, Springer, FAZ, Funke, Burda, Süddeutsche.',
+      'gab die Bundesregierung 2021 und 2022 jährlich für Werbung in Medien aus — die größten Empfänger sind die größten Verlage.',
     meta: 'Parlamentarische Anfragen · Buch Kap. 1',
     href: '/recherchen#werbeausgaben-bundesregierung',
   },
   {
-    tag: 'Wissenschaftskommunikation',
-    punch: '2.200 Journalist:innen',
+    tag: 'DSA-Vollzug',
+    punch: '120 Mio. €',
     text:
-      'sind beim Science Media Center Germany akkreditiert. Die Vorauswahl der Statements bleibt für Leser:innen unsichtbar.',
-    meta: 'SMC-Eigenangabe · Buch Kap. 1',
-    href: '/atlas/science-media-center-germany',
+      'verhängte die EU-Kommission im Dezember 2025 als Strafe gegen X — wegen „ungenügendem Datenzugang für Forscher" unter dem Digital Services Act.',
+    meta: 'EU-Kommission · Dezember 2025',
+    href: '/chronik',
   },
   {
-    tag: 'NATO-Strukturen',
-    punch: 'Atlantic Council',
+    tag: 'Militärische Steuerung',
+    punch: 'DISARM',
     text:
-      'gilt im Buch als politischer Arm der NATO. In den Gremien: ehemalige US-Geheimdienstkoordinatoren, NATO-Generalsekretäre, Konzernchefs.',
-    meta: 'Atlantic Council Reports · Buch Kap. 5',
-    href: '/atlas/atlantic-council',
+      'ist das im Auftrag des US-Militärs entwickelte Rahmenwerk zur Klassifizierung von „Desinformation". Seit 2023 offizieller EU-US-Standard für den Erkenntnisaustausch.',
+    meta: 'US-Verteidigungsministerium · Buch Kap. 5',
+    href: '/chronik',
   },
   {
-    tag: 'DSA & NetzDG',
-    punch: 'Aus SOMA wird EDMO',
+    tag: 'Wahlsicherung',
+    punch: 'Rapid Response System',
     text:
-      'Die EU finanziert eine Stelle, die EU-bezogene Inhalte auf Verlässlichkeit prüft — und liefert die Daten zugleich in den DSA-Vollzug.',
-    meta: 'EU-Kommission · Buch Kap. 3',
-    href: '/atlas/edmo',
+      'Die EU aktivierte das System vor der Ungarn-Wahl im April 2026. Plattformen müssen Inhalte, die Faktenchecker und NGOs markieren, besonders schnell löschen oder ausbremsen.',
+    meta: 'EU-Kommission · März 2026',
+    href: '/chronik',
   },
   {
-    tag: 'Klima',
-    punch: '25.000 Klimajournalist:innen',
+    tag: 'Faktenchecker im Faktencheck',
+    punch: '35 von 100',
     text:
-      'qualifiziert Internews weltweit über das Earth Journalism Network — finanziert überwiegend aus US-Außen­politik-Budgets (USAID, State Department).',
-    meta: 'Internews-Jahresberichte · Buch Kap. 5',
-    href: '/atlas/internews-earth-journalism-network',
-  },
-  {
-    tag: 'Stiftungs-Faktencheck',
-    punch: 'Correctiv',
-    text:
-      'ist Meta-Partner für deutschsprachige Faktenchecks und gleichzeitig Empfänger von Stiftungs- und Bundesmitteln. Eine Konstellation, die Häring strukturell aufschlüsselt.',
-    meta: 'Westend Verlag 2026 · Buch Kap. 2',
-    href: '/atlas/correctiv',
+      'Mit dieser Bewertung führte NewsGuard das Portal Achgut als einen der zehn größten Verbreiter von Desinformation 2022. Im Februar 2026 untersagt das OLG Frankfurt diese Lesart.',
+    meta: 'OLG Frankfurt · AZ 6 U 92/25',
+    href: '/faktenchecks',
   },
   {
     tag: 'Hass und Hetze',
     punch: 'Vom NetzDG zum DSA',
     text:
-      'Die jahrelange argumentative Vorarbeit der Amadeu Antonio Stiftung wanderte fast unverändert ins NetzDG — und später in den Digital Services Act.',
-    meta: 'Programmberichte „Demokratie leben!" · Buch Kap. 2',
-    href: '/atlas/amadeu-antonio-stiftung',
+      'Die argumentative Vorarbeit lieferten Stiftungen über Jahre. Ihre Vorschläge — Plattformen müssen melden, löschen, dokumentieren — wanderten unverändert ins Gesetz und später in den DSA.',
+    meta: 'Buch Kap. 2 & 3',
+    href: '/buch#kapitel-2',
   },
   {
-    tag: 'Geheimdienste',
-    punch: 'Institute for Strategic Dialogue',
+    tag: 'Stiftungs-Förderung',
+    punch: '191 Mio. €',
     text:
-      'Eine als zivilgesellschaftlich auftretende NGO, die mit Five-Eyes-Geheimdiensten und NATO-Programmen verflochten ist — und maßgeblich DSA und NetzDG geprägt hat.',
-    meta: 'Buch Kap. 5 · DCMS-Förderübersichten',
-    href: '/atlas/institute-for-strategic-dialogue',
+      'Aktueller Etat des Bundesprogramms „Demokratie leben!". Im März 2026 streicht Bundesbildungs­ministerin Karin Prien 200 der 3.000 Projektförderungen — betroffen unter anderem HateAid, Correctiv und Amadeu Antonio Stiftung.',
+    meta: 'BMFSFJ · Chronik März 2026',
+    href: '/chronik',
   },
   {
-    tag: 'Agentur-Faktencheck',
-    punch: 'dpa-Faktencheck',
+    tag: 'Pressefreiheit',
+    punch: 'EU-Sanktionen',
     text:
-      'Eine Nachrichtenagentur, deren Mehrheitsstruktur auf Mediengesellschafter und öffentlich-rechtliche Anstalten zurückgeht, prüft Aussagen genau dieser Sphäre.',
-    meta: 'dpa-Eigenangaben · Buch Kap. 2',
-    href: '/atlas/dpa-faktencheck',
+      'Der EU-Rat verhängte im Mai 2025 Sanktionen gegen drei deutsche Journalisten wegen „Unterstützung russischer Propaganda" — und sanktionierte im Dezember 2025 weitere Publizisten.',
+    meta: 'EU-Rat · Mai und Dezember 2025',
+    href: '/chronik',
+  },
+  {
+    tag: 'EU-Faktencheck-Architektur',
+    punch: '5 Mio. €',
+    text:
+      'erhielt das European Fact-Checking Standards Network im März 2026 — im Rahmen des „Europäischen Demokratieschilds" zur Förderung „geeigneter" Faktenchecker.',
+    meta: 'EU-Kommission · März 2026',
+    href: '/chronik',
   },
   {
     tag: 'Aktuelles',
     punch: 'WHO-Gesundheitsnotstand?',
     text:
-      'Eine WHO-Kommission fordert wegen des Klimawandels den internationalen Gesundheitsnotstand auszurufen. Ein WHO-Notstand gäbe der EU unter DSA erweiterte Rechte gegenüber Plattformen.',
+      'Eine WHO-Kommission fordert im Mai 2026, wegen des Klimawandels den internationalen Gesundheitsnotstand auszurufen. Ein WHO-Notstand gäbe der EU unter DSA erweiterte Eingriffsrechte gegenüber Plattformen.',
     meta: 'Häring · Mai 2026',
     href: 'https://norberthaering.de/propaganda-zensur/who-gesundheitsnotstand/',
   },

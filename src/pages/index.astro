@@ -7,6 +7,8 @@ import NewsletterForm from '../components/NewsletterForm.astro';
 import Carousel from '../components/Carousel.astro';
 import UnifiedNewsCard from '../components/UnifiedNewsCard.astro';
 import FaktencheckCard from '../components/FaktencheckCard.astro';
+import ActorPortraitCard from '../components/ActorPortraitCard.astro';
+import SpinnenImNetzCard from '../components/SpinnenImNetzCard.astro';
 import TimelineEvent from '../components/TimelineEvent.astro';
 import { hookCards } from '../data/homepage';
 import { book } from '../data/book';
@@ -17,6 +19,11 @@ import { chronik } from '../data/chronik';
 // ausgewählte Chronik-Einträge mit Häring-Link.
 const medien = await getCollection('medien');
 const faktenchecks = await getCollection('faktenchecks');
+
+// --- Daten fürs Akteurs-Karussell ---
+const actors = (await getCollection('actors'))
+  .filter((a) => a.data.fulltext)
+  .sort((a, b) => (a.data.order ?? 100) - (b.data.order ?? 100));
 
 type FeedItem = {
   date: string;
@@ -153,6 +160,38 @@ const bookSchema = {
           paywall={item.paywall}
         />
       ))}
+    </Carousel>
+  </section>
+
+  <!-- Karussell 3: Akteurs-Porträts -->
+  <section class="container-page py-10 md:py-16 border-t border-line">
+    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
+      <div class="min-w-0">
+        <p class="meta-label text-accent mb-2">Wer ist wer</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">
+          Die Akteure im Porträt.
+        </h2>
+      </div>
+      <a
+        href="/atlas"
+        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
+      >
+        Zum Atlas →
+      </a>
+    </div>
+
+    <Carousel label="Akteurs-Porträts">
+      {actors.map((a) => (
+        <ActorPortraitCard
+          name={a.data.name}
+          slug={a.id}
+          kategorie={a.data.kategorie}
+          land={a.data.land}
+          gegruendet={a.data.gegruendet}
+          kurzbeschreibung={a.data.kurzbeschreibung}
+        />
+      ))}
+      <SpinnenImNetzCard />
     </Carousel>
   </section>
 
