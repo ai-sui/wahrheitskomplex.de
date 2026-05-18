@@ -1,0 +1,70 @@
+---
+// Einheitliche Karte für gemischten „Neues aus dem Wahrheitskomplex"-Feed.
+// Funktioniert für Medien-Einträge, Faktenchecks und Chronik-Einträge mit Häring-Link.
+interface Props {
+  badge: string; // z.B. "Video", "Faktencheck", "Aktuell"
+  title: string;
+  source: string; // Outlet / Faktenchecker / "norberthaering.de"
+  date: string; // ISO oder YYYY-MM
+  url: string;
+  thumb?: string; // optional /yt-thumbs/*.jpg, /article-thumbs/*.jpg, /faktencheck-thumbs/*.jpg
+  paywall?: boolean;
+}
+
+const { badge, title, source, date, url, thumb, paywall = false } = Astro.props;
+
+const parts = date.split('-');
+const dateAttr = parts.length === 3 ? date : parts.length === 2 ? `${date}-01` : `${date}-01-01`;
+const dateLabel =
+  parts.length === 3
+    ? new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(date))
+    : parts.length === 2
+      ? new Intl.DateTimeFormat('de-DE', { month: 'long', year: 'numeric' }).format(new Date(`${date}-15`))
+      : parts[0];
+---
+
+<article class="bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col h-full">
+  <a
+    href={url}
+    rel="noopener"
+    class="block aspect-video bg-ink relative overflow-hidden group no-underline"
+    aria-label={`${badge}: ${title} (${source})`}
+  >
+    {thumb ? (
+      <img
+        src={thumb}
+        alt={`Vorschau: ${title}`}
+        width="1280"
+        height="720"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    ) : (
+      <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-lg px-6 text-center">
+        {source}
+      </div>
+    )}
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
+    <span class="absolute top-3 left-3 text-[0.65rem] uppercase tracking-wider bg-accent text-paper px-2 py-0.5 rounded-full">
+      {badge}
+    </span>
+    {paywall && (
+      <span class="absolute top-3 right-3 text-[0.6rem] uppercase tracking-wider bg-ink text-paper px-2 py-0.5 rounded-full">
+        🔒
+      </span>
+    )}
+  </a>
+
+  <div class="p-5 flex flex-col flex-1">
+    <time class="meta-label text-muted mb-2" datetime={dateAttr}>{dateLabel}</time>
+    <h3 class="font-serif text-base md:text-lg leading-snug mb-2 flex-1">
+      <a href={url} rel="noopener" class="no-underline hover:text-accent">
+        {title}
+      </a>
+    </h3>
+    <p class="text-xs text-ink-soft mt-auto">
+      <span class="text-muted">bei</span> <strong>{source}</strong>
+    </p>
+  </div>
+</article>

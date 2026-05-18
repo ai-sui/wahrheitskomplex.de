@@ -1,88 +1,133 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { book } from '../data/book';
 ---
 
 <BaseLayout
-  title="Über das Projekt"
-  description="Was dieser Atlas ist, was er nicht ist, wer ihn baut und was als nächstes geplant ist."
+  title="Über"
+  description="Was Wahrheitskomplex.de ist, wer dahintersteht und wie die Seite mit dem Buch zusammenhängt."
 >
   <section class="container-page py-12 md:py-16 max-w-3xl">
-    <p class="meta-label text-accent mb-3">Über das Projekt</p>
+    <p class="meta-label text-accent mb-3">Über die Seite</p>
     <h1 class="font-serif text-3xl md:text-4xl leading-tight mb-8">
-      Was dieser Atlas ist — und was er <em class="text-accent not-italic">nicht</em> ist.
+      Begleitseite zum Buch <em class="text-accent not-italic">{book.title}</em>.
     </h1>
 
-    <div class="prose-section text-lg leading-relaxed text-ink-soft space-y-5 mb-12">
+    <div class="text-lg leading-relaxed text-ink-soft space-y-5 mb-12">
       <p>
-        Wahrheitskomplex.de ist das Begleitprojekt zum Buch
-        <em>Der Wahrheitskomplex</em> von Norbert Häring (Westend Verlag, 2026).
-        Diese Demo entstand in einer Nacht, um zu zeigen, wie ein offen
-        zugänglicher Recherche-Atlas zum Buch aussehen könnte.
+        Wahrheitskomplex.de ist die Online-Begleitseite zum gleichnamigen Buch
+        von Norbert Häring (Westend Verlag, 2026). Sie macht das im Buch
+        beschriebene Geflecht aus Akteuren, Geldflüssen und
+        Plattform-Politik durchsuchbar — und führt die Recherche dort fort,
+        wo das Buch beim Redaktionsschluss aufgehört hat.
       </p>
       <p>
-        Die Seite versteht sich als <strong>Schaufenster und Atlas</strong>:
-        Ein erster Einstieg in die Akteure und Geldflüsse, die Häring im Buch
-        beschreibt, mit klaren Quellen und Verweisen auf seine Tiefenartikel.
-      </p>
-      <p>
-        Sie <strong>ersetzt nicht</strong>
-        <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>
-        — sondern bündelt, sortiert und erschließt das, was dort über Jahre
-        entstanden ist, für ein Publikum, das nicht in Blog-Archiven sucht.
+        Wer ein Stichwort sucht, findet hier den dazugehörigen Akteur, die
+        relevanten Quellen, die Verbindungen ins Buch und — wo es welche
+        gibt — Härings vertiefende Online-Artikel. Wer das Buch noch nicht
+        kennt, findet einen kompakten Einstieg in seine Argumentation.
       </p>
     </div>
 
-    <h2 class="font-serif text-2xl mb-4">Was Sie hier finden</h2>
+    <h2 class="font-serif text-2xl mb-4">Was die Seite leistet</h2>
     <ul class="space-y-3 text-ink-soft mb-12">
       <li class="flex gap-3">
-        <span class="meta-label text-accent shrink-0 w-24">Atlas</span>
-        <span>Acht zentrale Akteure des sogenannten Wahrheitskomplexes als durchsuchbare Profile, mit Finanzierung, Reichweite, Kernkritik und Quellen.</span>
+        <span class="meta-label text-accent shrink-0 w-32">Buch</span>
+        <span>Eine Karte der sechs Kapitel — mit Inhalt, Akteuren und Beispielen pro Kapitel.</span>
       </li>
       <li class="flex gap-3">
-        <span class="meta-label text-accent shrink-0 w-24">Recherchen</span>
-        <span>Sechs Beispiele, in denen sich Diskurs und Aktenlage trennen — als Einstieg in die Argumentationslogik des Buchs.</span>
+        <span class="meta-label text-accent shrink-0 w-32">Atlas</span>
+        <span>Die zentralen Akteure des Wahrheitskomplexes als durchsuchbare Profile, mit Finanzierung, Reichweite, Kernkritik und Quellen.</span>
       </li>
       <li class="flex gap-3">
-        <span class="meta-label text-accent shrink-0 w-24">Skizze</span>
-        <span>Eine schematische Beziehungs-Karte, die zeigt, welche Auftraggeber welche Akteure prägen.</span>
+        <span class="meta-label text-accent shrink-0 w-32">Faktenchecks</span>
+        <span>Dokumentierte Fälle, in denen etablierte Faktenchecker fehlgegangen sind — mit Behauptung, Urteil, Aktenlage und Verweis auf den Tiefenartikel.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="meta-label text-accent shrink-0 w-32">Chronik</span>
+        <span>Die Chronik des Buchs (1998–Februar 2026) plus die fortlaufende Aktualisierung „Was seither geschah" — beides an einem Ort.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="meta-label text-accent shrink-0 w-32">Recherchen</span>
+        <span>Sechs Recherche-Beispiele, in denen sich Diskurs und Aktenlage trennen — kompakter Einstieg in die Argumentationslogik des Buchs.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="meta-label text-accent shrink-0 w-32">Im Gespräch</span>
+        <span>Aktuelle Interviews, Videos und Rezensionen zum Buch — sortiert nach Erscheinungsdatum.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="meta-label text-accent shrink-0 w-32">Glossar</span>
+        <span>Kurz­definitionen der wiederkehrenden Begriffe: DSA, NetzDG, IFCN, EDMO, SMC, Five Eyes, USAID und mehr.</span>
       </li>
     </ul>
 
-    <h2 class="font-serif text-2xl mb-4">Was diese Demo nicht ist</h2>
-    <ul class="space-y-2 text-ink-soft mb-12 list-disc pl-5 marker:text-accent">
-      <li>Keine vollständige Akteurs-Datenbank — die acht Profile sind eine kuratierte Auswahl.</li>
-      <li>Keine Newsletter-Plattform — Anmeldungen laufen über norberthaering.de.</li>
-      <li>Keine endgültige Tonalität — Texte werden vor dem offiziellen Launch mit dem Autor abgestimmt.</li>
-      <li>Keine SEO-optimierte Suchmaschinen-Falle — bewusst keine Tracker, keine Ad-Tech, keine Webfonts.</li>
-    </ul>
-
-    <h2 class="font-serif text-2xl mb-4">Was als nächstes geplant ist</h2>
-    <ol class="space-y-2 text-ink-soft mb-12 list-decimal pl-5 marker:text-accent marker:font-semibold">
-      <li>Abstimmung mit Norbert Häring — Tonalität, Auswahl, Quellen.</li>
-      <li>Eigene Domain (statt <code class="text-sm">.netlify.app</code>).</li>
-      <li>Schrittweiser Ausbau auf weitere Akteure aus dem Liber-Net-Bestand.</li>
-      <li>Faktencheck-Galerie mit konkreten Behauptung/Aktenlage-Paaren.</li>
-      <li>Interaktiver Beziehungs-Graph (Sigma.js) für die Geldflüsse.</li>
-      <li>Newsletter-Anbindung an Härings bestehenden Kanal.</li>
-      <li>CMS-Anbindung, damit der Autor selbst pflegen kann.</li>
-    </ol>
-
-    <h2 class="font-serif text-2xl mb-4">Wer baut das</h2>
+    <h2 class="font-serif text-2xl mb-4">Tonalität und Haltung</h2>
     <p class="text-ink-soft leading-relaxed mb-6">
-      Diese Demo wurde unabhängig vom Autor und vom Verlag erstellt, als
-      Vorschlag für ein Begleitprojekt zum Buch. Ob und in welcher Form daraus
-      die offizielle Buch-Site wird, entscheidet Norbert Häring.
+      Die Seite hält die Haltung des Buchs: sachlich, quellengestützt, ohne
+      Effekthascherei. Wo Häring kritisiert, ist er das Subjekt — nicht die
+      Seitenredaktion. Akteure werden mit ihren eigenen Selbstdarstellungen
+      zitiert; wo eine Stellungnahme zu Härings Recherche existiert, wird
+      sie verlinkt.
+    </p>
+    <p class="text-ink-soft leading-relaxed mb-12">
+      Bewusst verzichten wir auf Werbenetzwerke, Tracking-Cookies und
+      Webfonts Dritter. Schriften kommen aus dem System des jeweiligen
+      Geräts; Bilder werden lokal gehostet; YouTube-Einbettungen laden erst
+      nach Klick und über den Cookie-freien Endpoint.
     </p>
 
-    <div class="border-t border-line pt-8 mt-12">
-      <p class="meta-label text-accent mb-3">Fragen, Hinweise, Kritik?</p>
-      <p class="text-ink-soft leading-relaxed">
-        Verbesserungs­vorschläge, fehlende Akteure oder Quellen­hinweise nehmen
-        wir gern auf. Bis ein eigener Kontaktkanal eingerichtet ist, gehen
-        Anfragen am besten direkt an
-        <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>
-        oder den Westend Verlag.
-      </p>
+    <h2 class="font-serif text-2xl mb-4">Wer dahintersteht</h2>
+    <p class="text-ink-soft leading-relaxed mb-6">
+      Inhaltliche Grundlage ist das Buch von Norbert Häring und seine
+      laufende Berichterstattung auf
+      <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>.
+      Die Online-Begleitseite entsteht in Abstimmung mit dem Autor.
+    </p>
+    <p class="text-ink-soft leading-relaxed mb-12">
+      Anregungen, Korrekturhinweise und neue Quellenfunde nehmen wir gern
+      auf — bitte über den Kontakt-Hinweis auf
+      <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>
+      oder über den
+      <a href={book.buyUrl} rel="noopener" class="underline decoration-line hover:decoration-accent">Westend Verlag</a>.
+    </p>
+
+    <h2 class="font-serif text-2xl mb-4">Wie die Seite gepflegt wird</h2>
+    <p class="text-ink-soft leading-relaxed mb-6">
+      Neue Faktenchecks, Interviews und Chronik-Einträge kommen laufend
+      dazu — gespiegelt aus Härings Berichterstattung und ergänzt um neue
+      Beiträge anderer Autorinnen und Autoren, sofern sie sich auf den
+      Buch-Kontext beziehen.
+    </p>
+    <p class="text-ink-soft leading-relaxed">
+      Die im Buch enthaltene Chronik ist hier vollständig hinterlegt; ihre
+      Fortsetzung („Was seither geschah") wird in dem Maße aktualisiert,
+      wie die Recherche es erfordert. Wer das Buch in einer neuen Auflage
+      kauft, findet die Aktualisierung dann auch dort wieder.
+    </p>
+
+    <div class="mt-12 pt-8 border-t border-line">
+      <p class="meta-label text-accent mb-3">Schnell weiter</p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/buch"
+          class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+        >
+          Zum Buch →
+        </a>
+        <a
+          href="/atlas"
+          class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+        >
+          Zum Atlas →
+        </a>
+        <a
+          href={book.buyUrl}
+          rel="noopener"
+          class="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium no-underline hover:bg-accent transition-colors"
+        >
+          Beim Westend Verlag →
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

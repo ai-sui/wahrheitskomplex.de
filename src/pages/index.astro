@@ -1,38 +1,102 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FactWeek from '../components/FactWeek.astro';
 import HookCard from '../components/HookCard.astro';
 import BookSection from '../components/BookSection.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
-import MediaCard from '../components/MediaCard.astro';
+import Carousel from '../components/Carousel.astro';
+import UnifiedNewsCard from '../components/UnifiedNewsCard.astro';
 import FaktencheckCard from '../components/FaktencheckCard.astro';
-import { factOfTheWeek, hookCards } from '../data/homepage';
+import TimelineEvent from '../components/TimelineEvent.astro';
+import { hookCards } from '../data/homepage';
 import { book } from '../data/book';
+import { chronik } from '../data/chronik';
 
-const recent = (await getCollection('medien'))
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 3);
+// --- Daten fürs „Neues aus dem Wahrheitskomplex"-Karussell ---
+// Mische Medien (Videos/Interviews/Rezensionen), Faktenchecks und
+// ausgewählte Chronik-Einträge mit Häring-Link.
+const medien = await getCollection('medien');
+const faktenchecks = await getCollection('faktenchecks');
 
-const recentFaktenchecks = (await getCollection('faktenchecks'))
+type FeedItem = {
+  date: string;
+  badge: string;
+  title: string;
+  source: string;
+  url: string;
+  thumb?: string;
+  paywall?: boolean;
+};
+
+const typeLabels: Record<string, string> = {
+  video: 'Video',
+  podcast: 'Podcast',
+  interview: 'Interview',
+  rezension: 'Rezension',
+  vortrag: 'Vortrag',
+};
+
+const newsFeed: FeedItem[] = [
+  ...medien.map((m) => ({
+    date: m.data.date,
+    badge: typeLabels[m.data.type] ?? 'Beitrag',
+    title: m.data.title,
+    source: m.data.outlet,
+    url: m.data.url,
+    thumb: m.data.youtubeId
+      ? `/yt-thumbs/${m.data.youtubeId}.jpg`
+      : `/article-thumbs/${m.id}.jpg`,
+    paywall: m.data.paywall,
+  })),
+  ...faktenchecks.map((fc) => ({
+    date: fc.data.date,
+    badge: 'Faktencheck',
+    title: fc.data.title,
+    source: fc.data.faktenchecker,
+    url: fc.data.url,
+    thumb: `/faktencheck-thumbs/${fc.id}.jpg`,
+  })),
+  // Ausgewählte Chronik-Einträge mit Häring-Link als „Aktuelles"
+  ...chronik
+    .filter((c) => c.haeringLink)
+    .map((c) => ({
+      date: c.date,
+      badge: 'Aktuell',
+      title: c.title,
+      source: 'norberthaering.de',
+      url: c.haeringLink as string,
+    })),
+];
+
+const recentNews = newsFeed
+  .sort((a, b) => {
+    const pad = (d: string) =>
+      d.split('-').length === 3 ? d : d.split('-').length === 2 ? `${d}-15` : `${d}-12-31`;
+    return pad(b.date).localeCompare(pad(a.date));
+  })
+  .slice(0, 10);
+
+// --- Faktenchecks-Karussell ---
+const recentFaktenchecks = [...faktenchecks]
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .slice(0, 3);
+  .slice(0, 10);
+
+// --- Chronik-Block „Was seither geschah" ---
+const recentChronik = [...chronik]
+  .sort((a, b) => {
+    const pad = (d: string) =>
+      d.split('-').length === 3 ? d : d.split('-').length === 2 ? `${d}-31` : `${d}-12-31`;
+    return pad(b.date).localeCompare(pad(a.date));
+  })
+  .slice(0, 5);
 
 const bookSchema = {
   '@context': 'https://schema.org',
   '@type': 'Book',
   name: book.title,
   alternateName: book.subtitle,
-  author: {
-    '@type': 'Person',
-    name: book.author,
-    url: 'https://norberthaering.de',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: book.publisher,
-    url: book.buyUrl,
-  },
+  author: { '@type': 'Person', name: book.author, url: 'https://norberthaering.de' },
+  publisher: { '@type': 'Organization', name: book.publisher, url: book.buyUrl },
   datePublished: '2026-05',
   inLanguage: 'de',
   description: book.blurb,
@@ -40,63 +104,97 @@ const bookSchema = {
 ---
 
 <BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
-  <FactWeek fact={factOfTheWeek} />
-
-  <section class="container-page py-12 md:py-16">
-    <div class="flex items-baseline justify-between mb-8 border-b border-line pb-4">
-      <h2 class="font-serif text-2xl md:text-3xl">Drei Einstiege</h2>
-      <p class="meta-label hidden sm:block">aus dem Buch</p>
+  <!-- Karussell 1: Einstiege aus dem Buch -->
+  <section class="container-page pt-10 md:pt-14 pb-12 md:pb-16">
+    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
+      <div>
+        <p class="meta-label text-accent mb-2">Einstiege</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Aus dem Buch in zehn Zahlen.</h2>
+      </div>
+      <a
+        href="/atlas"
+        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
+      >
+        Zum Atlas →
+      </a>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-3">
+    <Carousel label="Einstiege aus dem Buch">
       {hookCards.map((card) => <HookCard card={card} />)}
-    </div>
+    </Carousel>
   </section>
 
+  <!-- Karussell 2: Neues aus dem Wahrheitskomplex (Mix) -->
   <section class="container-page py-12 md:py-16 border-t border-line">
-    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
-      <h2 class="font-serif text-2xl md:text-3xl">Zuletzt im Gespräch</h2>
+    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
+      <div>
+        <p class="meta-label text-accent mb-2">Neues</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">
+          Neues aus dem Wahrheitskomplex.
+        </h2>
+      </div>
       <a
         href="/im-gespraech"
-        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
       >
         Alle Beiträge →
       </a>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-3">
-      {recent.map((m) => (
-        <MediaCard
-          title={m.data.title}
-          type={m.data.type}
-          host={m.data.host}
-          outlet={m.data.outlet}
-          url={m.data.url}
-          youtubeId={m.data.youtubeId}
-          slug={m.id}
-          date={m.data.date}
-          durationMin={m.data.durationMin}
-          paywall={m.data.paywall}
-          themen={m.data.themen}
-          pullquote={m.data.pullquote}
-          showEmbed={true}
+    <Carousel label="Aktuelle Beiträge aus dem Wahrheitskomplex">
+      {recentNews.map((item) => (
+        <UnifiedNewsCard
+          badge={item.badge}
+          title={item.title}
+          source={item.source}
+          date={item.date}
+          url={item.url}
+          thumb={item.thumb}
+          paywall={item.paywall}
         />
       ))}
+    </Carousel>
+  </section>
+
+  <!-- Das Buch -->
+  <BookSection book={book} />
+
+  <!-- Chronik-Block „Was seither geschah" -->
+  <section class="container-page py-12 md:py-16 border-t border-line">
+    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
+      <div>
+        <p class="meta-label text-accent mb-2">Chronik</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Was seither geschah.</h2>
+      </div>
+      <a
+        href="/chronik"
+        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
+      >
+        Vollständige Chronik →
+      </a>
+    </div>
+
+    <div class="max-w-4xl">
+      {recentChronik.map((e) => <TimelineEvent eintrag={e} />)}
     </div>
   </section>
 
+  <!-- Karussell 3: Faktenchecks im Check -->
   <section class="container-page py-12 md:py-16 border-t border-line">
-    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
-      <h2 class="font-serif text-2xl md:text-3xl">Letzte Faktenchecks</h2>
+    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
+      <div>
+        <p class="meta-label text-accent mb-2">Faktenchecker im Faktencheck</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecks im Check.</h2>
+      </div>
       <a
         href="/faktenchecks"
-        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
       >
         Alle Faktenchecks →
       </a>
     </div>
 
-    <div class="grid gap-5 md:grid-cols-3">
+    <Carousel label="Faktenchecks im Check">
       {recentFaktenchecks.map((fc) => (
         <FaktencheckCard
           title={fc.data.title}
@@ -111,10 +209,8 @@ const bookSchema = {
           url={fc.data.url}
         />
       ))}
-    </div>
+    </Carousel>
   </section>
-
-  <BookSection book={book} />
 
   <NewsletterForm />
 </BaseLayout>

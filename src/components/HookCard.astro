@@ -6,15 +6,17 @@ interface Props {
 }
 
 const { card } = Astro.props;
+const isExternal = card.href.startsWith('http');
 ---
 
 <a
   href={card.href}
-  class="group flex flex-col bg-paper-soft border border-line rounded-sm p-6 md:p-7 no-underline hover:border-accent transition-colors"
+  rel={isExternal ? 'noopener' : undefined}
+  class="group flex flex-col h-full bg-paper-soft border border-line rounded-sm p-6 md:p-7 no-underline hover:border-accent transition-colors"
 >
   <p class="meta-label text-accent mb-4">{card.tag}</p>
 
-  <p class="font-serif text-2xl md:text-3xl font-semibold leading-tight mb-3 group-hover:text-accent transition-colors">
+  <p class="font-serif text-2xl md:text-[1.7rem] font-semibold leading-tight mb-3 group-hover:text-accent transition-colors">
     {card.punch}
   </p>
 
@@ -22,15 +24,8 @@ const { card } = Astro.props;
     <span class="text-muted">…</span>{card.text}
   </p>
 
-  <dl class="flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted border-t border-line pt-4 mt-auto">
-    <div class="flex items-center gap-1.5">
-      <span class="inline-block w-1.5 h-1.5 rounded-full bg-verified" aria-hidden="true"></span>
-      <dt class="sr-only">Verifiziert:</dt>
-      <dd>{card.verified}</dd>
-    </div>
-    <div>
-      <dt class="sr-only">Lesedauer:</dt>
-      <dd>{card.readingTime}</dd>
-    </div>
-  </dl>
+  <p class="text-xs text-muted border-t border-line pt-4 mt-auto flex items-center gap-2">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-verified shrink-0" aria-hidden="true"></span>
+    <span>{card.meta}</span>
+  </p>
 </a>
