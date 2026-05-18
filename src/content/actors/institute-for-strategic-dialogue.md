@@ -21,7 +21,7 @@ kernkritik: >-
   Geheimdiensten.
 stellungnahme: >-
   ISD verweist auf eigene Methodik-Dokumente und Beam-Whitepaper.
-buchKapitel: "Kapitel 1 / Kapitel 5 — Militärische Steuerung des Wahrheitskomplexes"
+buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/isd/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-

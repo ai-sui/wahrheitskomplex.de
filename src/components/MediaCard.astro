@@ -1,4 +1,6 @@
 ---
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import LiteYouTube from './LiteYouTube.astro';
 
 type Type = 'video' | 'podcast' | 'interview' | 'rezension' | 'vortrag';
@@ -10,6 +12,7 @@ interface Props {
   outlet: string;
   url: string;
   youtubeId?: string;
+  slug?: string;
   date: string;
   durationMin?: number;
   paywall?: boolean;
@@ -25,6 +28,7 @@ const {
   outlet,
   url,
   youtubeId,
+  slug,
   date,
   durationMin,
   paywall = false,
@@ -32,6 +36,14 @@ const {
   pullquote,
   showEmbed = true,
 } = Astro.props;
+
+// Article-Thumbnail vorhanden? (Build-time check)
+const thumbPath = slug
+  ? resolve(process.cwd(), `public/article-thumbs/${slug}.jpg`)
+  : null;
+const articleThumb = thumbPath && existsSync(thumbPath)
+  ? `/article-thumbs/${slug}.jpg`
+  : null;
 
 const typeLabels: Record<Type, string> = {
   video: 'Video',
@@ -57,6 +69,30 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
 >
   {showEmbed && youtubeId ? (
     <LiteYouTube id={youtubeId} title={title} />
+  ) : articleThumb ? (
+    <a
+      href={url}
+      rel="noopener"
+      class="block aspect-video bg-ink relative no-underline group overflow-hidden"
+      aria-label={`${typeLabels[type]} bei ${outlet}: ${title}`}
+    >
+      <img
+        src={articleThumb}
+        alt={`Vorschau: ${title} (${outlet})`}
+        width="1280"
+        height="720"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent"></div>
+      <span class="absolute top-3 left-3 text-[0.65rem] uppercase tracking-wider bg-paper/95 text-ink px-2 py-0.5 rounded-full">
+        {outlet}
+      </span>
+      <span class="absolute bottom-3 right-3 text-[0.65rem] uppercase tracking-wider bg-paper/95 text-ink px-2 py-0.5 rounded-full">
+        Artikel öffnen ↗
+      </span>
+    </a>
   ) : (
     <a
       href={url}

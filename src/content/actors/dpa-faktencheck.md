@@ -26,7 +26,7 @@ kernkritik: >-
 stellungnahme: >-
   Die dpa verweist auf ihre Faktencheck-Methodik und auf das
   IFCN-Code-of-Principles-Verfahren als externen Prüfrahmen.
-buchKapitel: "Kapitel 2 — Stiftungs- und Agentur-Faktencheckerei"
+buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/propaganda-zensur/dpa-faktencheck/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-

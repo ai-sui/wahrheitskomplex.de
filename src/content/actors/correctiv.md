@@ -25,7 +25,7 @@ kernkritik: >-
 stellungnahme: >-
   Auf wiederholte Anfrage verweist Correctiv auf öffentlich einsehbare
   Geschäftsberichte und die Methodik-Seiten des Faktencheck-Bereichs.
-buchKapitel: "Kapitel 2 — Stiftungs-Faktencheckerei in Deutschland"
+buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/correctiv/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-

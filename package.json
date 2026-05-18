@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "og": "node scripts/generate-og.mjs",
-    "yt-thumbs": "node scripts/fetch-yt-thumbs.mjs"
+    "yt-thumbs": "node scripts/fetch-yt-thumbs.mjs",
+    "article-thumbs": "node scripts/fetch-article-thumbs.mjs"
   },
   "dependencies": {
     "@astrojs/netlify": "^7.0.8",

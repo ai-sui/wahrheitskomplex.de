@@ -27,7 +27,7 @@ stellungnahme: >-
   Die Stiftung verweist auf öffentlich zugängliche Jahresberichte, die
   Programmbeschreibungen unter „Demokratie leben!" und ihre Stellungnahmen
   zu Gesetzgebungsvorhaben.
-buchKapitel: "Kapitel 3 — Vom NetzDG zum DSA"
+buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/wahrheitskomplex/finanzierer/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-

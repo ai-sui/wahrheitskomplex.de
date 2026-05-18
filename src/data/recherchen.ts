@@ -47,7 +47,7 @@ export const recherchen: Recherche[] = [
     quelle: 'Programmberichte „Demokratie leben!“, Stiftungsdokumente',
     haeringLink: 'https://norberthaering.de/wahrheitskomplex/finanzierer/',
     atlasLink: '/atlas/amadeu-antonio-stiftung',
-    buchKapitel: 'Kapitel 3',
+    buchKapitel: 'Kapitel 2',
   },
   {
     slug: 'atlantic-council-faktencheck',
@@ -60,7 +60,7 @@ export const recherchen: Recherche[] = [
     quelle: 'Atlantic Council Reports, NATO-Publikationen, Recherchen Norbert Häring',
     haeringLink: 'https://norberthaering.de/spinnen-im-netz/atlantic-council/',
     atlasLink: '/atlas/atlantic-council',
-    buchKapitel: 'Kapitel 1',
+    buchKapitel: 'Kapitel 5',
   },
   {
     slug: 'klima-journalismus-internews',
@@ -73,7 +73,7 @@ export const recherchen: Recherche[] = [
     quelle: 'Förderübersichten USAID, Internews-Jahresberichte',
     haeringLink: 'https://norberthaering.de/propaganda-zensur/internews/',
     atlasLink: '/atlas/internews-earth-journalism-network',
-    buchKapitel: 'Kapitel 4',
+    buchKapitel: 'Kapitel 5',
   },
   {
     slug: 'edmo-dsa-rolle',

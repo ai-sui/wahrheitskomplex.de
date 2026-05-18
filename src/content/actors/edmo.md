@@ -26,7 +26,7 @@ kernkritik: >-
 stellungnahme: >-
   EDMO verweist auf seine Charta, die akademische Anbindung der Hubs und
   auf veröffentlichte Methodiken.
-buchKapitel: "Kapitel 3 — DSA und die Architektur der EU-Faktencheckerei"
+buchKapitel: "Kapitel 3 — Die EU baut ihren Wahrheitskomplex auf"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/edmo/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-

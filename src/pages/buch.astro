@@ -1,0 +1,169 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { kapitel } from '../data/buch';
+import { recherchen } from '../data/recherchen';
+import { book } from '../data/book';
+
+const actors = await getCollection('actors');
+
+function actorsFor(matches: string) {
+  return actors
+    .filter((a) => a.data.buchKapitel?.includes(matches) && a.data.fulltext)
+    .sort((a, b) => (a.data.order ?? 100) - (b.data.order ?? 100));
+}
+
+function recherchenFor(matches: string) {
+  return recherchen.filter((r) => r.buchKapitel?.includes(matches));
+}
+---
+
+<BaseLayout
+  title="Das Buch"
+  description="Sechs Kapitel von „Der Wahrheitskomplex“ — Inhalt, Akteure, Recherche-Beispiele. Mit direkten Verweisen ins Inhaltsverzeichnis und die Leseprobe auf norberthaering.de."
+>
+  <section class="container-page py-12 md:py-16 max-w-4xl">
+    <p class="meta-label text-accent mb-3">Das Buch</p>
+    <h1 class="font-serif text-3xl md:text-4xl leading-tight mb-4">
+      {book.title} — in sechs Kapiteln.
+    </h1>
+    <p class="text-ink-soft text-lg leading-relaxed max-w-2xl mb-8">
+      Eine kompakte Karte des Buchs: Worum geht es in welchem Kapitel, welche
+      Akteure aus dem Atlas tauchen wo auf, welche Recherche-Beispiele sind
+      thematisch verbunden.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mb-12">
+      <a
+        href="https://norberthaering.de/wahrheitskomplex/inhaltsverzeichnis/"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+      >
+        Vollständiges Inhaltsverzeichnis →
+      </a>
+      <a
+        href="https://norberthaering.de/buchtipps/wahrheitskonplex-leseprobe/"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+      >
+        Leseprobe →
+      </a>
+      <a
+        href={book.buyUrl}
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium no-underline hover:bg-accent transition-colors"
+      >
+        Beim Westend Verlag →
+      </a>
+    </div>
+
+    <!-- Kapitel-Schnellnavigation -->
+    <nav aria-label="Kapitel-Übersicht" class="border-y border-line py-5 mb-10">
+      <p class="meta-label mb-3">Springen zu</p>
+      <ol class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+        {kapitel.map((k) => (
+          <li>
+            <a
+              href={`#kapitel-${k.nr}`}
+              class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+            >
+              <span class="meta-label text-muted mr-1">{k.nr}</span>
+              {k.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <div class="space-y-16">
+      {kapitel.map((k) => {
+        const actorList = actorsFor(k.matches);
+        const recherchenList = recherchenFor(k.matches);
+        return (
+          <article id={`kapitel-${k.nr}`} class="scroll-mt-32">
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="font-serif text-5xl md:text-6xl font-bold text-accent leading-none">
+                {String(k.nr).padStart(2, '0')}
+              </span>
+              <h2 class="font-serif text-2xl md:text-3xl leading-tight">
+                {k.title}
+              </h2>
+            </div>
+
+            <p class="text-ink-soft leading-relaxed max-w-2xl mb-6 md:ml-20">
+              {k.abstract}
+            </p>
+
+            <div class="md:ml-20 grid md:grid-cols-[2fr_3fr] gap-8 md:gap-12">
+              <div>
+                <p class="meta-label text-muted mb-3">Unterabschnitte</p>
+                <ul class="space-y-1.5 text-sm text-ink-soft border-l border-line pl-4">
+                  {k.unterabschnitte.map((u) => (
+                    <li>{u}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="space-y-6">
+                {actorList.length > 0 && (
+                  <div>
+                    <p class="meta-label text-accent mb-3">
+                      Akteure aus dem Atlas
+                    </p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                      {actorList.map((a) => (
+                        <li>
+                          <a
+                            href={`/atlas/${a.id}`}
+                            class="text-ink no-underline hover:text-accent border-b border-line hover:border-accent inline-block"
+                          >
+                            {a.data.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {recherchenList.length > 0 && (
+                  <div>
+                    <p class="meta-label text-accent mb-3">
+                      Recherche-Beispiele
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                      {recherchenList.map((r) => (
+                        <li>
+                          <a
+                            href={`/recherchen#${r.slug}`}
+                            class="text-ink-soft no-underline hover:text-accent leading-snug block"
+                          >
+                            <span class="text-accent">›</span> {r.frage}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {actorList.length === 0 && recherchenList.length === 0 && (
+                  <p class="text-sm text-muted italic">
+                    Atlas-Profile und Recherchen zu diesem Kapitel folgen.
+                  </p>
+                )}
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <p class="mt-16 text-sm text-muted leading-relaxed border-t border-line pt-6">
+      Diese Übersicht ist eine vereinfachte Karte des Buchs — sie ersetzt
+      nicht die Lektüre. Für vollständige Unterabschnitte siehe das
+      <a href="https://norberthaering.de/wahrheitskomplex/inhaltsverzeichnis/" rel="noopener" class="underline decoration-line hover:decoration-accent">
+        offizielle Inhaltsverzeichnis
+      </a>
+      auf norberthaering.de.
+    </p>
+  </section>
+</BaseLayout>

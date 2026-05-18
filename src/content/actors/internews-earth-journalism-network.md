@@ -26,7 +26,7 @@ stellungnahme: >-
   Internews verweist auf öffentliche Förderübersichten, die Unabhängigkeit
   redaktioneller Entscheidungen der Stipendiat:innen und auf eigene
   Transparenz-Charta.
-buchKapitel: "Kapitel 4 — Klima-Wahrheitskomplex und Auslandsförderung"
+buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
 haeringLink: "https://norberthaering.de/propaganda-zensur/internews/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
