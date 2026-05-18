@@ -34,28 +34,43 @@ const links = [
         <span class="meta-label hidden lg:inline">Recherche-Atlas</span>
       </a>
 
-      <nav
-        aria-label="Hauptnavigation"
-        class="relative -mx-5 px-5 md:mx-0 md:px-0"
-      >
-        <ul class="flex items-center gap-4 md:gap-5 overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {links.map((link) => (
-            <li class="shrink-0">
-              <a
-                href={link.href}
-                class:list={[
-                  'text-sm no-underline transition-colors',
-                  isActive(link.href) ? 'text-accent font-semibold' : 'text-ink-soft hover:text-ink',
-                ]}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <!-- Fade rechts, signalisiert Scroll auf Mobile -->
-        <div class="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-paper to-transparent pointer-events-none" aria-hidden="true"></div>
-      </nav>
+      <div class="flex items-center gap-3 md:gap-5">
+        <nav
+          aria-label="Hauptnavigation"
+          class="relative flex-1 -mx-5 px-5 md:mx-0 md:px-0 md:flex-initial"
+        >
+          <ul class="flex items-center gap-4 md:gap-5 overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {links.map((link) => (
+              <li class="shrink-0">
+                <a
+                  href={link.href}
+                  class:list={[
+                    'text-sm no-underline transition-colors',
+                    isActive(link.href) ? 'text-accent font-semibold' : 'text-ink-soft hover:text-ink',
+                  ]}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <!-- Fade rechts, signalisiert Scroll auf Mobile -->
+          <div class="md:hidden absolute right-12 top-0 bottom-0 w-8 bg-gradient-to-l from-paper to-transparent pointer-events-none" aria-hidden="true"></div>
+        </nav>
+
+        <button
+          type="button"
+          data-open-search
+          aria-label="Suche öffnen"
+          title="Suche · ⌘K · /"
+          class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line bg-paper hover:border-accent hover:text-accent transition-colors text-ink-soft"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
