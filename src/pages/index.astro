@@ -105,15 +105,15 @@ const bookSchema = {
 
 <BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
   <!-- Karussell 1: Einstiege aus dem Buch -->
-  <section class="container-page pt-10 md:pt-14 pb-12 md:pb-16">
-    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
-      <div>
+  <section class="container-page pt-8 md:pt-14 pb-10 md:pb-16">
+    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
+      <div class="min-w-0">
         <p class="meta-label text-accent mb-2">Einstiege</p>
         <h2 class="font-serif text-2xl md:text-3xl leading-tight">Aus dem Buch in zehn Zahlen.</h2>
       </div>
       <a
         href="/atlas"
-        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
+        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
       >
         Zum Atlas →
       </a>
@@ -125,7 +125,7 @@ const bookSchema = {
   </section>
 
   <!-- Karussell 2: Neues aus dem Wahrheitskomplex (Mix) -->
-  <section class="container-page py-12 md:py-16 border-t border-line">
+  <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
       <div>
         <p class="meta-label text-accent mb-2">Neues</p>
@@ -160,7 +160,7 @@ const bookSchema = {
   <BookSection book={book} />
 
   <!-- Chronik-Block „Was seither geschah" -->
-  <section class="container-page py-12 md:py-16 border-t border-line">
+  <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
       <div>
         <p class="meta-label text-accent mb-2">Chronik</p>
@@ -180,7 +180,7 @@ const bookSchema = {
   </section>
 
   <!-- Karussell 3: Faktenchecks im Check -->
-  <section class="container-page py-12 md:py-16 border-t border-line">
+  <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
       <div>
         <p class="meta-label text-accent mb-2">Faktenchecker im Faktencheck</p>

@@ -11,7 +11,7 @@ const { label, cardClass = '' } = Astro.props;
 
 <section class="carousel-root relative" data-carousel aria-label={label}>
   <div
-    class="carousel-track flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mb-4"
+    class="carousel-track flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mb-4 px-1 -mx-1"
     data-track
     role="region"
     tabindex="0"
@@ -26,7 +26,7 @@ const { label, cardClass = '' } = Astro.props;
     aria-label="Vorheriger Beitrag"
     hidden
   >
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
       <path d="M15 6 9 12l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
@@ -36,7 +36,7 @@ const { label, cardClass = '' } = Astro.props;
     data-next
     aria-label="Nächster Beitrag"
   >
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
       <path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
@@ -50,7 +50,7 @@ const { label, cardClass = '' } = Astro.props;
   .carousel-track > * {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: min(85vw, 22rem);
+    width: min(88vw, 22rem);
   }
   @media (min-width: 768px) {
     .carousel-track > * { width: min(50%, 24rem); }
@@ -61,20 +61,24 @@ const { label, cardClass = '' } = Astro.props;
 
   .carousel-btn {
     position: absolute;
-    top: 40%;
-    width: 2.75rem;
-    height: 2.75rem;
+    top: 32%;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 9999px;
     background: var(--color-paper);
     color: var(--color-ink);
     border: 1px solid var(--color-line);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 6px 16px -8px rgba(26,26,26,0.25);
-    transition: background-color 120ms ease, color 120ms ease, transform 120ms ease, opacity 200ms ease;
+    transition: background-color 120ms ease, color 120ms ease, opacity 200ms ease;
     z-index: 2;
+  }
+  /* Pfeile nur auf Pointer-fähigen Geräten — Touch hat Swipe */
+  @media (hover: hover) and (pointer: fine) {
+    .carousel-btn { display: flex; }
   }
   .carousel-btn:hover { background: var(--color-ink); color: var(--color-paper); }
   .carousel-btn:focus-visible {
@@ -82,12 +86,8 @@ const { label, cardClass = '' } = Astro.props;
     outline-offset: 2px;
   }
   .carousel-btn[hidden] { display: none; }
-  .carousel-prev { left: -1rem; }
-  .carousel-next { right: -1rem; }
-  @media (min-width: 768px) {
-    .carousel-prev { left: -1.25rem; }
-    .carousel-next { right: -1.25rem; }
-  }
+  .carousel-prev { left: -1.25rem; }
+  .carousel-next { right: -1.25rem; }
 </style>
 
 <script>

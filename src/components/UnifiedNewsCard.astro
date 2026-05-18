@@ -27,25 +27,32 @@ const dateLabel =
   <a
     href={url}
     rel="noopener"
-    class="block aspect-video bg-ink relative overflow-hidden group no-underline"
+    class="block aspect-video relative overflow-hidden group no-underline"
     aria-label={`${badge}: ${title} (${source})`}
   >
     {thumb ? (
-      <img
-        src={thumb}
-        alt={`Vorschau: ${title}`}
-        width="1280"
-        height="720"
-        loading="lazy"
-        decoding="async"
-        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
+      <>
+        <div class="absolute inset-0 bg-ink"></div>
+        <img
+          src={thumb}
+          alt={`Vorschau: ${title}`}
+          width="1280"
+          height="720"
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onerror="this.style.display='none'"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
+      </>
     ) : (
-      <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-lg px-6 text-center">
-        {source}
+      <div class="absolute inset-0 bg-ink flex flex-col justify-between p-5 text-paper">
+        <span class="font-serif italic text-paper/60 text-sm leading-snug line-clamp-4">
+          {title}
+        </span>
+        <span class="meta-label text-paper/80 self-end">{source}</span>
       </div>
     )}
-    <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
     <span class="absolute top-3 left-3 text-[0.65rem] uppercase tracking-wider bg-accent text-paper px-2 py-0.5 rounded-full">
       {badge}
     </span>
