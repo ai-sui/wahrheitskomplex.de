@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TimelineEvent from '../components/TimelineEvent.astro';
+import { chronik } from '../data/chronik';
+
+// Neueste zuerst
+const events = [...chronik].sort((a, b) => {
+  // Pad incomplete dates for comparable sorting
+  const pad = (d: string) => {
+    const parts = d.split('-');
+    if (parts.length === 1) return `${parts[0]}-12-31`;
+    if (parts.length === 2) return `${parts[0]}-${parts[1]}-31`;
+    return d;
+  };
+  return pad(b.date).localeCompare(pad(a.date));
+});
+
+// Gruppieren nach Jahr für Jahres-Navigation
+const years = Array.from(
+  new Set(events.map((e) => e.date.slice(0, 4))),
+).sort((a, b) => Number(b) - Number(a));
+
+const themen = [
+  'Pandemie',
+  'Klima',
+  'Ukraine & NATO',
+  'Wahlen',
+  'DSA & NetzDG',
+  'Hass und Hetze',
+];
+
+// Index erster Eintrag pro Jahr (für Anker)
+const eventsWithYear = events.map((e, i) => ({
+  e,
+  i,
+  year: e.date.slice(0, 4),
+}));
+const firstIndexByYear = new Map<string, number>();
+for (const { i, year } of eventsWithYear) {
+  if (!firstIndexByYear.has(year)) firstIndexByYear.set(year, i);
+}
+---
+
+<BaseLayout
+  title="Chronik"
+  description="Chronik des Wahrheitskomplexes — historische Anker (1998–2025) plus Härings laufende Fortsetzung 2026. Vom NetzDG über DSA bis zu den jüngsten Gerichtsurteilen gegen NewsGuard und Correctiv."
+>
+  <section class="container-page py-12 md:py-16">
+    <p class="meta-label text-accent mb-3">Chronik</p>
+    <h1 class="font-serif text-3xl md:text-4xl leading-tight mb-4 max-w-3xl">
+      Der Wahrheitskomplex in der Zeit.
+    </h1>
+    <p class="max-w-2xl text-ink-soft text-lg leading-relaxed mb-8">
+      Historische Ankerereignisse zur Entstehung des Komplexes — und die
+      laufende Fortsetzung, wie Norbert Häring sie auf seiner Seite
+      dokumentiert. Neueste Einträge oben.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mb-10">
+      <a
+        href="https://norberthaering.de/chronik-fortsetzung/"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+      >
+        Härings Chronik-Fortsetzung →
+      </a>
+    </div>
+  </section>
+
+  <!-- Sticky-Jahresnavi -->
+  <nav
+    aria-label="Jahres-Navigation"
+    class="sticky top-[3.5rem] z-20 border-y border-line bg-paper/90 backdrop-blur-sm"
+  >
+    <div class="container-page py-3 flex items-center gap-3 overflow-x-auto">
+      <p class="meta-label text-muted shrink-0 mr-1">Jahre</p>
+      {years.map((y) => (
+        <a
+          href={`#jahr-${y}`}
+          class="text-sm px-3 py-1 rounded-full border border-line text-ink-soft hover:border-accent hover:text-accent shrink-0"
+        >
+          {y}
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  <!-- Themen-Filter -->
+  <section class="container-page py-6 border-b border-line">
+    <fieldset class="flex flex-col gap-2.5" data-filter-group="thema">
+      <legend class="meta-label">Filter nach Thema</legend>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          class="filter-chip is-active"
+          data-filter-value="__all__"
+          aria-pressed="true"
+        >
+          Alle
+        </button>
+        {themen.map((t) => (
+          <button
+            type="button"
+            class="filter-chip"
+            data-filter-value={t}
+            aria-pressed="false"
+          >
+            {t}
+          </button>
+        ))}
+      </div>
+    </fieldset>
+
+    <div class="mt-4 flex items-center justify-between text-sm text-muted">
+      <p data-count>{events.length} Einträge</p>
+      <button
+        type="button"
+        class="underline decoration-line hover:decoration-accent hover:text-accent"
+        data-reset
+      >
+        Filter zurücksetzen
+      </button>
+    </div>
+  </section>
+
+  <section class="container-page py-12 md:py-16">
+    <div class="max-w-5xl">
+      {eventsWithYear.map(({ e, i, year }) => (
+        <>
+          {firstIndexByYear.get(year) === i && (
+            <h2
+              id={`jahr-${year}`}
+              class="font-serif text-3xl md:text-4xl text-accent mb-8 mt-4 first:mt-0 scroll-mt-32"
+            >
+              {year}
+            </h2>
+          )}
+          <TimelineEvent eintrag={e} />
+        </>
+      ))}
+    </div>
+
+    <p
+      class="mt-6 text-center text-sm text-muted hidden"
+      data-empty
+    >
+      Keine Einträge passen zum Filter.
+      <button type="button" class="underline text-accent" data-reset>Zurücksetzen</button>.
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  let activeThema = '__all__';
+
+  const events = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-timeline-event]'),
+  );
+  const chips = document.querySelectorAll<HTMLButtonElement>('.filter-chip');
+  const countEl = document.querySelector<HTMLElement>('[data-count]');
+  const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+  const resetBtns = document.querySelectorAll<HTMLButtonElement>('[data-reset]');
+
+  function apply() {
+    let visible = 0;
+    const yearVisibility = new Map<string, number>();
+
+    for (const ev of events) {
+      const themen = (ev.dataset.themen ?? '').split('|').filter(Boolean);
+      const show = activeThema === '__all__' || themen.includes(activeThema);
+      ev.hidden = !show;
+      if (show) {
+        visible++;
+        const year = (ev.dataset.date ?? '').slice(0, 4);
+        yearVisibility.set(year, (yearVisibility.get(year) ?? 0) + 1);
+      }
+    }
+
+    // Hide year headings whose events are all filtered out
+    for (const h2 of document.querySelectorAll<HTMLElement>('h2[id^="jahr-"]')) {
+      const year = h2.id.replace('jahr-', '');
+      h2.hidden = (yearVisibility.get(year) ?? 0) === 0;
+    }
+
+    if (countEl) {
+      countEl.textContent =
+        visible === events.length
+          ? `${events.length} Einträge`
+          : `${visible} von ${events.length} Einträgen`;
+    }
+    if (emptyEl) emptyEl.classList.toggle('hidden', visible !== 0);
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      activeThema = chip.dataset.filterValue ?? '__all__';
+      for (const c of chips) {
+        const isActive = c === chip;
+        c.classList.toggle('is-active', isActive);
+        c.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      }
+      apply();
+    });
+  }
+
+  for (const btn of resetBtns) {
+    btn.addEventListener('click', () => {
+      activeThema = '__all__';
+      for (const c of chips) {
+        const isAll = c.dataset.filterValue === '__all__';
+        c.classList.toggle('is-active', isAll);
+        c.setAttribute('aria-pressed', isAll ? 'true' : 'false');
+      }
+      apply();
+    });
+  }
+</script>
