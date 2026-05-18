@@ -1,0 +1,123 @@
+---
+import LiteYouTube from './LiteYouTube.astro';
+
+type Type = 'video' | 'podcast' | 'interview' | 'rezension' | 'vortrag';
+
+interface Props {
+  title: string;
+  type: Type;
+  host: string;
+  outlet: string;
+  url: string;
+  youtubeId?: string;
+  date: string;
+  durationMin?: number;
+  paywall?: boolean;
+  themen?: string[];
+  pullquote?: string;
+  showEmbed?: boolean;
+}
+
+const {
+  title,
+  type,
+  host,
+  outlet,
+  url,
+  youtubeId,
+  date,
+  durationMin,
+  paywall = false,
+  themen = [],
+  pullquote,
+  showEmbed = true,
+} = Astro.props;
+
+const typeLabels: Record<Type, string> = {
+  video: 'Video',
+  podcast: 'Podcast',
+  interview: 'Interview',
+  rezension: 'Rezension',
+  vortrag: 'Vortrag',
+};
+
+const dateFmt = new Intl.DateTimeFormat('de-DE', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(new Date(date));
+---
+
+<article
+  class="bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col"
+  data-media-card
+  data-type={type}
+  data-themen={themen.join('|')}
+  data-paywall={String(paywall)}
+>
+  {showEmbed && youtubeId ? (
+    <LiteYouTube id={youtubeId} title={title} />
+  ) : (
+    <a
+      href={url}
+      rel="noopener"
+      class="block aspect-video bg-ink relative no-underline group"
+      aria-label={`${typeLabels[type]} bei ${outlet}: ${title}`}
+    >
+      <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-xl px-6 text-center">
+        <span class="opacity-90 group-hover:opacity-100 transition">{outlet}</span>
+      </div>
+      <span
+        class="absolute top-3 right-3 text-[0.6rem] uppercase tracking-wider bg-paper text-ink px-2 py-0.5 rounded-full"
+      >
+        externes Fenster ↗
+      </span>
+    </a>
+  )}
+
+  <div class="p-5 md:p-6 flex flex-col flex-1">
+    <div class="flex items-center gap-2 mb-3 text-xs flex-wrap">
+      <span class="meta-label text-accent">{typeLabels[type]}</span>
+      <span class="text-muted">·</span>
+      <time class="text-muted" datetime={date}>{dateFmt}</time>
+      {durationMin && (
+        <>
+          <span class="text-muted">·</span>
+          <span class="text-muted">{durationMin} Min.</span>
+        </>
+      )}
+      {paywall && (
+        <span class="ml-auto text-[0.65rem] uppercase tracking-wider px-2 py-0.5 bg-ink text-paper rounded-full">
+          Bezahlschranke
+        </span>
+      )}
+    </div>
+
+    <h3 class="font-serif text-lg md:text-xl leading-snug mb-2">
+      <a href={url} rel="noopener" class="no-underline hover:text-accent">
+        {title}
+      </a>
+    </h3>
+
+    <p class="text-sm text-ink-soft mb-3">
+      <span class="text-muted">bei</span> <strong class="font-semibold">{outlet}</strong>
+      <span class="text-muted"> · von {host}</span>
+    </p>
+
+    {pullquote && (
+      <blockquote class="border-l-2 border-line pl-4 text-sm text-ink-soft italic leading-relaxed mb-4 flex-1">
+        „{pullquote}"
+      </blockquote>
+    )}
+
+    {themen.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-line">
+        {themen.map((t) => (
+          <span class="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 bg-paper border border-line rounded-full text-muted">
+            {t}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>

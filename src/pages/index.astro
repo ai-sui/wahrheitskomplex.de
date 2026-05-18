@@ -1,11 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FactWeek from '../components/FactWeek.astro';
 import HookCard from '../components/HookCard.astro';
 import BookSection from '../components/BookSection.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import MediaCard from '../components/MediaCard.astro';
 import { factOfTheWeek, hookCards } from '../data/homepage';
 import { book } from '../data/book';
+
+const recent = (await getCollection('medien'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
 
 const bookSchema = {
   '@context': 'https://schema.org',
@@ -39,6 +45,37 @@ const bookSchema = {
 
     <div class="grid gap-5 md:grid-cols-3">
       {hookCards.map((card) => <HookCard card={card} />)}
+    </div>
+  </section>
+
+  <section class="container-page py-12 md:py-16 border-t border-line">
+    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
+      <h2 class="font-serif text-2xl md:text-3xl">Zuletzt im Gespräch</h2>
+      <a
+        href="/im-gespraech"
+        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+      >
+        Alle Beiträge →
+      </a>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {recent.map((m) => (
+        <MediaCard
+          title={m.data.title}
+          type={m.data.type}
+          host={m.data.host}
+          outlet={m.data.outlet}
+          url={m.data.url}
+          youtubeId={m.data.youtubeId}
+          date={m.data.date}
+          durationMin={m.data.durationMin}
+          paywall={m.data.paywall}
+          themen={m.data.themen}
+          pullquote={m.data.pullquote}
+          showEmbed={false}
+        />
+      ))}
     </div>
   </section>
 

@@ -42,4 +42,22 @@ const actors = defineCollection({
   }),
 });
 
-export const collections = { actors };
+const medien = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/medien' }),
+  schema: z.object({
+    title: z.string(),
+    type: z.enum(['video', 'podcast', 'interview', 'rezension', 'vortrag']),
+    host: z.string(),
+    outlet: z.string(),
+    url: z.string().url(),
+    youtubeId: z.string().optional(),
+    date: z.string(), // ISO YYYY-MM-DD
+    durationMin: z.number().optional(),
+    paywall: z.boolean().default(false),
+    themen: z.array(z.string()).default([]),
+    pullquote: z.string().optional(),
+    language: z.enum(['de', 'en']).default('de'),
+  }),
+});
+
+export const collections = { actors, medien };
