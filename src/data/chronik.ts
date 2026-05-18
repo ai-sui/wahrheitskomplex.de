@@ -1,28 +1,29 @@
 // Chronik des Wahrheitskomplexes.
 //
-// Aufbau:
-//   - Historische Anker-Ereignisse (1998–2025): rekonstruiert aus dem
-//     Chronik-Anhang des Buchs und den Akteurs-Profilen.
-//   - Aktuelle Einträge (Feb–Mai 2026): aus Härings „Chronik-Fortsetzung"
-//     auf norberthaering.de/chronik-fortsetzung/.
+// Inhaltliche Quelle:
+//   - Buch-Anhang „Chronik des Wahrheitskomplexes" (Westend Verlag 2026,
+//     Kapitel direkt vor den Anmerkungen)
+//   - Härings „Chronik-Fortsetzung" auf norberthaering.de/chronik-fortsetzung/
 //
-// Datumsformat: YYYY-MM-DD wenn bekannt, sonst YYYY-MM (gerendert als
-// „im Monat XY" / „Frühjahr XY" je nach Genauigkeit).
+// Datumsformat: YYYY-MM-DD (selten), YYYY-MM (überwiegend) oder YYYY.
+// Region: ISO-artige Länderkürzel oder Sphären-Marker.
 
 export type ChronikEintrag = {
-  date: string; // YYYY-MM-DD oder YYYY-MM oder YYYY
+  date: string;
+  region: string; // "DE", "EU", "USA", "UK", "INT", "RU", "UA", "RO" oder "USA / DE" etc.
   title: string;
-  description: string;
+  description?: string;
   themen?: string[];
-  actorSlug?: string; // wenn ein Atlas-Akteur betroffen ist
+  actorSlug?: string;
   haeringLink?: string;
-  sourceLink?: string; // externer Beleg
+  sourceLink?: string;
 };
 
 export const chronik: ChronikEintrag[] = [
-  // ---------- HISTORISCHE ANKER ----------
+  // ---------- VOR DER BUCH-CHRONIK (Anker) ----------
   {
     date: '1998',
+    region: 'DE',
     title: 'Amadeu Antonio Stiftung gegründet',
     description:
       'Anetta Kahane gründet die Stiftung zum Gedenken an den 1990 in Eberswalde ermordeten Vertragsarbeiter Amadeu Antonio. Sie wird in den 2010er Jahren zu einer der prägenden Stimmen für die spätere NetzDG-Gesetzgebung.',
@@ -31,204 +32,265 @@ export const chronik: ChronikEintrag[] = [
   },
   {
     date: '2006',
+    region: 'UK',
     title: 'Institute for Strategic Dialogue (ISD) gegründet',
     description:
       'In London entsteht eine als zivilgesellschaftlich auftretende Organisation gegen Radikalisierung. Sie wird sich zur zentralen Schnittstelle zwischen Geheimdiensten, NATO-Programmen und Online-Inhaltsregulierung entwickeln.',
     themen: ['Ukraine & NATO', 'DSA & NetzDG'],
     actorSlug: 'institute-for-strategic-dialogue',
   },
-  {
-    date: '2014',
-    title: 'Correctiv gegründet',
-    description:
-      'Erste explizit non-profit organisierte Investigativ-Redaktion Deutschlands. Wenig später kommt die Faktencheck-Sparte hinzu, die zum Partner von Meta wird.',
-    themen: ['Hass und Hetze'],
-    actorSlug: 'correctiv',
-  },
-  {
-    date: '2015',
-    title: 'Science Media Center Germany gegründet',
-    description:
-      'Vermittlungsstelle für vorausgewählte Wissenschaftler-Statements an Redaktionen. Wird über die folgenden Jahre zu einem kaum sichtbaren, aber zentralen Akteur der deutschen Wissenschaftsberichterstattung.',
-    themen: ['Pandemie', 'Klima'],
-    actorSlug: 'science-media-center-germany',
-  },
-  {
-    date: '2015',
-    title: 'Bundesprogramm „Demokratie leben!" startet',
-    description:
-      'BMFSFJ-Förderprogramm, das in den Folgejahren zur Hauptfinanzierungsquelle vieler im Buch behandelter Stiftungen und NGOs wird — darunter Amadeu Antonio, HateAid, Teile von Correctiv.',
-    themen: ['DSA & NetzDG', 'Hass und Hetze'],
-  },
-  {
-    date: '2017-10-01',
-    title: 'NetzDG tritt in Kraft',
-    description:
-      'Das Netzwerkdurchsetzungsgesetz verpflichtet Plattformen, „offensichtlich rechtswidrige" Inhalte binnen 24 Stunden zu löschen. Die argumentative Vorarbeit lieferten Stiftungen, allen voran die Amadeu Antonio Stiftung. Wird zur Blaupause für den EU-Digital-Services-Act.',
-    themen: ['DSA & NetzDG'],
-    actorSlug: 'amadeu-antonio-stiftung',
-  },
-  {
-    date: '2020',
-    title: 'EDMO (European Digital Media Observatory) gegründet',
-    description:
-      'EU-finanziertes Dachnetzwerk aus Faktencheckern, Forschungseinrichtungen und Behörden. Wird in den Folgejahren in den DSA-Vollzug eingebunden — die Kommission finanziert die Stelle, die ihrerseits Inhalte mit EU-Bezug bewertet.',
-    themen: ['DSA & NetzDG'],
-    actorSlug: 'edmo',
-  },
-  {
-    date: '2021',
-    title: 'Atlantic Council positioniert sich als „Wahrheits-Theoretiker"',
-    description:
-      'Eine Reihe von Publikationen des Atlantic Council formuliert die theoretische Begründung für institutionalisierte Faktencheckerei. Die Empfehlungen wandern in westliche Plattform-Regulierung — und in den späteren DSA.',
-    themen: ['Ukraine & NATO', 'DSA & NetzDG'],
-    actorSlug: 'atlantic-council',
-  },
-  {
-    date: '2022-10-19',
-    title: 'EU verabschiedet Digital Services Act (DSA)',
-    description:
-      'Die EU verabschiedet den DSA. Die Mechanismen — Melden, Löschen, Risiko-Audits, Faktencheck-Netzwerke — bauen auf NetzDG und ISD-Empfehlungen auf. Vollzug ab 2024.',
-    themen: ['DSA & NetzDG'],
-  },
-  {
-    date: '2024',
-    title: 'DSA-Vollzug beginnt',
-    description:
-      'Die EU-Kommission startet den eigentlichen Vollzug des DSA. Plattformen müssen Risiken bewerten, Faktencheck-Daten integrieren, Maßnahmen dokumentieren. EDMO und Mitgliedstaat-Stellen liefern Lageberichte.',
-    themen: ['DSA & NetzDG'],
-    actorSlug: 'edmo',
-  },
 
-  // ---------- 2026 (aus Härings Chronik-Fortsetzung) ----------
+  // ---------- 2014 ----------
+  { date: '2014-01', region: 'EU', title: 'NATO StratCom COE in Riga nimmt die Arbeit auf', themen: ['Ukraine & NATO'] },
+  { date: '2014-02', region: 'UA', title: 'Präsident der Ukraine wird gestürzt', themen: ['Ukraine & NATO'] },
+  { date: '2014-06', region: 'USA / UK', title: 'Erster Global Fact-Checking Summit findet in London statt', themen: ['DSA & NetzDG'] },
+  { date: '2014-07', region: 'DE', title: 'Recherchekollektiv Correctiv nimmt die Arbeit auf', themen: ['Hass und Hetze'], actorSlug: 'correctiv' },
+  { date: '2014-11', region: 'DE', title: 'Haushaltsausschuss bewilligt 40,5 Mio. € für „Demokratie leben!" 2015', themen: ['Hass und Hetze'] },
+
+  // ---------- 2015 ----------
+  { date: '2015-07', region: 'DE', title: 'Gründung des Science Media Center Germany', themen: ['Pandemie', 'Klima'], actorSlug: 'science-media-center-germany' },
+  { date: '2015-07', region: 'USA', title: 'Gründung des International Fact-Checking Network (IFCN)', themen: ['DSA & NetzDG'] },
+  { date: '2015-09', region: 'EU', title: 'Bildung der EastStratCom Task Force', themen: ['Ukraine & NATO'] },
+  { date: '2015-09', region: 'DE', title: 'Außenministerium, AAS und Facebook gründen Arbeitsgruppe gegen „Hassbotschaften"', themen: ['Hass und Hetze', 'DSA & NetzDG'], actorSlug: 'amadeu-antonio-stiftung' },
+
+  // ---------- 2016 ----------
+  { date: '2016-01', region: 'DE', title: 'ISD, AAS und Facebook vereinbaren „Initiative für Zivilcourage Online"', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+  { date: '2016-04', region: 'EU', title: 'Kommission stellt Planung für Hybrid CoE in Helsinki vor', themen: ['Ukraine & NATO'] },
+  { date: '2016-05', region: 'EU', title: 'Plattformen unterzeichnen Verhaltenskodex gegen Hassrede im Internet', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+  { date: '2016-07', region: 'USA', title: 'Wikileaks veröffentlicht E-Mails der Führung der Demokratischen Partei', description: 'Juli bis Oktober 2016 — Auftakt der „Russia-Gate"-Narrative.', themen: ['Ukraine & NATO'] },
+  { date: '2016-08', region: 'USA', title: 'Senatsbericht: Plattformen wegen „russischer Wahlkampfbeeinflussung" kritisiert', description: 'Facebook beginnt Kooperation mit Faktencheckern.', themen: ['Wahlen', 'DSA & NetzDG'] },
+  { date: '2016-10', region: 'USA', title: 'Digital Forensic Research Lab beim Atlantic Council geht an den Start', themen: ['Ukraine & NATO'], actorSlug: 'atlantic-council' },
+  { date: '2016-11', region: 'USA', title: 'Donald Trump gewinnt Präsidentschaftswahl', themen: ['Wahlen'] },
+  { date: '2016-11', region: 'USA', title: 'Washington Post veröffentlicht „PropOrNot"-Liste „putintreuer" US-Medien', themen: ['Ukraine & NATO'] },
+  { date: '2016-11', region: 'USA / EU', title: 'Atlantic Council: Report über „Trojanische Pferde des Kremls in Europa"', themen: ['Ukraine & NATO'], actorSlug: 'atlantic-council' },
+  { date: '2016-11', region: 'DE', title: 'DIE ZEIT greift Politiker wegen russlandfreundlicher Haltung an', themen: ['Ukraine & NATO'] },
+  { date: '2016-12', region: 'DE', title: 'BILD warnt mit Experten von ISD und Atlantic Council vor „Kaperung der Bundestagswahl durch Russland"', themen: ['Wahlen', 'Ukraine & NATO'] },
+  { date: '2016-12', region: 'DE', title: 'Boykottkampagne #KeinGeldFürRechts startet', themen: ['Hass und Hetze'] },
+  { date: '2016-12', region: 'USA', title: 'Global Engagement Center bekommt Mandat, Desinformation zu bekämpfen', themen: ['Ukraine & NATO', 'DSA & NetzDG'] },
+
+  // ---------- 2017 ----------
+  { date: '2017-01', region: 'DE', title: 'Facebook heuert Correctiv-Faktenchecker an', themen: ['DSA & NetzDG'], actorSlug: 'correctiv' },
+  { date: '2017-01', region: 'DE', title: 'ARD-Faktenfinder geht an den Start', themen: ['DSA & NetzDG'] },
+  { date: '2017-02', region: 'DE', title: 'BND und Verfassungsschutz finden keine Beweise für russische Fake-News-Kampagnen 2016', themen: ['Ukraine & NATO', 'Wahlen'] },
+  { date: '2017-03', region: 'DE', title: 'Heiko Maas stellt Entwurf des NetzDG vor', description: 'Verabschiedung im Juni 2017, Inkrafttreten 1. Oktober.', themen: ['DSA & NetzDG'] },
+  { date: '2017-04', region: 'EU', title: 'USA und acht EU-Länder unterzeichnen Memorandum: European Centre of Excellence for Countering Hybrid Threats in Helsinki', themen: ['Ukraine & NATO'] },
+  { date: '2017-04', region: 'USA', title: 'Google und Washington Post vereinbaren Kooperation gegen Fake News', themen: ['DSA & NetzDG'] },
+  { date: '2017-09', region: 'USA / EU', title: 'StratCom-DC-Konferenz des US-Militärs in Washington — mit europäischen Teilnehmern', themen: ['Ukraine & NATO'] },
+  { date: '2017', region: 'DE', title: 'Meldestelle REspect! geht an den Start', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+
+  // ---------- 2018 ----------
+  { date: '2018-02', region: 'USA / EU', title: 'Atlantic Council fordert Verhaltenskodex gegen Desinformation und ein Netzwerk von Faktencheckern', themen: ['DSA & NetzDG'], actorSlug: 'atlantic-council' },
+  { date: '2018-02', region: 'INT', title: 'Conscious Advertising Network (CAN) wird gebildet', themen: ['DSA & NetzDG'] },
+  { date: '2018-03', region: 'USA', title: 'Konferenz für Militärattachés zu „Souveränität und Desinformation" in Washington', themen: ['Ukraine & NATO'] },
+  { date: '2018-03', region: 'INT', title: 'NewsGuard wird gegründet', themen: ['DSA & NetzDG'] },
+  { date: '2018-04', region: 'EU', title: 'Kommission kündigt Verhaltenskodex gegen Desinformation und Faktenchecker-Netzwerk SOMA an', description: 'Start Oktober/November 2018 — Vorgänger von EDMO.', themen: ['DSA & NetzDG'] },
+  { date: '2018-05', region: 'USA', title: 'Facebook vereinbart mit Digital Forensic Research Lab Kooperation gegen russische Desinformation', themen: ['Ukraine & NATO'] },
+  { date: '2018-06', region: 'USA', title: 'S.-J. Terp wird vom Militär beauftragt, DISARM zu entwickeln', themen: ['Ukraine & NATO', 'DSA & NetzDG'] },
+  { date: '2018-06', region: 'INT', title: 'Gründung von Global Disinformation Index (GDI)', themen: ['DSA & NetzDG'] },
+  { date: '2018-12', region: 'EU', title: 'Kommission stellt Aktionsplan für Außen- und Sicherheitspolitik vor', themen: ['Ukraine & NATO'] },
+
+  // ---------- 2019 ----------
+  { date: '2019-01', region: 'DE', title: 'HateAid startet Informationsseite für Betroffene digitalen Hasses', description: 'Hilfsangebot startet im Sommer 2019.', themen: ['Hass und Hetze'] },
+  { date: '2019-02', region: 'EU', title: 'Alliance4Europe wird gegründet', themen: ['DSA & NetzDG'] },
+  { date: '2019-03', region: 'DE', title: 'dpa beginnt Fact-Checking für Facebook', themen: ['DSA & NetzDG'], actorSlug: 'dpa-faktencheck' },
+  { date: '2019-06', region: 'INT', title: 'BBC gründet mit führenden internationalen Medien die Trusted News Initiative', themen: ['DSA & NetzDG'] },
+  { date: '2019-09', region: 'USA', title: 'Geheimdienste, Google, Facebook, Twitter und Microsoft vereinbaren gemeinsame „Wahlsicherung"', description: 'LinkedIn, Pinterest, Reddit und Verizon Media stoßen im August 2020 dazu.', themen: ['Wahlen', 'DSA & NetzDG'] },
+
+  // ---------- 2020 ----------
+  { date: '2020-01', region: 'INT', title: 'IFCN ruft CoronaVirusFacts Alliance ins Leben', themen: ['Pandemie', 'DSA & NetzDG'] },
+  { date: '2020-01', region: 'DE', title: 'Meldestelle „HessenGegenHetze" wird gegründet', themen: ['Hass und Hetze'] },
+  { date: '2020-03', region: 'USA / EU', title: 'Google, Facebook und Twitter bilden „Allianz gegen Falschinformationen"', themen: ['Pandemie', 'DSA & NetzDG'] },
+  { date: '2020-06', region: 'EU', title: 'EU-Kommission gründet European Digital Media Observatory (EDMO)', themen: ['DSA & NetzDG'], actorSlug: 'edmo' },
+  { date: '2020-09', region: 'DE', title: 'Digital Policy Lab beim ISD hält erste Sitzung ab', themen: ['DSA & NetzDG'], actorSlug: 'institute-for-strategic-dialogue' },
+  { date: '2020-10', region: 'USA', title: 'Digitale Plattformen verhindern Verbreitung des NY-Post-Artikels zum „Hunter-Biden-Laptop"', themen: ['Wahlen', 'DSA & NetzDG'] },
+  { date: '2020-11', region: 'USA', title: 'Joe Biden gewinnt die Präsidentschaftswahl', themen: ['Wahlen'] },
+  { date: '2020-11', region: 'DE', title: 'Aufsicht der Medienanstalten über alternative Online-Medien im Medienstaatsvertrag verankert', themen: ['DSA & NetzDG'] },
+  { date: '2020-12', region: 'USA', title: 'YouTube, Facebook, Twitter und Microsoft schaffen gemeinsame Datenbank „extremistischer Inhalte"', themen: ['DSA & NetzDG'] },
+
+  // ---------- 2021 ----------
+  { date: '2021-03', region: 'DE', title: '„Expert*innenzirkel Medien an den Rändern" des Bibliothekarsverbands startet', themen: ['Hass und Hetze'] },
+  { date: '2021-03', region: 'DE', title: '„Gesetz zur Bekämpfung des Rechtsextremismus und der Hasskriminalität" verabschiedet', description: 'Verschärft §188 StGB („Politikerbeleidigung").', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+  { date: '2021-04', region: 'DE', title: 'Verfassungsschutz führt „Phänomenbereich verfassungsschutzrelevante Delegitimierung des Staates" ein', themen: ['Hass und Hetze'] },
+  { date: '2021-05', region: 'EU', title: 'Google stellt EDMO European Media and Information Fund (EMIF) mit 25 Mio. € zur Verfügung', themen: ['DSA & NetzDG'], actorSlug: 'edmo' },
+  { date: '2021-07', region: 'DE', title: 'Gründung des Netzwerks Klimajournalismus', themen: ['Klima'] },
+  { date: '2021-12', region: 'EU', title: 'EU-Kommission gibt Bildung des European Fact-Checking Standards Network (EFCSN) bekannt', themen: ['DSA & NetzDG'] },
+  { date: '2021-12', region: 'INT', title: 'UN-Generalversammlung verabschiedet Desinformations-Resolution', description: 'Meinungsfreiheit soll „durch Desinformationsbekämpfung gefördert" werden.', themen: ['DSA & NetzDG'] },
+  { date: '2021-12', region: 'INT', title: 'Gründung der DISARM-Foundation', themen: ['Ukraine & NATO', 'DSA & NetzDG'] },
+
+  // ---------- 2022 ----------
+  { date: '2022-02', region: 'RU / UA', title: 'Russischer Angriff auf die Ukraine', themen: ['Ukraine & NATO'] },
+  { date: '2022-03', region: 'EU', title: 'Entschließung des EU-Parlaments zu „Prebunking" gegen feindliche Desinformation', themen: ['DSA & NetzDG'] },
+  { date: '2022-06', region: 'EU', title: 'Verschärfter Verhaltenskodex gegen Desinformation verabschiedet', description: 'X unterschreibt nicht.', themen: ['DSA & NetzDG'] },
+  { date: '2022-06', region: 'DE / USA', title: 'DGAP- und Atlantic-Council-Programm zur „Influencer-Ausbildung" gegen Desinformation startet', themen: ['DSA & NetzDG'], actorSlug: 'atlantic-council' },
+  { date: '2022-10-19', region: 'EU', title: 'Digital Services Act (DSA) wird verabschiedet', themen: ['DSA & NetzDG'] },
+  { date: '2022-11', region: 'DE / EU', title: 'German-Austrian Digital Media Observatory (GADMO) geht an den Start', themen: ['DSA & NetzDG'] },
+
+  // ---------- 2023 ----------
+  { date: '2023-01', region: 'DE', title: 'NGO-/Stiftungs-Treffen im Bundesinnenministerium', description: 'Daraus entstehen die „Allianz für eine resiliente Informationsgesellschaft" und „toneshift".', themen: ['DSA & NetzDG'] },
+  { date: '2023-02', region: 'USA', title: 'National Endowment for Democracy beendet Förderung von Global Disinformation Index', themen: ['DSA & NetzDG'] },
+  { date: '2023-05', region: 'USA / EU', title: 'USA und EU machen DISARM zum Standard für Erkenntnisaustausch zu „ausländischer Informationsmanipulation"', themen: ['Ukraine & NATO', 'DSA & NetzDG'] },
+  { date: '2023-05', region: 'INT', title: 'Weltgesundheitsversammlung verabschiedet Resolution zur „Nutzung der Verhaltenswissenschaften gegen Desinformation"', themen: ['Pandemie'] },
+  { date: '2023-12', region: 'EU', title: 'EU-Kommission leitet Ermittlungen gegen X wegen DSA-Verstößen ein', themen: ['DSA & NetzDG'] },
+  { date: '2023-12', region: 'USA', title: 'US-Kongress streicht Mittel des Global Engagement Center', description: 'Das Center hatte u.a. Global Disinformation Index finanziert.', themen: ['Ukraine & NATO'] },
+
+  // ---------- 2024 ----------
+  { date: '2024-02', region: 'EU', title: 'Digital Services Act tritt in Kraft', themen: ['DSA & NetzDG'] },
+  { date: '2024-04', region: 'EU', title: 'EU-Rat beschließt zivil-militärische „Schnelle hybride Eingreifteams"', themen: ['Ukraine & NATO'] },
+  { date: '2024-04', region: 'EU', title: 'Kommission verabschiedet DSA-Leitlinien zur „Sicherung von Wahlen"', themen: ['Wahlen', 'DSA & NetzDG'] },
+  { date: '2024-04', region: 'DE', title: 'Neues Disziplinarrecht: Beamte bei „extremistischen" Äußerungen per Verordnung aus dem Dienst entfernbar', themen: ['Hass und Hetze'] },
+  { date: '2024-05', region: 'UK', title: 'Britische Regierung: Global Disinformation Index seit März 2023 nicht mehr unterstützt', themen: ['DSA & NetzDG'] },
+  { date: '2024-06', region: 'EU', title: 'EU-Kommission stellt Strategische Agenda 2024–2029 vor', themen: ['Ukraine & NATO', 'DSA & NetzDG'] },
+  { date: '2024-08', region: 'INT', title: 'Weltverband der Werbetreibenden löst Global Alliance for Responsible Media auf', themen: ['DSA & NetzDG'] },
+  { date: '2024-10', region: 'DE', title: 'Meldestelle „Respect!" wird Vertrauenswürdiger Hinweisgeber nach DSA', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+  { date: '2024-10', region: 'EU', title: 'Verordnung über Transparenz und Targeting politischer Werbung (TTPA) tritt in Kraft', themen: ['Wahlen'] },
+  { date: '2024-10', region: 'USA', title: 'Meta schaltet CrowdTangle ab', description: 'Echtzeitüberwachung von Inhalten auf Facebook und Instagram entfällt.', themen: ['DSA & NetzDG'] },
+  { date: '2024-11', region: 'INT', title: 'Global Initiative for Information Integrity on Climate Change gegründet', themen: ['Klima'] },
+  { date: '2024-12', region: 'RO', title: 'Erste Runde der rumänischen Präsidentschaftswahl annulliert', description: 'Begründung: Verdacht auf russische „Informationsmanipulation".', themen: ['Wahlen', 'Ukraine & NATO'] },
+
+  // ---------- 2025 ----------
+  { date: '2025-01', region: 'DE', title: '„Grünbuch ZMZ 4.0" zur zivil-militärischen Zusammenarbeit gegen „hybride Bedrohungslagen"', themen: ['Ukraine & NATO'] },
+  { date: '2025-01', region: 'USA', title: 'Facebook beendet in den USA Zusammenarbeit mit externen Faktencheckern', themen: ['DSA & NetzDG'] },
+  { date: '2025-02', region: 'EU', title: 'Kommission nimmt Verhaltenskodex für Desinformation in DSA auf', themen: ['DSA & NetzDG'] },
+  { date: '2025-02', region: 'USA / EU', title: 'US-Vizepräsident Vance kritisiert auf Münchner Sicherheitskonferenz fehlende Meinungsfreiheit in EU', themen: ['DSA & NetzDG'] },
+  { date: '2025-04', region: 'DE', title: 'David Bendels: 7 Monate Haft auf Bewährung wegen Faeser-Meme (erste Instanz)', themen: ['Hass und Hetze'] },
+  { date: '2025-04', region: 'RU', title: 'Global Fact-Checking Network (GFCN) in Moskau vorgestellt', themen: ['DSA & NetzDG'] },
+  { date: '2025-05', region: 'EU', title: 'EU-Rat verhängt Sanktionen gegen drei deutsche Journalisten wegen „Unterstützung russischer Propaganda"', themen: ['Ukraine & NATO'] },
+  { date: '2025-06', region: 'DE', title: 'HateAid wird Vertrauenswürdiger Hinweisgeber nach DSA', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
+  { date: '2025-07', region: 'DE', title: 'OVG NRW: Bibliotheken dürfen nicht vor Büchern warnen', themen: ['Hass und Hetze'] },
+  { date: '2025-08', region: 'DE', title: 'Wahlausschuss Ludwigshafen schließt AfD-Kandidat wegen Social-Media-Posts aus', themen: ['Wahlen'] },
+  { date: '2025-08', region: 'USA', title: 'Trump verbietet Banken, Konten aus politischen oder religiösen Gründen zu kündigen', themen: ['Hass und Hetze'] },
+  { date: '2025-09', region: 'USA', title: 'Global Disinformation Index nimmt Schwarze Liste vom Markt', themen: ['DSA & NetzDG'] },
+  { date: '2025-09', region: 'USA', title: 'YouTube lässt in den USA gesperrte „Corona-/Wahl-Desinfo"-Kanäle wieder zu', description: 'Zusammenarbeit mit externen Faktencheckern wird eingestellt.', themen: ['Pandemie', 'DSA & NetzDG'] },
+  { date: '2025-10', region: 'EU', title: 'EU-Kommission ermittelt gegen Facebook, Instagram und TikTok wegen unzureichender Datenoffenlegung', themen: ['DSA & NetzDG'] },
+  { date: '2025-11', region: 'EU', title: 'EU-Kommission stellt „Europäischen Schutzschild für die Demokratie" vor', themen: ['DSA & NetzDG'] },
+  { date: '2025-12', region: 'DE', title: 'Hessen stutzt Meldestelle „HessenGegenHetze" zurück', description: 'Im Februar 2026 werden Name und Begriff „Meldestelle" von einschlägigen Webseiten getilgt.', themen: ['Hass und Hetze'] },
+  { date: '2025-12', region: 'EU', title: '120 Mio. € Strafe gegen X wegen ungenügendem Forscher-Datenzugang', themen: ['DSA & NetzDG'] },
+  { date: '2025-12', region: 'EU', title: 'EU-Rat sanktioniert weitere Publizisten — u.a. Buchautor Jacques Baud', themen: ['Ukraine & NATO'] },
+  { date: '2025-12', region: 'USA', title: 'US-Regierung verhängt Einreisesperren gegen Chefinnen von HateAid und GDI', themen: ['Hass und Hetze'] },
+
+  // ---------- 2026 (bis Buch-Redaktionsschluss) ----------
+  { date: '2026-01', region: 'DE', title: 'David Bendels in zweiter Instanz vom Faeser-Meme-Vorwurf freigesprochen', themen: ['Hass und Hetze'] },
+  { date: '2026-01', region: 'INT', title: 'Papst Leo XIV beklagt Einschränkung der Meinungsfreiheit in westlichen Ländern', themen: ['DSA & NetzDG'] },
+  { date: '2026-02', region: 'DE', title: 'SPD-Positionspapier und CDU-Parteitag: Social-Media-Verbot für unter 14-Jährige', themen: ['DSA & NetzDG'] },
+  { date: '2026-02', region: 'EU', title: 'MCC Brussels startet Democracy Interference Observatory zur Beobachtung von EU-Wahleinmischung', themen: ['Wahlen'] },
+
+  // ---------- 2026 (Härings Online-Fortsetzung) ----------
   {
     date: '2026-02',
+    region: 'DE',
     title: 'OLG Frankfurt untersagt NewsGuard Achgut-Bewertung',
     description:
-      'Das Oberlandesgericht Frankfurt (AZ: 6 U 92/25) untersagt NewsGuard, Achgut wegen unzureichender faktischer Grundlage als einen der zehn wichtigsten Verbreiter von Desinformation zu nennen und mit 35/100 zu bewerten. NewsGuard hatte seine Bewertung im ersten Fall auf einen, im zweiten auf fünf angeblich desinformierende Artikel gestützt.',
+      'AZ 6 U 92/25: NewsGuard darf Achgut nicht mehr als einen der zehn wichtigsten Verbreiter von Desinformation 2022 nennen oder mit 35/100 bewerten. Bewertungen waren auf einen bzw. fünf angeblich desinformierende Artikel gestützt.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
     sourceLink: 'https://multipolar-magazin.de/meldungen/0399',
   },
   {
     date: '2026-02-17',
+    region: 'DE',
     title: 'X muss Forschungsdaten herausgeben',
     description:
-      'Democracy Reporting International und Gesellschaft für Freiheitsrechte erstreiten am Berliner Kammergericht eine einstweilige Verfügung, die X verpflichtet, DRI als „Forscher" Datenzugang rund um die Ungarn-Wahl im April zu gewähren.',
+      'Berliner Kammergericht verpflichtet X auf einstweilige Verfügung von DRI und Gesellschaft für Freiheitsrechte, Daten rund um die Ungarn-Wahl im April offenzulegen.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-03',
+    region: 'USA',
     title: 'US-Außenministerium schließt Vergleich mit Zensur-Klägern',
     description:
-      'Zur Beilegung einer Klage von Daily Wire und The Federalist verpflichtet sich das US-Außenministerium zehn Jahre lang weder digitale Desinformations-Abwehrtechnologien zu fördern noch deren Einsatz zu empfehlen. Hintergrund waren die schwarzen Listen von Global Disinformation Index und NewsGuard, die das Ministerium auf Umwegen finanziert hatte.',
-    themen: ['DSA & NetzDG', 'Ukraine & NATO'],
+      'Verpflichtet sich für 10 Jahre, keine digitalen Desinformations-Abwehrtechnologien zu fördern oder zu empfehlen. Hintergrund: Klage von Daily Wire und The Federalist wegen Förderung von GDI und NewsGuard.',
+    themen: ['DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/us-aussenministerium-vergleich/',
   },
   {
     date: '2026-03',
+    region: 'EU',
     title: 'EFCSN erhält 5 Mio. € EU-Förderung',
-    description:
-      'Das European Fact-Checking Standards Network erhält im Rahmen des „Europäischen Demokratieschilds" 5 Mio. € über 30 Monate — für die Förderung „geeigneter" Faktenchecker und die Finanzierung einer Datenbank EFCSN-lizenzierter Faktenchecks.',
+    description: 'Über 30 Monate, im Rahmen des „Europäischen Demokratieschilds".',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-03-16',
+    region: 'EU',
     title: 'EU aktiviert „Rapid Response System" für Ungarn-Wahl',
-    description:
-      'Vor der Parlamentswahl am 12.4.2026 aktiviert die EU ihr Rapid Response System. Es verpflichtet große Plattformen, Inhalte besonders schnell und willig zu löschen, die Faktenchecker und NGOs markieren.',
-    themen: ['DSA & NetzDG', 'Ukraine & NATO'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
+    description: 'Verpflichtet Plattformen, von Faktencheckern markierte Inhalte besonders schnell zu löschen/ausbremsen.',
+    themen: ['Wahlen', 'DSA & NetzDG'],
   },
   {
     date: '2026-03-20',
-    title: 'Landgericht Hamburg: HateAid darf so genannt werden',
-    description:
-      'Das Landgericht Hamburg stellt fest, dass HateAid keinen Anspruch auf Unterlassung der Äußerung hat, es sei eine „Vorfeldorganisation der Grünen".',
+    region: 'DE',
+    title: 'LG Hamburg: HateAid darf so genannt werden',
+    description: 'Kein Anspruch auf Unterlassung der Äußerung, HateAid sei „Vorfeldorganisation der Grünen".',
     themen: ['Hass und Hetze'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-03-20',
+    region: 'DE',
     title: 'Karin Prien streicht 200 „Demokratie-leben!"-Projekte',
-    description:
-      'Bundesbildungsministerin Karin Prien kündigt das Auslaufenlassen von 200 der 3000 Projektförderungen aus „Demokratie leben!" an. Betroffen u.a. HateAid, Correctiv und Amadeu Antonio Stiftung. Wie viel der 191 Mio. € Fördersumme eingespart wird, bleibt unklar.',
+    description: 'Betroffen u.a. HateAid, Correctiv und Amadeu Antonio Stiftung. Eingesparte Summe der 191 Mio. € bleibt unklar.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     actorSlug: 'amadeu-antonio-stiftung',
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-03-24',
+    region: 'EU',
     title: 'EU aktiviert „Rapid Response System" auch für Bulgarien',
-    description:
-      'Auf Antrag des bulgarischen Übergangspräsidenten Andrei Gjurow aktiviert die EU das System für die Wahl am 19.4.2026. Der Außenminister erklärt, die Antwort auf hybride Bedrohungen werde mit EU und NATO koordiniert.',
-    themen: ['DSA & NetzDG', 'Ukraine & NATO'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
+    description: 'Wahl am 19.4.2026. Koordination mit EU und NATO ausdrücklich Teil der Antwort.',
+    themen: ['Wahlen', 'Ukraine & NATO'],
   },
   {
     date: '2026-04-15',
-    title: 'Landgericht Berlin kassiert Correctivs „Masterplan"',
-    description:
-      'Das Landgericht Berlin untersagt Correctiv die Behauptung, vom rechten Treffen in Potsdam im November 2023 bleibe ein „Masterplan zur Ausweisung von deutschen Staatsbürgern" zurück und Martin Sellner habe dort eine „Ausbürgerungsidee" geäußert. Correctiv geht in Berufung.',
+    region: 'DE',
+    title: 'LG Berlin kassiert Correctivs „Masterplan"-Narrativ',
+    description: 'Correctiv darf nicht behaupten, vom Potsdamer Treffen 11/2023 bleibe ein „Masterplan zur Ausweisung deutscher Staatsbürger" zurück. Correctiv geht in Berufung.',
     themen: ['Hass und Hetze'],
     actorSlug: 'correctiv',
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-04',
+    region: 'USA',
     title: 'Werbekonzerne legen Kartell-Klage bei',
-    description:
-      'Dentsu US, GroupM Worldwide und Publicis verpflichten sich in einem gerichtlichen Vergleich, keine abgestimmten Ausschlusslisten politischer Medien mehr zu nutzen — als Reaktion auf eine Kartell-Klage der US-FTC und Bundesstaaten.',
+    description: 'Dentsu US, GroupM Worldwide und Publicis verpflichten sich, keine abgestimmten Ausschlusslisten politischer Medien mehr zu nutzen.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-04',
+    region: 'USA',
     title: 'US-Justizministerium verweigert Amtshilfe gegen X',
-    description:
-      'Das US-Justizministerium lehnt drei Amtshilfeersuchen französischer Staatsanwälte gegen X ab. Frankreichs Vorgehen wird als Versuch eingestuft, ein US-Unternehmen wegen Entscheidungen zu verfolgen, die im eigenen Land geschützt sind.',
+    description: 'Lehnt drei französische Ermittlungs-Amtshilfeersuchen ab.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-04',
+    region: 'DE',
     title: 'Verfassungsschutz beerdigt Kategorie „Delegitimierung"',
-    description:
-      'Das Bundesamt für Verfassungsschutz schafft den 2021 eingeführten „Phänomenbereich verfassungsschutzrelevante Delegitimierung des Staates" offiziell wieder ab.',
+    description: 'Der 2021 eingeführte „Phänomenbereich verfassungsschutzrelevante Delegitimierung des Staates" wird offiziell abgeschafft.',
     themen: ['Hass und Hetze'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-04',
-    title: 'Weimer darf Buchladen-Betreiber nicht „Extremisten" nennen',
-    description:
-      'Das Verwaltungsgericht Berlin untersagt Kulturstaatsminister Wolfram Weimer, die Betreiber des Berliner Buchladens „Zur schwankenden Weltkugel" als „politische Extremisten" zu bezeichnen. Weimer hatte sie im März von einer Preisträger-Liste streichen lassen.',
+    region: 'DE',
+    title: 'VG Berlin: Weimer darf Buchladen-Betreiber nicht „Extremisten" nennen',
     themen: ['Hass und Hetze'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-05',
-    title: 'Bundestagsfraktionen verlassen X',
-    description:
-      'SPD, Grüne und Linke verlassen gemeinsam die Plattform X mit Verweis auf „Chaos und Desinformation". Parallel ruft SPD-Chefin Saskia Esken zu Werbeboykott gegen den Podcaster Ben Berndt auf, weil dieser ein mehrstündiges Gespräch mit Björn Höcke veröffentlicht hat.',
+    region: 'DE',
+    title: 'SPD, Grüne, Linke verlassen X',
+    description: 'Saskia Esken ruft parallel zu Werbeboykott gegen Podcaster Ben Berndt auf, der mit Björn Höcke ein mehrstündiges Gespräch veröffentlicht hatte.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-05',
+    region: 'DE',
     title: 'Weimer will YouTube wie Fernsehen regulieren',
-    description:
-      'Kulturstaatsminister Wolfram Weimer kündigt an, YouTube als „das neue Fernsehen" zu regulieren — mit bevorzugter Ausspielung ausgewählter Inhalte und Landesmedien als Vielfaltswächter. SPD-Chef Lars Klingbeil unterstützt die Forderung.',
+    description: 'Bevorzugte Ausspielung ausgewählter Inhalte, Landesmedien als Vielfaltswächter. SPD-Chef Klingbeil unterstützt.',
     themen: ['DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/chronik-fortsetzung/',
   },
   {
     date: '2026-05',
+    region: 'INT',
     title: 'WHO-Kommission fordert „Klima-Gesundheitsnotstand"',
-    description:
-      'Die „Paneuropäische Kommission Klima und Gesundheit" der WHO fordert die WHO auf, wegen des Klimawandels den internationalen Gesundheitsnotstand auszurufen und den Kampf gegen „Klima-Desinformation" zu verstärken. Ein WHO-Notstand gäbe der EU-Kommission unter DSA erweiterte Rechte gegenüber Plattformen.',
+    description: 'Ein WHO-Notstand würde der EU-Kommission unter DSA erweiterte Rechte gegenüber Plattformen geben.',
     themen: ['Klima', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/who-gesundheitsnotstand/',
   },

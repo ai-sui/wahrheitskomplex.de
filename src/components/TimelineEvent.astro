@@ -55,11 +55,16 @@ if (parts.length === 3) {
     <div class="absolute left-[-4px] md:left-[-4px] top-2 w-2 h-2 rounded-full bg-accent ring-4 ring-paper" aria-hidden="true"></div>
 
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-2">
-      {eintrag.title}
+      <span class="inline-flex items-baseline gap-2.5 flex-wrap">
+        <span class="text-[0.65rem] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-ink text-paper rounded-sm relative -top-1">{eintrag.region}</span>
+        <span>{eintrag.title}</span>
+      </span>
     </h3>
-    <p class="text-ink-soft leading-relaxed mb-3 max-w-2xl">
-      {eintrag.description}
-    </p>
+    {eintrag.description && (
+      <p class="text-ink-soft leading-relaxed mb-3 max-w-2xl">
+        {eintrag.description}
+      </p>
+    )}
 
     <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
       {eintrag.actorSlug && (
