@@ -5,7 +5,7 @@ host: Milena Preradovic
 outlet: Punkt.PRERADOVIC
 url: https://www.youtube.com/watch?v=jmKAuP1E2jA
 youtubeId: jmKAuP1E2jA
-date: "2026-04-28"
+date: "2026-05-01"
 durationMin: 41
 paywall: false
 themen:

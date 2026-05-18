@@ -5,7 +5,7 @@ host: Markus J. Karsten
 outlet: Westend Verlag
 url: https://www.youtube.com/watch?v=VqPFYDL9s3s
 youtubeId: VqPFYDL9s3s
-date: "2026-05-02"
+date: "2026-05-17"
 paywall: false
 themen:
   - "DSA & NetzDG"
