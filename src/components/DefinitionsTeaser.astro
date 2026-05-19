@@ -1,0 +1,71 @@
+---
+import DefinitionCard from './DefinitionCard.astro';
+import { definitionen } from '../data/definitionen';
+
+// Server rendert alle Definitionen. Bei Page-Load wählt JS zufällig drei
+// aus dem Pool — Rotation ohne Backend, ohne Build-Trigger.
+---
+
+<section class="container-page py-10 md:py-14 border-t border-line">
+  <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
+    <div class="min-w-0">
+      <p class="meta-label text-accent mb-2">Begriffe im Wahrheitskomplex</p>
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight">
+        Was ist …?
+      </h2>
+    </div>
+    <a
+      href="/glossar"
+      class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
+    >
+      Zum Glossar →
+    </a>
+  </div>
+
+  <div
+    class="grid gap-5 md:grid-cols-3"
+    data-definitions-grid
+  >
+    {definitionen.map((d, i) => (
+      <div
+        data-def-slot
+        data-default-visible={i < 3 ? 'true' : 'false'}
+        class:list={[i < 3 ? '' : 'hidden']}
+      >
+        <DefinitionCard d={d} />
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  // Beim Page-Load drei zufällige Definitionen sichtbar machen.
+  // Ohne JS bleiben die ersten drei (default-visible) stehen.
+  const grid = document.querySelector<HTMLElement>('[data-definitions-grid]');
+  if (grid) {
+    const slots = Array.from(
+      grid.querySelectorAll<HTMLElement>('[data-def-slot]'),
+    );
+    if (slots.length > 3) {
+      // Fisher–Yates Shuffle der Indizes
+      const order = slots.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      const pick = new Set(order.slice(0, 3));
+      slots.forEach((slot, i) => {
+        slot.classList.toggle('hidden', !pick.has(i));
+      });
+      // DOM-Reihenfolge so anpassen, dass die ausgewählten 3 oben stehen
+      const fragment = document.createDocumentFragment();
+      const others: HTMLElement[] = [];
+      slots.forEach((slot, i) => {
+        if (pick.has(i)) fragment.appendChild(slot);
+        else others.push(slot);
+      });
+      others.forEach((s) => fragment.appendChild(s));
+      grid.appendChild(fragment);
+    }
+  }
+</script>

@@ -10,6 +10,7 @@ import ActorPortraitCard from '../components/ActorPortraitCard.astro';
 import SpinnenImNetzCard from '../components/SpinnenImNetzCard.astro';
 import TimelineEvent from '../components/TimelineEvent.astro';
 import SiteIntro from '../components/SiteIntro.astro';
+import DefinitionsTeaser from '../components/DefinitionsTeaser.astro';
 import { book } from '../data/book';
 import { chronik } from '../data/chronik';
 
@@ -115,6 +116,9 @@ const bookSchema = {
 <BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
   <!-- Begleitseiten-Erklärung oben -->
   <SiteIntro />
+
+  <!-- Reinzieher: Drei zufällige Definitionen aus dem Wahrheitskomplex-Vokabular -->
+  <DefinitionsTeaser />
 
   <!-- Karussell 1: Neues aus dem Wahrheitskomplex (Mix) — der eigentliche Einstieg -->
   <section class="container-page pt-6 md:pt-10 pb-10 md:pb-16">
