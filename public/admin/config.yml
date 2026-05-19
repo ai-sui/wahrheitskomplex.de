@@ -19,7 +19,7 @@
 # mit seinem GitHub-Konto einloggen und Inhalte pflegen.
 backend:
   name: github
-  repo: SUI-USERNAME/wahrheitskomplex-de # ⚠️ HIER ANPASSEN
+  repo: ai-sui/wahrheitskomplex.de
   branch: main
 
 # editorial_workflow: Edits gehen als Draft-PR rein.
