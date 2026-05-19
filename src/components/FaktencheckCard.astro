@@ -1,6 +1,5 @@
 ---
-import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { thumbManifest } from '../data/thumb-manifest';
 
 interface Props {
   title: string;
@@ -38,16 +37,13 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
   year: 'numeric',
 }).format(new Date(date));
 
-// Thumb-Logik: override hat Vorrang vor automatischem og:image
+// Thumb-Logik: override hat Vorrang vor automatischem og:image.
+// Existenz-Check läuft über das Build-Manifest (kein node:fs zur Render-Zeit).
 let thumb: string | null = null;
 if (thumbOverride) {
   thumb = thumbOverride;
-} else {
-  const thumbPath = resolve(
-    process.cwd(),
-    `public/faktencheck-thumbs/${slug}.jpg`,
-  );
-  if (existsSync(thumbPath)) thumb = `/faktencheck-thumbs/${slug}.jpg`;
+} else if (thumbManifest.faktencheckThumbs.includes(`${slug}.jpg`)) {
+  thumb = `/faktencheck-thumbs/${slug}.jpg`;
 }
 
 const hasSummary = Boolean(summary);

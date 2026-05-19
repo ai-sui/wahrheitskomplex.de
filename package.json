@@ -7,7 +7,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/build-thumb-manifest.mjs && astro dev",
+    "prebuild": "node scripts/build-thumb-manifest.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

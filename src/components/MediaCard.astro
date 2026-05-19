@@ -1,7 +1,6 @@
 ---
-import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
 import LiteYouTube from './LiteYouTube.astro';
+import { thumbManifest } from '../data/thumb-manifest';
 
 type Type = 'video' | 'podcast' | 'interview' | 'rezension' | 'vortrag';
 
@@ -37,13 +36,11 @@ const {
   showEmbed = true,
 } = Astro.props;
 
-// Article-Thumbnail vorhanden? (Build-time check)
-const thumbPath = slug
-  ? resolve(process.cwd(), `public/article-thumbs/${slug}.jpg`)
-  : null;
-const articleThumb = thumbPath && existsSync(thumbPath)
-  ? `/article-thumbs/${slug}.jpg`
-  : null;
+// Article-Thumbnail vorhanden? (aus Build-Manifest, kein node:fs nötig)
+const articleThumb =
+  slug && thumbManifest.articleThumbs.includes(`${slug}.jpg`)
+    ? `/article-thumbs/${slug}.jpg`
+    : null;
 
 const typeLabels: Record<Type, string> = {
   video: 'Video',
