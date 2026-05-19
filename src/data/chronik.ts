@@ -17,6 +17,7 @@ export type ChronikEintrag = {
   actorSlug?: string;
   haeringLink?: string;
   sourceLink?: string;
+  thumb?: string; // optionales Vorschaubild (z.B. /chronik-thumbs/who-cover.jpg)
 };
 
 export const chronik: ChronikEintrag[] = [
@@ -293,5 +294,6 @@ export const chronik: ChronikEintrag[] = [
     description: 'Ein WHO-Notstand würde der EU-Kommission unter DSA erweiterte Rechte gegenüber Plattformen geben.',
     themen: ['Klima', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/who-gesundheitsnotstand/',
+    thumb: '/chronik-thumbs/who-climate-health.jpg',
   },
 ];

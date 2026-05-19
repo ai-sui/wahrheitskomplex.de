@@ -9,10 +9,12 @@ interface Props {
   slug: string;
   date: string;
   themen?: string[];
-  behauptung: string;
-  urteil: string;
-  realitaet: string;
+  behauptung?: string;
+  urteil?: string;
+  realitaet?: string;
+  summary?: string;
   url: string;
+  thumbOverride?: string;
 }
 
 const {
@@ -25,7 +27,9 @@ const {
   behauptung,
   urteil,
   realitaet,
+  summary,
   url,
+  thumbOverride,
 } = Astro.props;
 
 const dateFmt = new Intl.DateTimeFormat('de-DE', {
@@ -34,11 +38,20 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
   year: 'numeric',
 }).format(new Date(date));
 
-const thumbPath = resolve(
-  process.cwd(),
-  `public/faktencheck-thumbs/${slug}.jpg`,
-);
-const thumb = existsSync(thumbPath) ? `/faktencheck-thumbs/${slug}.jpg` : null;
+// Thumb-Logik: override hat Vorrang vor automatischem og:image
+let thumb: string | null = null;
+if (thumbOverride) {
+  thumb = thumbOverride;
+} else {
+  const thumbPath = resolve(
+    process.cwd(),
+    `public/faktencheck-thumbs/${slug}.jpg`,
+  );
+  if (existsSync(thumbPath)) thumb = `/faktencheck-thumbs/${slug}.jpg`;
+}
+
+const hasSummary = Boolean(summary);
+const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
 ---
 
 <article
@@ -97,20 +110,24 @@ const thumb = existsSync(thumbPath) ? `/faktencheck-thumbs/${slug}.jpg` : null;
       </a>
     </h3>
 
-    <dl class="grid gap-3 text-sm flex-1">
-      <div>
-        <dt class="meta-label text-muted mb-1">Behauptung</dt>
-        <dd class="text-ink-soft leading-snug">{behauptung}</dd>
-      </div>
-      <div>
-        <dt class="meta-label text-muted mb-1">Urteil von {faktenchecker}</dt>
-        <dd class="text-ink-soft leading-snug">{urteil}</dd>
-      </div>
-      <div>
-        <dt class="meta-label text-accent mb-1">Was Härings Recherche zeigt</dt>
-        <dd class="text-ink leading-snug">{realitaet}</dd>
-      </div>
-    </dl>
+    {hasSummary ? (
+      <p class="text-sm text-ink-soft leading-relaxed flex-1">{summary}</p>
+    ) : hasThreeBlocks ? (
+      <dl class="grid gap-3 text-sm flex-1">
+        <div>
+          <dt class="meta-label text-muted mb-1">Behauptung</dt>
+          <dd class="text-ink-soft leading-snug">{behauptung}</dd>
+        </div>
+        <div>
+          <dt class="meta-label text-muted mb-1">Urteil von {faktenchecker}</dt>
+          <dd class="text-ink-soft leading-snug">{urteil}</dd>
+        </div>
+        <div>
+          <dt class="meta-label text-accent mb-1">Was Härings Recherche zeigt</dt>
+          <dd class="text-ink leading-snug">{realitaet}</dd>
+        </div>
+      </dl>
+    ) : null}
 
     <div class="mt-5 pt-4 border-t border-line flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
       <a

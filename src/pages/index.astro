@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HookCard from '../components/HookCard.astro';
 import BookSection from '../components/BookSection.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import Carousel from '../components/Carousel.astro';
@@ -10,7 +9,7 @@ import FaktencheckCard from '../components/FaktencheckCard.astro';
 import ActorPortraitCard from '../components/ActorPortraitCard.astro';
 import SpinnenImNetzCard from '../components/SpinnenImNetzCard.astro';
 import TimelineEvent from '../components/TimelineEvent.astro';
-import { hookCards } from '../data/homepage';
+import SiteIntro from '../components/SiteIntro.astro';
 import { book } from '../data/book';
 import { chronik } from '../data/chronik';
 
@@ -61,7 +60,9 @@ const newsFeed: FeedItem[] = [
     title: fc.data.title,
     source: fc.data.faktenchecker,
     url: fc.data.url,
-    thumb: `/faktencheck-thumbs/${fc.id}.jpg`,
+    thumb: fc.data.thumbOverride
+      ? fc.data.thumbOverride
+      : `/faktencheck-thumbs/${fc.id}.jpg`,
   })),
   // Ausgewählte Chronik-Einträge mit Häring-Link als „Aktuelles"
   ...chronik
@@ -72,6 +73,7 @@ const newsFeed: FeedItem[] = [
       title: c.title,
       source: 'norberthaering.de',
       url: c.haeringLink as string,
+      thumb: c.thumb,
     })),
 ];
 
@@ -111,28 +113,11 @@ const bookSchema = {
 ---
 
 <BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
-  <!-- Karussell 1: Einstiege aus dem Buch -->
-  <section class="container-page pt-8 md:pt-14 pb-10 md:pb-16">
-    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
-      <div class="min-w-0">
-        <p class="meta-label text-accent mb-2">Einstiege</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Aus dem Buch in zehn Zahlen.</h2>
-      </div>
-      <a
-        href="/atlas"
-        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
-      >
-        Zum Atlas →
-      </a>
-    </div>
+  <!-- Begleitseiten-Erklärung oben -->
+  <SiteIntro />
 
-    <Carousel label="Einstiege aus dem Buch">
-      {hookCards.map((card) => <HookCard card={card} />)}
-    </Carousel>
-  </section>
-
-  <!-- Karussell 2: Neues aus dem Wahrheitskomplex (Mix) -->
-  <section class="container-page py-10 md:py-16 border-t border-line">
+  <!-- Karussell 1: Neues aus dem Wahrheitskomplex (Mix) — der eigentliche Einstieg -->
+  <section class="container-page pt-6 md:pt-10 pb-10 md:pb-16">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
       <div>
         <p class="meta-label text-accent mb-2">Neues</p>
@@ -163,13 +148,13 @@ const bookSchema = {
     </Carousel>
   </section>
 
-  <!-- Karussell 3: Akteurs-Porträts -->
+  <!-- Karussell 2: NGOs des Wahrheitskomplexes -->
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
       <div class="min-w-0">
         <p class="meta-label text-accent mb-2">Wer ist wer</p>
         <h2 class="font-serif text-2xl md:text-3xl leading-tight">
-          Die Akteure im Porträt.
+          Die wichtigsten NGOs des Wahrheitskomplexes.
         </h2>
       </div>
       <a
@@ -180,7 +165,7 @@ const bookSchema = {
       </a>
     </div>
 
-    <Carousel label="Akteurs-Porträts">
+    <Carousel label="Die wichtigsten NGOs des Wahrheitskomplexes">
       {actors.map((a) => (
         <ActorPortraitCard
           name={a.data.name}
@@ -200,14 +185,17 @@ const bookSchema = {
 
   <!-- Chronik-Block „Was seither geschah" -->
   <section class="container-page py-10 md:py-16 border-t border-line">
-    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line">
-      <div>
+    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line gap-4">
+      <div class="min-w-0">
         <p class="meta-label text-accent mb-2">Chronik</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Was seither geschah.</h2>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight mb-1">Was seither geschah.</h2>
+        <p class="text-sm text-muted">
+          Aktivitäten im Wahrheitskomplex seit Drucklegung im Februar 2026.
+        </p>
       </div>
       <a
         href="/chronik"
-        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
+        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
       >
         Vollständige Chronik →
       </a>
@@ -218,12 +206,12 @@ const bookSchema = {
     </div>
   </section>
 
-  <!-- Karussell 3: Faktenchecks im Check -->
+  <!-- Karussell 3: Faktenchecker im Check -->
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
       <div>
-        <p class="meta-label text-accent mb-2">Faktenchecker im Faktencheck</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecks im Check.</h2>
+        <p class="meta-label text-accent mb-2">Fake Facts</p>
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker im Check.</h2>
       </div>
       <a
         href="/faktenchecks"
@@ -233,7 +221,7 @@ const bookSchema = {
       </a>
     </div>
 
-    <Carousel label="Faktenchecks im Check">
+    <Carousel label="Faktenchecker im Check">
       {recentFaktenchecks.map((fc) => (
         <FaktencheckCard
           title={fc.data.title}
@@ -245,6 +233,8 @@ const bookSchema = {
           behauptung={fc.data.behauptung}
           urteil={fc.data.urteil}
           realitaet={fc.data.realitaet}
+          summary={fc.data.summary}
+          thumbOverride={fc.data.thumbOverride}
           url={fc.data.url}
         />
       ))}

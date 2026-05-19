@@ -68,11 +68,16 @@ const faktenchecks = defineCollection({
     actorSlug: z.string().optional(), // wenn Faktenchecker ein Atlas-Akteur ist
     date: z.string(), // ISO YYYY-MM-DD
     themen: z.array(z.string()).default([]),
-    behauptung: z.string(), // was wurde behauptet
-    urteil: z.string(), // welches Urteil hat der Faktenchecker gefällt
-    realitaet: z.string(), // was Härings Recherche zeigt
+    // Drei-Block-Form (Standard):
+    behauptung: z.string().optional(),
+    urteil: z.string().optional(),
+    realitaet: z.string().optional(),
+    // Oder kompakte Variante (rendert statt der drei Blöcke):
+    summary: z.string().optional(),
     url: z.string().url(), // Link zum Häring-Artikel
     quellen: z.array(z.string()).default([]),
+    // Override des automatisch geholten og:image (Pfad unter /public)
+    thumbOverride: z.string().optional(),
   }),
 });
 

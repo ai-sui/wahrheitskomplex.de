@@ -1,0 +1,35 @@
+---
+// Knapper Erklärungsblock oben auf der Startseite — sagt in einer Zeile,
+// was diese Seite ist und wie sie zum Buch steht. Cover als visueller Anker.
+import { book } from '../data/book';
+---
+
+<section class="container-page pt-8 md:pt-12 pb-4">
+  <div class="flex items-start gap-5 md:gap-7 max-w-3xl">
+    <a
+      href="/buch"
+      class="shrink-0 no-underline block"
+      aria-label="Zur Buchseite"
+    >
+      <img
+        src="/cover-wahrheitskomplex.jpg"
+        alt={`Cover: ${book.title}`}
+        width="507"
+        height="800"
+        loading="eager"
+        decoding="async"
+        class="w-16 md:w-20 h-auto rounded-sm shadow-[0_10px_24px_-12px_rgba(0,0,0,0.4)] transition-transform hover:-translate-y-0.5"
+      />
+    </a>
+    <div class="min-w-0">
+      <p class="meta-label text-accent mb-1.5">Begleitseite zum Buch</p>
+      <h1 class="font-serif text-xl md:text-2xl leading-snug mb-2">
+        <em class="not-italic">{book.title}</em> <span class="text-muted">von Norbert Häring</span>
+      </h1>
+      <p class="text-sm md:text-base text-ink-soft leading-relaxed">
+        Akteure, Faktenchecks, Chronik — fortlaufend recherchiert seit
+        Drucklegung. <a href="/ueber" class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent">Über die Seite →</a>
+      </p>
+    </div>
+  </div>
+</section>
