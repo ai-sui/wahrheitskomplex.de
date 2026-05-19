@@ -226,24 +226,22 @@ collections:
           name: kategorie,
           label: "Kategorie (Freitext)",
           widget: string,
-          hint: "z.B. „Faktencheck", „Stiftung", „Think Tank / NATO-Umfeld"",
+          hint: 'z.B. „Faktencheck", „Stiftung", „Think Tank / NATO-Umfeld"',
         }
-      - {
-          name: akteurstyp,
-          label: "Akteurstyp",
-          widget: select,
-          options:
-            - Behörde
-            - Faktenchecker
-            - Stiftung
-            - Plattform
-            - Medienverbund
-            - NGO
-            - Think Tank
-            - Mittler / NGO
-            - Stiftung / Think Tank
-            - NGO / Geheimdienst-nah
-        }
+      - name: akteurstyp
+        label: "Akteurstyp"
+        widget: select
+        options:
+          - Behörde
+          - Faktenchecker
+          - Stiftung
+          - Plattform
+          - Medienverbund
+          - NGO
+          - Think Tank
+          - Mittler / NGO
+          - Stiftung / Think Tank
+          - NGO / Geheimdienst-nah
       - { name: land, label: "Land / Region", widget: string }
       - {
           name: gegruendet,
@@ -277,7 +275,7 @@ collections:
           label: "Buch-Kapitel",
           widget: string,
           required: false,
-          hint: "z.B. „Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"",
+          hint: 'z.B. „Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"',
         }
       - {
           name: haeringLink,
@@ -291,19 +289,17 @@ collections:
           widget: string,
           required: false,
         }
-      - {
-          name: quellen,
-          label: "Quellen",
-          widget: list,
-          required: false,
-          default: [],
-          summary: "{{fields.title}}",
-          fields:
-            - { name: title, label: "Titel", widget: string }
-            - { name: url, label: "URL", widget: string, required: false }
-            - { name: publisher, label: "Verlag / Publisher", widget: string, required: false }
-            - { name: date, label: "Datum", widget: string, required: false }
-        }
+      - name: quellen
+        label: "Quellen"
+        widget: list
+        required: false
+        default: []
+        summary: "{{fields.title}}"
+        fields:
+          - { name: title, label: "Titel", widget: string }
+          - { name: url, label: "URL", widget: string, required: false }
+          - { name: publisher, label: "Verlag / Publisher", widget: string, required: false }
+          - { name: date, label: "Datum", widget: string, required: false }
       - {
           name: order,
           label: "Sortierung (kleiner = vorn)",
@@ -323,5 +319,5 @@ collections:
           label: "Volltext (Markdown)",
           widget: markdown,
           required: false,
-          hint: "Nur ausfüllen, wenn „Volltext-Profil" aktiv ist.",
+          hint: 'Nur ausfüllen, wenn „Volltext-Profil" aktiv ist.',
         }
