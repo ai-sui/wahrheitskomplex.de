@@ -1,0 +1,84 @@
+# Tägliche automatische Synchronisierung mit norberthaering.de
+# - Scrapt Härings Sammelseiten für Faktenchecks und Interviews
+# - Erzeugt Markdown-Stubs für neue Einträge
+# - Wenn etwas Neues dazukommt: erstellt automatisch einen Pull-Request
+#
+# Reviewer kann den PR ansehen, Themen/Faktenchecker/Pullquotes ergänzen,
+# dann mergen. Netlify deployt automatisch.
+
+name: Auto-Sync von norberthaering.de
+
+on:
+  schedule:
+    # 4:30 UTC = 6:30 in Mitteleuropa (Sommer- und Winterzeit-tolerant)
+    - cron: '30 4 * * *'
+  # Manuell auslösbar über die GitHub-Actions-UI
+  workflow_dispatch:
+
+# Mindestrechte für den GITHUB_TOKEN, den die Action verwendet
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Dependencies installieren
+        run: npm ci
+
+      - name: Auto-Sync ausführen
+        id: sync
+        run: npm run auto-sync
+
+      - name: Article-Thumbnails für neue Medien-Einträge holen
+        run: npm run article-thumbs || true
+        # || true: falls noch keine neuen Einträge, soll Action nicht failen
+
+      - name: Faktencheck-Thumbnails holen
+        run: npm run faktencheck-thumbs || true
+
+      - name: Status prüfen
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Veränderungen gefunden:"
+            git status --short
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "Keine neuen Inhalte."
+          fi
+
+      - name: Pull-Request erstellen
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'auto-sync: neue Inhalte von norberthaering.de'
+          title: 'Auto-Sync — neue Inhalte von norberthaering.de'
+          body: |
+            Automatisch erkannte neue Einträge auf
+            norberthaering.de. Bitte vor dem Merge die generierten
+            Markdown-Stubs durchgehen — typisch zu ergänzen:
+
+            - **Faktenchecks:** Themen-Tags, ggf. Faktenchecker-Name
+              korrigieren, Summary glätten
+            - **Medien:** Host (Interviewer / Autor), Themen, Pullquote,
+              ggf. `paywall: true`
+
+            Bilder (`/yt-thumbs/`, `/article-thumbs/`,
+            `/faktencheck-thumbs/`) wurden in diesem Lauf bereits
+            heruntergeladen, falls vorhanden.
+          branch: auto-sync/run-${{ github.run_id }}
+          delete-branch: true
+          labels: |
+            auto-sync

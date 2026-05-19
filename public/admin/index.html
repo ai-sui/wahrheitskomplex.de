@@ -12,21 +12,9 @@
     />
   </head>
   <body>
-    <!-- Decap CMS und Netlify Identity laden nur auf /admin/. -->
-    <!-- Public-Site bleibt 100% drittanbieter-frei. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Decap CMS — Open-Source-Redaktionsoberfläche.
+         Externes JS nur auf /admin/, Public-Site bleibt drittanbieter-frei.
+         Auth: GitHub-OAuth (in public/admin/config.yml konfiguriert). -->
     <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
-    <script>
-      // Nach erfolgreichem Login: zurück auf /admin/
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>

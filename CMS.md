@@ -1,125 +1,161 @@
-# Redaktions-System (Decap CMS)
+# Redaktions-System
 
-Die Site nutzt **Decap CMS** als Pflegewerkzeug — eine git-basierte
-Redaktionsoberfläche. Edits laufen über GitHub-Pull-Requests, Netlify
-deployt automatisch beim Merge.
+Die Site nutzt **Decap CMS** (Open Source, kostenlos) für manuelle Pflege
+und einen **Auto-Sync** aus norberthaering.de für die Hauptlast der
+Inhalte.
 
-## Wer wann was tut
+## Architektur in einem Satz
 
-| Rolle | Aufgabe |
-|---|---|
-| **Häring** | Inhalte pflegen — Beiträge, Faktenchecks, Akteurs-Profile |
-| **Sui** | Reviews + Merges der Pull-Requests, technische Pflege |
+> Norbert publiziert wie gewohnt auf seinem Blog. Ein nächtlicher
+> GitHub-Action-Cron erzeugt aus neuen Beiträgen automatisch
+> Markdown-Stubs und schiebt sie als Pull-Request ins Repo. Sui (oder
+> ein anderer Reviewer) prüft kurz, klickt Merge — und 30 Sekunden
+> später ist's live.
+
+| Komponente | Verantwortlich | Aufwand pro neuem Eintrag |
+|---|---|---|
+| Härings Blog (Quelle) | Norbert | wie immer, kein Extra |
+| Auto-Sync GitHub Action | (läuft automatisch) | 0 |
+| PR-Review + Merge | Sui | ~30 Sek pro Eintrag |
+| Decap CMS unter /admin/ | Sui (bei Bedarf) | für eigene Inhalte |
+
+---
 
 ## Einmaliges Setup (TODO Sui)
 
-Stand: aktuell ist das Projekt **nur lokal** in `/Users/ralphsuikat/code/wahrheitskomplex-de`. Die CMS-Files (`public/admin/`) sind da, funktionieren aber erst nach folgenden Schritten.
-
 ### 1 · GitHub-Repo anlegen + push
 
+Auf github.com privates Repo anlegen, dann:
+
 ```bash
-# Neues, privates Repo auf github.com erstellen (z.B. ralphsuikat/wahrheitskomplex-de).
-# Dann:
 cd /Users/ralphsuikat/code/wahrheitskomplex-de
-git remote add origin git@github.com:ralphsuikat/wahrheitskomplex-de.git
+git remote add origin git@github.com:DEIN-USER/wahrheitskomplex-de.git
 git push -u origin main
 ```
 
-### 2 · Netlify-Site mit GitHub verbinden
+### 2 · `public/admin/config.yml` anpassen
+
+Eine Zeile editieren:
+
+```yaml
+backend:
+  name: github
+  repo: DEIN-USER/wahrheitskomplex-de   # ← hier deinen GitHub-User eintragen
+  branch: main
+```
+
+Dann commit + push.
+
+### 3 · Netlify mit GitHub-Repo verbinden
 
 Im Netlify-Dashboard:
-- Site Settings → Build & Deploy → Continuous Deployment → Link site to Git
-- GitHub-Repo `wahrheitskomplex-de` auswählen
-- Build-Command: `npm run build`
-- Publish-Dir: `dist`
+- Site Settings → **Build & Deploy** → **Continuous Deployment** → **Link site to Git**
+- GitHub-Repo auswählen
+- Build-Command: `npm run build` · Publish-Dir: `dist`
 
-Damit committet jeder CMS-Edit ins Repo, Netlify baut automatisch.
+Ab jetzt deployt Netlify automatisch bei jedem Push (einschließlich CMS-Edits und Auto-Sync-PRs).
 
-### 3 · Netlify Identity aktivieren
+### 4 · GitHub-OAuth-App anlegen
 
-Im Netlify-Dashboard:
-- Site Settings → Identity → **Enable Identity**
-- Registration: **Invite only** (sonst kann jeder ein Konto anlegen)
-- External providers (optional): Google, GitHub aus, falls Häring nur per Mail will
+GitHub → rechts oben Avatar → **Settings** → **Developer settings** → **OAuth Apps** → **New OAuth App**:
 
-### 4 · Git Gateway aktivieren
+- Application name: `Wahrheitskomplex CMS`
+- Homepage URL: `https://wahrheitskomplex.netlify.app` (oder später die echte Domain)
+- Authorization callback URL: **`https://api.netlify.com/auth/done`** (genau so, Netlify hostet den OAuth-Proxy gratis)
 
-Same Dashboard:
-- Identity → Services → **Enable Git Gateway**
+→ **Register application**.
 
-Damit kann Decap im Namen des angemeldeten Users committen, ohne dass jeder Editor einen GitHub-Account braucht.
+Auf der nächsten Seite **Client ID** kopieren, dann **Generate a new client secret** → auch **Client Secret** kopieren.
 
-### 5 · Häring einladen
+### 5 · OAuth-Daten in Netlify hinterlegen
 
-Im Netlify-Dashboard:
-- Identity → **Invite users** → Häringes Mail-Adresse eintragen
-- Häring bekommt eine Mail mit Invite-Link → klickt → wählt Passwort → ist drin
+Netlify-Dashboard → **Site settings** → **Access** → **OAuth** → **Install provider** → **GitHub** → Client ID + Secret einfügen.
 
-### 6 · Erster Test
+(Falls dieser Menüpunkt nicht da ist: in der älteren Netlify-UI heißt er „Authorization providers".)
 
-- Häring öffnet `https://wahrheitskomplex.de/admin/`
-- Loggt sich ein
-- Erstellt einen Test-Beitrag in einer Collection
-- Sui bekommt PR-Notification auf GitHub
-- Sui merged → Netlify deployt → neuer Beitrag live
+### 6 · Norbert als Collaborator einladen
+
+Auf GitHub im Repo → **Settings** → **Collaborators** → **Add people** → Norberts GitHub-Username.
+
+Norbert braucht **nur einen ganz normalen GitHub-Account** — nichts Spezielles. Er bekommt eine Mail mit Invite-Link, akzeptiert, fertig.
+
+### 7 · Erster Test
+
+- Norbert öffnet `https://wahrheitskomplex.netlify.app/admin/` (später: `wahrheitskomplex.de/admin/`)
+- Klickt „Login with GitHub" → wird zu GitHub umgeleitet → autorisiert → ist drin
+- Erzeugt einen Test-Beitrag
+- Klickt „Publish" → GitHub-Commit entsteht → Netlify deployt
 
 ---
 
-## Pflegeanleitung für Häring (Kurzfassung)
+## Pflegeanleitung (für Norbert, Kurzfassung)
 
 ### Zugang
-- URL: **`https://wahrheitskomplex.de/admin/`** (oder vor Domain-Umstellung: `https://wahrheitskomplex.netlify.app/admin/`)
-- Login mit Mail/Passwort aus der Einladung
 
-### Drei Sammlungen aktuell pflegbar
+URL: `https://wahrheitskomplex.netlify.app/admin/` (später: `wahrheitskomplex.de/admin/`)
 
-**1. Im Gespräch** — neue Interviews, Videos, Rezensionen, Podcasts
-- Neuer Eintrag → Felder ausfüllen → „Save"
-- YouTube-Videos: nur die ID eintragen (bei `youtube.com/watch?v=ABC123` ist die ID `ABC123`). Vorschaubild wird automatisch geholt.
-- Bei externem Artikel/Video: einfach die URL eintragen, die Seite zieht das og:image-Bild beim nächsten Build.
+Login mit GitHub-Account. Beim ersten Mal: GitHub fragt nach Autorisierung — einmal „Authorize" klicken.
+
+### Drei Sammlungen pflegbar
+
+**1. Im Gespräch** — Interviews, Videos, Rezensionen, Podcasts
+- Bei YouTube-Videos: nur die ID eintragen (bei `youtube.com/watch?v=ABC123` ist die ID `ABC123`)
+- Vorschaubild wird automatisch geholt
 
 **2. Faktenchecker im Check** — Faktencheck-Fälle
-- Zwei Darstellungs-Varianten: entweder „Zusammenfassung" (Fließtext) oder die drei Felder „Behauptung / Urteil / Realität". Nur eine ausfüllen.
+- Zwei Varianten: entweder *Zusammenfassung* (Fließtext) oder *Behauptung/Urteil/Realität* (drei Blöcke). Nur eine ausfüllen.
 
-**3. Atlas-Akteure** — NGOs / Stiftungen / Faktenchecker
-- Häkchen „Volltext-Profil" entscheidet, ob ein eigenes Detail-Profil unter `/atlas/NAME` erzeugt wird oder die Karte nur auf Härings Tiefenartikel verweist.
-- Markdown-Body unten ausfüllen, wenn Volltext aktiv ist.
+**3. Atlas-Akteure** — NGOs / Stiftungen
+- Häkchen „Volltext-Profil" entscheidet, ob ein eigenes Detail-Profil unter `/atlas/SLUG` erzeugt wird
+- Markdown-Body unten ausfüllen, wenn Volltext aktiv
 
-### Editorial Workflow
-Edits gehen als **Draft → Review → Ready → Published** durch.
+### Editorial Workflow (PR-basiert)
 
-- Häring klickt „Publish" → es entsteht ein PR
-- Sui (oder ein anderer Reviewer) bekommt Notification
-- Beim Merge → Netlify deployt
-- 30 Sekunden später ist's live
+1. Norbert klickt im CMS „Publish" → Decap erzeugt einen Pull-Request
+2. Sui (oder ein anderer Reviewer) bekommt Notification
+3. Beim Merge → Netlify deployt automatisch
+4. ~30 Sekunden später ist der Eintrag live
 
-Wenn Häring direkt veröffentlichen soll (ohne Review-Step), in `public/admin/config.yml` `publish_mode` auf `simple` setzen.
+Wer das nicht will (Norbert publiziert direkt ohne Review): in `public/admin/config.yml` `publish_mode: editorial_workflow` entfernen.
 
 ### Bilder hochladen
-- Im Editor: Drag&Drop in die Media-Library
-- Dateien landen unter `/uploads/`
-- Direkt im Inhalt referenzierbar
-
-### Was Häring NICHT über das CMS pflegt (aktuell)
-- **Chronik** — liegt in TypeScript-Datei (`src/data/chronik.ts`), 130+ Einträge. Migration nach Markdown ist Phase 2.
-- **Definitionen** („Was ist…?") — TS-Datei
-- **Glossar** — TS-Datei
-- **Recherchen** — TS-Datei (6 statische Karten)
-- **Hero-Texte** der Startseite
-
-Diese kann Sui per Code-Edit pflegen. Wenn Häring sie selbst pflegen soll, in Phase 2 ebenfalls migrieren.
+Drag&Drop in die Media-Library, landet unter `/public/uploads/`.
 
 ---
 
-## Technische Hinweise
+## Auto-Sync (passiert von alleine)
 
-### Schema-Änderungen
-- Die Definition liegt in `public/admin/config.yml` (Decap)
-- UND in `src/content.config.ts` (Astro/Zod, für die Build-Validierung)
-- Beide müssen konsistent sein
+`.github/workflows/auto-sync.yml` läuft täglich um 6:30 Uhr CET und prüft:
 
-### Fallback ohne CMS
-Solange das CMS nicht aktiviert ist (Schritte 1-5 oben nicht durchgeführt), kann jeder mit Repo-Zugang die Markdown-Files direkt unter `src/content/` editieren und committen. CMS ist nur ein UX-Layer obendrauf.
+| Quelle auf norberthaering.de | Zielsammlung |
+|---|---|
+| `/wahrheitskomplex/faktenchecks/` | Faktenchecks |
+| `/wahrheitskomplex/rezensionen-interviews/` | Im Gespräch |
 
-### Privacy
-Decap CMS und Netlify Identity laden NUR auf `/admin/` externe Scripts (von unpkg.com bzw. netlify.com). Die öffentliche Site bleibt vollständig drittanbieter-frei.
+Wenn neue Beiträge gefunden werden:
+- Markdown-Stubs werden erzeugt
+- og:image-Vorschaubilder werden gezogen
+- Ein Pull-Request wird angelegt, Label `auto-sync`
+- Sui ergänzt im PR fehlende Felder (Themen, Host, Pullquote) und merged
+
+**Manuell auslösen**: GitHub-Actions-UI → „Auto-Sync von norberthaering.de" → **Run workflow**.
+
+---
+
+## Was NICHT auto-synct ist (vorerst)
+
+- **Chronik** — liegt als TS-Datei (`src/data/chronik.ts`). 130+ Einträge. Migration nach Markdown ist Phase 2. Für jetzt: Sui pflegt direkt im Code, wenn Norbert was Neues meldet.
+- **Definitionen** (`Was ist …?`) — TS-Datei
+- **Glossar** — TS-Datei
+- **Recherchen** — TS-Datei
+- **Hero-Texte** der Startseite
+
+Diese Inhalte ändern sich selten. Sui pflegt sie per Code-Edit oder über das CMS in einer späteren Erweiterung.
+
+---
+
+## Privacy
+
+Decap CMS lädt externes JavaScript **nur auf `/admin/`** (von unpkg.com). Die öffentliche Site bleibt vollständig drittanbieter-frei. Kein Tracker, kein Webfont, kein CDN-Aufruf.
+
+Die Auth-Flow geht direkt zwischen Browser ↔ GitHub ↔ Netlify-OAuth-Proxy — keine zusätzlichen Daten an Dritte.

@@ -68,18 +68,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitsko
 
     <JsonLd data={websiteSchema} />
     {jsonLd && <JsonLd data={jsonLd} />}
-
-    <!-- Identity-Token-Redirect: leitet Invite-/Recovery-Mails ans CMS weiter.
-         Tut nichts ohne Token im URL-Hash. Kein externes Script. -->
-    <script is:inline>
-      if (
-        typeof window !== 'undefined' &&
-        window.location.hash &&
-        /(invite|recovery|confirmation|email_change|access)_token=/.test(window.location.hash)
-      ) {
-        window.location.replace('/admin/' + window.location.hash);
-      }
-    </script>
   </head>
   <body class="min-h-dvh flex flex-col">
     <Topbar />

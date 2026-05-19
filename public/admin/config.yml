@@ -4,8 +4,22 @@
 # Häring legt einen Beitrag an → Decap erzeugt automatisch einen Pull-Request →
 # beim Merge deployt Netlify die neue Version.
 
+# Backend: GitHub-OAuth direkt.
+# Setup:
+#   1. GitHub-Repo unten in "repo:" eintragen (Format: USER/REPO oder ORG/REPO)
+#   2. Eine GitHub-OAuth-App in deinem GitHub-Account anlegen
+#      (Settings → Developer settings → OAuth Apps)
+#      - Homepage URL: https://wahrheitskomplex.de  (oder netlify.app-URL solange Domain noch nicht steht)
+#      - Authorization callback URL: https://api.netlify.com/auth/done
+#   3. Client ID + Client Secret in Netlify hinterlegen:
+#      Site settings → Access → OAuth → Install provider → GitHub
+#   4. Im Repo: Norbert als Collaborator hinzufügen (Settings → Collaborators)
+#
+# Wenn das alles steht: jeder mit Repo-Schreibrecht kann sich unter /admin/
+# mit seinem GitHub-Konto einloggen und Inhalte pflegen.
 backend:
-  name: git-gateway
+  name: github
+  repo: SUI-USERNAME/wahrheitskomplex-de # ⚠️ HIER ANPASSEN
   branch: main
 
 # editorial_workflow: Edits gehen als Draft-PR rein.
