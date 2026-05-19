@@ -1,0 +1,310 @@
+# Decap-CMS-Konfiguration für Wahrheitskomplex.de
+#
+# Edits laufen über Git-Gateway (Netlify Identity) als PR-Workflow:
+# Häring legt einen Beitrag an → Decap erzeugt automatisch einen Pull-Request →
+# beim Merge deployt Netlify die neue Version.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# editorial_workflow: Edits gehen als Draft-PR rein.
+# Auf "simple" stellen, falls Häring direkt commiten soll (kein Review-Step).
+publish_mode: editorial_workflow
+
+# Uploads (Bilder, PDFs) landen unter /public/uploads/ und sind unter
+# https://wahrheitskomplex.de/uploads/{datei} erreichbar.
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# UI-Texte auf Deutsch
+locale: "de"
+
+collections:
+  # =========================================================
+  # IM GESPRÄCH — Interviews, Videos, Rezensionen, Podcasts
+  # =========================================================
+  - name: medien
+    label: "Im Gespräch"
+    label_singular: "Beitrag"
+    description: "Aktuelle Interviews, Videos, Rezensionen, Podcasts zum Buch."
+    folder: src/content/medien
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - label: "Videos"
+        field: type
+        pattern: video
+      - label: "Interviews"
+        field: type
+        pattern: interview
+      - label: "Rezensionen"
+        field: type
+        pattern: rezension
+    fields:
+      - { name: title, label: "Titel", widget: string }
+      - {
+          name: type,
+          label: "Format",
+          widget: select,
+          options: [
+            { label: "Video", value: video },
+            { label: "Podcast", value: podcast },
+            { label: "Interview (Text)", value: interview },
+            { label: "Rezension", value: rezension },
+            { label: "Vortrag", value: vortrag },
+          ],
+        }
+      - { name: host, label: "Interviewer / Autor", widget: string }
+      - { name: outlet, label: "Medium / Plattform", widget: string }
+      - { name: url, label: "URL des Beitrags", widget: string, pattern: ['^https?://', 'Bitte mit https:// beginnen'] }
+      - {
+          name: youtubeId,
+          label: "YouTube-ID (nur bei YouTube-Videos)",
+          widget: string,
+          required: false,
+          hint: "Bei https://youtube.com/watch?v=abc123 wäre die ID: abc123",
+        }
+      - { name: date, label: "Datum", widget: date, format: "YYYY-MM-DD" }
+      - {
+          name: durationMin,
+          label: "Dauer in Minuten (optional)",
+          widget: number,
+          required: false,
+          value_type: int,
+        }
+      - {
+          name: paywall,
+          label: "Hinter Bezahlschranke?",
+          widget: boolean,
+          default: false,
+        }
+      - {
+          name: themen,
+          label: "Themen",
+          widget: list,
+          default: [],
+          hint: "z.B. Pandemie, Klima, Ukraine & NATO, DSA & NetzDG, Hass und Hetze, Wahlen",
+        }
+      - {
+          name: pullquote,
+          label: "Zitat / Kurzbeschreibung",
+          widget: text,
+          required: false,
+        }
+      - {
+          name: language,
+          label: "Sprache",
+          widget: select,
+          options: [{ label: "Deutsch", value: de }, { label: "English", value: en }],
+          default: de,
+        }
+
+  # =========================================================
+  # FAKTENCHECKS
+  # =========================================================
+  - name: faktenchecks
+    label: "Faktenchecker im Check"
+    label_singular: "Faktencheck"
+    description: "Dokumentierte Fälle, in denen Faktenchecker fehlgegangen sind."
+    folder: src/content/faktenchecks
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [date, faktenchecker]
+    view_filters:
+      - label: "Correctiv"
+        field: faktenchecker
+        pattern: Correctiv
+      - label: "ARD-Faktenfinder"
+        field: faktenchecker
+        pattern: ARD
+      - label: "dpa"
+        field: faktenchecker
+        pattern: dpa
+    fields:
+      - { name: title, label: "Titel des Falls", widget: string }
+      - {
+          name: faktenchecker,
+          label: "Welcher Faktenchecker?",
+          widget: string,
+          hint: "z.B. Correctiv, dpa-Faktencheck, ARD-Faktenfinder, ZDF, AFP",
+        }
+      - {
+          name: actorSlug,
+          label: "Atlas-Akteur (optional)",
+          widget: string,
+          required: false,
+          hint: "Wenn der Faktenchecker im Atlas ein eigenes Profil hat, hier den Slug eintragen (z.B. correctiv, dpa-faktencheck).",
+        }
+      - { name: date, label: "Datum", widget: date, format: "YYYY-MM-DD" }
+      - { name: url, label: "URL des Häring-Tiefenartikels", widget: string }
+      - {
+          name: themen,
+          label: "Themen",
+          widget: list,
+          default: [],
+        }
+      # Zwei Darstellungs-Varianten — eine reicht.
+      - {
+          name: summary,
+          label: "Kompakte Zusammenfassung",
+          widget: text,
+          required: false,
+          hint: "Wenn ausgefüllt, wird die Karte als Fließtext gerendert. Sonst Drei-Block-Form darunter nutzen.",
+        }
+      - {
+          name: behauptung,
+          label: "Was wurde behauptet?",
+          widget: text,
+          required: false,
+        }
+      - {
+          name: urteil,
+          label: "Welches Urteil hat der Faktenchecker gefällt?",
+          widget: text,
+          required: false,
+        }
+      - {
+          name: realitaet,
+          label: "Was Härings Recherche zeigt",
+          widget: text,
+          required: false,
+        }
+      - {
+          name: thumbOverride,
+          label: "Eigenes Vorschaubild (Pfad)",
+          widget: string,
+          required: false,
+          hint: "Optional: Pfad zu einem hochgeladenen Bild, z.B. /uploads/afp-thumb.jpg",
+        }
+      - {
+          name: quellen,
+          label: "Quellen (eine pro Zeile)",
+          widget: list,
+          default: [],
+        }
+
+  # =========================================================
+  # ATLAS-AKTEURE
+  # =========================================================
+  - name: actors
+    label: "Atlas-Akteure"
+    label_singular: "Akteur"
+    description: "NGO-, Stiftungs-, Faktenchecker- und Behörden-Profile."
+    folder: src/content/actors
+    create: true
+    slug: "{{slug}}"
+    sortable_fields: [order, name]
+    view_filters:
+      - label: "Volltext-Profile"
+        field: fulltext
+        pattern: "true"
+      - label: "Stub-Profile"
+        field: fulltext
+        pattern: "false"
+    fields:
+      - { name: name, label: "Name", widget: string }
+      - {
+          name: kategorie,
+          label: "Kategorie (Freitext)",
+          widget: string,
+          hint: "z.B. „Faktencheck", „Stiftung", „Think Tank / NATO-Umfeld"",
+        }
+      - {
+          name: akteurstyp,
+          label: "Akteurstyp",
+          widget: select,
+          options:
+            - Behörde
+            - Faktenchecker
+            - Stiftung
+            - Plattform
+            - Medienverbund
+            - NGO
+            - Think Tank
+            - Mittler / NGO
+            - Stiftung / Think Tank
+            - NGO / Geheimdienst-nah
+        }
+      - { name: land, label: "Land / Region", widget: string }
+      - {
+          name: gegruendet,
+          label: "Gegründet",
+          widget: string,
+          required: false,
+          hint: "Jahreszahl oder Bereich",
+        }
+      - { name: themen, label: "Themen", widget: list, default: [] }
+      - {
+          name: kurzbeschreibung,
+          label: "Kurzbeschreibung (eine Zeile für die Karte)",
+          widget: text,
+        }
+      - { name: finanzierung, label: "Finanzierung", widget: text }
+      - {
+          name: reichweite,
+          label: "Reichweite",
+          widget: text,
+          required: false,
+        }
+      - { name: kernkritik, label: "Kernkritik (aus Buch / Häring)", widget: text }
+      - {
+          name: stellungnahme,
+          label: "Stellungnahme des Akteurs",
+          widget: text,
+          required: false,
+        }
+      - {
+          name: buchKapitel,
+          label: "Buch-Kapitel",
+          widget: string,
+          required: false,
+          hint: "z.B. „Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"",
+        }
+      - {
+          name: haeringLink,
+          label: "Häring-Tiefenartikel (URL)",
+          widget: string,
+          required: false,
+        }
+      - {
+          name: libernetLink,
+          label: "Liber-Net-Profil (URL)",
+          widget: string,
+          required: false,
+        }
+      - {
+          name: quellen,
+          label: "Quellen",
+          widget: list,
+          required: false,
+          default: [],
+          summary: "{{fields.title}}",
+          fields:
+            - { name: title, label: "Titel", widget: string }
+            - { name: url, label: "URL", widget: string, required: false }
+            - { name: publisher, label: "Verlag / Publisher", widget: string, required: false }
+            - { name: date, label: "Datum", widget: string, required: false }
+        }
+      - {
+          name: order,
+          label: "Sortierung (kleiner = vorn)",
+          widget: number,
+          value_type: int,
+          default: 100,
+        }
+      - {
+          name: fulltext,
+          label: "Volltext-Profil?",
+          widget: boolean,
+          default: false,
+          hint: "Wenn aktiv: eigene Detail-Seite unter /atlas/SLUG, Markdown-Body wird angezeigt.",
+        }
+      - {
+          name: body,
+          label: "Volltext (Markdown)",
+          widget: markdown,
+          required: false,
+          hint: "Nur ausfüllen, wenn „Volltext-Profil" aktiv ist.",
+        }
