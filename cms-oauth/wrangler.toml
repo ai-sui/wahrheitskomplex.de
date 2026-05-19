@@ -1,0 +1,26 @@
+# Cloudflare-Worker-Konfiguration für den OAuth-Proxy.
+# Übernimmt den OAuth-Flow zwischen Decap CMS (Browser) und GitHub.
+#
+# Deploy: wrangler deploy  (aus diesem Verzeichnis)
+# Secrets via Dashboard oder: wrangler secret put GITHUB_CLIENT_ID
+#                              wrangler secret put GITHUB_CLIENT_SECRET
+
+name = "wahrheitskomplex-cms-auth"
+main = "src/index.js"
+compatibility_date = "2025-05-01"
+
+# Cloudflare-Subdomain — sobald deployed: https://wahrheitskomplex-cms-auth.<dein-konto>.workers.dev
+workers_dev = true
+
+# Optional: Custom-Route, sobald die Domain steht
+# routes = [
+#   { pattern = "wahrheitskomplex.de/auth/*", zone_name = "wahrheitskomplex.de" }
+# ]
+
+# Diese Variablen werden im Code per env.* gelesen.
+# Optional & ohne Geheimnis — sicher hier definierbar:
+[vars]
+ALLOWED_DOMAINS = "wahrheitskomplex.de,wahrheitskomplex.netlify.app,*.pages.dev,*.workers.dev,localhost"
+
+# GITHUB_CLIENT_ID und GITHUB_CLIENT_SECRET werden als Worker-Secrets gesetzt,
+# nicht hier — siehe OPERATIONS.md (Step 2).

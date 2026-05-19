@@ -1,0 +1,14 @@
+{
+  "name": "wahrheitskomplex-cms-auth",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "OAuth-Proxy für Decap CMS — vermittelt Login zwischen Decap und GitHub",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
