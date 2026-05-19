@@ -21,6 +21,9 @@ backend:
   name: github
   repo: ai-sui/wahrheitskomplex.de
   branch: main
+  # OAuth läuft über unseren eigenen Cloudflare Worker — nicht über Netlify.
+  base_url: https://wahrheitskomplex-cms-auth.github-survival631.workers.dev
+  auth_endpoint: auth
 
 # editorial_workflow: Edits gehen als Draft-PR rein.
 # Auf "simple" stellen, falls Häring direkt commiten soll (kein Review-Step).
