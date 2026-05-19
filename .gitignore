@@ -30,3 +30,6 @@ pnpm-debug.log*
 *conflicted copy*
 *Konfliktkopie*
 
+
+# Wrangler local build artifacts
+cms-oauth/.wrangler/

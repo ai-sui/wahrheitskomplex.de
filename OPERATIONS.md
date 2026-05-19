@@ -118,11 +118,36 @@ Wenn das Client Secret kompromittiert ist:
 
 1. GitHub → OAuth Apps → Wahrheitskomplex CMS → **Generate a new client secret** → kopieren
 2. Altes Secret in der OAuth-App löschen
-3. Im Cloudflare-Worker neu setzen:
+3. Im Cloudflare-Worker neu setzen — **per printf-Pipe, NICHT interaktiv:**
    ```bash
    cd cms-oauth
-   wrangler secret put GITHUB_CLIENT_SECRET
+   printf 'DER_NEUE_WERT' | wrangler secret put GITHUB_CLIENT_SECRET
    ```
+
+### Warum printf statt interaktiv?
+
+Beim interaktiven `wrangler secret put` (ohne Pipe) tippt/pastet man den Wert in einen Prompt — und dabei können
+**unsichtbar Zeichen verloren gehen** (Trunkierung beim Paste, Leerzeichen, Zeilenumbrüche).
+Genau das ist uns beim Erst-Setup zweimal passiert:
+
+- **Client-ID:** letztes `r` fehlte → GitHub-404 bei Login
+- **Client Secret:** kompletter Wert falsch → "Invalid state key" / Endlosschleife
+
+Verifizieren, dass der Wert korrekt gesetzt wurde, geht so:
+
+```bash
+# Was schickt der Worker tatsächlich an GitHub?
+curl -sI 'https://wahrheitskomplex-cms-auth.github-survival631.workers.dev/auth?provider=github&site_id=wahrheitskomplex.github-survival631.workers.dev' \
+  | grep -i '^location'
+# Erwartung: location: https://github.com/login/oauth/authorize?client_id=<VOLLSTÄNDIGE_ID>&...
+```
+
+### Debug-Logging temporär aktivieren
+
+Wenn der Login-Flow wieder bricht, kann man in `cms-oauth/src/index.js` in `handleCallback`
+temporär `console.log(...)` einfügen (was rein/raus geht), redeployen, und mit
+`wrangler tail` live mitlesen. **Nicht vergessen, das wieder zu entfernen, bevor man fertig ist —
+sonst landen Tokens in den Logs.**
 
 ---
 
