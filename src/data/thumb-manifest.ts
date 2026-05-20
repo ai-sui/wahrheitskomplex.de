@@ -13,25 +13,7 @@ export const thumbManifest = {
     "weltwoche-zeller-video.jpg"
   ],
   "faktencheckThumbs": [
-    "afp-aufmacher.jpg",
-    "afp-faktencheck.jpg",
-    "ard-faktenfinder-merz.jpg",
-    "ard-siggelkow-ueber-sanktionen.jpg",
-    "correctiv-anti-journalisten.jpg",
-    "correctiv-nanolipide.jpg",
-    "dw-ndr-rostock.jpg",
-    "faktenfinder-watzl.jpg",
-    "ganser-guerot-krone.jpg",
-    "pflanzensprengstoff.jpg",
-    "pistorius-faktenfuchs.jpg",
-    "siggelkow-rechtsextremismus.jpg",
-    "siggelkow-uebersterblichkeit.jpg",
-    "spahn-wieler-faktenchecker.jpg",
-    "spannungsfall-dpa.jpg",
-    "tagesschau-vitamin-d.jpg",
-    "transgender-gesetz-tagesschau.jpg",
-    "zdf-nordstream-sabotage.jpg",
-    "zdf-nordstream.jpg"
+    "afp-aufmacher.jpg"
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",

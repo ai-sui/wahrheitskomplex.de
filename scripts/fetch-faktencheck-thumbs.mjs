@@ -1,5 +1,16 @@
 // Lädt og:image jedes Faktencheck-Eintrags und speichert lokal als 16:9-JPEG.
+//
+// Überspringt das generische Häring-Site-Branding ("Geld und"-OG-Image),
+// das auf seinen Artikeln einheitlich gesetzt ist. Sonst hätten alle
+// Faktencheck-Karten das gleiche orange Bild. Wo der Auto-Fetch nichts
+// Spezifisches findet, greift in der FaktencheckCard der typografische
+// Fallback (Faktenchecker-Name auf dunklem Hintergrund).
+//
+// Für einzelne Fälle (z.B. AFP) kann manuell ein Bild unter
+// public/faktencheck-thumbs/ abgelegt und per `thumbOverride:` in der
+// jeweiligen MD-Datei referenziert werden.
 import sharp from 'sharp';
+import { createHash } from 'node:crypto';
 import { readdir, readFile, mkdir, access } from 'node:fs/promises';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -77,6 +88,17 @@ for (const f of files) {
       const u = new URL(url);
       imgUrl = `${u.protocol}//${u.host}${imgUrl}`;
     }
+
+    // Wenn das og:image das generische Häring-Site-Logo ist
+    // ("logo-gum"-Pfad), gleich hier abbrechen — alle Faktencheck-Seiten
+    // auf norberthaering.de setzen dasselbe Bild und wir würden 18× das
+    // gleiche orange Branding einsammeln.
+    if (/\/logo-gum/i.test(imgUrl)) {
+      console.log(`= ${slug}: generisches Häring-Site-Logo übersprungen`);
+      skipped++;
+      continue;
+    }
+
     const imgRes = await fetch(imgUrl, {
       headers: { 'User-Agent': UA, Referer: url },
     });
@@ -92,6 +114,17 @@ for (const f of files) {
       continue;
     }
     const buf = Buffer.from(await imgRes.arrayBuffer());
+
+    // Doppelter Boden: falls jemand das Site-Logo unter anderem Namen
+    // hostet, fangen wir's per Hash ab.
+    const sourceHash = createHash('md5').update(buf).digest('hex');
+    const GENERIC_HAERING_OG_HASH = '4cdad2b09f7c3842a498def628a76627';
+    if (sourceHash === GENERIC_HAERING_OG_HASH) {
+      console.log(`= ${slug}: generisches Häring-OG-Bild übersprungen`);
+      skipped++;
+      continue;
+    }
+
     await sharp(buf)
       .resize({
         width: 1280,
