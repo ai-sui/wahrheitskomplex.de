@@ -1,17 +1,24 @@
-# Wahrheitskomplex.de — Demo
+# Wahrheitskomplex.de
 
 Begleit-Site zum Buch *Der Wahrheitskomplex* von Norbert Häring (Westend Verlag, 2026).
-Build mit Astro 6 + Tailwind 4. Deployt auf Netlify ohne Tracker, ohne Webfonts, ohne Analytics.
+Build mit Astro 6 + Tailwind 4, gehostet auf GitHub Pages — ohne Tracker, ohne Webfonts,
+ohne Analytics.
 
-**Live:** [wahrheitskomplex.netlify.app](https://wahrheitskomplex.netlify.app)
+**Live:**
+- Custom-Domain (nach DNS-Migration): [wahrheitskomplex.de](https://wahrheitskomplex.de)
+- Build-Vorschau: [ai-sui.github.io/wahrheitskomplex.de](https://ai-sui.github.io/wahrheitskomplex.de/)
 
 ## Routen
 
-- `/` — Startseite mit „Fakt der Woche", drei Hook-Karten, Newsletter-Teaser
-- `/atlas` — Akteurs-Übersicht mit Filter-Chips (Thema, Akteurstyp)
-- `/atlas/[slug]` — Akteurs-Detail (Volltext für Science Media Center, Atlantic Council, ISD)
-- `/impressum` — Platzhalter
-- `/datenschutz` — Platzhalter
+- `/` — Startseite mit Karussells: Neues / NGOs / Chronik / Faktenchecks
+- `/atlas` — Akteurs-Übersicht mit Filter-Chips
+- `/atlas/[slug]` — Akteurs-Detail (für Akteure mit `fulltext: true`)
+- `/buch` — Kapitel-Übersicht des Buchs
+- `/faktenchecks` — Faktenchecker im Check (Vollübersicht, gefiltert)
+- `/chronik` — Vollständige Chronik
+- `/im-gespraech` — Interviews, Videos, Rezensionen, Podcasts
+- `/glossar` — Begriffe im Wahrheitskomplex
+- `/impressum`, `/datenschutz`
 
 ## Lokal entwickeln
 
@@ -20,49 +27,33 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-## Deploy auf Netlify
+## Deploy
 
-Die Site ist mit Netlify verknüpft (Site-ID liegt in `.netlify/state.json`).
-Deploys laufen aus dem Projektordner per Netlify-CLI:
+Automatisch via GitHub Actions auf jeden Push nach `main` —
+siehe [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml).
+Wird Pages über GitHub-Settings → Pages konfiguriert (Source: GitHub Actions).
 
-```bash
-npm run build
-npx netlify deploy --prod --dir=dist
-```
+Custom-Domain wird über `public/CNAME` aktiviert (Datei vorhanden → base path = '/',
+Datei fehlt → base path = '/wahrheitskomplex.de' für die Build-Vorschau-URL).
 
-Beim ersten Mal nötig: `npx netlify login`.
+Operations-Playbook (DNS, OAuth, Secrets, Rollback): [OPERATIONS.md](./OPERATIONS.md)
 
 ## Inhalte pflegen
 
-Die Akteure leben als Markdown-Files unter `src/content/actors/`. Schema in
-[`src/content.config.ts`](./src/content.config.ts) (Zod-validiert beim Build).
+Über das CMS unter `/admin/` (Decap CMS, Login via GitHub OAuth).
+Anleitung für Redakteur:innen: [BEDIENUNGSANLEITUNG-NORBERT.md](./BEDIENUNGSANLEITUNG-NORBERT.md)
 
-Felder:
+Akteure und Faktenchecks leben als Markdown-Files unter `src/content/{actors,faktenchecks,medien}/`.
+Schema in [`src/content.config.ts`](./src/content.config.ts) (Zod-validiert beim Build).
 
-| Feld | Pflicht | Bemerkung |
-|------|---------|-----------|
-| `name`, `kategorie`, `akteurstyp`, `land` | ja | |
-| `themen` | ja | Array aus Strings, sollte zu den Filter-Chips in `/atlas` passen |
-| `finanzierung`, `kernkritik` | ja | Prosa |
-| `kurzbeschreibung` | ja | Eine Zeile für die Karte |
-| `fulltext` | ja | `true` → Detail-Seite wird generiert |
-| `gegruendet`, `reichweite`, `stellungnahme`, `buchKapitel` | nein | |
-| `haeringLink`, `libernetLink` | nein | URLs |
-| `quellen` | nein | Array von `{ title, url, publisher, date }` |
-| `order` | nein | Sortierung im Atlas-Grid (kleiner = weiter oben) |
+## Auto-Sync
 
-Der Markdown-Body (unter den Frontmatter-Strichen) wird im Detail-Profil als
-„Hintergrund"-Block gerendert.
-
-## Startseite-Inhalte
-
-Hartkodiert in [`src/data/homepage.ts`](./src/data/homepage.ts).
-Spätere CMS-Anbindung tauscht nur diese Datei aus.
+GitHub Action [`auto-sync.yml`](./.github/workflows/auto-sync.yml) holt täglich um
+6:30 CET neue Beiträge von norberthaering.de und erzeugt PRs.
 
 ## Was bewusst nicht drin ist
 
-- Newsletter-Backend (Phase 2): Anmeldung läuft vorerst über norberthaering.de
+- Newsletter-Backend — Anmeldung läuft über norberthaering.de
 - Beziehungsgraph der Geldflüsse
 - Volle Liber-Net-Datenintegration
 - Mehrsprachigkeit
-- CMS-Anbindung
