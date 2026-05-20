@@ -5,9 +5,10 @@ import { withBase } from '../utils/url';
 interface Props {
   eintrag: ChronikEintrag;
   showLine?: boolean;
+  compact?: boolean; // versteckt Description und Themen-Tags (für Homepage-Übersicht)
 }
 
-const { eintrag, showLine = true } = Astro.props;
+const { eintrag, showLine = true, compact = false } = Astro.props;
 
 // Format date based on precision
 const parts = eintrag.date.split('-');
@@ -61,7 +62,7 @@ if (parts.length === 3) {
         <span>{eintrag.title}</span>
       </span>
     </h3>
-    {eintrag.description && (
+    {!compact && eintrag.description && (
       <p class="text-ink-soft leading-relaxed mb-3 max-w-2xl">
         {eintrag.description}
       </p>
@@ -96,7 +97,7 @@ if (parts.length === 3) {
       )}
     </div>
 
-    {eintrag.themen && eintrag.themen.length > 0 && (
+    {!compact && eintrag.themen && eintrag.themen.length > 0 && (
       <div class="flex flex-wrap gap-1.5 mt-3">
         {eintrag.themen.map((t) => (
           <span class="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 bg-paper-soft border border-line rounded-full text-muted">

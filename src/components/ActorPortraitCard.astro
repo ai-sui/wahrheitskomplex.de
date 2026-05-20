@@ -4,34 +4,47 @@ import { withBase } from '../utils/url';
 interface Props {
   name: string;
   slug: string;
-  kategorie: string;
+  akteurstyp: string;
   land: string;
   gegruendet?: string | number;
   kurzbeschreibung: string;
+  kernkritik?: string;
+  haeringLink?: string;
 }
 
-const { name, slug, kategorie, land, gegruendet, kurzbeschreibung } = Astro.props;
+const { name, slug, akteurstyp, land, gegruendet, kurzbeschreibung, kernkritik, haeringLink } =
+  Astro.props;
 
-const metaLine = [kategorie, land, gegruendet]
+const metaLine = [akteurstyp, land, gegruendet]
   .filter((s) => s !== undefined && s !== '')
   .join(' · ');
+
+// Primärziel ist Norberts ausführliches Porträt auf norberthaering.de.
+// Falls keines hinterlegt ist, fällt die Karte auf das interne Profil zurück.
+const hasExternal = Boolean(haeringLink);
+const targetHref = hasExternal ? (haeringLink as string) : withBase(`/atlas/${slug}`);
+const ctaLabel = hasExternal
+  ? 'Vollständiges Porträt bei norberthaering.de →'
+  : 'Profil ansehen →';
 ---
 
 <a
-  href={withBase(`/atlas/${slug}`)}
+  href={targetHref}
+  rel={hasExternal ? 'noopener' : undefined}
   class="group h-full flex flex-col bg-paper-soft border border-line border-l-4 border-l-accent rounded-sm p-6 md:p-7 no-underline transition-colors hover:border-accent"
 >
   <p class="meta-label text-muted mb-4 leading-tight">{metaLine}</p>
 
-  <h3 class="font-serif text-xl md:text-2xl leading-tight mb-3 group-hover:text-accent transition-colors">
+  <h3 class="font-serif text-xl md:text-2xl leading-tight mb-4 group-hover:text-accent transition-colors">
     {name}
   </h3>
 
-  <p class="text-sm text-ink-soft leading-relaxed flex-1 mb-5">
-    {kurzbeschreibung}
-  </p>
+  <div class="text-sm text-ink-soft leading-relaxed flex-1 mb-5 space-y-3">
+    <p>{kurzbeschreibung}</p>
+    {kernkritik && <p>{kernkritik}</p>}
+  </div>
 
   <p class="text-sm text-accent font-medium border-t border-line pt-4 mt-auto">
-    Profil ansehen →
+    {ctaLabel}
   </p>
 </a>

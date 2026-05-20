@@ -11,6 +11,7 @@ import SpinnenImNetzCard from '../components/SpinnenImNetzCard.astro';
 import TimelineEvent from '../components/TimelineEvent.astro';
 import SiteIntro from '../components/SiteIntro.astro';
 import DefinitionsTeaser from '../components/DefinitionsTeaser.astro';
+import AlleFaktenchecksCard from '../components/AlleFaktenchecksCard.astro';
 import { book } from '../data/book';
 import { chronik } from '../data/chronik';
 import { withBase } from '../utils/url';
@@ -124,12 +125,9 @@ const bookSchema = {
   <!-- Karussell 1: Neues aus dem Wahrheitskomplex (Mix) — der eigentliche Einstieg -->
   <section class="container-page pt-6 md:pt-10 pb-10 md:pb-16">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
-      <div>
-        <p class="meta-label text-accent mb-2">Neues</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">
-          Neues aus dem Wahrheitskomplex.
-        </h2>
-      </div>
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight">
+        Neues aus dem Wahrheitskomplex.
+      </h2>
       <a
         href={withBase('/im-gespraech')}
         class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
@@ -156,12 +154,9 @@ const bookSchema = {
   <!-- Karussell 2: NGOs des Wahrheitskomplexes -->
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
-      <div class="min-w-0">
-        <p class="meta-label text-accent mb-2">Wer ist wer</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">
-          Die wichtigsten NGOs des Wahrheitskomplexes.
-        </h2>
-      </div>
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight min-w-0">
+        Die wichtigsten NGOs des Wahrheitskomplexes.
+      </h2>
       <a
         href={withBase('/atlas')}
         class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
@@ -175,10 +170,12 @@ const bookSchema = {
         <ActorPortraitCard
           name={a.data.name}
           slug={a.id}
-          kategorie={a.data.kategorie}
+          akteurstyp={a.data.akteurstyp}
           land={a.data.land}
           gegruendet={a.data.gegruendet}
           kurzbeschreibung={a.data.kurzbeschreibung}
+          kernkritik={a.data.kernkritik}
+          haeringLink={a.data.haeringLink}
         />
       ))}
       <SpinnenImNetzCard />
@@ -190,40 +187,28 @@ const bookSchema = {
 
   <!-- Chronik-Block „Was seither geschah" -->
   <section class="container-page py-10 md:py-16 border-t border-line">
-    <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-line gap-4">
-      <div class="min-w-0">
-        <p class="meta-label text-accent mb-2">Chronik</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight mb-1">Was seither geschah.</h2>
-        <p class="text-sm text-muted">
-          Aktivitäten im Wahrheitskomplex seit Drucklegung im Februar 2026.
-        </p>
-      </div>
-      <a
-        href={withBase('/chronik')}
-        class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
-      >
-        Vollständige Chronik →
-      </a>
+    <div class="mb-8 pb-4 border-b border-line">
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight">Was seither geschah.</h2>
     </div>
 
     <div class="max-w-4xl">
-      {recentChronik.map((e) => <TimelineEvent eintrag={e} />)}
+      {recentChronik.map((e) => <TimelineEvent eintrag={e} compact />)}
+
+      <p class="text-right mt-2">
+        <a
+          href={withBase('/chronik')}
+          class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+        >
+          Vollständige Chronik →
+        </a>
+      </p>
     </div>
   </section>
 
   <!-- Karussell 3: Faktenchecker im Check -->
   <section class="container-page py-10 md:py-16 border-t border-line">
-    <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line">
-      <div>
-        <p class="meta-label text-accent mb-2">Fake Facts</p>
-        <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker im Check.</h2>
-      </div>
-      <a
-        href={withBase('/faktenchecks')}
-        class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
-      >
-        Alle Faktenchecks →
-      </a>
+    <div class="mb-6 pb-4 border-b border-line">
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker im Check.</h2>
     </div>
 
     <Carousel label="Faktenchecker im Check">
@@ -243,6 +228,7 @@ const bookSchema = {
           url={fc.data.url}
         />
       ))}
+      <AlleFaktenchecksCard count={faktenchecks.length} />
     </Carousel>
   </section>
 
