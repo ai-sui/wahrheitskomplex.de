@@ -19,6 +19,7 @@ realitaet: >-
   gewünschten Faktencheck-Urteil zu gelangen — und verlässt damit
   journalistische Sorgfaltspflichten.
 url: "https://norberthaering.de/propaganda-zensur/spannungsfall-dpa/"
+thumbOverride: "/faktencheck-thumbs/spannungsfall-dpa.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

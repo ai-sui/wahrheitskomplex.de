@@ -19,6 +19,7 @@ realitaet: >-
   Beide Faktenchecks bestätigen dadurch die ursprüngliche Behauptung
   inhaltlich, während sie sie formal als „falsch" deklarieren.
 url: "https://norberthaering.de/propaganda-zensur/dw-ndr-rostock/"
+thumbOverride: "/faktencheck-thumbs/dw-ndr-rostock.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

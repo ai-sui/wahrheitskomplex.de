@@ -13,7 +13,9 @@ export const thumbManifest = {
     "weltwoche-zeller-video.jpg"
   ],
   "faktencheckThumbs": [
-    "afp-aufmacher.jpg"
+    "afp-aufmacher.jpg",
+    "dw-ndr-rostock.jpg",
+    "spannungsfall-dpa.jpg"
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",
