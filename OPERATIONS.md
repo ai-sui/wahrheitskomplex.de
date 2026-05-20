@@ -121,10 +121,21 @@ dig wahrheitskomplex.de +short
 # Sollte ergeben: 185.199.108.153 (+ die anderen drei)
 ```
 
-### Schritt 3 — GitHub Pages erkennt CNAME automatisch
+### Schritt 3 — CNAME-Datei wieder ins Repo
 
-Die Datei `/public/CNAME` ist bereits committed. Sobald DNS auf GitHub
-zeigt, validiert Pages die Domain und stellt automatisch HTTPS um.
+Während der Vorschau-Phase ist `public/CNAME` bewusst entfernt
+(sonst zeigen alle Links auf die unerreichbare Custom-Domain). Sobald
+die DNS-Records gesetzt sind:
+
+```bash
+echo "wahrheitskomplex.de" > public/CNAME
+git add public/CNAME
+git commit -m "hosting: CNAME aktivieren — Custom-Domain live"
+git push
+```
+
+Astro erkennt die Datei automatisch und schaltet `base` auf `/` um.
+GitHub Pages validiert daraufhin die Domain und stellt HTTPS um.
 
 Status checken:
 
