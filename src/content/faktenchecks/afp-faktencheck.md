@@ -14,7 +14,5 @@ url: "https://norberthaering.de/news/afp-faktencheck/"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "Wissenschaftler-Replik (im Artikel verlinkt)"
-# thumbOverride: Aufmacherfoto folgt — AFP-Server blockt Bot-Zugriffe.
-# Bild kann manuell unter public/faktencheck-thumbs/ ergänzt werden:
-# thumbOverride: "/faktencheck-thumbs/afp-aufmacher.jpg"
+thumbOverride: "/faktencheck-thumbs/afp-aufmacher.jpg"
 ---
