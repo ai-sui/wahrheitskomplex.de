@@ -13,6 +13,7 @@ export const thumbManifest = {
     "weltwoche-zeller-video.jpg"
   ],
   "faktencheckThumbs": [
+    "afp-aufmacher.jpg",
     "afp-faktencheck.jpg",
     "ard-faktenfinder-merz.jpg",
     "ard-siggelkow-ueber-sanktionen.jpg",
