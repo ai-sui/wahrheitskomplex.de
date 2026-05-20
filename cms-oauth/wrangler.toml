@@ -20,7 +20,7 @@ workers_dev = true
 # Diese Variablen werden im Code per env.* gelesen.
 # Optional & ohne Geheimnis — sicher hier definierbar:
 [vars]
-ALLOWED_DOMAINS = "wahrheitskomplex.de,wahrheitskomplex.netlify.app,*.pages.dev,*.workers.dev,localhost"
+ALLOWED_DOMAINS = "wahrheitskomplex.de,ai-sui.github.io,*.github.io,wahrheitskomplex.netlify.app,*.pages.dev,*.workers.dev,localhost"
 
 # GITHUB_CLIENT_ID und GITHUB_CLIENT_SECRET werden als Worker-Secrets gesetzt,
 # nicht hier — siehe OPERATIONS.md (Step 2).
