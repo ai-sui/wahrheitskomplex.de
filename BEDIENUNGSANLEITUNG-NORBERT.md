@@ -61,7 +61,7 @@ um dich am CMS einzuloggen.
 
 1. Öffne im Browser:
    - `https://wahrheitskomplex.de/admin/` (sobald die Domain steht)
-   - oder solange noch: `https://wahrheitskomplex.github-survival631.workers.dev/admin/`
+   - oder solange noch: `https://ai-sui.github.io/wahrheitskomplex.de/admin/`
 2. Klick **„Mit GitHub einloggen"**
 3. GitHub fragt dich, ob du den Zugriff erlaubst → **„Authorize"**
 4. Du bist im CMS und siehst drei Sammlungen:
@@ -144,7 +144,7 @@ genug Anfragen für die Seite. Kein Abo, keine Kreditkarte nötig.
 | Bestandteil | Wo | Wofür |
 |---|---|---|
 | **Domain** | `wahrheitskomplex.de` (bei All-Inkl als Registrar) | Was Besucher in die Adresszeile tippen |
-| **Hosting** | Cloudflare (Workers) | Liefert die Seite aus, wenn jemand sie aufruft |
+| **Hosting** | GitHub Pages (kostenlos) | Liefert die Seite aus, wenn jemand sie aufruft |
 | **Code & Inhalte** | GitHub (`github.com/ai-sui/wahrheitskomplex.de`) | Versions-Historie, „Single source of truth" |
 | **CMS-Login** | Cloudflare Worker (OAuth-Proxy) | Authentifiziert dich gegenüber GitHub, wenn du `/admin/` benutzt |
 | **Mail-Postfächer `@wahrheitskomplex.de`** | All-Inkl (unverändert) | Bleiben funktional |
@@ -325,15 +325,14 @@ Bearbeiters.
 
 **Was, wenn die Seite mal nicht erreichbar ist?**
 
-Cloudflare hat eine Verfügbarkeit von ~99,99 %. Wenn die Seite trotzdem mal
-weg ist: Mail an Sui. Inhalte bleiben in jedem Fall auf GitHub erhalten —
-sie können nicht „verloren gehen".
+GitHub Pages hat eine sehr hohe Verfügbarkeit (>99,9 %). Wenn die Seite
+trotzdem mal weg ist: Mail an Sui. Inhalte bleiben in jedem Fall auf
+GitHub erhalten — sie können nicht „verloren gehen".
 
 **Wie viel kostet das Hosting?**
 
-Momentan 0 Euro pro Monat (Cloudflare-Free-Tier reicht für die zu
-erwartenden Zugriffe). Falls die Seite jemals so viel Traffic bekommt,
-dass eine Bezahl-Variante nötig wird, sind das ca. 5–10 USD/Monat.
+0 Euro pro Monat — GitHub Pages ist für Open-Source-Repos dauerhaft
+kostenlos und hat für unsere Datenmenge keine relevanten Limits.
 
 **Brauche ich für die Pflege eine bestimmte Software?**
 

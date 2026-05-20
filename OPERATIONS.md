@@ -76,37 +76,87 @@ Claude passt dann `public/admin/config.yml` an und pusht. Cloudflare baut neu.
 
 ---
 
-## Domain wahrheitskomplex.de umstellen (folgt später)
+## Architektur (Stand Mai 2026)
 
-**Voraussetzung:** Norbert teilt Sui die Zugangsdaten zum DNS-Provider seiner Domain.
+| Komponente | Wo |
+|---|---|
+| **Website** | GitHub Pages — Auto-Deploy aus `main` via `.github/workflows/deploy-pages.yml` |
+| **Repo & Inhalte** | github.com/ai-sui/wahrheitskomplex.de |
+| **OAuth-Proxy für CMS** | Cloudflare Worker `wahrheitskomplex-cms-auth.github-survival631.workers.dev` |
+| **Domain (live)** | wahrheitskomplex.de (DNS bei All-Inkl, A-Records auf GitHub Pages) |
+| **Test-URL bis DNS-Migration** | https://ai-sui.github.io/wahrheitskomplex.de/ |
+| **Mail @wahrheitskomplex.de** | All-Inkl (unverändert) |
 
-### Was du tun musst (sobald Daten da)
+---
 
-1. **Cloudflare Pages-Projekt** (oder Worker) → Custom Domains → **wahrheitskomplex.de** hinzufügen
-2. **DNS-Records** in Norberts Provider-Dashboard eintragen — Cloudflare zeigt dir exakte Werte (typisch: CNAME oder A-Record auf einen Cloudflare-Endpoint)
-3. **Warten** (5 Min bis 24 h) bis DNS propagiert
-4. **Claude sagen**: „Domain steht" — Claude passt `astro.config.mjs` (site:) und sitemap-/JSON-LD-URLs an
+## Domain wahrheitskomplex.de auf GitHub Pages umstellen
+
+### Schritt 1 — DNS-Records bei All-Inkl eintragen (Admin)
+
+Folgende DNS-Werte schickst du dem Admin (oder trägst sie selbst im KAS ein):
+
+**Apex `wahrheitskomplex.de` — vier A-Records auf GitHub Pages:**
+
+```
+Type    Name    Value             TTL
+A       @       185.199.108.153   3600
+A       @       185.199.109.153   3600
+A       @       185.199.110.153   3600
+A       @       185.199.111.153   3600
+```
+
+**`www.wahrheitskomplex.de` — CNAME:**
+
+```
+Type    Name    Value                            TTL
+CNAME   www     ai-sui.github.io.                3600
+```
+
+**MX-Records (Mail)** bleiben unverändert bei All-Inkl.
+
+### Schritt 2 — Auf Propagation warten (1 h–24 h)
+
+```bash
+dig wahrheitskomplex.de +short
+# Sollte ergeben: 185.199.108.153 (+ die anderen drei)
+```
+
+### Schritt 3 — GitHub Pages erkennt CNAME automatisch
+
+Die Datei `/public/CNAME` ist bereits committed. Sobald DNS auf GitHub
+zeigt, validiert Pages die Domain und stellt automatisch HTTPS um.
+
+Status checken:
+
+```bash
+gh api /repos/ai-sui/wahrheitskomplex.de/pages | jq '{cname, status, protected_domain_state}'
+```
+
+`cname: "wahrheitskomplex.de"` und `status: "built"` = fertig.
 
 ---
 
 ## Neuen Inhalt veröffentlichen
 
-### Variante A: über das CMS (für Norbert)
+### Variante A — Norbert publiziert direkt im CMS
 
-`/admin/` → Login → Sammlung wählen → Eintrag anlegen → Publish.
+`/admin/` → Login → Sammlung wählen → Eintrag anlegen → **Publish**.
 
-### Variante B: direkt im Repo (für Sui)
+Decap commitet wegen `publish_mode: simple` direkt auf `main`. GitHub
+Pages baut automatisch — in 30–60 Sek ist die Änderung live.
+
+### Variante B — Direkt im Repo (für Sui)
 
 - Markdown-File unter `src/content/{actors,faktenchecks,medien}/` erstellen
 - `git add` + `git commit` + `git push`
-- Cloudflare baut automatisch
+- GitHub Pages baut automatisch
 
-### Variante C: Auto-Sync (für Häring-Blog-Posts)
+### Variante C — Auto-Sync (für Häring-Blog-Posts)
 
 GitHub Action `auto-sync.yml` läuft täglich 6:30 CET. Bei neuen Inhalten auf norberthaering.de:
 - erzeugt PR mit Label `auto-sync`
 - Sui review't, klickt Merge
-- Cloudflare deployt
+- GitHub Pages deployt automatisch
 
 Manuell auslösen: GitHub → Actions → „Auto-Sync von norberthaering.de" → „Run workflow".
 
