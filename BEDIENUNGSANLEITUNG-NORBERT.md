@@ -3,8 +3,12 @@
 Stand: Mai 2026
 
 Dieses Dokument erklärt dir, was wahrheitskomplex.de ist, wie du selbst
-Inhalte pflegen kannst und wie du im Notfall an die Seite herankommst,
-auch wenn Sui (der technische Betreuer) gerade nicht erreichbar ist.
+Inhalte pflegst und veröffentlichst, und wie du im Notfall an die Seite
+herankommst, falls Sui (der technische Betreuer) nicht erreichbar ist.
+
+**Wichtigste Botschaft:** Du veröffentlichst direkt selbst — Sui muss
+nicht mehr für jeden Eintrag tätig werden. Du klickst „Publish", und
+30 Sekunden später ist es online.
 
 ---
 
@@ -21,197 +25,193 @@ auch wenn Sui (der technische Betreuer) gerade nicht erreichbar ist.
   zum Buch
 - **Chronik** — laufende Ereignisse im „Wahrheitskomplex" seit Drucklegung
   im Februar 2026
-- **Recherchen** — vertiefende Beiträge von Norbert Häring
+- **Recherchen** — vertiefende Beiträge
 
 Die Seite ergänzt das Buch, läuft fortwährend weiter und kann jederzeit
 um neue Inhalte ergänzt werden.
 
-## 2. Wer pflegt was
+## 2. Wer macht was
 
 | Person | Verantwortung |
 |---|---|
-| **Norbert Häring** | Inhalt (Artikel, Profile, Bewertungen) |
-| **Sui** *(„ai-sui")* | Technik (Hosting, Code, Updates) |
-| **Auto-Sync** *(automatisches Skript)* | Übernimmt neue Beiträge von norberthaering.de täglich von selbst |
-
-Du musst nichts Technisches selbst machen. Wenn der Auto-Sync etwas verpasst
-oder wenn du gezielt etwas hinzufügen / ändern willst, gibt es zwei Wege —
-siehe Abschnitt 3 und 4.
+| **Norbert Häring** | Inhalt (Artikel, Profile, Bewertungen) — komplett autonom |
+| **Auto-Sync** *(automatisches Skript)* | Holt neue Beiträge von norberthaering.de täglich von selbst auf die Seite |
+| **Sui** *(„ai-sui")* | Nur noch Technik — wenn etwas Technisches nicht funktioniert |
 
 ---
 
-## 3. Inhalte ändern — Variante A (empfohlen, kein technisches Wissen nötig)
+## 3. Einmaliges Setup (10 Minuten)
 
-So machst du Änderungen, ohne ein Backend zu bedienen: du schreibst Claude,
-was du willst, Claude formuliert dir das Markdown, du mailst es Sui.
+Bevor du loslegst, musst du einmalig zwei Dinge tun. Danach nie wieder.
 
-### 3.1 Claude.ai-Konto anlegen (einmalig, 2 Min)
+### 3.1 GitHub-Konto anlegen
 
-1. Öffne <https://claude.ai/signup>
-2. Wähle „Continue with Google" (wenn du ein Gmail-Konto hast — einfachster Weg)
-   **oder** „Continue with email" und eine beliebige E-Mail-Adresse
-3. Bestätige die E-Mail (Anthropic schickt dir einen Link)
-4. Fertig — du bist drin
+GitHub ist die Plattform, auf der die Inhalte und der Code der Seite
+liegen. Du musst GitHub nicht bedienen — du brauchst nur ein Konto,
+um dich am CMS einzuloggen.
 
-**Welches Abo brauchst du?** Der **kostenlose Plan (Free) reicht**.
-Du kannst pro Tag eine zweistellige Zahl an Nachrichten an Claude schicken — mehr als wir
-für die paar Einträge pro Woche je brauchen. Kein Abo, keine Kreditkarte nötig.
-Falls Claude dich irgendwann auf ein Limit hinweist („You'll be able to send more
-messages in X hours"), wartest du einfach ein paar Stunden — oder schreibst Sui kurz Bescheid.
+1. Öffne <https://github.com/signup>
+2. E-Mail-Adresse eingeben, Passwort wählen, Username wählen
+   (Vorschlag: `norberthaering` oder `n-haering`)
+3. Bestätigungs-Mail von GitHub anklicken
+4. **Sui deinen GitHub-Username mailen** — er trägt dich als Maintainer
+   ins Projekt ein, dann hast du Schreibrechte
 
-### 3.2 So gehst du vor
+### 3.2 Erste Anmeldung im CMS
 
-1. Öffne <https://claude.ai> (Login mit deinem Account von oben)
-2. Klick links oben **„New Chat"** / **„Neuer Chat"**
-3. Wähle unten in Abschnitt 7 das passende Template (kopieren mit ⌘C bzw. Strg+C)
-4. Füge es im Chat-Fenster ein, ersetze die `<…>`-Platzhalter mit deinen Angaben
-5. Schick die Nachricht ab — Claude antwortet mit einem fertigen Text-Stück
-6. Kopier diesen fertigen Text und schick ihn per Mail an Sui — er bringt es online
+1. Öffne im Browser:
+   - `https://wahrheitskomplex.de/admin/` (sobald die Domain steht)
+   - oder solange noch: `https://wahrheitskomplex.github-survival631.workers.dev/admin/`
+2. Klick **„Mit GitHub einloggen"**
+3. GitHub fragt dich, ob du den Zugriff erlaubst → **„Authorize"**
+4. Du bist im CMS und siehst drei Sammlungen:
+   - Im Gespräch
+   - Faktenchecker im Check
+   - Atlas-Akteure
 
-Du musst nichts klicken, nichts hochladen, nichts auf GitHub tun. Nur schreiben und mailen.
-
-### 3.3 Was du an Sui schickst
-
-Eine Mail mit:
-
-- **Betreff:** „Neuer Eintrag: \<Titel\>"
-- **Inhalt:** das fertige Markdown-Stück, das Claude dir geliefert hat
-
-Sui macht den Rest (15 Sekunden: in den richtigen Ordner legen, committen, fertig).
-Die Seite ist 30 Sekunden später live.
-
-### 3.4 Kleine Korrekturen ohne Claude
-
-Wenn du an einem bestehenden Eintrag etwas ändern willst, schreib Sui einfach
-in einer normalen Mail:
-
-> „Im Atlas-Eintrag zur Bertelsmann Stiftung bitte den Satz 'X' ersetzen
-> durch 'Y'. Quelle: …"
-
-Sui macht das direkt.
+Der Browser merkt sich das. Beim nächsten Mal reicht ein Klick.
 
 ---
 
-## 4. Inhalte ändern — Variante B (Direkt im CMS, optional)
+## 4. Inhalte ändern oder ergänzen
 
-Falls du selbst mal etwas ohne Umweg über Sui einstellen willst — etwa,
-wenn er gerade nicht erreichbar ist — gibt es ein Web-Backend („CMS")
-direkt auf der Seite.
+### 4.1 Neuer Eintrag (z.B. ein neues Interview, ein neuer Faktencheck)
 
-### 4.1 Voraussetzungen (einmaliges Setup)
+1. Wähle links die passende Sammlung (Im Gespräch / Faktenchecker / Atlas-Akteure)
+2. Klick oben rechts **„Neue(r/s) Beitrag"** bzw. **„Schnell-Erstellung"**
+3. Fülle die Felder aus (Pflichtfelder sind markiert)
+4. Klick **„Speichern"** (Entwurf, geht nicht online) **oder** **„Publish"** (sofort online)
 
-- Ein **GitHub-Konto** (kostenlos)
-- Sui muss dich **als Mitarbeiter im Repo** einladen — Mail an Sui mit deinem
-  GitHub-Benutzernamen genügt
+Bei „Publish" wird die Änderung direkt veröffentlicht. Cloudflare baut die
+Seite in ca. 30 Sekunden neu auf — danach ist dein Eintrag live.
 
-Lege ein GitHub-Konto an unter <https://github.com/signup> falls noch nicht
-geschehen. Du musst dort nichts tun — du brauchst es nur, um dich am CMS
-anzumelden.
+### 4.2 Bestehenden Eintrag ändern
 
-### 4.2 Login
+1. Sammlung wählen, gewünschten Eintrag in der Liste anklicken
+2. Felder bearbeiten
+3. Klick **„Publish"**
 
-1. Öffne in deinem Browser die Seite **/admin/** — also entweder
-   - `https://wahrheitskomplex.de/admin/` (sobald die Domain umgezogen ist)
-   - oder bis dahin `https://wahrheitskomplex.github-survival631.workers.dev/admin/`
-2. Klick „Mit GitHub einloggen"
-3. Erlaube den Zugriff auf dein GitHub-Konto (einmalig)
-4. Du bist im CMS — du siehst drei Sammlungen:
-   - **Im Gespräch**
-   - **Faktenchecker im Check**
-   - **Atlas-Akteure**
+### 4.3 Eintrag löschen
 
-### 4.3 Einen neuen Eintrag erstellen
+1. Eintrag öffnen
+2. Oben rechts auf den Drei-Punkte-Knopf (`⋮`) → **„Delete entry"**
 
-1. Wähle links die passende Sammlung
-2. Klick oben rechts **„Neue(r/s) Beitrag"**
-3. Fülle die Felder aus
-4. Klick **„Speichern"** (Entwurf) oder direkt **„Publish"** (veröffentlichen)
+### 4.4 Bilder hochladen
 
-Bei „Publish" erzeugt das CMS automatisch einen Pull-Request im GitHub-Repo.
-Sui (oder du, falls Maintainer-Rechte) muss diesen PR mit einem Klick mergen,
-dann ist der Eintrag in ca. 30 Sekunden auf der Seite sichtbar.
+Bei Atlas-Akteuren oder Faktenchecks kannst du Bilder hochladen
+(Logos, Aufmacherfotos):
+
+1. Im Bearbeitungs-Modus auf das Bild-Feld klicken
+2. **„Upload"** oder Datei reinziehen
+3. Bild auswählen
+4. Speichern
+
+Bilder landen unter `/uploads/` und sind unter
+`wahrheitskomplex.de/uploads/<dateiname>` erreichbar.
 
 ---
 
-## 5. Wo die Seite technisch liegt
+## 5. Wenn du Hilfe beim Schreiben brauchst (optional: Claude.ai)
 
-| Bestandteil | Wo | Was sie tut |
+Manchmal ist es einfacher, einen Text zuerst grob mit Claude zu skizzieren
+und dann ins CMS zu kopieren, statt direkt im CMS zu schreiben.
+Besonders nützlich für **lange Atlas-Volltext-Profile** mit mehreren
+Absätzen.
+
+### 5.1 Claude-Konto anlegen (einmalig, kostenlos)
+
+1. <https://claude.ai/signup>
+2. „Continue with Google" (falls Gmail) oder „Continue with email"
+3. E-Mail bestätigen, fertig
+
+**Welches Abo?** Der **kostenlose Plan reicht** — du hast pro Tag mehr als
+genug Anfragen für die Seite. Kein Abo, keine Kreditkarte nötig.
+
+### 5.2 So nutzt du Claude als Schreibhilfe
+
+1. Auf <https://claude.ai> einloggen
+2. **„New Chat"** öffnen
+3. In Abschnitt 8 unten das passende Template kopieren
+4. Im Chat einfügen, deine Angaben einsetzen
+5. Claude antwortet mit einem fertigen Text-Block
+6. Diesen Text in die entsprechenden Felder im CMS einfügen
+7. Im CMS: Publish
+
+---
+
+## 6. Wo die Seite technisch liegt
+
+| Bestandteil | Wo | Wofür |
 |---|---|---|
-| **Domain** | `wahrheitskomplex.de` (bei All-Inkl als Registrar) | Was du in die Adresszeile tippst |
+| **Domain** | `wahrheitskomplex.de` (bei All-Inkl als Registrar) | Was Besucher in die Adresszeile tippen |
 | **Hosting** | Cloudflare (Workers) | Liefert die Seite aus, wenn jemand sie aufruft |
 | **Code & Inhalte** | GitHub (`github.com/ai-sui/wahrheitskomplex.de`) | Versions-Historie, „Single source of truth" |
 | **CMS-Login** | Cloudflare Worker (OAuth-Proxy) | Authentifiziert dich gegenüber GitHub, wenn du `/admin/` benutzt |
-| **Mail-Postfächer `@wahrheitskomplex.de`** | All-Inkl (unverändert) | Bleibt nach dem Domain-Umzug funktional |
+| **Mail-Postfächer `@wahrheitskomplex.de`** | All-Inkl (unverändert) | Bleiben funktional |
 
 **Was das praktisch heißt:**
 
 - Selbst wenn ein einzelner Dienst ausfällt, sind die Inhalte nicht weg —
   alles, was auf der Seite steht, liegt in Klartext (Markdown) im GitHub-Repo
 - Backups sind automatisch durch GitHub
-- Die Seite ist statisch — kein Risiko durch Datenbank-Schäden, Hacks etc.
+- Die Seite ist statisch — kein Risiko durch Datenbank-Schäden oder Hacks
 
 ---
 
-## 6. Wenn Sui nicht erreichbar ist
+## 7. Wenn Sui nicht erreichbar ist
 
-Drei realistische Szenarien:
+### 7.1 „Sui ist im Urlaub" (1–2 Wochen)
 
-### 6.1 „Sui ist im Urlaub" (1–2 Wochen)
+**Du musst nichts tun.** Inhalte pflegen geht autonom über das CMS.
+Falls die Seite versehentlich offline geht oder das CMS-Login nicht
+funktioniert — Mail an Sui, er kümmert sich nach Rückkehr.
 
-**Du musst nichts tun.** Die Seite läuft autonom weiter, auch ohne Sui.
-Der Auto-Sync holt täglich neue Beiträge von norberthaering.de. Wenn du
-manuell etwas einstellen willst:
+Die laufenden Inhalte (neue Blog-Posts) holt der Auto-Sync täglich
+selbst — die laufen auch ohne Sui weiter.
 
-- Variante A (Mail an Sui) — Mail bleibt einfach im Posteingang, wird nach
-  Rückkehr abgearbeitet
-- Variante B (CMS direkt unter `/admin/`) — sofort wirksam, vorausgesetzt
-  du hast den GitHub-Zugang aus Abschnitt 4.1 vorab eingerichtet
+### 7.2 „Sui ist länger weg" (mehrere Wochen)
 
-**Empfehlung:** Richte den CMS-Zugang einmal jetzt ein, auch wenn du ihn nie
-nutzt. Damit hast du die Option.
+**Inhalte:** Über das CMS publizierst du weiter wie gewohnt.
 
-### 6.2 „Sui ist länger weg" (mehrere Wochen)
+**Wenn etwas Technisches kaputtgeht** (Seite offline, Fehlermeldung,
+CMS-Login geht nicht):
 
-**Inhalte:** Variante B (CMS direkt) reicht aus. Du publishst, der PR wird
-automatisch gemerged (oder du klickst „Merge" auf GitHub.com selbst).
-
-**Wenn etwas Technisches nicht funktioniert** (Seite offline, Fehlermeldung,
-o.ä.):
-
-- E-Mail an [Backup-Kontakt, von Sui auszufüllen]
-- oder an einen anderen Entwickler deines Vertrauens. Der Code liegt
-  vollständig auf GitHub, jeder Web-Entwickler kann übernehmen
+- E-Mail an den Backup-Kontakt: *[Backup-Kontakt von Sui einzutragen]*
+- oder an einen anderen Web-Entwickler deines Vertrauens — der Code
+  liegt vollständig auf GitHub, jeder kann ihn lesen und anpassen
   (Astro + Cloudflare Workers — gängige Technologien)
 
-### 6.3 „Sui ist dauerhaft weg" (Notfall)
+### 7.3 „Sui ist dauerhaft weg" (Notfall-Übernahme durch jemand anderen)
 
-Der Code, die Inhalte und die Anleitungen stehen vollständig auf GitHub.
+Der Code, die Inhalte und alle Anleitungen liegen vollständig auf GitHub.
 Jeder Entwickler kann:
 
 1. Das Repo klonen (`git clone github.com/ai-sui/wahrheitskomplex.de`)
 2. Die Anleitungen in `OPERATIONS.md` lesen
-3. Die Seite in seinen eigenen Cloudflare-Account deployen (Anleitung
-   ebenfalls in `OPERATIONS.md`)
-4. Die DNS auf den neuen Host umstellen (Admin-Aktion im KAS)
+3. Die Seite in seinen eigenen Cloudflare-Account deployen (Schritte stehen
+   in `OPERATIONS.md`)
+4. Die DNS bei All-Inkl auf den neuen Host umstellen (Admin-Aktion im KAS)
 
 **Was du dafür brauchst:**
-- Den GitHub-Repo-Zugang (siehe 4.1)
+- Den GitHub-Repo-Zugang (hast du nach dem Setup oben)
 - Den DNS-/KAS-Zugang bei All-Inkl (hat der Admin)
 
-Solange diese zwei Zugänge bestehen, geht der Betrieb weiter — egal, wer
-technisch zuständig ist.
+Solange diese zwei Zugänge bestehen, geht der Betrieb weiter — egal,
+wer technisch zuständig ist.
 
 ---
 
-## 7. Templates für Claude
+## 8. Templates für Claude (optional, siehe Abschnitt 5)
 
-Hier die drei Vorlagen zum Kopieren-und-Einfügen in Claude.ai
-(siehe Abschnitt 3.2).
+Die folgenden Templates sind eine Schreibhilfe für claude.ai. Nutzen kannst
+du sie, wenn du einen Eintrag erst formulieren willst, bevor du ins CMS
+gehst. Du **musst** sie nicht benutzen — direkt im CMS zu schreiben geht
+genauso.
 
 ### Template 1: Neuer Beitrag „Im Gespräch" (Interview, Video, Podcast, Rezension)
 
 ```
-Bitte erstelle den Markdown-Eintrag für einen neuen Beitrag in der Sammlung
+Bitte erstelle den Inhalt für einen neuen Beitrag in der Sammlung
 "Im Gespräch" auf wahrheitskomplex.de.
 
 Format des Beitrags: <Video / Podcast / Interview (Text) / Rezension / Vortrag>
@@ -227,22 +227,21 @@ Themen: <Komma-getrennt, z.B. Pandemie, Klima, DSA & NetzDG, Hass und Hetze>
 Sprache: <Deutsch / English>
 Kurzbeschreibung / Pullquote (1–3 Sätze): <…>
 
-Bitte gib mir das fertige Markdown-File mit YAML-Frontmatter zurück,
-genau im Format der bestehenden Einträge in src/content/medien/.
-Schlag mir auch einen Dateinamen (slug.md) vor.
+Bitte liefere mir den fertigen Text feldweise, damit ich ihn direkt in
+die CMS-Felder kopieren kann. Schlag mir auch einen Slug für die URL vor.
 ```
 
 ### Template 2: Neuer Faktencheck-Fall
 
 ```
-Bitte erstelle den Markdown-Eintrag für einen neuen Faktencheck-Fall in der
+Bitte erstelle den Inhalt für einen neuen Faktencheck-Fall in der
 Sammlung "Faktenchecker im Check" auf wahrheitskomplex.de.
 
 Titel des Falls: <kurz, prägnant>
 Welcher Faktenchecker?: <Correctiv / dpa-Faktencheck / ARD-Faktenfinder / ZDF / AFP / …>
-Atlas-Akteur-Slug (optional): <z.B. correctiv, dpa-faktencheck — wenn der Faktenchecker bei uns ein Profil hat>
+Atlas-Akteur-Slug (optional): <z.B. correctiv, dpa-faktencheck>
 Datum: <YYYY-MM-DD>
-URL des Häring-Tiefenartikels: <https://norberthaering.de/...>
+URL des Tiefenartikels: <https://norberthaering.de/...>
 Themen: <Komma-getrennt>
 
 — Variante A (kompakte Form):
@@ -251,21 +250,20 @@ Zusammenfassung (3–5 Sätze, Fließtext): <…>
 — Variante B (Drei-Block-Form, wenn keine Zusammenfassung):
 Behauptung: <Was wurde behauptet?>
 Urteil: <Welches Urteil hat der Faktenchecker gefällt?>
-Realität: <Was zeigt deine Recherche?>
+Realität: <Was zeigt die Recherche?>
 
 Quellen (eine pro Zeile):
 - <URL oder Beleg>
 - <URL oder Beleg>
 
-Bitte gib mir das fertige Markdown-File mit YAML-Frontmatter zurück,
-genau im Format der bestehenden Einträge in src/content/faktenchecks/.
-Schlag mir auch einen Dateinamen (slug.md) vor.
+Bitte liefere mir den fertigen Text feldweise, damit ich ihn direkt in
+die CMS-Felder kopieren kann. Schlag mir auch einen Slug für die URL vor.
 ```
 
 ### Template 3: Neuer Atlas-Akteur (NGO, Stiftung, Faktenchecker, Behörde)
 
 ```
-Bitte erstelle den Markdown-Eintrag für einen neuen Atlas-Akteur auf
+Bitte erstelle den Inhalt für einen neuen Atlas-Akteur auf
 wahrheitskomplex.de.
 
 Name: <z.B. "Bertelsmann Stiftung">
@@ -295,43 +293,49 @@ Volltext-Profil?: <ja / nein>
 
 Sortierung (kleiner = vorn, Standard 100): <Zahl>
 
-Bitte gib mir das fertige Markdown-File mit YAML-Frontmatter zurück,
-genau im Format der bestehenden Einträge in src/content/actors/.
-Schlag mir auch einen Dateinamen (slug.md) vor.
+Bitte liefere mir den fertigen Text feldweise, damit ich ihn direkt in
+die CMS-Felder kopieren kann. Schlag mir auch einen Slug für die URL vor.
 ```
 
 ---
 
-## 8. Kontakt
+## 9. Kontakt
 
-- **Inhaltliche Fragen** (Beiträge, Korrekturen): Mail an Sui →
-  [Sui-Mail-Adresse hier einfügen]
-- **Technische Probleme** (Seite offline, Login geht nicht, etc.):
-  ebenfalls Mail an Sui
-- **Im Notfall** (Sui länger nicht erreichbar): [Backup-Kontakt hier einfügen]
+- **Technische Probleme** (Seite offline, CMS-Login geht nicht, Fehler-Meldungen):
+  Mail an Sui → *[Sui-Mail-Adresse einzutragen]*
+- **Im Notfall** (Sui länger nicht erreichbar): *[Backup-Kontakt einzutragen]*
 
 ---
 
-## 9. Häufige Fragen
+## 10. Häufige Fragen
 
 **Was, wenn ich etwas Falsches publish? Kann ich es rückgängig machen?**
 
-Ja. Jede Änderung ist in der GitHub-Versions-Historie protokolliert. Mail an Sui:
-„Bitte den letzten Stand der Akteur-XY-Seite wiederherstellen" — er hat einen
-Knopf, der das in 10 Sekunden macht.
+Im CMS einfach den Eintrag erneut bearbeiten oder löschen — sofort wirksam.
+Falls du eine **frühere Version** wiederherstellen willst (z.B. wenn du
+zwei Versionen zurück möchtest): Mail an Sui, er holt die alte Version aus
+der GitHub-Historie zurück.
 
 **Sehe ich, wer wann was geändert hat?**
 
-Ja, alles ist in der GitHub-Historie nachvollziehbar (von außen frei einsehbar
+Ja, alles ist in der GitHub-Historie nachvollziehbar (frei einsehbar
 unter <https://github.com/ai-sui/wahrheitskomplex.de/commits/main>).
+Jede Änderung trägt einen Zeitstempel und den GitHub-Username des
+Bearbeiters.
 
 **Was, wenn die Seite mal nicht erreichbar ist?**
 
 Cloudflare hat eine Verfügbarkeit von ~99,99 %. Wenn die Seite trotzdem mal
-weg ist: Mail an Sui. Inhalte bleiben in jedem Fall auf GitHub erhalten.
+weg ist: Mail an Sui. Inhalte bleiben in jedem Fall auf GitHub erhalten —
+sie können nicht „verloren gehen".
 
 **Wie viel kostet das Hosting?**
 
-Momentan 0 Euro pro Monat (Cloudflare-Free-Tier reicht für die zu erwartenden
-Zugriffe). Falls die Seite jemals so viel Traffic bekommt, dass eine
-Bezahl-Variante nötig wird, sind das ca. 5–10 USD/Monat.
+Momentan 0 Euro pro Monat (Cloudflare-Free-Tier reicht für die zu
+erwartenden Zugriffe). Falls die Seite jemals so viel Traffic bekommt,
+dass eine Bezahl-Variante nötig wird, sind das ca. 5–10 USD/Monat.
+
+**Brauche ich für die Pflege eine bestimmte Software?**
+
+Nein. Alles läuft im Browser (CMS unter `/admin/`, Claude unter `claude.ai`).
+Du brauchst keine App installieren, keinen Editor, kein Terminal.

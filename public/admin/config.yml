@@ -25,9 +25,10 @@ backend:
   base_url: https://wahrheitskomplex-cms-auth.github-survival631.workers.dev
   auth_endpoint: auth
 
-# editorial_workflow: Edits gehen als Draft-PR rein.
-# Auf "simple" stellen, falls Häring direkt commiten soll (kein Review-Step).
-publish_mode: editorial_workflow
+# simple: Klick auf "Publish" commitet sofort auf main — keine PR-Schleife,
+# kein zusätzlicher Merge-Schritt. Norbert ist alleiniger Content-Autor;
+# Rückgängig-Machen bei Bedarf über die Git-Historie.
+publish_mode: simple
 
 # Uploads (Bilder, PDFs) landen unter /public/uploads/ und sind unter
 # https://wahrheitskomplex.de/uploads/{datei} erreichbar.
