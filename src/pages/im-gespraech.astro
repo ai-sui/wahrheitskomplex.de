@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MediaCard from '../components/MediaCard.astro';
 import FilterChips from '../components/FilterChips.astro';
+import { withBase } from '../utils/url';
 
 const medien = (await getCollection('medien')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
@@ -16,11 +17,44 @@ const typeMap: Record<string, string> = {
   rezension: 'Rezension',
   vortrag: 'Vortrag',
 };
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Im Gespräch — Beiträge zum Buch',
+  numberOfItems: medien.length,
+  itemListElement: medien.map((m, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: m.data.title,
+    url: m.data.url,
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Start',
+      item: new URL(withBase('/'), Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Im Gespräch',
+      item: new URL(withBase('/im-gespraech'), Astro.site).toString(),
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Im Gespräch"
   description="Aktuelle Videos, Interviews, Rezensionen und Podcasts zu „Der Wahrheitskomplex“. Sortiert nach Erscheinungsdatum."
+  jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <section class="container-page py-12 md:py-16">
     <p class="meta-label text-accent mb-3">Im Gespräch</p>

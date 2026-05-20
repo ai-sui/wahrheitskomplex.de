@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FaktencheckCard from '../components/FaktencheckCard.astro';
+import { withBase } from '../utils/url';
 
 const faktenchecks = (await getCollection('faktenchecks')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
@@ -18,11 +19,48 @@ for (const fc of faktenchecks) {
 const outlets = Array.from(outletCounts.entries())
   .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
   .map(([name]) => name);
+
+// ItemList-Schema fuer die Vollliste (hilft Google, die Seite als
+// strukturierte Sammlung zu verstehen)
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Faktenchecker im Check',
+  description:
+    'Dokumentierte Faelle, in denen etablierte Faktencheck-Stellen falsch oder irrefuehrend gestempelt haben.',
+  numberOfItems: faktenchecks.length,
+  itemListElement: faktenchecks.map((fc, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: fc.data.title,
+    url: fc.data.url,
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Start',
+      item: new URL(withBase('/'), Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Faktenchecks',
+      item: new URL(withBase('/faktenchecks'), Astro.site).toString(),
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Faktenchecks"
   description="18 Fälle, in denen Faktenchecker deutscher und internationaler Medien danebenlagen — recherchiert und dokumentiert von Norbert Häring. Mit Verdict, Aktenlage und Quellen."
+  jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <section class="container-page py-12 md:py-16">
     <p class="meta-label text-accent mb-3">Faktenchecks</p>

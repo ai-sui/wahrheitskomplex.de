@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wahrheitskomplex.netlify.app/sitemap-index.xml
+Sitemap: https://wahrheitskomplex.de/sitemap-index.xml

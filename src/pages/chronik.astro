@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TimelineEvent from '../components/TimelineEvent.astro';
 import { chronik } from '../data/chronik';
+import { breadcrumbList } from '../utils/seo';
+
+const bc = breadcrumbList(Astro.site, [{ name: 'Chronik', path: '/chronik' }]);
 
 // Neueste zuerst
 const events = [...chronik].sort((a, b) => {
@@ -44,6 +47,7 @@ for (const { i, year } of eventsWithYear) {
 <BaseLayout
   title="Chronik"
   description="Chronik des Wahrheitskomplexes — historische Anker (1998–2025) plus Härings laufende Fortsetzung 2026. Vom NetzDG über DSA bis zu den jüngsten Gerichtsurteilen gegen NewsGuard und Correctiv."
+  jsonLd={bc}
 >
   <section class="container-page py-12 md:py-16">
     <p class="meta-label text-accent mb-3">Chronik</p>

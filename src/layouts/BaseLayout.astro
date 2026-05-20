@@ -15,19 +15,19 @@ interface Props {
 
 const {
   title,
-  description = 'Recherche-Atlas zum Buch „Der Wahrheitskomplex“ von Norbert Häring (Westend Verlag, 2026). Faktenchecker, Stiftungen, NGOs im Staatsauftrag — durchsuchbar und mit Quellen.',
+  description = 'Begleitseite zum Buch „Der Wahrheitskomplex" von Norbert Häring (Westend Verlag, 2026). Atlas der Akteure (Faktenchecker, Stiftungen, NGOs, Think Tanks), dokumentierte Faktencheck-Fehlgriffe, laufende Chronik — recherchiert und mit Quellen belegt.',
   ogImage = '/og.png',
   jsonLd,
 } = Astro.props;
 
-const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://wahrheitskomplex.netlify.app');
+const ogImageUrl = new URL(ogImage, Astro.site ?? 'https://wahrheitskomplex.de');
 
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Wahrheitskomplex',
   alternateName: 'Atlas zum Buch „Der Wahrheitskomplex"',
-  url: Astro.site?.toString() ?? 'https://wahrheitskomplex.netlify.app/',
+  url: Astro.site?.toString() ?? 'https://wahrheitskomplex.de/',
   description,
   inLanguage: 'de-DE',
   publisher: {
@@ -38,7 +38,7 @@ const websiteSchema = {
 };
 
 const fullTitle = title === 'Wahrheitskomplex' ? title : `${title} — Wahrheitskomplex`;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitskomplex.netlify.app');
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitskomplex.de');
 ---
 
 <!doctype html>

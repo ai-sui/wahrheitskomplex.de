@@ -2,11 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { book } from '../data/book';
 import { withBase } from '../utils/url';
+import { breadcrumbList } from '../utils/seo';
+
+const bc = breadcrumbList(Astro.site, [{ name: 'Über die Seite', path: '/ueber' }]);
 ---
 
 <BaseLayout
   title="Über"
   description="Was Wahrheitskomplex.de ist, wer dahintersteht und wie die Seite mit dem Buch zusammenhängt."
+  jsonLd={bc}
 >
   <section class="container-page py-12 md:py-16 max-w-3xl">
     <p class="meta-label text-accent mb-3">Über die Seite</p>

@@ -2,15 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { glossar } from '../data/glossar';
 import { withBase } from '../utils/url';
+import { breadcrumbList } from '../utils/seo';
 
 const sorted = [...glossar].sort((a, b) =>
   a.term.localeCompare(b.term, 'de'),
 );
+
+const bc = breadcrumbList(Astro.site, [{ name: 'Glossar', path: '/glossar' }]);
 ---
 
 <BaseLayout
   title="Glossar"
   description="Kurzdefinitionen zu wiederkehrenden Begriffen: DSA, NetzDG, IFCN, SMC, Five Eyes, USAID, EDMO und mehr."
+  jsonLd={bc}
 >
   <section class="container-page py-12 md:py-16 max-w-3xl">
     <p class="meta-label text-accent mb-3">Glossar</p>

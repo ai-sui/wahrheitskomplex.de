@@ -5,8 +5,11 @@ import { kapitel } from '../data/buch';
 import { recherchen } from '../data/recherchen';
 import { book } from '../data/book';
 import { withBase } from '../utils/url';
+import { breadcrumbList } from '../utils/seo';
 
 const actors = await getCollection('actors');
+
+const bc = breadcrumbList(Astro.site, [{ name: 'Das Buch', path: '/buch' }]);
 
 function actorsFor(matches: string) {
   return actors
@@ -22,6 +25,7 @@ function recherchenFor(matches: string) {
 <BaseLayout
   title="Das Buch"
   description="Sechs Kapitel von „Der Wahrheitskomplex“ — Inhalt, Akteure, Recherche-Beispiele. Mit direkten Verweisen ins Inhaltsverzeichnis und die Leseprobe auf norberthaering.de."
+  jsonLd={bc}
 >
   <section class="container-page py-12 md:py-16 max-w-4xl">
     <p class="meta-label text-accent mb-3">Das Buch</p>

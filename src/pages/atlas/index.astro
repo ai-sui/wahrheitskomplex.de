@@ -4,10 +4,47 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ActorCard from '../../components/ActorCard.astro';
 import FilterChips from '../../components/FilterChips.astro';
 import RelationsDiagram from '../../components/RelationsDiagram.astro';
+import { withBase } from '../../utils/url';
 
 const actors = (await getCollection('actors')).sort(
   (a, b) => (a.data.order ?? 100) - (b.data.order ?? 100),
 );
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Atlas der Akteure',
+  description:
+    'NGOs, Stiftungen, Faktenchecker, Behoerden und Think Tanks im Umfeld des Wahrheitskomplexes.',
+  numberOfItems: actors.length,
+  itemListElement: actors.map((a, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: a.data.name,
+    url: a.data.fulltext
+      ? new URL(withBase(`/atlas/${a.id}`), Astro.site).toString()
+      : a.data.haeringLink ?? undefined,
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Start',
+      item: new URL(withBase('/'), Astro.site).toString(),
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Atlas der Akteure',
+      item: new URL(withBase('/atlas'), Astro.site).toString(),
+    },
+  ],
+};
 
 const themen = [
   'Pandemie',
@@ -32,6 +69,7 @@ const akteurstypen = [
 <BaseLayout
   title="Atlas der Akteure"
   description="Akteure des sogenannten Wahrheitskomplexes — Faktenchecker, Stiftungen, Think Tanks, Behörden. Durchsuchbar nach Thema und Typ, mit Quellen und Verweis auf die Tiefenartikel von Norbert Häring."
+  jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <section class="container-page py-12 md:py-16">
     <p class="meta-label mb-3 text-accent">Atlas</p>
