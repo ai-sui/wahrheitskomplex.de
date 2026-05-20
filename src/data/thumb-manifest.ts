@@ -14,8 +14,20 @@ export const thumbManifest = {
   ],
   "faktencheckThumbs": [
     "afp-aufmacher.jpg",
+    "ard-faktenfinder-merz.jpg",
+    "ard-siggelkow-ueber-sanktionen.jpg",
+    "correctiv-anti-journalisten.jpg",
+    "correctiv-nanolipide.jpg",
     "dw-ndr-rostock.jpg",
-    "spannungsfall-dpa.jpg"
+    "faktenfinder-watzl.jpg",
+    "ganser-guerot-krone.jpg",
+    "pflanzensprengstoff.jpg",
+    "pistorius-faktenfuchs.jpg",
+    "siggelkow-rechtsextremismus.jpg",
+    "siggelkow-uebersterblichkeit.jpg",
+    "spahn-wieler-faktenchecker.jpg",
+    "spannungsfall-dpa.jpg",
+    "transgender-gesetz-tagesschau.jpg"
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",

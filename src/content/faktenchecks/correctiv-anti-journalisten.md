@@ -21,6 +21,7 @@ realitaet: >-
   konkreten Fällen, in denen Correctiv Recherchen mit Methoden bewertet,
   die einer wissenschaftlichen Prüfung nicht standhalten.
 url: "https://norberthaering.de/propaganda-zensur/correctiv-anti-journalisten/"
+thumbOverride: "/faktencheck-thumbs/correctiv-anti-journalisten.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

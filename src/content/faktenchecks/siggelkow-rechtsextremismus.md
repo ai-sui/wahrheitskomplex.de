@@ -18,6 +18,7 @@ realitaet: >-
   aufgedeckt wurden, erfolgt nur eine halbherzige Korrektur; an der
   ursprünglichen Bewertung wird nichts geändert.
 url: "https://norberthaering.de/propaganda-zensur/siggelkow-rechtsextremismus/"
+thumbOverride: "/faktencheck-thumbs/siggelkow-rechtsextremismus.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

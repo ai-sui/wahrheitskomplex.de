@@ -16,6 +16,7 @@ realitaet: >-
   zentrale Kritik-Punkte sachlich zutreffen — wodurch die Tagesschau
   ihre eigenen Faktenchecker desavouiert.
 url: "https://norberthaering.de/news/transgender-gesetz-tagesschau-stellt-wieder-einmal-die-eigenen-kulturkaempfenden-faktenchecker-bloss/"
+thumbOverride: "/faktencheck-thumbs/transgender-gesetz-tagesschau.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

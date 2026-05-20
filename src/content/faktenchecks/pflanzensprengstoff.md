@@ -18,6 +18,7 @@ realitaet: >-
   reagieren darauf, indem sie ihre Faktencheck-Abteilungen still
   zurückbauen — statt offen zu korrigieren.
 url: "https://norberthaering.de/propaganda-zensur/pflanzensprengstoff/"
+thumbOverride: "/faktencheck-thumbs/pflanzensprengstoff.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

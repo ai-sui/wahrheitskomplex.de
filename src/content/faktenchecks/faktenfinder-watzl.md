@@ -19,6 +19,7 @@ realitaet: >-
   abgestempelt, ohne dass die zugrunde liegenden Quellen sauber
   geprüft worden wären.
 url: "https://norberthaering.de/news/faktenfinder-watzl/"
+thumbOverride: "/faktencheck-thumbs/faktenfinder-watzl.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

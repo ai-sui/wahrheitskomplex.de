@@ -19,6 +19,7 @@ realitaet: >-
   Angeklagten" — ein methodisches Muster, das sich in vielen
   Faktenchecks wiederfindet.
 url: "https://norberthaering.de/propaganda-zensur/correctiv-nanolipide/"
+thumbOverride: "/faktencheck-thumbs/correctiv-nanolipide.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "Echelon Biosciences Produktdatenblatt"

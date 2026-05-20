@@ -19,6 +19,7 @@ realitaet: >-
   Gesamtbild herauslösen — ein methodisches Muster, das sich
   durchzieht.
 url: "https://norberthaering.de/news/ard-siggelkow-ueber-sanktionen/"
+thumbOverride: "/faktencheck-thumbs/ard-siggelkow-ueber-sanktionen.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

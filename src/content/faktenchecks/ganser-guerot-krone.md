@@ -17,6 +17,7 @@ realitaet: >-
   an anspruchsvollen Themen scheitert — und wie die ARD aus dieser
   fachlichen Schwäche eine institutionelle Routine macht.
 url: "https://norberthaering.de/propaganda-zensur/ganser-guerot-krone/"
+thumbOverride: "/faktencheck-thumbs/ganser-guerot-krone.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

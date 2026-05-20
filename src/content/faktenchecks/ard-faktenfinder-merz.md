@@ -17,6 +17,7 @@ realitaet: >-
   einen Politiker, der genau diese Institution reformieren will. Die
   Interessenkollision wird im Beitrag nicht offen gelegt.
 url: "https://norberthaering.de/propaganda-zensur/ard-faktenfinder-merz/"
+thumbOverride: "/faktencheck-thumbs/ard-faktenfinder-merz.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

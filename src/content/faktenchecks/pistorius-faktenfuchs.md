@@ -17,6 +17,7 @@ realitaet: >-
   Verteidigungsministers steht in offenem Widerspruch zu Studienlage
   und Behördenkommunikation der vorangegangenen Jahre.
 url: "https://norberthaering.de/propaganda-zensur/pistorius-faktenfuchs/"
+thumbOverride: "/faktencheck-thumbs/pistorius-faktenfuchs.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

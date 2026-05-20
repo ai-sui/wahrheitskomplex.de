@@ -18,6 +18,7 @@ realitaet: >-
   von Faktencheckern als unzulässig markiert worden war. Die
   Faktenchecker passen ihre Bewertungen daraufhin nicht öffentlich an.
 url: "https://norberthaering.de/propaganda-zensur/spahn-wieler-faktenchecker/"
+thumbOverride: "/faktencheck-thumbs/spahn-wieler-faktenchecker.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "BMG-Pressekonferenz 6. Oktober 2021"

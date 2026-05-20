@@ -18,6 +18,7 @@ realitaet: >-
   hier nicht zur Aufklärung bei, sondern zur Stabilisierung des
   offiziellen Narrativs.
 url: "https://norberthaering.de/propaganda-zensur/siggelkow-uebersterblichkeit/"
+thumbOverride: "/faktencheck-thumbs/siggelkow-uebersterblichkeit.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---
