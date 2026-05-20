@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/url';
+
 interface Props {
   name: string;
   slug: string;
@@ -70,7 +72,7 @@ const isExternal = !fulltext && Boolean(haeringLink);
 
   <p class="meta-label text-muted border-t border-line pt-3 mt-auto">
     {fulltext ? (
-      <a href={`/atlas/${slug}`} class="text-accent no-underline hover:underline">
+      <a href={withBase(`/atlas/${slug}`)} class="text-accent no-underline hover:underline">
         Profil ansehen →
       </a>
     ) : haeringLink ? (

@@ -1,5 +1,6 @@
 ---
 import { thumbManifest } from '../data/thumb-manifest';
+import { withBase } from '../utils/url';
 
 interface Props {
   title: string;
@@ -41,9 +42,9 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
 // Existenz-Check läuft über das Build-Manifest (kein node:fs zur Render-Zeit).
 let thumb: string | null = null;
 if (thumbOverride) {
-  thumb = thumbOverride;
+  thumb = withBase(thumbOverride);
 } else if (thumbManifest.faktencheckThumbs.includes(`${slug}.jpg`)) {
-  thumb = `/faktencheck-thumbs/${slug}.jpg`;
+  thumb = withBase(`/faktencheck-thumbs/${slug}.jpg`);
 }
 
 const hasSummary = Boolean(summary);
@@ -135,7 +136,7 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
       </a>
       {actorSlug && (
         <a
-          href={`/atlas/${actorSlug}`}
+          href={withBase(`/atlas/${actorSlug}`)}
           class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
         >
           Akteur im Atlas →

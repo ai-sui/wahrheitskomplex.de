@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { glossar } from '../data/glossar';
+import { withBase } from '../utils/url';
 
 const sorted = [...glossar].sort((a, b) =>
   a.term.localeCompare(b.term, 'de'),
@@ -39,7 +40,7 @@ const sorted = [...glossar].sort((a, b) =>
                 <span class="meta-label text-muted">Siehe:</span>
                 {entry.siehe.map((ref) => (
                   <a
-                    href={ref.href}
+                    href={withBase(ref.href)}
                     class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
                   >
                     {ref.label}

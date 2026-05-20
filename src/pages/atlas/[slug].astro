@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ActorDetail from '../../components/ActorDetail.astro';
+import { withBase } from '../../utils/url';
 
 export async function getStaticPaths() {
   const actors = await getCollection('actors', ({ data }) => data.fulltext);
@@ -45,7 +46,7 @@ const orgSchema = {
 >
   <nav class="container-page pt-8 text-sm">
     <a
-      href="/atlas"
+      href={withBase('/atlas')}
       class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
     >
       ← Zur Übersicht

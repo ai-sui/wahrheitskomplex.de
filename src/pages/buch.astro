@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { kapitel } from '../data/buch';
 import { recherchen } from '../data/recherchen';
 import { book } from '../data/book';
+import { withBase } from '../utils/url';
 
 const actors = await getCollection('actors');
 
@@ -114,7 +115,7 @@ function recherchenFor(matches: string) {
                       {actorList.map((a) => (
                         <li>
                           <a
-                            href={`/atlas/${a.id}`}
+                            href={withBase(`/atlas/${a.id}`)}
                             class="text-ink no-underline hover:text-accent border-b border-line hover:border-accent inline-block"
                           >
                             {a.data.name}
@@ -134,7 +135,7 @@ function recherchenFor(matches: string) {
                       {recherchenList.map((r) => (
                         <li>
                           <a
-                            href={`/recherchen#${r.slug}`}
+                            href={withBase(`/recherchen#${r.slug}`)}
                             class="text-ink-soft no-underline hover:text-accent leading-snug block"
                           >
                             <span class="text-accent">›</span> {r.frage}

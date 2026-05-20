@@ -1,5 +1,6 @@
 ---
 import type { HookCard } from '../data/homepage';
+import { withBase } from '../utils/url';
 
 interface Props {
   card: HookCard;
@@ -10,7 +11,7 @@ const isExternal = card.href.startsWith('http');
 ---
 
 <a
-  href={card.href}
+  href={withBase(card.href)}
   rel={isExternal ? 'noopener' : undefined}
   class="group flex flex-col h-full bg-paper-soft border border-line rounded-sm p-6 md:p-7 no-underline hover:border-accent transition-colors"
 >

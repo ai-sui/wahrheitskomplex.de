@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/url';
+
 interface Props {
   name: string;
   slug: string;
@@ -16,7 +18,7 @@ const metaLine = [kategorie, land, gegruendet]
 ---
 
 <a
-  href={`/atlas/${slug}`}
+  href={withBase(`/atlas/${slug}`)}
   class="group h-full flex flex-col bg-paper-soft border border-line border-l-4 border-l-accent rounded-sm p-6 md:p-7 no-underline transition-colors hover:border-accent"
 >
   <p class="meta-label text-muted mb-4 leading-tight">{metaLine}</p>

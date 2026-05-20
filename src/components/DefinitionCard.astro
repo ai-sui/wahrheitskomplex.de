@@ -1,5 +1,6 @@
 ---
 import type { Definition } from '../data/definitionen';
+import { withBase } from '../utils/url';
 
 interface Props {
   d: Definition;
@@ -30,7 +31,7 @@ const { d } = Astro.props;
     {d.link && (
       <p class="mt-1.5">
         <a
-          href={d.link.href}
+          href={withBase(d.link.href)}
           class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
         >
           {d.link.label} →

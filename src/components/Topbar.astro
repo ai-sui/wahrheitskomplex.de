@@ -1,7 +1,11 @@
 ---
+import { withBase } from '../utils/url';
+
 const { pathname } = Astro.url;
-const isActive = (href: string) =>
-  href === '/' ? pathname === '/' : pathname.startsWith(href);
+const isActive = (href: string) => {
+  const target = withBase(href);
+  return target === withBase('/') ? pathname === withBase('/') : pathname.startsWith(target);
+};
 
 // Start ist über das Logo erreichbar — daher hier nicht doppelt.
 const links = [
@@ -18,7 +22,7 @@ const links = [
 <header class="border-b border-line bg-paper/85 backdrop-blur-sm sticky top-0 z-30">
   <div class="container-page py-3 md:py-4">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-8">
-      <a href="/" class="flex items-baseline gap-2 no-underline shrink-0" aria-label="Wahrheitskomplex Startseite">
+      <a href={withBase('/')} class="flex items-baseline gap-2 no-underline shrink-0" aria-label="Wahrheitskomplex Startseite">
         <span class="font-serif text-xl font-semibold tracking-tight">
           Wahrheits<span class="text-accent">komplex</span>
         </span>
@@ -34,7 +38,7 @@ const links = [
             {links.map((link) => (
               <li class="shrink-0">
                 <a
-                  href={link.href}
+                  href={withBase(link.href)}
                   class:list={[
                     'text-sm no-underline transition-colors',
                     isActive(link.href) ? 'text-accent font-semibold' : 'text-ink-soft hover:text-ink',

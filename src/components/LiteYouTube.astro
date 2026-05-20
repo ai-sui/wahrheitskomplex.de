@@ -3,6 +3,8 @@
 // Lädt nur ein lokal gehostetes Thumbnail. Erst nach Klick wird das Iframe
 // (über youtube-nocookie.com) eingefügt. Keine Drittanbieter-Requests
 // vor Interaktion.
+import { withBase } from '../utils/url';
+
 interface Props {
   id: string;
   title: string;
@@ -19,7 +21,7 @@ const { id, title } = Astro.props;
   aria-label={`Video abspielen: ${title}`}
 >
   <img
-    src={`/yt-thumbs/${id}.jpg`}
+    src={withBase(`/yt-thumbs/${id}.jpg`)}
     alt={`Vorschau: ${title}`}
     width="1280"
     height="720"

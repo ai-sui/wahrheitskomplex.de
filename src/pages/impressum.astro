@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout
@@ -59,7 +60,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="text-sm text-muted">
       Weitere Informationen zum Datenschutz finden Sie auf der
       <a
-        href="/datenschutz"
+        href={withBase('/datenschutz')}
         class="text-accent underline decoration-accent/40 hover:decoration-accent"
       >Datenschutzseite</a>.
     </p>

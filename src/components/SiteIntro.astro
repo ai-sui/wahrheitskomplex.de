@@ -2,17 +2,18 @@
 // Knapper Erklärungsblock oben auf der Startseite — sagt in einer Zeile,
 // was diese Seite ist und wie sie zum Buch steht. Cover als visueller Anker.
 import { book } from '../data/book';
+import { withBase } from '../utils/url';
 ---
 
 <section class="container-page pt-8 md:pt-12 pb-4">
   <div class="flex items-start gap-5 md:gap-7 max-w-3xl">
     <a
-      href="/buch"
+      href={withBase('/buch')}
       class="shrink-0 no-underline block"
       aria-label="Zur Buchseite"
     >
       <img
-        src="/cover-wahrheitskomplex.jpg"
+        src={withBase('/cover-wahrheitskomplex.jpg')}
         alt={`Cover: ${book.title}`}
         width="507"
         height="800"
@@ -28,7 +29,7 @@ import { book } from '../data/book';
       </h1>
       <p class="text-sm md:text-base text-ink-soft leading-relaxed">
         Akteure, Faktenchecks, Chronik — fortlaufend recherchiert seit
-        Drucklegung. <a href="/ueber" class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent">Über die Seite →</a>
+        Drucklegung. <a href={withBase('/ueber')} class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent">Über die Seite →</a>
       </p>
     </div>
   </div>

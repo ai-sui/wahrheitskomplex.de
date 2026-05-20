@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="Datenschutz" description="Datenschutzhinweise zur Begleitseite Wahrheitskomplex.">
@@ -29,7 +30,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <p class="text-ink-soft leading-relaxed">
       Der inhaltlich Verantwortliche ist im
-      <a href="/impressum" class="underline decoration-line hover:decoration-accent">Impressum</a>
+      <a href={withBase('/impressum')} class="underline decoration-line hover:decoration-accent">Impressum</a>
       genannt. Anfragen bezüglich der Verarbeitung Ihrer Daten richten Sie bitte
       an die dort hinterlegte E-Mail-Adresse.
     </p>

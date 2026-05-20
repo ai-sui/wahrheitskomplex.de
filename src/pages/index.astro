@@ -13,6 +13,7 @@ import SiteIntro from '../components/SiteIntro.astro';
 import DefinitionsTeaser from '../components/DefinitionsTeaser.astro';
 import { book } from '../data/book';
 import { chronik } from '../data/chronik';
+import { withBase } from '../utils/url';
 
 // --- Daten fürs „Neues aus dem Wahrheitskomplex"-Karussell ---
 // Mische Medien (Videos/Interviews/Rezensionen), Faktenchecks und
@@ -51,8 +52,8 @@ const newsFeed: FeedItem[] = [
     source: m.data.outlet,
     url: m.data.url,
     thumb: m.data.youtubeId
-      ? `/yt-thumbs/${m.data.youtubeId}.jpg`
-      : `/article-thumbs/${m.id}.jpg`,
+      ? withBase(`/yt-thumbs/${m.data.youtubeId}.jpg`)
+      : withBase(`/article-thumbs/${m.id}.jpg`),
     paywall: m.data.paywall,
   })),
   ...faktenchecks.map((fc) => ({
@@ -62,8 +63,8 @@ const newsFeed: FeedItem[] = [
     source: fc.data.faktenchecker,
     url: fc.data.url,
     thumb: fc.data.thumbOverride
-      ? fc.data.thumbOverride
-      : `/faktencheck-thumbs/${fc.id}.jpg`,
+      ? withBase(fc.data.thumbOverride)
+      : withBase(`/faktencheck-thumbs/${fc.id}.jpg`),
   })),
   // Ausgewählte Chronik-Einträge mit Häring-Link als „Aktuelles"
   ...chronik
@@ -74,7 +75,7 @@ const newsFeed: FeedItem[] = [
       title: c.title,
       source: 'norberthaering.de',
       url: c.haeringLink as string,
-      thumb: c.thumb,
+      thumb: c.thumb ? withBase(c.thumb) : undefined,
     })),
 ];
 
@@ -130,7 +131,7 @@ const bookSchema = {
         </h2>
       </div>
       <a
-        href="/im-gespraech"
+        href={withBase('/im-gespraech')}
         class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
       >
         Alle Beiträge →
@@ -162,7 +163,7 @@ const bookSchema = {
         </h2>
       </div>
       <a
-        href="/atlas"
+        href={withBase('/atlas')}
         class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
       >
         Zum Atlas →
@@ -198,7 +199,7 @@ const bookSchema = {
         </p>
       </div>
       <a
-        href="/chronik"
+        href={withBase('/chronik')}
         class="text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
       >
         Vollständige Chronik →
@@ -218,7 +219,7 @@ const bookSchema = {
         <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker im Check.</h2>
       </div>
       <a
-        href="/faktenchecks"
+        href={withBase('/faktenchecks')}
         class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0"
       >
         Alle Faktenchecks →

@@ -1,5 +1,6 @@
 ---
 import type { Recherche } from '../data/recherchen';
+import { withBase } from '../utils/url';
 
 interface Props {
   recherche: Recherche;
@@ -36,7 +37,7 @@ const { recherche: r } = Astro.props;
   <div class="flex flex-wrap gap-3 border-t border-line pt-5 mt-6 text-sm">
     {r.atlasLink && (
       <a
-        href={r.atlasLink}
+        href={withBase(r.atlasLink)}
         class="text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
       >
         Akteur im Atlas →

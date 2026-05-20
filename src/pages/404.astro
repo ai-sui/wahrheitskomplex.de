@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="404 — nicht gefunden" description="Diese Seite existiert nicht. Vielleicht ein Faktencheck-Artefakt.">
@@ -18,13 +19,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="flex flex-wrap gap-3">
       <a
-        href="/"
+        href={withBase('/')}
         class="rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium no-underline hover:bg-accent transition-colors"
       >
         Zur Startseite
       </a>
       <a
-        href="/atlas"
+        href={withBase('/atlas')}
         class="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
       >
         Zum Akteurs-Atlas

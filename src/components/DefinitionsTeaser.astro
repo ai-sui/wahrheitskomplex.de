@@ -1,6 +1,7 @@
 ---
 import DefinitionCard from './DefinitionCard.astro';
 import { definitionen } from '../data/definitionen';
+import { withBase } from '../utils/url';
 
 // Server rendert alle Definitionen. Bei Page-Load wählt JS zufällig drei
 // aus dem Pool — Rotation ohne Backend, ohne Build-Trigger.
@@ -15,7 +16,7 @@ import { definitionen } from '../data/definitionen';
       </h2>
     </div>
     <a
-      href="/glossar"
+      href={withBase('/glossar')}
       class="hidden sm:inline-block text-sm text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent shrink-0 self-end"
     >
       Zum Glossar →

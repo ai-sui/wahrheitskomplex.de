@@ -1,5 +1,6 @@
 ---
 import type { Book } from '../data/book';
+import { withBase } from '../utils/url';
 
 interface Props {
   book: Book;
@@ -17,7 +18,7 @@ const { book } = Astro.props;
       class="block w-44 md:w-52 shrink-0 mx-auto md:mx-0 group"
     >
       <img
-        src="/cover-wahrheitskomplex.jpg"
+        src={withBase('/cover-wahrheitskomplex.jpg')}
         alt={`Buchcover: ${book.title} — ${book.author}, ${book.publisher}`}
         width="507"
         height="800"
@@ -50,7 +51,7 @@ const { book } = Astro.props;
 
       <div class="flex gap-4 items-start mb-6 max-w-xl">
         <img
-          src="/haering-portrait.jpg"
+          src={withBase('/haering-portrait.jpg')}
           alt={`Porträt von ${book.author}`}
           width="800"
           height="1169"

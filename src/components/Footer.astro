@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../utils/url';
 const year = new Date().getFullYear();
 ---
 
@@ -14,15 +15,15 @@ const year = new Date().getFullYear();
     <div>
       <p class="meta-label mb-3">Navigation</p>
       <ul class="space-y-2 text-ink-soft">
-        <li><a href="/" class="hover:text-accent">Start</a></li>
-        <li><a href="/buch" class="hover:text-accent">Das Buch</a></li>
-        <li><a href="/atlas" class="hover:text-accent">Atlas der Akteure</a></li>
-        <li><a href="/faktenchecks" class="hover:text-accent">Faktenchecks</a></li>
-        <li><a href="/chronik" class="hover:text-accent">Chronik</a></li>
-        <li><a href="/recherchen" class="hover:text-accent">Recherchen</a></li>
-        <li><a href="/im-gespraech" class="hover:text-accent">Im Gespräch</a></li>
-        <li><a href="/glossar" class="hover:text-accent">Glossar</a></li>
-        <li><a href="/ueber" class="hover:text-accent">Über das Projekt</a></li>
+        <li><a href={withBase('/')} class="hover:text-accent">Start</a></li>
+        <li><a href={withBase('/buch')} class="hover:text-accent">Das Buch</a></li>
+        <li><a href={withBase('/atlas')} class="hover:text-accent">Atlas der Akteure</a></li>
+        <li><a href={withBase('/faktenchecks')} class="hover:text-accent">Faktenchecks</a></li>
+        <li><a href={withBase('/chronik')} class="hover:text-accent">Chronik</a></li>
+        <li><a href={withBase('/recherchen')} class="hover:text-accent">Recherchen</a></li>
+        <li><a href={withBase('/im-gespraech')} class="hover:text-accent">Im Gespräch</a></li>
+        <li><a href={withBase('/glossar')} class="hover:text-accent">Glossar</a></li>
+        <li><a href={withBase('/ueber')} class="hover:text-accent">Über das Projekt</a></li>
         <li><a href="https://norberthaering.de" rel="noopener" class="hover:text-accent">norberthaering.de &rarr;</a></li>
       </ul>
     </div>
@@ -30,8 +31,8 @@ const year = new Date().getFullYear();
     <div>
       <p class="meta-label mb-3">Rechtliches</p>
       <ul class="space-y-2 text-ink-soft">
-        <li><a href="/impressum" class="hover:text-accent">Impressum</a></li>
-        <li><a href="/datenschutz" class="hover:text-accent">Datenschutz</a></li>
+        <li><a href={withBase('/impressum')} class="hover:text-accent">Impressum</a></li>
+        <li><a href={withBase('/datenschutz')} class="hover:text-accent">Datenschutz</a></li>
       </ul>
     </div>
   </div>

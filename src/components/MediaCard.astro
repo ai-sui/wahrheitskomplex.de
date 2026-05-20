@@ -1,6 +1,7 @@
 ---
 import LiteYouTube from './LiteYouTube.astro';
 import { thumbManifest } from '../data/thumb-manifest';
+import { withBase } from '../utils/url';
 
 type Type = 'video' | 'podcast' | 'interview' | 'rezension' | 'vortrag';
 
@@ -39,7 +40,7 @@ const {
 // Article-Thumbnail vorhanden? (aus Build-Manifest, kein node:fs nötig)
 const articleThumb =
   slug && thumbManifest.articleThumbs.includes(`${slug}.jpg`)
-    ? `/article-thumbs/${slug}.jpg`
+    ? withBase(`/article-thumbs/${slug}.jpg`)
     : null;
 
 const typeLabels: Record<Type, string> = {
