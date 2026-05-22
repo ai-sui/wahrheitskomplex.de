@@ -66,7 +66,7 @@ const defaultSvg = `<?xml version="1.0" encoding="UTF-8"?>
 
   <line x1="80" y1="540" x2="780" y2="540" stroke="#d8d0c2" stroke-width="1"/>
   <text x="80" y="575" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="20" fill="#4a4a4a" font-style="italic">
-    Akteure, Geldflüsse, Quellen — durchsuchbar.
+    Akteure, Faktenchecks, Chronik — recherchiert seit Drucklegung.
   </text>
 </svg>`;
 
@@ -166,7 +166,7 @@ function actorSvg({ name, kategorie, kurzbeschreibung, land, gegruendet }) {
 
   <line x1="80" y1="540" x2="1120" y2="540" stroke="#d8d0c2" stroke-width="1"/>
   <text x="80" y="580" font-family="system-ui, sans-serif" font-size="18" fill="#6c665a" letter-spacing="1">${esc(meta)}</text>
-  <text x="1120" y="580" text-anchor="end" font-family="system-ui, sans-serif" font-size="18" fill="#6c665a" letter-spacing="1">wahrheitskomplex.netlify.app</text>
+  <text x="1120" y="580" text-anchor="end" font-family="system-ui, sans-serif" font-size="18" fill="#6c665a" letter-spacing="1">wahrheitskomplex.de</text>
 </svg>`;
 }
 

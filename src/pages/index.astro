@@ -67,17 +67,9 @@ const newsFeed: FeedItem[] = [
       ? withBase(fc.data.thumbOverride)
       : withBase(`/faktencheck-thumbs/${fc.id}.jpg`),
   })),
-  // Ausgewählte Chronik-Einträge mit Häring-Link als „Aktuelles"
-  ...chronik
-    .filter((c) => c.haeringLink)
-    .map((c) => ({
-      date: c.date,
-      badge: 'Aktuell',
-      title: c.title,
-      source: 'norberthaering.de',
-      url: c.haeringLink as string,
-      thumb: c.thumb ? withBase(c.thumb) : undefined,
-    })),
+  // Chronik-Einträge gehen NICHT mehr ins "Neues"-Karussell — sie haben
+  // ihren eigenen Block "Was seither geschah" weiter unten. So bleibt
+  // jede Sektion thematisch eindeutig.
 ];
 
 const recentNews = newsFeed
@@ -115,7 +107,10 @@ const bookSchema = {
 };
 ---
 
-<BaseLayout title="Wahrheitskomplex" jsonLd={bookSchema}>
+<BaseLayout
+  title="Wahrheitskomplex — Begleitseite zum Buch von Norbert Häring"
+  jsonLd={bookSchema}
+>
   <!-- Begleitseiten-Erklärung oben -->
   <SiteIntro />
 

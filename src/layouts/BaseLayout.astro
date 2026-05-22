@@ -37,7 +37,8 @@ const websiteSchema = {
   },
 };
 
-const fullTitle = title === 'Wahrheitskomplex' ? title : `${title} — Wahrheitskomplex`;
+// "Wahrheitskomplex" anhaengen, ausser es ist schon im Title (verhindert Doppel-Branding)
+const fullTitle = /wahrheitskomplex/i.test(title) ? title : `${title} — Wahrheitskomplex`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitskomplex.de');
 ---
 
