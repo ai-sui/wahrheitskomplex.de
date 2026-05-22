@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { definitionen } from '../../data/definitionen';
+import { withBase } from '../../utils/url';
+import { breadcrumbList } from '../../utils/seo';
+
+export async function getStaticPaths() {
+  return definitionen
+    .filter((d) => d.slug && d.volltext && d.volltext.length > 0)
+    .map((d) => ({
+      params: { slug: d.slug! },
+      props: { def: d },
+    }));
+}
+
+const { def } = Astro.props;
+
+const description = def.antwort;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: def.term,
+  description: def.antwort,
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    name: 'Glossar — Wahrheitskomplex',
+    url: new URL(withBase('/glossar'), Astro.site).toString(),
+  },
+  url: new URL(withBase(`/glossar/${def.slug}`), Astro.site).toString(),
+  subjectOf: {
+    '@type': 'Book',
+    name: 'Der Wahrheitskomplex',
+    author: { '@type': 'Person', name: 'Norbert Häring' },
+  },
+};
+
+const bc = breadcrumbList(Astro.site, [
+  { name: 'Glossar', path: '/glossar' },
+  { name: def.term, path: `/glossar/${def.slug}` },
+]);
+---
+
+<BaseLayout
+  title={`Was ist ${def.term}?`}
+  description={description}
+  jsonLd={[articleSchema, bc]}
+>
+  <nav class="container-page pt-8 text-sm">
+    <a
+      href={withBase('/glossar')}
+      class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+    >
+      ← Zum Glossar
+    </a>
+  </nav>
+
+  <article class="container-page py-8 md:py-12 max-w-3xl">
+    <p class="meta-label text-accent mb-3">Was ist …?</p>
+    <h1 class="font-serif text-3xl md:text-5xl leading-tight mb-6">
+      {def.term}<span class="text-accent">?</span>
+    </h1>
+
+    <p class="font-serif text-xl md:text-2xl text-ink leading-snug mb-10 border-l-4 border-accent pl-5">
+      {def.antwort}
+    </p>
+
+    {def.volltext && (
+      <div class="text-ink leading-relaxed space-y-5 md:text-lg">
+        {def.volltext.map((para) => (
+          <p>{para}</p>
+        ))}
+      </div>
+    )}
+
+    {def.quellenDetail && def.quellenDetail.length > 0 && (
+      <section class="mt-12 border-t border-line pt-6">
+        <p class="meta-label text-muted mb-3">Quellen</p>
+        <ul class="space-y-2 text-sm text-ink-soft">
+          {def.quellenDetail.map((q) => (
+            <li>
+              {q.href ? (
+                <a
+                  href={q.href}
+                  rel="noopener"
+                  class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+                >
+                  {q.label} ↗
+                </a>
+              ) : (
+                <span>{q.label}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {def.link && (
+      <section class="mt-8 border-t border-line pt-6">
+        <p class="text-sm">
+          <a
+            href={withBase(def.link.href)}
+            class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+          >
+            {def.link.label} →
+          </a>
+        </p>
+      </section>
+    )}
+
+    <nav class="mt-16 pt-6 border-t border-line text-sm">
+      <a
+        href={withBase('/glossar')}
+        class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+      >
+        ← Zurück zum Glossar
+      </a>
+    </nav>
+  </article>
+</BaseLayout>

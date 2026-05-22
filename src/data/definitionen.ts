@@ -1,12 +1,25 @@
 // „Was ist …?" — pointierte Definitionen offizieller und halb­offizieller
 // Begriffe aus dem Umfeld des Wahrheitskomplexes.
 // Der Browser wählt beim Page-Load drei zufällige Einträge aus dem Pool.
+//
+// Begriffe mit `slug` und `volltext` bekommen eine eigene Detail-Seite
+// unter /glossar/[slug] mit dem Volltext, einer strukturierten
+// Quellen-Liste und BreadcrumbList-Schema. Die „Was ist …?"-Karte zeigt
+// dann zusätzlich einen „Mehr →"-Link auf diese Seite.
+
+export type Quelle = {
+  label: string;
+  href?: string;
+};
 
 export type Definition = {
   term: string;
   antwort: string;
-  quelle: string; // Wer hat das so definiert / wer nutzt den Begriff
+  quelle: string; // Wer hat das so definiert / wer nutzt den Begriff (Kurz-Form)
   link?: { label: string; href: string }; // optionaler Verweis (Atlas, Chronik, Buchkapitel)
+  slug?: string; // wenn vorhanden: Detail-Seite /glossar/[slug]
+  volltext?: string[]; // Absätze in Reihenfolge (Markdown-freier Fließtext)
+  quellenDetail?: Quelle[]; // strukturierte Quellen mit optionaler URL
 };
 
 export const definitionen: Definition[] = [
@@ -26,10 +39,23 @@ export const definitionen: Definition[] = [
   },
   {
     term: 'Meinungsfreiheit',
+    slug: 'meinungsfreiheit',
     antwort:
-      'Im EU-Aktionsplan gegen Desinformation neu gefasst als „Freiheit vor Desinformation". Aus einem Abwehrrecht gegen den Staat wird ein Schutzanspruch — vor anderen Stimmen.',
-    quelle: 'EU-Aktionsplan gegen Desinformation (2018), Digital Services Act',
-    link: { label: 'Atlas: EDMO', href: '/atlas/edmo' },
+      'Wenn es nach der UN und den Unterzeichnerstaaten einer UN-Erklärung geht, setzt Meinungsfreiheit diverse und verlässliche Informationsquellen und die staatliche Bekämpfung von Desinformation voraus.',
+    quelle: 'UN „Global Principles on Information Integrity" (2024)',
+    volltext: [
+      'Traditionell versteht man unter Meinungs- und Informationsfreiheit das Recht und die Möglichkeit, seine Meinung frei von Repressionen zu äußern und sie zu verbreiten und sich aus selbst gewählten und frei zugänglichen Quellen zu informieren. Gemäß den „Global Principles on Information Integrity" der UN von 2024 setzt die Ausübung dieser Rechte voraus, dass die Öffentlichkeit „konsistenten Zugang zu diversen und verlässlichen Informationsquellen hat", da die Menschen nur so „wohlinformierte und unabhängige Entscheidungen" treffen können. Die Staaten sollen für diese „Informationsintegrität" sorgen, insbesondere durch Bekämpfung von Desinformation. Meinungs- und Informationsfreiheit wird so in ein „Recht auf verlässliche Informationen" umgedeutet, für die wohlmeinende Regenten zu sorgen haben.',
+      'Eine Suche nach dem Ursprung dieser pervertierten UN-Definition von Meinungs- und Informationsfreiheit führt zu einer der dicksten Spinnen im internationalen Netz der Wahrheitskontrolleure: dem Institute for Strategic Dialogue. ISD-Gründerin und Chefin Sasha Havlicek gründete nämlich zusammen mit der maßgeblich vom französischen Staat finanzierten Organisation Reporter ohne Grenzen und anderen das „Forum on Information and Democracy". Dieses Forum setzte eine Kommission unter Leitung des Generalsekretärs von Reporter ohne Grenzen ein, die 2018 eine „Internationale Erklärung über Information und Demokratie" verabschiedete. Diese enthielt die Umdefinition des Rechts auf Informationsfreiheit zum Recht, sich blind auf alle veröffentlichten Informationen verlassen zu können, und die dadurch implizierte Notwendigkeit, irreführende Informationen zu beseitigen.',
+      'Anschließend organisierte Havlicek auf der UN-Vollversammlung im September 2019 eine „Internationale Partnerschaft für Information und Demokratie" mit rund 50 Ländern, darunter auch Deutschland. Die Unterzeichnerstaaten verpflichteten sich dazu, „nationale und internationale Rechtsrahmen zu fördern, die die Meinungsfreiheit und den Zugang zu verlässlichen Informationen fördern". Was vielen Delegierten vielleicht nicht klar war: Durch Verweis auf die „Internationale Erklärung über Information und Demokratie" verpflichteten sie sich damit gleichzeitig auf die umgedeutete Informationsfreiheit im Sinne einer von oben hergestellten Informationsverlässlichkeit. Die UN arbeitete auf dieser Basis weiter mit dem Ergebnis der besagten Globalen Prinzipien für Informationsintegrität.',
+    ],
+    quellenDetail: [
+      { label: 'Buchseiten 183ff' },
+      {
+        label: 'UN „Global Principles on Information Integrity" (insbes. S. 3 und S. 12)',
+        href: 'https://www.un.org/sites/un2.un.org/files/un-global-principles-for-information-integrity-en.pdf',
+      },
+    ],
+    link: { label: 'Atlas: Institute for Strategic Dialogue', href: '/atlas/institute-for-strategic-dialogue' },
   },
   {
     term: 'Prebunking',

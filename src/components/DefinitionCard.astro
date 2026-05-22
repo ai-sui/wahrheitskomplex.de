@@ -7,6 +7,8 @@ interface Props {
 }
 
 const { d } = Astro.props;
+
+const hasDeepProfile = Boolean(d.slug && d.volltext && d.volltext.length > 0);
 ---
 
 <article
@@ -24,6 +26,17 @@ const { d } = Astro.props;
 
   <p class="text-sm md:text-base text-ink-soft leading-relaxed mb-5 flex-1">
     {d.antwort}
+    {hasDeepProfile && (
+      <>
+        {' '}
+        <a
+          href={withBase(`/glossar/${d.slug}`)}
+          class="text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent whitespace-nowrap"
+        >
+          Mehr →
+        </a>
+      </>
+    )}
   </p>
 
   <div class="border-t border-line pt-3 mt-auto text-xs text-muted leading-snug">

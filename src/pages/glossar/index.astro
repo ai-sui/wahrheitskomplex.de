@@ -1,12 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { glossar } from '../data/glossar';
-import { withBase } from '../utils/url';
-import { breadcrumbList } from '../utils/seo';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { glossar } from '../../data/glossar';
+import { definitionen } from '../../data/definitionen';
+import { withBase } from '../../utils/url';
+import { breadcrumbList } from '../../utils/seo';
 
 const sorted = [...glossar].sort((a, b) =>
   a.term.localeCompare(b.term, 'de'),
 );
+
+// Definitionen mit Volltext bekommen oben einen eigenen Block
+// als Wegweiser zu den Detail-Seiten /glossar/[slug].
+const tiefencheck = definitionen
+  .filter((d) => d.slug && d.volltext && d.volltext.length > 0)
+  .sort((a, b) => a.term.localeCompare(b.term, 'de'));
 
 const bc = breadcrumbList(Astro.site, [{ name: 'Glossar', path: '/glossar' }]);
 ---
@@ -25,7 +32,41 @@ const bc = breadcrumbList(Astro.site, [{ name: 'Glossar', path: '/glossar' }]);
       Kurz, sachlich, mit Querverweisen ins Atlas-Profil, wo der Begriff zur Sache wird.
     </p>
 
-    <dl class="border-t border-line">
+    {tiefencheck.length > 0 && (
+      <section class="mb-12">
+        <h2 class="font-serif text-2xl md:text-3xl leading-tight mb-2">
+          Begriffe im Tiefencheck.
+        </h2>
+        <p class="text-ink-soft leading-relaxed mb-6">
+          Wo offizielle Sprachverwendungen einen genaueren Blick verdienen — mit
+          Quellen, Entstehungsgeschichte und Buchverweisen.
+        </p>
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {tiefencheck.map((d) => (
+            <li>
+              <a
+                href={withBase(`/glossar/${d.slug}`)}
+                class="block bg-paper-soft border border-line border-l-4 border-l-accent rounded-sm p-4 md:p-5 no-underline transition-colors hover:border-accent"
+              >
+                <p class="meta-label text-muted mb-1">Was ist …?</p>
+                <p class="font-serif text-lg md:text-xl leading-tight">
+                  {d.term}<span class="text-accent">?</span>
+                </p>
+                <p class="text-sm text-ink-soft leading-snug mt-2 line-clamp-3">
+                  {d.antwort}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <h2 class="font-serif text-2xl md:text-3xl leading-tight mb-2">
+      Abkürzungen und Fachbegriffe.
+    </h2>
+
+    <dl class="border-t border-line mt-6">
       {sorted.map((entry) => (
         <div
           id={entry.term.toLowerCase().replace(/\s+/g, '-')}
