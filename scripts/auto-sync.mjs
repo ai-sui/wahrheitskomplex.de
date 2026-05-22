@@ -255,6 +255,19 @@ async function syncMedien() {
       if (/(westendverlag|buchkomplizen|ohrenschmauss|freistattsmart|promostoff)\b/.test(url)) return false;
       // Skip Telegram/X-Profile
       if (/^https?:\/\/(t\.me|x\.com|twitter\.com)\//.test(url)) return false;
+      // Skip Such- und Listing-URLs (haben oft ?q=… oder $/search)
+      if (/[?&]q=|[?&]s=|\/search\b|\$\/search|\/tag\/|\/category\//.test(url)) return false;
+      // Skip Profile-URLs (channel/user/handle/@-Pfade)
+      if (/\/(channel|user|c|@)\//.test(url)) return false;
+      // Skip Plattform-Wurzel und Pfade < 2 Segmente
+      // (z.B. https://odysee.com/punkt-preradovic ist Profil, nicht Beitrag)
+      try {
+        const u = new URL(url);
+        const segments = u.pathname.split('/').filter(Boolean);
+        if (segments.length < 2) return false;
+      } catch {
+        return false;
+      }
       return true;
     })
     .filter((url, i, arr) => arr.indexOf(url) === i);
