@@ -296,4 +296,13 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/who-gesundheitsnotstand/',
     thumb: '/chronik-thumbs/who-climate-health.jpg',
   },
+  {
+    date: '2026-05-21',
+    region: 'INT',
+    title: 'Kanadas Armee spionierte Äußerungen der Bevölkerung zu Corona aus',
+    description:
+      'Ein Untersuchungsbericht der kanadischen Armee belegt: Mehrere Armee-Teams durchforsteten 2020 soziale Medien und erstellten Stimmungsberichte zur Bevölkerung und Opposition in Sachen Covid-19. Militärexperte Wesley Wark (CBC News): Das Militär wollte Möglichkeiten erproben, das Denken der Bevölkerung zu beeinflussen, die Unterstützung für das Militär zu steigern und russischen Informationsaktivitäten zu begegnen.',
+    themen: ['Pandemie', 'Ukraine & NATO'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/kanadas-armee-covid/',
+  },
 ];
