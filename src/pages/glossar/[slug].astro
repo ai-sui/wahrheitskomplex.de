@@ -3,6 +3,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { definitionen } from '../../data/definitionen';
 import { withBase } from '../../utils/url';
 import { breadcrumbList } from '../../utils/seo';
+import { marked } from 'marked';
+
+// Marked-Konfiguration: Inline-Links in den Volltext-Absaetzen erlauben,
+// damit Norbert direkt aus dem Fliesstext auf Atlas-Profile und externe
+// Quellen verlinken kann (statt nur Quellenangaben unten).
+marked.setOptions({ breaks: false, gfm: true });
+
+// Externe Links bekommen target="_blank" + rel="noopener",
+// interne Links (z.B. /atlas/...) bleiben in der gleichen Tab.
+function renderInline(md: string): string {
+  let html = marked.parseInline(md) as string;
+  html = html.replace(
+    /<a href="(https?:[^"]+)"/g,
+    '<a href="$1" target="_blank" rel="noopener"',
+  );
+  return html;
+}
 
 export async function getStaticPaths() {
   return definitionen
@@ -66,9 +83,9 @@ const bc = breadcrumbList(Astro.site, [
     </p>
 
     {def.volltext && (
-      <div class="text-ink leading-relaxed space-y-5 md:text-lg">
+      <div class="prose-fliesstext text-ink leading-relaxed space-y-5 md:text-lg">
         {def.volltext.map((para) => (
-          <p>{para}</p>
+          <p set:html={renderInline(para)} />
         ))}
       </div>
     )}

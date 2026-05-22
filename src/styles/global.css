@@ -62,6 +62,22 @@
   }
 }
 
+/*
+ * Volltext-Container fuer Glossar-Detail- und aehnliche Inhalts-Seiten,
+ * in denen Markdown-Body Inline-Links enthaelt. Stylt <a>-Tags innerhalb
+ * des Fliesstextes mit dem Site-Akzent — sonst waeren sie nur underlined
+ * vom global a-Style.
+ */
+.prose-fliesstext a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  text-underline-offset: 0.2em;
+}
+.prose-fliesstext a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
 @utility meta-label {
   font-size: 0.7rem;
   letter-spacing: var(--tracking-meta);
