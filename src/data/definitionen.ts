@@ -32,9 +32,28 @@ export const definitionen: Definition[] = [
   },
   {
     term: 'Kognitive Kriegsführung',
+    slug: 'kognitive-kriegsfuehrung',
     antwort:
-      '„Manipulation der menschlichen Wahrnehmung mit dem Ziel, nicht nur zu beeinflussen, was Menschen denken, sondern wie sie denken und handeln" — eine NATO-Definition aus dem Jahr 2020.',
+      'Laut NATO Teil des Kriegskunst-Imperativs der kognitiven Überlegenheit durch Verbesserung unserer kognitiven Prozesse. Einsatzgebiet sind laut NATO alle Menschen, ob Freund oder Feind.',
     quelle: 'NATO Innovation Hub, „Cognitive Warfare" (2020)',
+    volltext: [
+      'Laut NATO Teil des Kriegskunst-Imperativs der kognitiven Überlegenheit durch Verbesserung unserer kognitiven Prozesse. Einsatzgebiet sind laut NATO alle Menschen, ob Freund oder Feind (zitiert nach Tögel).',
+      'Der [NATO Innovation Hub](https://innovationhub-act.org/) schreibt über „Cognitive Warfare", sie sei der militärische Kampf auf einem neuen Schlachtfeld – unseren Köpfen. Kognitive Kriegsführung bedeute eine Verlagerung von Konflikten auf die Beeinflussung des menschlichen Denkens. Diese ergebe sich durch Fortschritte in den Neurowissenschaften, KI und Ausbreitung der Sozialen Medien.',
+      'Kognitive Kriegsführung ist ein Teilgebiet der hybriden Kriegsführung, die alle feindlichen Aktivitäten jenseits des traditionellen Kriegs mit Zerstörungs- und Tötungsgeräts umfasst.',
+      'Um den Krieg um die Köpfe besser führen zu können, gründete die NATO 2014 unter deutscher Beteiligung in Riga das [Strategic Communications Center of Excellence](https://stratcomcoe.org/), kurz: StratCom COE. »Strategische Kommunikation« ist das höfliche Wort für (militärische) Propaganda. Das Bundesverteidigungsministerium nennt als Beispiele für hybride Bedrohungen „gezielte Falschinformationen und -meldungen in den Medien, Beeinflussung des Meinungsklimas und Wahlbeeinflussung in liberalen Demokratien und offenen Gesellschaften". (Wahlbeeinflussung in aus westlicher Sicht nicht-demokratischen Ländern fällt nicht unter hybride Kriegsführung, sondern unter Demokratieförderung.)',
+      'Ziel der Angreifer sei es, »Gesellschaften zu destabilisieren und die öffentliche Meinung zu beeinflussen«, schreibt das Bundesverteidigungsministerium. Um dem zu begegnen, fasse die Bundesregierung zivile, militärische und polizeiliche Mittel zusammen und binde diese in das internationale und multilaterale Vorgehen ein. NATO und Geheimdienste dürfen sich also in Kooperation mit NGOs und Wissenschaftlern um die Verhinderung der Verbreitung von Desinformation und der Beeinflussung von Wahlen kümmern.',
+    ],
+    quellenDetail: [
+      { label: 'Buch „Der Wahrheitskomplex", Kap. 5' },
+      {
+        label: 'NATO Innovation Hub: Cognitive Warfare (2020)',
+        href: 'https://innovationhub-act.org/',
+      },
+      {
+        label: 'NATO Strategic Communications Centre of Excellence, Riga',
+        href: 'https://stratcomcoe.org/',
+      },
+    ],
     link: { label: 'Buch, Kap. 5', href: '/buch#kapitel-5' },
   },
   {
