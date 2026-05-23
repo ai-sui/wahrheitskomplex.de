@@ -51,6 +51,12 @@ const { label, cardClass = '' } = Astro.props;
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: min(88vw, 22rem);
+    /* Explizit auf die Karten setzen, damit jede Karte garantiert auf
+       die Höhe des höchsten Siblings gestreckt wird, unabhängig von
+       Inhalt-Länge. Funktioniert in Verbindung mit items-stretch am
+       Container und h-full an den Karten verlässlich quer durch alle
+       Browser. */
+    align-self: stretch;
   }
   @media (min-width: 768px) {
     .carousel-track > * { width: min(50%, 24rem); }
