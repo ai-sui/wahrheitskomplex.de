@@ -50,14 +50,14 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Atlas der Akteure',
-      item: new URL(withBase('/atlas'), Astro.site).toString(),
+      name: 'Porträts der Akteure',
+      item: new URL(withBase('/portraits'), Astro.site).toString(),
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: actor.data.name,
-      item: new URL(withBase(`/atlas/${actor.id}`), Astro.site).toString(),
+      item: new URL(withBase(`/portraits/${actor.id}`), Astro.site).toString(),
     },
   ],
 };
@@ -71,7 +71,7 @@ const breadcrumbSchema = {
 >
   <nav class="container-page pt-8 text-sm">
     <a
-      href={withBase('/atlas')}
+      href={withBase('/portraits')}
       class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
     >
       ← Zur Übersicht

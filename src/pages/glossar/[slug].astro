@@ -11,7 +11,7 @@ import { marked } from 'marked';
 marked.setOptions({ breaks: false, gfm: true });
 
 // Externe Links bekommen target="_blank" + rel="noopener",
-// interne Links (z.B. /atlas/...) bleiben in der gleichen Tab.
+// interne Links (z.B. /portraits/...) bleiben in der gleichen Tab.
 function renderInline(md: string): string {
   let html = marked.parseInline(md) as string;
   html = html.replace(

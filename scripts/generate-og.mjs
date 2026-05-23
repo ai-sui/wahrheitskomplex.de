@@ -59,7 +59,7 @@ const defaultSvg = `<?xml version="1.0" encoding="UTF-8"?>
   </g>
 
   <g transform="translate(80, 250)">
-    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">Ein Recherche-Atlas</text>
+    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">Die Begleitseite</text>
     <text x="0" y="74" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" fill="#1a1a1a">zum Buch von</text>
     <text x="0" y="148" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="62" font-weight="700" font-style="italic" fill="#b8331f">Norbert Häring.</text>
   </g>
@@ -150,7 +150,7 @@ function actorSvg({ name, kategorie, kurzbeschreibung, land, gegruendet }) {
   <rect x="0" y="0" width="1200" height="6" fill="#b8331f"/>
 
   <g transform="translate(80, 120)">
-    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="20" font-weight="600" fill="#6c665a" letter-spacing="3">WAHRHEITSKOMPLEX · ATLAS</text>
+    <text x="0" y="0" font-family="Iowan Old Style, Palatino Linotype, Georgia, serif" font-size="20" font-weight="600" fill="#6c665a" letter-spacing="3">WAHRHEITSKOMPLEX · IM PORTRÄT</text>
     <circle cx="446" cy="-7" r="5" fill="#b8331f"/>
   </g>
 

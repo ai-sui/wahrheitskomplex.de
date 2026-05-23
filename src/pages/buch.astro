@@ -34,7 +34,7 @@ function recherchenFor(matches: string) {
     </h1>
     <p class="text-ink-soft text-lg leading-relaxed max-w-2xl mb-8">
       Eine kompakte Karte des Buchs: Worum geht es in welchem Kapitel, welche
-      Akteure aus dem Atlas tauchen wo auf, welche Recherche-Beispiele sind
+      Akteure im Porträt tauchen wo auf, welche Recherche-Beispiele sind
       thematisch verbunden.
     </p>
 
@@ -113,13 +113,13 @@ function recherchenFor(matches: string) {
                 {actorList.length > 0 && (
                   <div>
                     <p class="meta-label text-accent mb-3">
-                      Akteure aus dem Atlas
+                      Akteure im Porträt
                     </p>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
                       {actorList.map((a) => (
                         <li>
                           <a
-                            href={withBase(`/atlas/${a.id}`)}
+                            href={withBase(`/portraits/${a.id}`)}
                             class="text-ink no-underline hover:text-accent border-b border-line hover:border-accent inline-block"
                           >
                             {a.data.name}
@@ -152,7 +152,7 @@ function recherchenFor(matches: string) {
 
                 {actorList.length === 0 && recherchenList.length === 0 && (
                   <p class="text-sm text-muted italic">
-                    Atlas-Profile und Recherchen zu diesem Kapitel folgen.
+                    Porträte und Recherchen zu diesem Kapitel folgen.
                   </p>
                 )}
               </div>

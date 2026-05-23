@@ -8,8 +8,8 @@ type Crumb = { name: string; path: string };
  * `site` ist die absolute URL der Site (z.B. Astro.site). Beispiel:
  *
  *   const bc = breadcrumbList(Astro.site, [
- *     { name: 'Atlas der Akteure', path: '/atlas' },
- *     { name: actor.data.name, path: `/atlas/${actor.id}` },
+ *     { name: 'Porträts der Akteure', path: '/portraits' },
+ *     { name: actor.data.name, path: `/portraits/${actor.id}` },
  *   ]);
  *
  * Die Start-Crumb wird automatisch vorangestellt.

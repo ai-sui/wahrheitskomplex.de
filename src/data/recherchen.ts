@@ -33,7 +33,7 @@ export const recherchen: Recherche[] = [
       'Das Science Media Center Germany liefert akkreditierten Journalist:innen vorausgewählte Statements. Die Auswahl ist für Leser:innen nicht erkennbar — gleiche Zitate erscheinen gleichzeitig in Dutzenden Medien.',
     quelle: 'SMC-Website, eigene Verlautbarungen, Recherchen Norbert Häring',
     haeringLink: 'https://norberthaering.de/propaganda-zensur/science-media-center/',
-    atlasLink: '/atlas/science-media-center-germany',
+    atlasLink: '/portraits/science-media-center-germany',
     buchKapitel: 'Kapitel 1',
   },
   {
@@ -46,7 +46,7 @@ export const recherchen: Recherche[] = [
       'Die argumentative Vorarbeit lieferten über Jahre staatlich kofinanzierte Stiftungen, allen voran die Amadeu Antonio Stiftung. Ihre Vorschläge — Plattformen müssen melden, löschen, dokumentieren — wanderten nahezu unverändert ins Gesetz und später in den DSA.',
     quelle: 'Programmberichte „Demokratie leben!“, Stiftungsdokumente',
     haeringLink: 'https://norberthaering.de/wahrheitskomplex/finanzierer/',
-    atlasLink: '/atlas/amadeu-antonio-stiftung',
+    atlasLink: '/portraits/amadeu-antonio-stiftung',
     buchKapitel: 'Kapitel 2',
   },
   {
@@ -59,7 +59,7 @@ export const recherchen: Recherche[] = [
       'Eine zentrale theoretische Begründung kommt aus Publikationen des Atlantic Council — eines Think Tanks, dessen Beiräte mit ehemaligen US-Geheimdienstkoordinatoren, NATO-Generalsekretären und Konzernchefs besetzt sind. Die Empfehlungen wandern in westliche Plattform-Regulierung.',
     quelle: 'Atlantic Council Reports, NATO-Publikationen, Recherchen Norbert Häring',
     haeringLink: 'https://norberthaering.de/spinnen-im-netz/atlantic-council/',
-    atlasLink: '/atlas/atlantic-council',
+    atlasLink: '/portraits/atlantic-council',
     buchKapitel: 'Kapitel 5',
   },
   {
@@ -72,7 +72,7 @@ export const recherchen: Recherche[] = [
       'Internews und sein Earth Journalism Network qualifizieren rund 25.000 Klimajournalist:innen weltweit. Finanziert wird das überwiegend aus US-Bundesmitteln (USAID, State Department) und großen Stiftungen — eine in den Beiträgen nicht ausgewiesene Förderkette.',
     quelle: 'Förderübersichten USAID, Internews-Jahresberichte',
     haeringLink: 'https://norberthaering.de/propaganda-zensur/internews/',
-    atlasLink: '/atlas/internews-earth-journalism-network',
+    atlasLink: '/portraits/internews-earth-journalism-network',
     buchKapitel: 'Kapitel 5',
   },
   {
@@ -85,7 +85,7 @@ export const recherchen: Recherche[] = [
       'Das European Digital Media Observatory (EDMO) wird von der EU-Kommission finanziert, prüft Inhalte mit EU-Bezug und liefert seine Daten zugleich in den DSA-Vollzug. Auftraggeber, Prüfer und Vollzieher sitzen so eng beieinander, dass die Sphären verschwimmen.',
     quelle: 'EDMO-Charta, EU-Kommissions-Förderübersichten',
     haeringLink: 'https://norberthaering.de/spinnen-im-netz/edmo/',
-    atlasLink: '/atlas/edmo',
+    atlasLink: '/portraits/edmo',
     buchKapitel: 'Kapitel 3',
   },
 ];

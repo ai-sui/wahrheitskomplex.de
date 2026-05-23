@@ -30,6 +30,14 @@ export default defineConfig({
   base,
   output: 'static',
   integrations: [sitemap()],
+  // /atlas/* → /portraits/* (Atlas wurde im Mai 2026 umbenannt; Norbert
+  // hatte den Begriff zu kartografisch gefunden). Astro generiert
+  // statische Meta-Refresh-HTML-Dateien für beide Pfade, sodass alte
+  // Links extern (Backlinks, Norbert-Blog) weiter funktionieren.
+  redirects: {
+    '/atlas': '/portraits',
+    '/atlas/[slug]': '/portraits/[slug]',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

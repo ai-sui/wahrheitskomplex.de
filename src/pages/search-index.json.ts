@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { recherchen } from '../data/recherchen';
 import { chronik } from '../data/chronik';
 import { glossar } from '../data/glossar';
+import { definitionen } from '../data/definitionen';
 import { kapitel } from '../data/buch';
 
 export type SearchEntry = {
@@ -41,8 +42,8 @@ export const GET: APIRoute = async () => {
       // Volltext-Profile haben eigene Detail-Seite, Stubs verweisen auf
       // Härings Tiefenartikel (oder als Fallback auf das Atlas-Grid).
       url: a.data.fulltext
-        ? `/atlas/${a.id}`
-        : (a.data.haeringLink ?? `/atlas#${a.id}`),
+        ? `/portraits/${a.id}`
+        : (a.data.haeringLink ?? `/portraits#${a.id}`),
       meta:
         `${a.data.kategorie} · ${a.data.land}` +
         (a.data.fulltext ? '' : ' · Stub'),
@@ -108,6 +109,17 @@ export const GET: APIRoute = async () => {
       snippet: [g.longForm ?? '', g.definition].filter(Boolean).join(' '),
       url: `/glossar#${idAnchor(g.term)}`,
       meta: g.longForm ?? 'Begriff',
+    })),
+
+    // ----- Definitionen ("Was ist..."-Karten + Detail-Seiten) -----
+    // Eigene Quelle neben glossar.ts: pointierte Antworten mit
+    // optionalem Volltext und eigener Detail-Seite.
+    ...definitionen.map<SearchEntry>((d) => ({
+      type: 'glossar',
+      title: d.term,
+      snippet: [d.antwort, ...(d.volltext ?? [])].filter(Boolean).join(' '),
+      url: d.slug ? `/glossar/${d.slug}` : `/glossar#${idAnchor(d.term)}`,
+      meta: d.quelle,
     })),
 
     // ----- Buchkapitel -----

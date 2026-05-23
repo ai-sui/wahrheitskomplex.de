@@ -150,10 +150,10 @@ collections:
         }
       - {
           name: actorSlug,
-          label: "Atlas-Akteur (optional)",
+          label: "Akteur-Porträt (optional)",
           widget: string,
           required: false,
-          hint: "Wenn der Faktenchecker im Atlas ein eigenes Profil hat, hier den Slug eintragen (z.B. correctiv, dpa-faktencheck).",
+          hint: "Wenn der Faktenchecker ein eigenes Porträt hat, hier den Slug eintragen (z.B. correctiv, dpa-faktencheck).",
         }
       - { name: date, label: "Datum", widget: date, format: "YYYY-MM-DD" }
       - { name: url, label: "URL des Häring-Tiefenartikels", widget: string }
@@ -207,7 +207,7 @@ collections:
   # ATLAS-AKTEURE
   # =========================================================
   - name: actors
-    label: "Atlas-Akteure"
+    label: "Akteurs-Porträts"
     label_singular: "Akteur"
     description: "NGO-, Stiftungs-, Faktenchecker- und Behörden-Profile."
     folder: src/content/actors
@@ -313,7 +313,7 @@ collections:
           label: "Volltext-Profil?",
           widget: boolean,
           default: false,
-          hint: "Wenn aktiv: eigene Detail-Seite unter /atlas/SLUG, Markdown-Body wird angezeigt.",
+          hint: "Wenn aktiv: eigene Detail-Seite unter /portraits/SLUG, Markdown-Body wird angezeigt.",
         }
       - {
           name: body,

@@ -22,7 +22,7 @@ const metaLine = [akteurstyp, land, gegruendet]
 // Primärziel ist Norberts ausführliches Porträt auf norberthaering.de.
 // Falls keines hinterlegt ist, fällt die Karte auf das interne Profil zurück.
 const hasExternal = Boolean(haeringLink);
-const targetHref = hasExternal ? (haeringLink as string) : withBase(`/atlas/${slug}`);
+const targetHref = hasExternal ? (haeringLink as string) : withBase(`/portraits/${slug}`);
 const ctaLabel = hasExternal
   ? 'Vollständiges Porträt bei norberthaering.de →'
   : 'Profil ansehen →';

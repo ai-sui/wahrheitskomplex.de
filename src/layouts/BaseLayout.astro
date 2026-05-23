@@ -15,7 +15,7 @@ interface Props {
 
 const {
   title,
-  description = 'Begleitseite zum Buch „Der Wahrheitskomplex" von Norbert Häring (Westend Verlag, 2026). Atlas der Akteure (Faktenchecker, Stiftungen, NGOs, Think Tanks), dokumentierte Faktencheck-Fehlgriffe, laufende Chronik — recherchiert und mit Quellen belegt.',
+  description = 'Begleitseite zum Buch „Der Wahrheitskomplex" von Norbert Häring (Westend Verlag, 2026). Porträts der Akteure (Faktenchecker, Stiftungen, NGOs, Think Tanks), dokumentierte Faktencheck-Fehlgriffe, laufende Chronik — recherchiert und mit Quellen belegt.',
   ogImage = '/og.png',
   jsonLd,
 } = Astro.props;
@@ -26,7 +26,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Wahrheitskomplex',
-  alternateName: 'Atlas zum Buch „Der Wahrheitskomplex"',
+  alternateName: 'Porträts und Recherchen zum Buch „Der Wahrheitskomplex"',
   url: Astro.site?.toString() ?? 'https://wahrheitskomplex.de/',
   description,
   inLanguage: 'de-DE',

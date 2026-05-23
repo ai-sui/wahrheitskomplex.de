@@ -64,7 +64,7 @@ export const definitionen: Definition[] = [
     quelle: 'UN „Global Principles on Information Integrity" (2024)',
     volltext: [
       'Traditionell versteht man unter Meinungs- und Informationsfreiheit das Recht und die Möglichkeit, seine Meinung frei von Repressionen zu äußern und sie zu verbreiten und sich aus selbst gewählten und frei zugänglichen Quellen zu informieren. Gemäß den [„Global Principles on Information Integrity"](https://www.un.org/sites/un2.un.org/files/un-global-principles-for-information-integrity-en.pdf) der UN von 2024 setzt die Ausübung dieser Rechte voraus, dass die Öffentlichkeit „konsistenten Zugang zu diversen und verlässlichen Informationsquellen hat", da die Menschen nur so „wohlinformierte und unabhängige Entscheidungen" treffen können. Die Staaten sollen für diese „Informationsintegrität" sorgen, insbesondere durch Bekämpfung von Desinformation. Meinungs- und Informationsfreiheit wird so in ein „Recht auf verlässliche Informationen" umgedeutet, für die wohlmeinende Regenten zu sorgen haben.',
-      'Eine Suche nach dem Ursprung dieser pervertierten UN-Definition von Meinungs- und Informationsfreiheit führt zu einer der dicksten Spinnen im internationalen Netz der Wahrheitskontrolleure: dem [Institute for Strategic Dialogue](/atlas/institute-for-strategic-dialogue). ISD-Gründerin und Chefin Sasha Havlicek gründete nämlich zusammen mit der maßgeblich vom französischen Staat finanzierten Organisation [Reporter ohne Grenzen](https://rsf.org/de) und anderen das „Forum on Information and Democracy". Dieses Forum setzte eine Kommission unter Leitung des Generalsekretärs von Reporter ohne Grenzen ein, die 2018 eine „Internationale Erklärung über Information und Demokratie" verabschiedete. Diese enthielt die Umdefinition des Rechts auf Informationsfreiheit zum Recht, sich blind auf alle veröffentlichten Informationen verlassen zu können, und die dadurch implizierte Notwendigkeit, irreführende Informationen zu beseitigen.',
+      'Eine Suche nach dem Ursprung dieser pervertierten UN-Definition von Meinungs- und Informationsfreiheit führt zu einer der dicksten Spinnen im internationalen Netz der Wahrheitskontrolleure: dem [Institute for Strategic Dialogue](/portraits/institute-for-strategic-dialogue). ISD-Gründerin und Chefin Sasha Havlicek gründete nämlich zusammen mit der maßgeblich vom französischen Staat finanzierten Organisation [Reporter ohne Grenzen](https://rsf.org/de) und anderen das „Forum on Information and Democracy". Dieses Forum setzte eine Kommission unter Leitung des Generalsekretärs von Reporter ohne Grenzen ein, die 2018 eine „Internationale Erklärung über Information und Demokratie" verabschiedete. Diese enthielt die Umdefinition des Rechts auf Informationsfreiheit zum Recht, sich blind auf alle veröffentlichten Informationen verlassen zu können, und die dadurch implizierte Notwendigkeit, irreführende Informationen zu beseitigen.',
       'Anschließend organisierte Havlicek auf der UN-Vollversammlung im September 2019 eine „Internationale Partnerschaft für Information und Demokratie" mit rund 50 Ländern, darunter auch Deutschland. Die Unterzeichnerstaaten verpflichteten sich dazu, „nationale und internationale Rechtsrahmen zu fördern, die die Meinungsfreiheit und den Zugang zu verlässlichen Informationen fördern". Was vielen Delegierten vielleicht nicht klar war: Durch Verweis auf die „Internationale Erklärung über Information und Demokratie" verpflichteten sie sich damit gleichzeitig auf die umgedeutete Informationsfreiheit im Sinne einer von oben hergestellten Informationsverlässlichkeit. Die UN arbeitete auf dieser Basis weiter mit dem Ergebnis der besagten [Globalen Prinzipien für Informationsintegrität](https://www.un.org/sites/un2.un.org/files/un-global-principles-for-information-integrity-en.pdf).',
     ],
     quellenDetail: [
@@ -74,7 +74,7 @@ export const definitionen: Definition[] = [
         href: 'https://www.un.org/sites/un2.un.org/files/un-global-principles-for-information-integrity-en.pdf',
       },
     ],
-    link: { label: 'Atlas: Institute for Strategic Dialogue', href: '/atlas/institute-for-strategic-dialogue' },
+    link: { label: 'Im Porträt: Institute for Strategic Dialogue', href: '/portraits/institute-for-strategic-dialogue' },
   },
   {
     term: 'Prebunking',
@@ -96,8 +96,8 @@ export const definitionen: Definition[] = [
       'Die Amadeu Antonio Stiftung legt die IHRA-Arbeitsdefinition zugrunde, deren Beispiele bestimmte Formen der Israel-Kritik einschließen. Der Begriff dehnt sich damit weit über die klassische Bedeutung hinaus.',
     quelle: 'IHRA-Arbeitsdefinition (2016); AAS-Bildungsmaterial',
     link: {
-      label: 'Akteur im Atlas',
-      href: '/atlas/amadeu-antonio-stiftung',
+      label: 'Im Porträt',
+      href: '/portraits/amadeu-antonio-stiftung',
     },
   },
   {
@@ -127,8 +127,8 @@ export const definitionen: Definition[] = [
       'Definiert über die Trainings- und Förder-Programme von Internews und seinem Earth Journalism Network — einem Netzwerk von rund 25.000 Journalist:innen weltweit, überwiegend US-Außenpolitik-finanziert.',
     quelle: 'Internews / Earth Journalism Network (Eigenangaben)',
     link: {
-      label: 'Atlas: Internews',
-      href: '/atlas/internews-earth-journalism-network',
+      label: 'Im Porträt: Internews',
+      href: '/portraits/internews-earth-journalism-network',
     },
   },
   {
