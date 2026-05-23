@@ -61,7 +61,9 @@ const newsFeed: FeedItem[] = [
     date: fc.data.date,
     badge: 'Faktencheck',
     title: fc.data.title,
-    source: fc.data.faktenchecker,
+    // Im "Neues"-Karussell soll die Quelle der Tiefenartikel sein
+    // (norberthaering.de), nicht der kritisierte Faktenchecker.
+    source: 'norberthaering.de',
     url: fc.data.url,
     thumb: fc.data.thumbOverride
       ? withBase(fc.data.thumbOverride)
@@ -177,9 +179,6 @@ const bookSchema = {
     </Carousel>
   </section>
 
-  <!-- Das Buch -->
-  <BookSection book={book} />
-
   <!-- Chronik-Block „Was seither geschah" -->
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="mb-8 pb-4 border-b border-line">
@@ -226,6 +225,9 @@ const bookSchema = {
       <AlleFaktenchecksCard count={faktenchecks.length} />
     </Carousel>
   </section>
+
+  <!-- Das Buch (am Ende, weil das Cover oben in SiteIntro schon vorkommt) -->
+  <BookSection book={book} />
 
   <NewsletterForm />
 </BaseLayout>

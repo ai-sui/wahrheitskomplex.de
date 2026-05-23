@@ -78,5 +78,32 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://wahrheitsko
     </main>
     <Footer />
     <SearchOverlay />
+
+    <!-- Externe Links automatisch in neuem Tab oeffnen + dezentes Pfeil-Symbol.
+         Greift fuer alle <a href> auf der Seite, ohne dass jede Komponente
+         das selbst setzen muss. Gilt auch fuer kuenftige Markdown-Volltexte. -->
+    <script>
+      (() => {
+        const here = location.hostname;
+        for (const a of document.querySelectorAll('a[href]')) {
+          let u;
+          try { u = new URL(a.getAttribute('href'), location.href); }
+          catch { continue; }
+          if (!u.protocol.startsWith('http')) continue;
+          if (u.host === here) continue;
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', a.getAttribute('rel') || 'noopener');
+          a.classList.add('ext-link');
+        }
+      })();
+    </script>
+    <style is:global>
+      a.ext-link::after {
+        content: " ↗";
+        font-size: 0.85em;
+        opacity: 0.7;
+        margin-left: 0.05em;
+      }
+    </style>
   </body>
 </html>

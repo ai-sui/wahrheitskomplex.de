@@ -78,9 +78,25 @@ export const definitionen: Definition[] = [
   },
   {
     term: 'Prebunking',
+    slug: 'prebunking',
     antwort:
-      'Vorbeugende „Inokulation" der Öffentlichkeit gegen Inhalte, die noch gar nicht veröffentlicht sind. Das EU-Parlament hat 2022 eine eigene Entschließung dafür beschlossen.',
-    quelle: 'EU-Parlament, Entschließung März 2022',
+      'Vorbeugende Immunisierung der Öffentlichkeit gegen aufkommende machtkritische Thesen, bevor diese eine breite Öffentlichkeit erreichen, z.B. indem man die Verbreiter oder deren übliche Stilmittel in Misskredit bringt.',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 2, 3 und 5',
+    volltext: [
+      'Vorbeugende Immunisierung der Öffentlichkeit gegen aufkommende machtkritische Thesen, bevor diese eine breite Öffentlichkeit erreichen, z.B. indem man die Verbreiter oder deren bevorzugte Stilmittel in Misskredit bringt.',
+      'Prebunking ist eine sprachliche Abwandlung von „Debunking", dem Widerlegen von Behauptungen. Ein von Google finanziertes Projekt namens [„Prebunking at Scale"](https://blog.google/around-the-globe/google-europe/prebunking-misinformation/) will ein KI-Werkzeug entwickeln, das vorhersagt, in welcher Sprache und zu welchem Thema sich „Desinformation" bald verbreiten wird. Diese können kooptierte Influencer und Faktenchecker dann vorsorglich durch entsprechende Kontext-Artikel konterkarieren. Im Resümee eines transatlantischen Projekts zur Vernetzung von Influencern mit dem Wahrheitssektor heißt es, die teilnehmenden Influencer seien bereit, sich im Prebunking zu betätigen.',
+      'Im Sinne der vorgeschlagenen „strategischen Allianz von Influencern und zivilgesellschaftlichen Organisationen" darf man sich das so vorstellen: Der informationstechnisch hochgerüstete NGO-Sektor weist Influencer frühzeitig auf kritische Narrative hin, die heiß werden könnten. Diese diskreditieren vorbeugend die kritischen Narrative oder deren wichtigste potenzielle Verbreiter. Wichtige Themen für das Prebunking sind Impfungen, Klimakrise, Militär und Geopolitik, Migration, KI und Digitale Identität.',
+      'Schon Schulkinder sollen gegen das Virus dissidenten Gedankenguts geimpft werden. Sie sollen lernen, dass alles, was die typischen Merkmale regierungs- und NATO-kritischer Beiträge aufweist, wahrscheinlich Desinformation ist. Entsprechende „Medienkompetenz" soll laut einer Entschließung des EU-Parlaments in allen Schulen der Mitgliedsstaaten gelehrt werden. Dazu werden unter anderem Lernspiele eingesetzt, die in Kooperation mit der NATO entwickelt wurden.',
+      'Für die Immunisierung Erwachsener gegen abweichende Gedanken hat die Google-Tochter [Jigsaw](https://jigsaw.google.com/) YouTube-Videos entwickelt, die Millionen Nutzern per YouTube ausgespielt werden. Die EU-Kommission empfiehlt solche „Inokulationsmaßnahmen" ausdrücklich allen großen Online-Plattformen in ihren Richtlinien für die Anwendung des DSA im Zusammenhang mit Wahlen. Damit sollen sie vorbeugend Widerstandsfähigkeit der Nutzer und Wähler gegen Desinformationsnarrative und Manipulationstechniken aufbauen.',
+    ],
+    quellenDetail: [
+      { label: 'Buch „Der Wahrheitskomplex", Kap. 2, 3 und 5' },
+      { label: 'Google Jigsaw', href: 'https://jigsaw.google.com/' },
+      {
+        label: 'EU-Parlament: Resolution gegen ausländische Einflussnahme (März 2022)',
+        href: 'https://www.europarl.europa.eu/doceo/document/TA-9-2022-0064_DE.html',
+      },
+    ],
     link: { label: 'Chronik 2022', href: '/chronik#jahr-2022' },
   },
   {
@@ -91,14 +107,26 @@ export const definitionen: Definition[] = [
     link: { label: 'Chronik 2014', href: '/chronik#jahr-2014' },
   },
   {
-    term: 'Antisemitismus (nach AAS)',
+    term: 'Antisemitismus',
+    slug: 'antisemitismus',
     antwort:
-      'Die Amadeu Antonio Stiftung legt die IHRA-Arbeitsdefinition zugrunde, deren Beispiele bestimmte Formen der Israel-Kritik einschließen. Der Begriff dehnt sich damit weit über die klassische Bedeutung hinaus.',
-    quelle: 'IHRA-Arbeitsdefinition (2016); AAS-Bildungsmaterial',
-    link: {
-      label: 'Im Porträt',
-      href: '/portraits/amadeu-antonio-stiftung',
-    },
+      'Viel mehr als judenfeindliches Gedankengut. Wenn es nach Amadeu Antonio Stiftung und Verfassungsschutz geht, ist jegliche Kritik an mächtigen oder geheimniskrämerischen Menschen und Institutionen antisemitisch.',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 3 und Chronik (2. Aufl.)',
+    volltext: [
+      '… ist viel mehr als judenfeindliches Gedankengut. Wenn es nach Amadeu Antonio Stiftung und Verfassungsschutz geht, ist jegliche Kritik an mächtigen oder geheimniskrämerischen Menschen und Institutionen antisemitisch.',
+      'Die [Amadeu Antonio Stiftung](/portraits/amadeu-antonio-stiftung) ist eine der staatlicherseits bestfinanzierten und einflussreichsten NGOs des Wahrheitskomplexes. Die Stiftung engagiert sich gegen Rechtsextremismus, Antisemitismus und Ausländerfeindlichkeit. Im Aufsichtsgremium sitzt unter anderem der Präsident des Thüringer Verfassungsschutzes. Die Gründerin und langjährige Vorsitzende Annetta Kahane war zuvor Informelle Mitarbeiterin des Staatsschutzes der DDR gewesen.',
+      'Nach der – allen Gesetzen der Logik widersprechenden – Argumentation der Stiftung ist alles, was als Verschwörungstheorie abgewertet werden kann, gleichzeitig antisemitisch. Denn Antisemitismus sei die Mutter aller Verschwörungstheorien. Eine Verschwörungstheorie – im Gegensatz zu legitimer Machtkritik – liegt vor, wenn den Mächtigen unterstellt wird, dass sie anderes als das Beste der Machtlosen im Sinne hätten.',
+      'Das Bundesamt für Verfassungsschutz übernahm diese absurde Definition von Antisemitismus weitgehend. Er nahm sich, wie von Kahane gefordert, intensiv der coronamaßnahmenkritischen Bewegung und unterstellte ihr pauschal eine Nähe zum Rechtsextremismus und Antisemitismus. In einer Ausarbeitung zur Unterfütterung der Einstufung der AfD als „gesichert rechtsextrem" und in einer Broschüre über angeblich „Antisemitische Codes und Chiffren" entlarvt der Verfassungsschutz Kritik an Bill Gates, den Rockefellers, dem Weltwirtschaftsforum, Big Pharma, Wall Street und vielen weiteren nichtjüdischen Personen und Institutionen als angebliche antisemitische Chiffren.',
+      'Personen und Institutionen, die von der Stiftung und dieser folgenden NGOs des Wahrheitskomplexes auf diese Weise als antisemitisch diffamiert werden, müssen damit rechnen, dass ihre Auftritte verhindert werden (Cancel Culture), ihre Beiträge auf den sozialen Medien gelöscht oder ausgebremst werden und sie mit Werbeboykotten belegt werden. Wer vom Verfassungsschutz als Person oder Institution als antisemitischer/rechtsradikaler Verdachtsfall eingestuft wird, kann schwerwiegende Nachteile erleiden, bis hin zum Verlust des Arbeitsplatzes oder des passiven Wahlrechts oder einem Parteiverbot.',
+    ],
+    quellenDetail: [
+      { label: 'Buch „Der Wahrheitskomplex", Kap. 3 und Chronik (2. Aufl.)' },
+      {
+        label: 'Bundesamt für Verfassungsschutz: „Antisemitische Codes und Chiffren"',
+        href: 'https://www.verfassungsschutz.de/',
+      },
+    ],
+    link: { label: 'Im Porträt: Amadeu Antonio Stiftung', href: '/portraits/amadeu-antonio-stiftung' },
   },
   {
     term: 'Delegitimierung',
