@@ -51,11 +51,10 @@ const { label, cardClass = '' } = Astro.props;
     flex: 0 0 auto;
     scroll-snap-align: start;
     width: min(88vw, 22rem);
-    /* Explizit auf die Karten setzen, damit jede Karte garantiert auf
-       die Höhe des höchsten Siblings gestreckt wird, unabhängig von
-       Inhalt-Länge. Funktioniert in Verbindung mit items-stretch am
-       Container und h-full an den Karten verlässlich quer durch alle
-       Browser. */
+    /* align-self: stretch greift in modernen Browsern zuverlässig
+       (zusammen mit items-stretch am Container). Falls eine Karte
+       intern h-full nicht ausreizt, korrigiert der Höhen-Sync per
+       JS unten nach. */
     align-self: stretch;
   }
   @media (min-width: 768px) {
@@ -127,6 +126,31 @@ const { label, cardClass = '' } = Astro.props;
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
+
+    // Höhen-Sync: misst die höchste Karte und setzt min-height auf alle
+    // anderen. Robust gegen Browser-Inkonsistenzen bei items-stretch
+    // mit overflow-x: auto.
+    function syncHeights() {
+      const items = Array.from(
+        track!.children,
+      ) as HTMLElement[];
+      // Reset, damit wir die natürliche Höhe messen können
+      items.forEach((el) => (el.style.minHeight = ''));
+      // Browser muss die neuen Höhen erst berechnen
+      requestAnimationFrame(() => {
+        const max = items.reduce(
+          (m, el) => Math.max(m, el.offsetHeight),
+          0,
+        );
+        if (max > 0) {
+          items.forEach((el) => (el.style.minHeight = `${max}px`));
+        }
+      });
+    }
+    syncHeights();
+    window.addEventListener('resize', syncHeights);
+    // Falls Bilder erst nachladen und die Höhe verändern: bei Load synchronisieren
+    window.addEventListener('load', syncHeights);
 
     // Keyboard support
     track.addEventListener('keydown', (e: KeyboardEvent) => {
