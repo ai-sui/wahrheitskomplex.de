@@ -1,10 +1,15 @@
 # Tägliche automatische Synchronisierung mit norberthaering.de
 # - Scrapt Härings Sammelseiten für Faktenchecks und Interviews
 # - Erzeugt Markdown-Stubs für neue Einträge
-# - Wenn etwas Neues dazukommt: erstellt automatisch einen Pull-Request
+# - Wenn etwas Neues dazukommt: erstellt oder aktualisiert EINEN PR
 #
+# Wichtig (Ralph, 24.5.2026): kein automatisches Übernehmen. Der Sync
+# erzeugt ausschließlich einen Vorschlags-PR auf dem festen Branch
+# `auto-sync/incoming`. Solange dieser PR offen ist, wird er bei jedem
+# folgenden Lauf aktualisiert, statt täglich einen neuen PR zu öffnen.
 # Reviewer kann den PR ansehen, Themen/Faktenchecker/Pullquotes ergänzen,
-# dann mergen. Netlify deployt automatisch.
+# dann mergen oder die unerwünschten Einträge im PR löschen und mergen.
+# GitHub-Pages-Deploy läuft danach automatisch.
 
 name: Auto-Sync von norberthaering.de
 
@@ -78,7 +83,11 @@ jobs:
             Bilder (`/yt-thumbs/`, `/article-thumbs/`,
             `/faktencheck-thumbs/`) wurden in diesem Lauf bereits
             heruntergeladen, falls vorhanden.
-          branch: auto-sync/run-${{ github.run_id }}
+          # Fester Branch-Name, damit nicht jeder taegliche Lauf einen
+          # neuen PR oeffnet. peter-evans/create-pull-request@v6 erkennt
+          # einen bestehenden offenen PR auf diesem Branch und aktualisiert
+          # ihn nur, statt einen weiteren zu eroeffnen.
+          branch: auto-sync/incoming
           delete-branch: true
           labels: |
             auto-sync
