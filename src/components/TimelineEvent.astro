@@ -5,7 +5,12 @@ import { withBase } from '../utils/url';
 interface Props {
   eintrag: ChronikEintrag;
   showLine?: boolean;
-  compact?: boolean; // versteckt Description und Themen-Tags (für Homepage-Übersicht)
+  // versteckt Description und Themen-Tags. Auf der Homepage-Übersicht
+  // war das schon immer Default. Auf der Chronik-Seite zusätzlich seit
+  // Norberts Hinweis vom 20.5.2026: "ohne magere Unterzeile und
+  // Schlagwörter. Dann wird das kompakter und der Leser braucht sich
+  // nicht durch mehrere Ebenen zu lesen, um einen Überblick zu bekommen."
+  compact?: boolean;
 }
 
 const { eintrag, showLine = true, compact = false } = Astro.props;
@@ -57,10 +62,7 @@ if (parts.length === 3) {
     <div class="absolute left-[-4px] md:left-[-4px] top-2 w-2 h-2 rounded-full bg-accent ring-4 ring-paper" aria-hidden="true"></div>
 
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-2">
-      <span class="inline-flex items-baseline gap-2.5 flex-wrap">
-        <span class="text-[0.65rem] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-ink text-paper rounded-sm relative -top-1">{eintrag.region}</span>
-        <span>{eintrag.title}</span>
-      </span>
+      {eintrag.title}
     </h3>
     {!compact && eintrag.description && (
       <p class="text-ink-soft leading-relaxed mb-3 max-w-2xl">
@@ -97,14 +99,5 @@ if (parts.length === 3) {
       )}
     </div>
 
-    {!compact && eintrag.themen && eintrag.themen.length > 0 && (
-      <div class="flex flex-wrap gap-1.5 mt-3">
-        {eintrag.themen.map((t) => (
-          <span class="text-[0.65rem] uppercase tracking-wider px-2 py-0.5 bg-paper-soft border border-line rounded-full text-muted">
-            {t}
-          </span>
-        ))}
-      </div>
-    )}
   </div>
 </article>

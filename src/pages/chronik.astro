@@ -60,15 +60,6 @@ for (const { i, year } of eventsWithYear) {
       dokumentiert. Neueste Einträge oben.
     </p>
 
-    <div class="flex flex-wrap gap-3 mb-10">
-      <a
-        href="https://norberthaering.de/chronik-fortsetzung/"
-        rel="noopener"
-        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
-      >
-        Härings Chronik-Fortsetzung →
-      </a>
-    </div>
   </section>
 
   <!-- Sticky-Jahresnavi -->
@@ -139,7 +130,7 @@ for (const { i, year } of eventsWithYear) {
               {year}
             </h2>
           )}
-          <TimelineEvent eintrag={e} />
+          <TimelineEvent eintrag={e} compact />
         </>
       ))}
     </div>
@@ -151,6 +142,32 @@ for (const { i, year } of eventsWithYear) {
       Keine Einträge passen zum Filter.
       <button type="button" class="underline text-accent" data-reset>Zurücksetzen</button>.
     </p>
+
+    <!--
+      Norberts Hinweise vom 20.5.2026 ("Den Link zur kompletten Chronik würde
+      ich unter den letzten Eintrag setzen. Dort erwartet und findet man ihn.")
+      und 22.5.2026 ("Weitere Aktualisierungen und Links zu den Quellen für
+      diese Aktualisierung finden sie auf norberthaering.de/wahrheitskomplex"
+      steht hinter der Chronik in der zweiten Auflage).
+    -->
+    <div class="max-w-5xl mt-12 pt-8 border-t border-line">
+      <p class="text-ink-soft leading-relaxed mb-5">
+        Weitere Aktualisierungen und Links zu den Quellen für diese
+        Aktualisierung finden Sie auf
+        <a
+          href="https://norberthaering.de/wahrheitskomplex/"
+          rel="noopener"
+          class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+        >norberthaering.de/wahrheitskomplex</a>.
+      </p>
+      <a
+        href="https://norberthaering.de/chronik-fortsetzung/"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+      >
+        Härings laufende Chronik-Fortsetzung →
+      </a>
+    </div>
   </section>
 </BaseLayout>
 
