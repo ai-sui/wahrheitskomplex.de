@@ -16,4 +16,5 @@ thumbOverride: "/faktencheck-thumbs/dpa-gerichtsurteil.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "achgut.com — Zu Hochwassern fragen Sie das Bundesumweltamt"
+  - 'Buch „Der Wahrheitskomplex", Kap. 1'
 ---

@@ -61,7 +61,7 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
   {thumb ? (
     <a
       href={url}
-      rel="noopener"
+      rel="noopener" target="_blank"
       class="block aspect-video bg-ink relative overflow-hidden group no-underline"
       aria-label={`Tiefenartikel auf norberthaering.de: ${title}`}
     >
@@ -85,7 +85,7 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
   ) : (
     <a
       href={url}
-      rel="noopener"
+      rel="noopener" target="_blank"
       class="block aspect-video bg-ink relative no-underline"
     >
       <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-xl px-6 text-center">
@@ -96,13 +96,17 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
 
   <div class="p-5 md:p-6 flex flex-col flex-1">
     <div class="flex items-center gap-2 mb-3 text-xs flex-wrap">
-      <span class="meta-label text-accent">Faktencheck</span>
+      {/* Dachzeile auf Norberts Vorschlag vom 24.5.2026:
+          "Sollten wir die Dachzeile vielleicht jeweils in
+          Faktenchecker-Check ändern?" — ja, weil die Sektion
+          ebenfalls so heisst und damit pro Karte konsistent ist. */}
+      <span class="meta-label text-accent">Faktenchecker-Check</span>
       <span class="text-muted">·</span>
       <time class="text-muted" datetime={date}>{dateFmt}</time>
     </div>
 
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-4">
-      <a href={url} rel="noopener" class="no-underline hover:text-accent">
+      <a href={url} rel="noopener" target="_blank" class="no-underline hover:text-accent">
         {title}
       </a>
     </h3>
@@ -129,7 +133,7 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
     <div class="mt-auto pt-4 border-t border-line flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
       <a
         href={url}
-        rel="noopener"
+        rel="noopener" target="_blank"
         class="text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
       >
         Vollständiger Beitrag bei norberthaering.de →

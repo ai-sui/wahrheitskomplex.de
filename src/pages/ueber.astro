@@ -85,7 +85,7 @@ const bc = breadcrumbList(Astro.site, [{ name: 'Über die Seite', path: '/ueber'
     <p class="text-ink-soft leading-relaxed mb-6">
       Inhaltliche Grundlage ist das Buch von Norbert Häring und seine
       laufende Berichterstattung auf
-      <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>.
+      <a href="https://norberthaering.de" rel="noopener" target="_blank" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>.
       Die Online-Begleitseite entsteht in Abstimmung mit dem Autor.
     </p>
     <p class="text-ink-soft leading-relaxed mb-6">
@@ -97,9 +97,9 @@ const bc = breadcrumbList(Astro.site, [{ name: 'Über die Seite', path: '/ueber'
     <p class="text-ink-soft leading-relaxed mb-12">
       Anregungen, Korrekturhinweise und neue Quellenfunde nehmen wir gern
       auf — bitte über den Kontakt-Hinweis auf
-      <a href="https://norberthaering.de" rel="noopener" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>
+      <a href="https://norberthaering.de" rel="noopener" target="_blank" class="underline decoration-line hover:decoration-accent">norberthaering.de</a>
       oder über den
-      <a href={book.buyUrl} rel="noopener" class="underline decoration-line hover:decoration-accent">Westend Verlag</a>.
+      <a href={book.buyUrl} rel="noopener" target="_blank" class="underline decoration-line hover:decoration-accent">Westend Verlag</a>.
     </p>
 
     <h2 class="font-serif text-2xl mb-4">Wie die Seite gepflegt wird</h2>
@@ -133,7 +133,7 @@ const bc = breadcrumbList(Astro.site, [{ name: 'Über die Seite', path: '/ueber'
         </a>
         <a
           href={book.buyUrl}
-          rel="noopener"
+          rel="noopener" target="_blank"
           class="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium no-underline hover:bg-accent transition-colors"
         >
           Beim Westend Verlag →

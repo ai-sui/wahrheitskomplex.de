@@ -14,7 +14,7 @@ const { book } = Astro.props;
     <!-- Cover-Platzhalter (SVG, kein Asset nötig) -->
     <a
       href={book.buyUrl}
-      rel="noopener"
+      rel="noopener" target="_blank"
       class="block w-44 md:w-52 shrink-0 mx-auto md:mx-0 group"
     >
       <img
@@ -68,7 +68,7 @@ const { book } = Astro.props;
       <div class="flex flex-wrap gap-3">
         <a
           href="https://norberthaering.de/buchtipps/wahrheitskonplex-leseprobe/"
-          rel="noopener"
+          rel="noopener" target="_blank"
           class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
         >
           Leseprobe <span aria-hidden="true">→</span>
@@ -76,7 +76,7 @@ const { book } = Astro.props;
         {book.buyUrl && (
           <a
             href={book.buyUrl}
-            rel="noopener"
+            rel="noopener" target="_blank"
             class="inline-flex items-center gap-2 rounded-full border border-ink px-5 py-2.5 text-sm font-medium no-underline hover:bg-ink hover:text-paper transition-colors"
           >
             Beim Westend Verlag <span aria-hidden="true">→</span>

@@ -36,7 +36,7 @@ const { fact } = Astro.props;
       <p class="mt-6">
         <a
           href={fact.deepLink.url}
-          rel="noopener"
+          rel="noopener" target="_blank"
           class="inline-flex items-center gap-2 text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
         >
           {fact.deepLink.label}

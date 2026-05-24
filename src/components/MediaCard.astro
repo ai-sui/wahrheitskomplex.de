@@ -70,7 +70,7 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
   ) : articleThumb ? (
     <a
       href={url}
-      rel="noopener"
+      rel="noopener" target="_blank"
       class="block aspect-video bg-ink relative no-underline group overflow-hidden"
       aria-label={`${typeLabels[type]} bei ${outlet}: ${title}`}
     >
@@ -94,7 +94,7 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
   ) : (
     <a
       href={url}
-      rel="noopener"
+      rel="noopener" target="_blank"
       class="block aspect-video bg-ink relative no-underline group"
       aria-label={`${typeLabels[type]} bei ${outlet}: ${title}`}
     >
@@ -128,7 +128,7 @@ const dateFmt = new Intl.DateTimeFormat('de-DE', {
     </div>
 
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-2">
-      <a href={url} rel="noopener" class="no-underline hover:text-accent">
+      <a href={url} rel="noopener" target="_blank" class="no-underline hover:text-accent">
         {title}
       </a>
     </h3>

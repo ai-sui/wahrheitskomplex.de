@@ -15,15 +15,12 @@ export const thumbManifest = {
   "faktencheckThumbs": [
     "afp-aufmacher.jpg",
     "ard-faktenfinder-merz.jpg",
-    "correctiv-anti-journalisten.jpg",
-    "correctiv-nanolipide.jpg",
     "dpa-gerichtsurteil.jpg",
     "dw-ndr-rostock.jpg",
     "ganser-guerot-krone.jpg",
     "pflanzensprengstoff.jpg",
     "pistorius-faktenfuchs.jpg",
     "siggelkow-rechtsextremismus.jpg",
-    "spahn-wieler-faktenchecker.jpg",
     "transgender-gesetz-tagesschau.jpg",
     "zdf-nordstream.jpg"
   ],
