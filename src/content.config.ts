@@ -78,6 +78,12 @@ const faktenchecks = defineCollection({
     quellen: z.array(z.string()).default([]),
     // Override des automatisch geholten og:image (Pfad unter /public)
     thumbOverride: z.string().optional(),
+    // Optionaler Sortier-Override. Karten werden nach Datum sortiert
+    // (neueste zuerst). Bei gewünschten Reihenfolge-Abweichungen kann
+    // `order` ein Datum-String (YYYY-MM-DD) sein, der das echte Datum
+    // für die Sortierung ersetzt — z.B. um einen thematisch passenden
+    // Beitrag vor einen anderen zu ziehen, obwohl er älter ist.
+    order: z.string().optional(),
   }),
 });
 

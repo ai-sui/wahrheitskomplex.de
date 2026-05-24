@@ -12,7 +12,7 @@ urteil: >-
   Das ZDF erklärt schon kurz nach der Tat, ohne abschließende Ermittlungen,
   Mutmaßungen in Richtung USA seien unzulässig oder verschwörungstheoretisch.
 realitaet: >-
-  Häring dokumentiert, wie das ZDF eine ergebnisoffene Bewertung
+  Der Beitrag dokumentiert, wie das ZDF eine ergebnisoffene Bewertung
   blockiert — und sich damit auf eine Seite der politischen Debatte
   stellt, statt journalistische Distanz zu halten.
 url: "https://norberthaering.de/propaganda-zensur/zdf-nordstream-sabotage/"

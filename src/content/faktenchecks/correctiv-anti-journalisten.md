@@ -15,11 +15,12 @@ urteil: >-
   als verlässlich „falsch" oder „irreführend" — oft ohne die zugrunde
   liegenden Quellen vollständig zu prüfen.
 realitaet: >-
-  Häring beschreibt Correctivs Selbstverständnis als „Anti-Journalismus":
-  Eine Allianz mit den Mächtigen, deren Aufgabe nicht das Hinterfragen,
-  sondern das Verteidigen offizieller Lesarten ist. Er belegt das an
-  konkreten Fällen, in denen Correctiv Recherchen mit Methoden bewertet,
-  die einer wissenschaftlichen Prüfung nicht standhalten.
+  Die Recherche beschreibt Correctivs Selbstverständnis als
+  „Anti-Journalismus": eine Allianz mit den Mächtigen, deren Aufgabe
+  nicht das Hinterfragen, sondern das Verteidigen offizieller Lesarten
+  ist. Belegt wird das an konkreten Fällen, in denen Correctiv
+  Recherchen mit Methoden bewertet, die einer wissenschaftlichen
+  Prüfung nicht standhalten.
 url: "https://norberthaering.de/propaganda-zensur/correctiv-anti-journalisten/"
 thumbOverride: "/faktencheck-thumbs/correctiv-anti-journalisten.jpg"
 quellen:

@@ -43,8 +43,9 @@ NATO-Hauptstädten aufgegriffen — und finden ihren Weg in die Argumente,
 mit denen Plattform-Regulierung, Faktencheckerei und Desinformations­be­kämpfung
 begründet werden.
 
-Häring beschreibt den Council als „politischen Arm der NATO": Wer in den
-Beiräten und Programmen sitzt, kommt aus US-Geheimdiensten, NATO-Generalsekretariaten
-und den Vorständen großer Pharma-, Finanz- und PR-Konzerne. Seine Veröffentlichungen
-liest Häring deshalb nicht als neutrale Analyse, sondern als
-Willensbekundungen eines konkreten Machtkomplexes.
+Im Buch wird der Council als „politischer Arm der NATO" beschrieben:
+Wer in den Beiräten und Programmen sitzt, kommt aus US-Geheimdiensten,
+NATO-Generalsekretariaten und den Vorständen großer Pharma-, Finanz- und
+PR-Konzerne. Seine Veröffentlichungen sind deshalb nicht als neutrale
+Analyse zu lesen, sondern als Willensbekundungen eines konkreten
+Machtkomplexes.

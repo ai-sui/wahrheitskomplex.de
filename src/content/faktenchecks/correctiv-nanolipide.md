@@ -13,8 +13,8 @@ urteil: >-
   Correctiv-Faktenchecker stempeln die Behauptung kurz und bündig als
   „falsch" ab.
 realitaet: >-
-  Häring zeigt, dass die Behauptung präzise zur Hälfte stimmt: Die
-  konkret bezogenen Substanzen sind tatsächlich „research use only".
+  Die Recherche zeigt, dass die Behauptung präzise zur Hälfte stimmt:
+  Die konkret bezogenen Substanzen sind tatsächlich „research use only".
   Correctiv arbeitet hier mit der Strategie „im Zweifel gegen den
   Angeklagten" — ein methodisches Muster, das sich in vielen
   Faktenchecks wiederfindet.

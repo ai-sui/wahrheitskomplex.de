@@ -83,8 +83,11 @@ const recentNews = newsFeed
   .slice(0, 10);
 
 // --- Faktenchecks-Karussell ---
+// `order` (falls gesetzt) übersteuert das echte Datum für Sortierzwecke.
+const sortKey = (fc: { data: { date: string; order?: string } }) =>
+  fc.data.order ?? fc.data.date;
 const recentFaktenchecks = [...faktenchecks]
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .sort((a, b) => new Date(sortKey(b)).getTime() - new Date(sortKey(a)).getTime())
   .slice(0, 10);
 
 // --- Chronik-Block „Was seither geschah" ---

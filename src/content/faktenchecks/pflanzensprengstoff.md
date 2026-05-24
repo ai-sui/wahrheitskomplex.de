@@ -2,6 +2,7 @@
 title: '„Pflanzensprengstoff" und der Zustand der Leitmedien'
 faktenchecker: ARD / mehrere
 date: "2023-02-27"
+order: "2023-03-29"  # Norberts Wunsch: in der Anzeige direkt vor Ganser (28.3.) erscheinen
 themen:
   - "Ukraine & NATO"
 summary: >-

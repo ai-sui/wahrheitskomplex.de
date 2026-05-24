@@ -19,9 +19,9 @@ reichweite: >-
   Weiterbildungsarm „Reporterfabrik".
 kernkritik: >-
   Doppelrolle als investigative Redaktion und Faktencheck-Stelle bei
-  gleichzeitiger Stiftungsfinanzierung. Häring kritisiert insbesondere
-  die intransparente Themenauswahl und die enge Verflechtung mit
-  staatsnahen Mittelgebern.
+  gleichzeitiger Stiftungsfinanzierung. Kritisch wird vor allem die
+  intransparente Themenauswahl und die enge Verflechtung mit staatsnahen
+  Mittelgebern gesehen.
 stellungnahme: >-
   Auf wiederholte Anfrage verweist Correctiv auf öffentlich einsehbare
   Geschäftsberichte und die Methodik-Seiten des Faktencheck-Bereichs.
@@ -51,13 +51,13 @@ Berichterstattung betreibt das Haus eine Faktencheck-Sparte, die für Meta
 deutschsprachige Inhalte prüft, sowie die „Reporterfabrik", einen Aus- und
 Weiterbildungsarm.
 
-Häring nähert sich Correctiv in *Der Wahrheitskomplex* nicht über die einzelnen
-Recherchen, sondern über die Struktur: Wer eine Stelle für „richtige" Fakten
-finanziert — Stiftungen mit klaren politischen Programmen, ergänzt durch
-Mittel staatsnaher Geber — bekommt eine Auswahl, die diesen Programmen nicht
-zufällig entspricht. Die Qualität einzelner Recherchen — die Häring nicht
-in Frage stellt — schließt diese Struktur-Kritik nicht aus, sondern macht
-sie aus seiner Sicht erst interessant.
+In *Der Wahrheitskomplex* erfolgt der Zugriff auf Correctiv nicht über die
+einzelnen Recherchen, sondern über die Struktur: Wer eine Stelle für
+„richtige" Fakten finanziert — Stiftungen mit klaren politischen
+Programmen, ergänzt durch Mittel staatsnaher Geber — bekommt eine
+Auswahl, die diesen Programmen nicht zufällig entspricht. Die Qualität
+einzelner Recherchen, die hier nicht in Frage gestellt wird, schließt
+diese Struktur-Kritik nicht aus, sondern macht sie erst interessant.
 
 Die Doppelrolle — eigene Recherchen veröffentlichen *und* die Recherchen
 anderer als Faktencheck einordnen — verstärkt die Frage, wer hier die

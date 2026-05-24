@@ -20,7 +20,7 @@ reichweite: >-
 kernkritik: >-
   Eine von der EU-Kommission finanzierte Struktur, die Inhalte mit
   EU-Bezug auf ihre „Verlässlichkeit" prüft und gleichzeitig der EU als
-  Datenlieferant für DSA-Vollzug dient. Häring sieht hier eine im
+  Datenlieferant für DSA-Vollzug dient. Hier liegt eine im
   Mediendiskurs untergewichtete Interessenkollision zwischen Auftraggeber
   und Prüfgegenstand.
 stellungnahme: >-
@@ -58,7 +58,7 @@ gleiche Struktur als Datengrundlage in den DSA-Vollzug. Wer die Auswahl
 einer Lageberichts-Hub trifft, beeinflusst damit, was im EU-System als
 „Desinformations-Trend" sichtbar wird.
 
-Häring rekonstruiert nicht die einzelnen Hub-Berichte, sondern die
-Geometrie der Verschränkung: Auftraggeber, Prüfer und nutzender Vollzieher
-sitzen so eng beieinander, dass die Sphären für Außenstehende kaum noch zu
-trennen sind.
+Im Buch werden nicht die einzelnen Hub-Berichte rekonstruiert, sondern
+die Geometrie der Verschränkung: Auftraggeber, Prüfer und nutzender
+Vollzieher sitzen so eng beieinander, dass die Sphären für Außenstehende
+kaum noch zu trennen sind.

@@ -47,7 +47,7 @@ erscheinen in der Praxis oft mehrfach gleichlautend in unterschiedlichen
 Medien — die kuratierende Auswahl wird für die Leserinnen und Leser nicht
 sichtbar gemacht.
 
-Häring kritisiert in *Der Wahrheitskomplex* den Effekt dieser Vorauswahl:
+In *Der Wahrheitskomplex* wird der Effekt dieser Vorauswahl kritisiert:
 Wer entscheidet, gilt als Maßstab dafür, was in der Berichterstattung als
 „wissenschaftlicher Konsens" auftaucht — ohne dass die Auswahlkriterien
 offengelegt würden.

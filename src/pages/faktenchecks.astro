@@ -4,8 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FaktencheckCard from '../components/FaktencheckCard.astro';
 import { withBase } from '../utils/url';
 
+// `order` (falls gesetzt) übersteuert das echte Datum für Sortierzwecke.
+const sortKey = (fc: { data: { date: string; order?: string } }) =>
+  fc.data.order ?? fc.data.date;
 const faktenchecks = (await getCollection('faktenchecks')).sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  (a, b) => new Date(sortKey(b)).getTime() - new Date(sortKey(a)).getTime(),
 );
 
 // Distinct outlets for filter chips (sorted by frequency desc, then alpha)

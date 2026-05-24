@@ -45,7 +45,9 @@ Online-Diskurses: ISD-Studien begründen Plattform-Auflagen, ISD-Software
 Online-Räume in Echtzeit.
 
 Finanziert wird das ISD zu großen Teilen aus staatlichen Töpfen — vom
-britischen Digitalministerium [DCMS](/glossar#dcms) bis zu NATO-Programmen. Häring zeichnet
-in *Der Wahrheitskomplex* nach, wie eng das ISD mit [Five-Eyes](/glossar#five-eyes)-Geheimdiensten
-verflochten ist und wie weitreichend seine Empfehlungen die EU-Regulierung
-([DSA](/glossar#dsa)) und das deutsche [NetzDG](/glossar#netzdg) geprägt haben.
+britischen Digitalministerium [DCMS](/glossar#dcms) bis zu NATO-Programmen.
+*Der Wahrheitskomplex* zeichnet nach, wie eng das ISD mit
+[Five-Eyes](/glossar#five-eyes)-Geheimdiensten verflochten ist und wie
+weitreichend seine Empfehlungen die EU-Regulierung
+([DSA](/glossar#dsa)) und das deutsche [NetzDG](/glossar#netzdg)
+geprägt haben.

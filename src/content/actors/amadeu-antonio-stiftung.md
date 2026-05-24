@@ -20,7 +20,7 @@ reichweite: >-
   Bildungsprojekte.
 kernkritik: >-
   Pionierin der gesetzgeberischen Logik, die ins Netzwerkdurchsetzungsgesetz
-  (NetzDG, 2017) und später in EU-Vorgaben (DSA) mündete. Häring kritisiert
+  (NetzDG, 2017) und später in EU-Vorgaben (DSA) mündete. Kritisiert wird
   die enge Verflechtung mit Bundesmitteln und die Rolle als Themen­agenda­setterin
   bei gleichzeitiger Selbstdarstellung als unabhängige Zivilgesellschaft.
 stellungnahme: >-
@@ -58,9 +58,9 @@ Debatte: Aus jahrelanger Argumentation gegen „Hass im Netz" wurde 2017 das
 löschen, dokumentieren — wurden später Bausteine des EU-Digital-Services-Act
 ([DSA](/glossar#dsa)).
 
-Häring rekonstruiert nicht die Inhalte der Stiftungsarbeit, sondern die
-Geometrie: Wer sich aus überwiegend öffentlichen Mitteln finanziert,
+Im Buch wird nicht die inhaltliche Stiftungsarbeit rekonstruiert, sondern
+die Geometrie: Wer sich aus überwiegend öffentlichen Mitteln finanziert,
 gleichzeitig Gesetzesvorschläge prägt, deren Vollzug wiederum bei
-staatsnahen Stellen liegt — der ist aus seiner Sicht nicht
-„Zivilgesellschaft", sondern Teil eines staatlich-zivilgesellschaftlichen
-Hybrid-Komplexes, dessen Trennlinien für Außenstehende unkenntlich werden.
+staatsnahen Stellen liegt — der ist nicht „Zivilgesellschaft", sondern
+Teil eines staatlich-zivilgesellschaftlichen Hybrid-Komplexes, dessen
+Trennlinien für Außenstehende unkenntlich werden.

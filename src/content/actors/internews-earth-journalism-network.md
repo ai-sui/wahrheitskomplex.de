@@ -20,7 +20,7 @@ reichweite: >-
 kernkritik: >-
   Eine US-Außen- und Entwicklungspolitik-finanzierte Organisation gestaltet
   global die Klima-Berichterstattung mit — über Stipendien, Trainings und
-  Themenvorschläge. Häring sieht hier eine in westlichen Medien selten
+  Themenvorschläge. Hier zeigt sich eine in westlichen Medien selten
   thematisierte Form weicher Steuerung internationaler Berichterstattung.
 stellungnahme: >-
   Internews verweist auf öffentliche Förderübersichten, die Unabhängigkeit
