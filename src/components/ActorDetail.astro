@@ -34,11 +34,29 @@ const {
   libernetLink,
   quellen,
 } = Astro.props;
+
+// Portraet-Dachzeile. Norbert (Re-Mail vom 22.5.2026): "Wie waere es
+// einfach mit 'Portraet:' oder 'Im Portraet:' oder 'Akteur im Portraet:'
+// oder 'NGO im Portraet:'". Wir mappen den akteurstyp auf eine knappe,
+// gut lesbare Form. Doppelnaturen werden auf den primaeren Typ reduziert.
+const portraetMap: Record<string, string> = {
+  'Behörde': 'Behörde im Porträt',
+  'Faktenchecker': 'Faktenchecker im Porträt',
+  'Stiftung': 'Stiftung im Porträt',
+  'Plattform': 'Plattform im Porträt',
+  'Medienverbund': 'Medienverbund im Porträt',
+  'NGO': 'NGO im Porträt',
+  'Think Tank': 'Think Tank im Porträt',
+  'Mittler / NGO': 'NGO im Porträt',
+  'Stiftung / Think Tank': 'Stiftung im Porträt',
+  'NGO / Geheimdienst-nah': 'NGO im Porträt',
+};
+const dachzeile = portraetMap[akteurstyp] ?? 'Im Porträt';
 ---
 
 <article class="container-page py-12 md:py-16 grid lg:grid-cols-[2fr_1fr] gap-12">
   <div>
-    <p class="meta-label text-accent mb-3">{kategorie}</p>
+    <p class="meta-label text-accent mb-3">{dachzeile}</p>
     <h1 class="font-serif text-4xl md:text-5xl leading-tight mb-6">{name}</h1>
 
     <div class="flex flex-wrap gap-1.5 mb-10">

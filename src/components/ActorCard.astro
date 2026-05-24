@@ -41,8 +41,15 @@ const isExternal = !fulltext && Boolean(haeringLink);
   data-akteurstyp={akteurstyp}
   data-themen={themenAttr}
 >
-  <div class="flex items-baseline justify-between gap-3 mb-3">
-    <p class="meta-label text-accent">{kategorie}</p>
+  {/*
+    Dachzeile (kategorie) ist auf Norberts Hinweis vom 20.5.2026 entfernt:
+    "Die Dachzeilen finde ich entbehrlich. Dachzeilen und andere
+    Zusatzebenen finde ich nur sinnvoll, wo ein einzelner Artikel /
+    Textobjekt präsentiert wird. Wo verschiedene Objekte gleichzeitig
+    präsentiert werden, erschweren zusätzliche Ebenen die Übersicht."
+    Die Land-Angabe oben rechts bleibt als kompakte Verortung.
+  */}
+  <div class="flex items-baseline justify-end gap-3 mb-3">
     <p class="text-xs text-muted">{land}</p>
   </div>
 
