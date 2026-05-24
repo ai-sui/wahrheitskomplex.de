@@ -155,7 +155,7 @@ const bookSchema = {
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
       <h2 class="font-serif text-2xl md:text-3xl leading-tight min-w-0">
-        Die wichtigsten NGOs des Wahrheitskomplexes.
+        {actors.length} wichtige NGOs des Wahrheitskomplexes.
       </h2>
       <a
         href={withBase('/portraits')}
@@ -165,7 +165,7 @@ const bookSchema = {
       </a>
     </div>
 
-    <Carousel label="Die wichtigsten NGOs des Wahrheitskomplexes">
+    <Carousel label="Wichtige NGOs des Wahrheitskomplexes">
       {actors.map((a) => (
         <ActorPortraitCard
           name={a.data.name}
@@ -202,13 +202,13 @@ const bookSchema = {
     </div>
   </section>
 
-  <!-- Karussell 3: Faktenchecker im Check -->
+  <!-- Karussell 3: Faktenchecker-Check -->
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="mb-6 pb-4 border-b border-line">
-      <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker im Check.</h2>
+      <h2 class="font-serif text-2xl md:text-3xl leading-tight">Faktenchecker-Check.</h2>
     </div>
 
-    <Carousel label="Faktenchecker im Check">
+    <Carousel label="Faktenchecker-Check">
       {recentFaktenchecks.map((fc) => (
         <FaktencheckCard
           title={fc.data.title}

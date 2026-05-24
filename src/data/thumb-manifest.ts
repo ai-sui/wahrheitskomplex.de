@@ -17,13 +17,15 @@ export const thumbManifest = {
     "ard-faktenfinder-merz.jpg",
     "correctiv-anti-journalisten.jpg",
     "correctiv-nanolipide.jpg",
+    "dpa-gerichtsurteil.jpg",
     "dw-ndr-rostock.jpg",
     "ganser-guerot-krone.jpg",
     "pflanzensprengstoff.jpg",
     "pistorius-faktenfuchs.jpg",
     "siggelkow-rechtsextremismus.jpg",
     "spahn-wieler-faktenchecker.jpg",
-    "transgender-gesetz-tagesschau.jpg"
+    "transgender-gesetz-tagesschau.jpg",
+    "zdf-nordstream.jpg"
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",

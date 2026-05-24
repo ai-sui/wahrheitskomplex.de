@@ -10,6 +10,7 @@ summary: >-
   Nordstream-2-Anschlags veröffentlicht und blamiert seinen Sender damit
   bis auf die Knochen. Spoiler: Es können nur die Russen gewesen sein.
 url: "https://norberthaering.de/propaganda-zensur/zdf-nordstream/"
+thumbOverride: "/faktencheck-thumbs/zdf-nordstream.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

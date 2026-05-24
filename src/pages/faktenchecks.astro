@@ -28,7 +28,7 @@ const outlets = Array.from(outletCounts.entries())
 const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Faktenchecker im Check',
+  name: 'Faktenchecker-Check',
   description:
     'Dokumentierte Faelle, in denen etablierte Faktencheck-Stellen falsch oder irrefuehrend gestempelt haben.',
   numberOfItems: faktenchecks.length,
@@ -61,7 +61,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Faktenchecker im Check — 18 dokumentierte Fehlgriffe"
+  title="Faktenchecker-Check — 10 dokumentierte Fehlgriffe"
   description="18 Fälle, in denen Faktenchecker deutscher und internationaler Medien danebenlagen — recherchiert und dokumentiert von Norbert Häring. Mit Verdict, Aktenlage und Quellen."
   jsonLd={[itemListSchema, breadcrumbSchema]}
 >

@@ -123,7 +123,7 @@ collections:
   # FAKTENCHECKS
   # =========================================================
   - name: faktenchecks
-    label: "Faktenchecker im Check"
+    label: "Faktenchecker-Check"
     label_singular: "Faktencheck"
     description: "Dokumentierte Fälle, in denen Faktenchecker fehlgegangen sind."
     folder: src/content/faktenchecks

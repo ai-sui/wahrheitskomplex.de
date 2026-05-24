@@ -12,6 +12,8 @@ summary: >-
   Nachrichtennetzseite achgut.com zu Hochwassern, die nicht schlimmer
   werden. Die Affäre offenbart fragwürdige Methoden und Absichten.
 url: "https://norberthaering.de/propaganda-zensur/dpa-gerichtsurteil/"
+thumbOverride: "/faktencheck-thumbs/dpa-gerichtsurteil.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
+  - "achgut.com — Zu Hochwassern fragen Sie das Bundesumweltamt"
 ---

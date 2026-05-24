@@ -162,7 +162,7 @@ export const definitionen: Definition[] = [
     term: 'Hybrides Eingreifteam',
     antwort:
       'Vom EU-Rat im April 2024 beschlossene zivil-militärische Schnell­einsatz­einheit gegen „hybride Bedrohungen" — ein Begriff, der von Desinformation bis Sabotage alles umfasst.',
-    quelle: 'EU-Rat, Beschluss April 2024',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 5',
     link: { label: 'Chronik 2024', href: '/chronik#jahr-2024' },
   },
   {
