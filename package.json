@@ -10,19 +10,28 @@
     "dev": "node scripts/build-thumb-manifest.mjs && astro dev",
     "prebuild": "node scripts/build-thumb-manifest.mjs",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "og": "node scripts/generate-og.mjs",
     "yt-thumbs": "node scripts/fetch-yt-thumbs.mjs",
     "article-thumbs": "node scripts/fetch-article-thumbs.mjs",
     "faktencheck-thumbs": "node scripts/fetch-faktencheck-thumbs.mjs",
-    "auto-sync": "node scripts/auto-sync.mjs"
+    "auto-sync": "node scripts/auto-sync.mjs",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.5.4",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.2.2",
     "marked": "^18.0.4",
     "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.94.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
