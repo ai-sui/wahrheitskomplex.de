@@ -8,11 +8,10 @@ interface Props {
   land: string;
   gegruendet?: string | number;
   kurzbeschreibung: string;
-  kernkritik?: string;
   haeringLink?: string;
 }
 
-const { name, slug, akteurstyp, land, gegruendet, kurzbeschreibung, kernkritik, haeringLink } =
+const { name, slug, akteurstyp, land, gegruendet, kurzbeschreibung, haeringLink } =
   Astro.props;
 
 const metaLine = [akteurstyp, land, gegruendet]
@@ -28,6 +27,14 @@ const ctaLabel = hasExternal
   : 'Profil ansehen →';
 ---
 
+{/*
+  Auf Ralphs Hinweis vom 24.5.2026 ("Karussell ist etwas zu hoch, viel
+  leerer Raum") zeigt diese Karte nur noch die kurzbeschreibung. Die
+  kernkritik fiel raus, weil sie zwischen den Akteuren stark unterschiedlich
+  lang ist und so den Höhen-Sync des Karussells in die Höhe trieb. Die
+  vollständige Kernkritik bleibt natürlich auf der Detail-Seite und im
+  Porträt auf norberthaering.de erhalten.
+*/}
 <a
   href={targetHref}
   rel={hasExternal ? 'noopener' : undefined}
@@ -39,10 +46,9 @@ const ctaLabel = hasExternal
     {name}
   </h3>
 
-  <div class="text-sm text-ink-soft leading-relaxed flex-1 mb-5 space-y-3">
-    <p>{kurzbeschreibung}</p>
-    {kernkritik && <p>{kernkritik}</p>}
-  </div>
+  <p class="text-sm text-ink-soft leading-relaxed flex-1 mb-5">
+    {kurzbeschreibung}
+  </p>
 
   <p class="text-sm text-accent font-medium border-t border-line pt-4 mt-auto">
     {ctaLabel}
