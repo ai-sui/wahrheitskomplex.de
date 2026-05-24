@@ -1,5 +1,5 @@
 ---
-title: 'Fake News im Kreis: Wie die Faktenchecker der Deutschen Welle diejenigen des NDR in Sachen 2+4-Vertrag in die Irre führten'
+title: 'Faktenchecker der Deutschen Welle führen NDR in die Irre'
 faktenchecker: Deutsche Welle / NDR
 date: "2024-10-31"
 themen:

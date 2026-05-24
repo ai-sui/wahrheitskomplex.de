@@ -1,5 +1,5 @@
 ---
-title: 'Die regierungsfinanzierten Faktenchecker von DPA fallen vor Gericht auf ihre lange Nase'
+title: 'Faktenchecker von dpa fallen vor Gericht auf die Nase'
 faktenchecker: dpa-Faktencheck
 actorSlug: dpa-faktencheck
 date: "2024-07-11"

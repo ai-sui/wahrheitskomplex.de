@@ -1,5 +1,5 @@
 ---
-title: 'ARD-Faktenfinder schludert und vernebelt bei Ausländer-Antisemitismus'
+title: 'ARD-Faktenfinder schludert bei Ausländer-Antisemitismus'
 faktenchecker: ARD-Faktenfinder (Pascal Siggelkow)
 date: "2023-10-26"
 themen:

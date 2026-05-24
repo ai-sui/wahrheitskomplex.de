@@ -1,5 +1,5 @@
 ---
-title: 'Regierung, Behörden und Medien haben sich hoffnungslos im Gestrüpp ihrer Impflügen verheddert'
+title: 'Regierung und Faktenchecker im Gestrüpp ihrer Impflügen verheddert'
 faktenchecker: BR Faktenfuchs / mehrere
 date: "2023-12-02"
 themen:

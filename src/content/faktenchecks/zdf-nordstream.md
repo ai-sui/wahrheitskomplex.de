@@ -1,5 +1,5 @@
 ---
-title: 'ZDF blamiert sich mit Video zur Nordstream-Sabotage bis auf die Knochen'
+title: 'ZDF blamiert sich mit Video zur Nordstream-Sabotage'
 faktenchecker: ZDF
 date: "2024-03-14"
 themen:

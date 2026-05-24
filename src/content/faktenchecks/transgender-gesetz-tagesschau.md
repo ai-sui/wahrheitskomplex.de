@@ -1,5 +1,5 @@
 ---
-title: 'Transgender-Gesetz: Tagesschau-Bericht stellt eigene kulturkämpfende Faktenchecker bloß'
+title: 'Tagesschau stellt kulturkämpfende Faktenchecker bloß'
 faktenchecker: Tagesschau (ARD)
 date: "2023-04-28"
 themen:
