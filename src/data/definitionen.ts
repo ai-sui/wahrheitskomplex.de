@@ -25,10 +25,26 @@ export type Definition = {
 export const definitionen: Definition[] = [
   {
     term: 'Wahrheit',
+    slug: 'wahrheit',
     antwort:
-      'Im Sprachgebrauch des EU-Digital-Services-Act: das, was von akkreditierten Faktencheck-Stellen als „verlässlich" eingestuft wird. Wahrheit wird so zur prozeduralen Eigenschaft, nicht zum Sachverhalt.',
-    quelle: 'Digital Services Act, Erwägungsgründe',
-    link: { label: 'Mehr im Buch, Kap. 3', href: '/buch#kapitel-3' },
+      'Keinesfalls dasselbe wie Fakten, betont der Atlantic Council. Fakten existieren objektiv und unabhängig von Glauben, Kultur und ähnlichem. Eine Wahrheit ist eine sinnstiftende Interpretation der Fakten, ähnlich dem Narrativ. Es kann viele geben.',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 1',
+    volltext: [
+      'Keinesfalls dasselbe wie Fakten, betont der Atlantic Council. Fakten existieren objektiv und unabhängig von Glauben, Kultur und ähnlichem. Eine Wahrheit ist eine sinnstiftende Interpretation der Fakten, ähnlich dem Narrativ. Es kann viele geben.',
+      'Der [Atlantic Council](/portraits/atlantic-council) ist eine sehr hochkarätig besetzte NGO, die man als politischen Arm der NATO bezeichnen kann. Für das US-Militär hat sie die Ergebnisse einer Konferenz 2018 in Washington für Militärattachés in einer Broschüre zusammengefasst. Titel (übersetzt): „Wessen Wahrheit?: Souveränität, Desinformation und wie man die Schlacht um das Vertrauen gewinnt". Auf der Konferenz erhielten die Militärgesandten der verbündeten Nationen Hinweise, wie deren Regierungen bei der Bekämpfung sogenannter Desinformation vorgehen sollten.',
+      'Freimütig räumen die Berichterstatter ein: „Die Kontrolle von Information und Wahrheit war schon immer entscheidend für die Ausübung von Macht." Der Atlantic Council über diese Wahrheit auf:',
+      '„Obwohl Fakten und Wahrheit oft als Synonyme betrachtet werden, haben sie in dieser Diskussion sehr unterschiedliche Bedeutungen. Die übliche Definition von Fakten besagt, dass sie objektiv in der Realität existieren, unabhängig von Glauben, Kultur oder anderen Überlegungen. Sie können nicht logisch angefochten werden. Die Wahrheit hingegen besteht aus Fakten, kann aber durch Überzeugungen und Interpretationen beeinflusst werden. So können zwei Menschen aus ein und demselben Sachverhalt zwei verschiedene Wahrheiten ableiten."',
+      'Der „Atlantikrat" spricht vom verstärkten Wettbewerb zwischen konkurrierenden Wahrheiten und fragt: „Wenn Wahrheit subjektiv sein kann (…), stellt sich die Frage, wessen Wahrheit richtig ist." Die Antwort hat er schon gegeben: Die Wahrheit der Mächtigen muss sich durchsetzen, denn sonst verlieren sie ihre Glaubwürdigkeit, ihre Souveränität. Und das darf nicht sein, wenn sie in einem Propagandakrieg mit Russland die Oberhand behalten wollen.',
+      'Bei der Machtausübung durch Wahrheitskontrolle geht es demnach um Deutungshoheit, um Narrativkontrolle. Entsprechend checken die lizenzierten Faktenchecker des Wahrheitskomplexes bei umstrittenen Fragen meist nicht Fakten, sondern Interpretationen der Fakten, also Narrative oder Wahrheiten. Und sie lassen regelmäßig nur die regierungsseitig vertretene Interpretation gelten.',
+    ],
+    quellenDetail: [
+      { label: 'Buch „Der Wahrheitskomplex", Kap. 1' },
+      {
+        label: 'Atlantic Council: „Whose Truth? Sovereignty, Disinformation, and Winning the Battle of Trust" (2018)',
+        href: 'https://www.atlanticcouncil.org/',
+      },
+    ],
+    link: { label: 'Im Porträt: Atlantic Council', href: '/portraits/atlantic-council' },
   },
   {
     term: 'Kognitive Kriegsführung',

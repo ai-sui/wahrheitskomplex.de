@@ -37,7 +37,10 @@ import { withBase } from '../utils/url';
 </section>
 
 <script>
-  // Beim Page-Load drei zufällige Definitionen sichtbar machen.
+  // Beim Page-Load: erste Karte (Wahrheit) bleibt fix angezeigt,
+  // zwei weitere werden zufaellig aus dem Rest gewaehlt.
+  // Norberts Wunsch: 'Was ist Wahrheit?' ist Bezug zum Buchtitel und
+  // soll immer als Einstieg da sein.
   // Ohne JS bleiben die ersten drei (default-visible) stehen.
   const grid = document.querySelector<HTMLElement>('[data-definitions-grid]');
   if (grid) {
@@ -45,22 +48,25 @@ import { withBase } from '../utils/url';
       grid.querySelectorAll<HTMLElement>('[data-def-slot]'),
     );
     if (slots.length > 3) {
-      // Fisher–Yates Shuffle der Indizes
-      const order = slots.map((_, i) => i);
-      for (let i = order.length - 1; i > 0; i--) {
+      // Slot 0 ist gepinnt. Aus den restlichen Indizes 2 zufaellig.
+      const rest = slots.map((_, i) => i).slice(1);
+      for (let i = rest.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [order[i], order[j]] = [order[j], order[i]];
+        [rest[i], rest[j]] = [rest[j], rest[i]];
       }
-      const pick = new Set(order.slice(0, 3));
+      const pick = new Set<number>([0, rest[0], rest[1]]);
       slots.forEach((slot, i) => {
         slot.classList.toggle('hidden', !pick.has(i));
       });
-      // DOM-Reihenfolge so anpassen, dass die ausgewählten 3 oben stehen
+      // DOM-Reihenfolge: Slot 0 (Wahrheit) bleibt vorn, dann die zwei
+      // zufaelligen, dann (versteckt) der Rest.
       const fragment = document.createDocumentFragment();
       const others: HTMLElement[] = [];
+      fragment.appendChild(slots[0]);
+      fragment.appendChild(slots[rest[0]]);
+      fragment.appendChild(slots[rest[1]]);
       slots.forEach((slot, i) => {
-        if (pick.has(i)) fragment.appendChild(slot);
-        else others.push(slot);
+        if (!pick.has(i)) others.push(slot);
       });
       others.forEach((s) => fragment.appendChild(s));
       grid.appendChild(fragment);
