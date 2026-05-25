@@ -21,6 +21,7 @@ export const thumbManifest = {
     "pflanzensprengstoff.jpg",
     "pistorius-faktenfuchs.jpg",
     "siggelkow-rechtsextremismus.jpg",
+    "tagesschau-vitamin-d.jpg",
     "transgender-gesetz-tagesschau.jpg",
     "zdf-nordstream.jpg"
   ],

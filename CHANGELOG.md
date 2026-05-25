@@ -29,6 +29,57 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 25.5.2026 – Norbert-Runde 3 (2 E-Mails, 25.5.)
+
+Backup-Tag: `backup-pre-norbert-runde3-20260525-121313`
+
+Eingeflossene Mails:
+
+- **Re: Was ist Wahrheit?** (25.5., 11:01) – Lob für die Site,
+  Schlusstext-Vorschlag für /faktenchecks, Häring-Funktion-Zusatz
+  für /ueber, Hinweis zu Klaus Tschira Stiftung, Korrekturen für die
+  Buch-Seite (Tippfehler Kap. 1, Akteure und Recherchefragen für
+  Kap. 4 und Kap. 6).
+- **Foto** (25.5., 11:49) – Aufmacher-Foto für den
+  Tagesschau-Vitamin-D-Faktencheck.
+
+Umgesetzt in dieser Runde:
+
+- **Faktenchecker-Check (Karte Vitamin D)**
+  - Von Norbert gesandtes Foto als
+    `public/faktencheck-thumbs/tagesschau-vitamin-d.jpg` eingebaut.
+- **/faktenchecks Schlusstext**
+  - Vorigen Erläuterungstext „Wir verkürzen für die Karten-Form …"
+    durch Norberts knappere Formulierung ersetzt: „Diese
+    Faktenchecker-Checks ergänzen die im Buch angeführten Beispiele.
+    Sie stammen von der Website norberthaering.de."
+- **/ueber**
+  - Zusatz angefügt: „Dasselbe gilt für die parteipolitische Funktion
+    von Norbert Häring."
+- **Porträts**
+  - Klaus Tschira Stiftung als eigenständiger Akteur entfernt
+    (`src/content/actors/klaus-tschira-stiftung.md`). Norbert: „Zur
+    Klaus Tschira Stiftung weiß ich nicht viel zu sagen. Stiftungen
+    wollte ich eigentlich nicht porträtieren." Die Erwähnung der KTS
+    bleibt in der Finanzierungsangabe des Science Media Center und
+    im Kurz-Glossar erhalten.
+- **Buch-Seite**
+  - Kapitel 1 abstract: Schreibweise korrigiert – „Eingenorden" →
+    „Einnorden".
+  - NewsGuard bekommt `buchKapitel: "Kapitel 4"`, sodass die Karte
+    in der „Akteure im Porträt"-Spalte von Kapitel 4 erscheint.
+  - Vier neue Recherchefragen ergänzt – zwei für Kap. 4 (WHO/Wikipedia
+    und WHO/UN-Influencer), zwei für Kap. 6 (Digitalisierung/Zentrali-
+    sierung/Meinungskontrolle und Teile-und-herrsche-Gegenmaßnahmen).
+
+Offen / Klärung mit Ralph nötig:
+
+- freistattsmart.de als Akteur für Kapitel 6: passt semantisch nicht
+  ins aktuelle Akteurs-Schema (das ist für Wahrheitskomplex-Akteure
+  mit Kernkritik gedacht). Vorschlag in der Antwort an Norbert: als
+  externer Link / Ressource in Kap. 6 ausweisen, statt als
+  Porträt-Karte.
+
 ### 25.5.2026 – Norbert-Runde 2 (5 E-Mails, 23.5.–24.5.)
 
 Backup-Tag: `backup-pre-norbert-runde2-20260524-235131`

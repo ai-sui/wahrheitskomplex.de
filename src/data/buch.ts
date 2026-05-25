@@ -15,7 +15,7 @@ export const kapitel: Kapitel[] = [
     title: 'Der Wahrheitskomplex bei der Arbeit',
     matches: 'Kapitel 1',
     abstract:
-      'Bestandsaufnahme: Wie der Komplex tagtäglich wirkt — vom „Eingenorden" etablierter Medien über Faktencheck-Verfahren und Werbeboykotte bis zu Meldestellen und Cancel-Culture-Mustern.',
+      'Bestandsaufnahme: Wie der Komplex tagtäglich wirkt, vom „Einnorden" etablierter Medien über Faktencheck-Verfahren und Werbeboykotte bis zu Meldestellen und Cancel-Culture-Mustern.',
     unterabschnitte: [
       'Wie etablierte Medien eingenordet werden',
       'Die Faktenchecker, ihre Zielscheiben und Methoden',

@@ -88,4 +88,50 @@ export const recherchen: Recherche[] = [
     atlasLink: '/portraits/edmo',
     buchKapitel: 'Kapitel 3',
   },
+  // Norbert 25.5.2026: Buchseite soll für Kap. 4 (WHO und UN) und Kap. 6
+  // (Ausblick und Gegenmaßnahmen) eigene Recherchefragen ausweisen.
+  {
+    slug: 'wikipedia-google-who',
+    tag: 'WHO & UN',
+    frage: 'Wie werden Wikipedia und Google-Suchergebnisse von der WHO beeinflusst?',
+    mainstream:
+      'Suchmaschinen und Wikipedia gelten als neutrale, redaktionell unabhängige Wissensquellen.',
+    recherche:
+      'WHO und Plattformen schlossen während der Pandemie Vereinbarungen, die WHO-Inhalte bevorzugt ausspielen und abweichende Angaben mit Warnhinweisen versehen. Wikipedia-Artikel zu Gesundheitsthemen orientieren sich nahezu ausschließlich an WHO-Quellen, abweichende Studienbefunde landen häufig auf der Diskussions-Seite statt im Hauptartikel.',
+    quelle: 'WHO-Vereinbarungen mit Plattformen, Recherchen Norbert Häring',
+    buchKapitel: 'Kapitel 4',
+  },
+  {
+    slug: 'who-un-influencer',
+    tag: 'WHO & UN',
+    frage: 'Arbeiten WHO und UN mit bezahlten Influencern?',
+    mainstream:
+      'Influencer-Kooperationen werden meist im Konsum-Marketing diskutiert, nicht in der Gesundheits- oder Klima-Kommunikation.',
+    recherche:
+      'WHO und UN unterhalten eigene Influencer-Programme. Die UN-Initiative „Verified" mobilisierte während der Pandemie tausende Influencer mit dem Auftrag, WHO-Botschaften zu verbreiten und „Falschinformationen" entgegenzutreten. Vergleichbare Strukturen existieren für Klima- und Nachhaltigkeitsthemen.',
+    quelle: 'UN-Verified-Selbstdarstellung, Recherchen Norbert Häring',
+    buchKapitel: 'Kapitel 4',
+  },
+  {
+    slug: 'digitalisierung-zentralisierung-meinung',
+    tag: 'Ausblick',
+    frage: 'Wie hängen Digitalisierung, Zentralisierung und Meinungskontrolle zusammen?',
+    mainstream:
+      'Digitalisierung gilt als technologische Modernisierung mit primär Effizienz- und Komfort-Gewinnen.',
+    recherche:
+      'Mit jeder Verlagerung von Bargeld, Identität, Kommunikation und Zahlungen in zentrale digitale Infrastrukturen wächst die Zahl der Hebel, an denen Inhalte ausgeblendet, Konten gesperrt oder Reichweiten gedrosselt werden können. Plattform-Regulierung, Zentralbank-Digitalwährungen und Digitale Identität schaffen zusammengenommen Kontrollpunkte, an denen Meinungs- und Verhaltenssteuerung technisch trivial wird.',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 6',
+    buchKapitel: 'Kapitel 6',
+  },
+  {
+    slug: 'teile-und-herrsche-gegenmassnahmen',
+    tag: 'Ausblick',
+    frage: 'Wie kann man persönlich der Teile-und-herrsche-Strategie begegnen?',
+    mainstream:
+      'Polarisierungs-Debatten enden meist mit dem Appell, „im Gespräch zu bleiben" oder Algorithmen schuld zu geben.',
+    recherche:
+      'Häring plädiert für drei Hebel im Alltag: Bargeld benutzen, statt sich auf digitale Spuren zu verlassen; lokale, analoge Strukturen pflegen, in denen man Nachbarn unabhängig vom politischen Lager begegnet; Quellen jenseits der lizenzierten Faktenchecker prüfen, statt fremde Etikettierungen zu übernehmen. Das verschiebt die Aufmerksamkeit zurück auf konkrete Macht und weg vom Streit über Identitäten.',
+    quelle: 'Buch „Der Wahrheitskomplex", Kap. 6',
+    buchKapitel: 'Kapitel 6',
+  },
 ];

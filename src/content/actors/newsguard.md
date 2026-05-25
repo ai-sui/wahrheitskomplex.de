@@ -16,6 +16,7 @@ kernkritik: >-
   unzureichender Tatsachengrundlage, das Portal Achgut als einen der
   zehn größten Verbreiter von Desinformation 2022 zu nennen
   (AZ 6 U 92/25).
+buchKapitel: "Kapitel 4"
 kurzbeschreibung: >-
   Privatwirtschaftlicher Web-Bewerter; OLG Frankfurt kassiert 2026 die
   Achgut-Bewertung.
