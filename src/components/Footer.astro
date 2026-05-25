@@ -3,7 +3,13 @@ import { withBase } from '../utils/url';
 const year = new Date().getFullYear();
 ---
 
-<footer class="mt-24 border-t border-line bg-paper-soft">
+{/* mt-0 statt mt-24 (Ralph 25.5.: zwischen Newsletter und Footer
+    war ein heller bg-paper-Streifen sichtbar, weil Newsletter und
+    Footer beide bg-paper-soft haben und der Margin den Body-
+    Hintergrund durchschimmern liess). Den Atem vor dem Footer
+    geben jetzt die einzelnen Pages mit dem Padding ihrer letzten
+    Section bzw. die NewsletterForm mit eigenem mt-20. */}
+<footer class="border-t border-line bg-paper-soft">
   <div class="container-page py-12 grid gap-10 md:grid-cols-3 text-sm">
     <div>
       <p class="font-serif text-lg font-semibold mb-2">Wahrheits<span class="text-accent">komplex</span></p>
