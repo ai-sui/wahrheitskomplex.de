@@ -62,10 +62,12 @@ function recherchenFor(matches: string) {
       </a>
     </div>
 
-    <!-- Kapitel-Schnellnavigation -->
+    {/* Kapitel-Schnellnavigation. Grid mit symmetrischen Spalten,
+        damit die linke und rechte Spalte gleich breit sind und der
+        Eindruck nicht "verschoben" wirkt (Ralph 25.5.). */}
     <nav aria-label="Kapitel-Übersicht" class="border-y border-line py-5 mb-10">
       <p class="meta-label mb-3">Springen zu</p>
-      <ol class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+      <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
         {kapitel.map((k) => (
           <li>
             <a
@@ -78,6 +80,34 @@ function recherchenFor(matches: string) {
           </li>
         ))}
       </ol>
+
+      {/* Weiterführende externe Quellen aus allen Kapiteln direkt unter
+          der Schnellnavigation, damit Leser sie nicht erst durch
+          Scrollen entdecken (Ralph 25.5.: "wo ist der Verweis auf
+          freistattsmart?"). Aktuell: Norberts zweite Webseite
+          freistattsmart.de unter Kapitel 6. */}
+      {kapitel.some((k) => k.weiterfuehrend && k.weiterfuehrend.length > 0) && (
+        <div class="mt-4 pt-3 border-t border-line">
+          <p class="meta-label text-muted mb-2">Weiterführend</p>
+          <ul class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+            {kapitel.flatMap((k) =>
+              (k.weiterfuehrend ?? []).map((w) => (
+                <li>
+                  <a
+                    href={w.url}
+                    rel="noopener"
+                    target="_blank"
+                    class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+                  >
+                    {w.label} ↗
+                  </a>
+                  <span class="text-muted ml-1">· Kap. {k.nr}</span>
+                </li>
+              )),
+            )}
+          </ul>
+        </div>
+      )}
     </nav>
 
     <div class="space-y-16">
