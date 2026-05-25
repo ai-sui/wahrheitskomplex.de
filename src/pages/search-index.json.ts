@@ -51,6 +51,11 @@ export const GET: APIRoute = async () => {
     })),
 
     // ----- Faktenchecks -----
+    // Wichtig: sowohl die Drei-Block-Felder (alte Form) als auch das
+    // summary (neue, harmonisierte Vorspann-Form) gehen ins Snippet.
+    // Sonst sind summary-only-Karten wie tagesschau-vitamin-d in der
+    // Suche unsichtbar (Ralph 25.5.: "es gibt keinen Treffer fuer
+    // Vitamin").
     ...faktenchecks.map<SearchEntry>((f) => ({
       type: 'faktencheck',
       title: f.data.title,
@@ -58,6 +63,7 @@ export const GET: APIRoute = async () => {
         f.data.behauptung,
         f.data.urteil,
         f.data.realitaet,
+        f.data.summary,
         f.data.faktenchecker,
       ]
         .filter(Boolean)
