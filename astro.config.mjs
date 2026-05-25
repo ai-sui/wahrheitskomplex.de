@@ -29,6 +29,14 @@ export default defineConfig({
   site,
   base,
   output: 'static',
+  // trailingSlash: 'always' garantiert, dass interne Links und Sitemap
+  // konsistent mit / generiert werden. Vorher gab es eine Kette
+  //   /atlas → /atlas/ → meta refresh /portraits → /portraits/
+  // (vier Hops), die Google als "Umleitungsfehler" gemeldet hat
+  // (Ralph 25.5., Search Console). Mit 'always' und Trailing-Slash-
+  // Zielen in den Redirects bleibt nur noch ein einziger Hop:
+  //   /atlas/ → meta refresh /portraits/
+  trailingSlash: 'always',
   integrations: [sitemap()],
   // /atlas/* → /portraits/* (Atlas wurde im Mai 2026 umbenannt; Norbert
   // hatte den Begriff zu kartografisch gefunden). Astro generiert
