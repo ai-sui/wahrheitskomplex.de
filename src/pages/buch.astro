@@ -150,11 +150,38 @@ function recherchenFor(matches: string) {
                   </div>
                 )}
 
-                {actorList.length === 0 && recherchenList.length === 0 && (
-                  <p class="text-sm text-muted italic">
-                    Porträte und Recherchen zu diesem Kapitel folgen.
-                  </p>
+                {k.weiterfuehrend && k.weiterfuehrend.length > 0 && (
+                  <div>
+                    <p class="meta-label text-accent mb-3">Weiterführend</p>
+                    <ul class="space-y-2 text-sm">
+                      {k.weiterfuehrend.map((w) => (
+                        <li>
+                          <a
+                            href={w.url}
+                            rel="noopener"
+                            target="_blank"
+                            class="text-ink-soft no-underline hover:text-accent leading-snug block"
+                          >
+                            <span class="text-accent">›</span> {w.label} ↗
+                          </a>
+                          {w.beschreibung && (
+                            <p class="text-xs text-muted leading-snug pl-3 mt-1">
+                              {w.beschreibung}
+                            </p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
+
+                {actorList.length === 0 &&
+                  recherchenList.length === 0 &&
+                  (!k.weiterfuehrend || k.weiterfuehrend.length === 0) && (
+                    <p class="text-sm text-muted italic">
+                      Porträte und Recherchen zu diesem Kapitel folgen.
+                    </p>
+                  )}
               </div>
             </div>
           </article>

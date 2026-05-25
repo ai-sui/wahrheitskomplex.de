@@ -1,12 +1,24 @@
 // Kapitel-Struktur des Buchs auf Basis des Inhaltsverzeichnisses
 // auf norberthaering.de/wahrheitskomplex/inhaltsverzeichnis/
 
+export type Weiterfuehrend = {
+  label: string;
+  url: string;
+  beschreibung?: string;
+};
+
 export type Kapitel = {
   nr: number;
   title: string;
   matches: string; // String, der im actor/recherche-buchKapitel-Feld vorkommt
   abstract: string;
   unterabschnitte: string[];
+  // Externe Quellen / befreundete Plattformen, die zum Kapitel-Thema
+  // weiterfuehren. Erscheinen auf der Buch-Seite unter dem Kapitel.
+  // Bewusst getrennt von "Akteure im Portraet", weil das Akteur-Schema
+  // fuer Wahrheitskomplex-Kritik ausgelegt ist und Gegenseiten nicht
+  // sinnvoll mit Kernkritik beschreibt.
+  weiterfuehrend?: Weiterfuehrend[];
 };
 
 export const kapitel: Kapitel[] = [
@@ -92,6 +104,14 @@ export const kapitel: Kapitel[] = [
       'Plattformen einhegen',
       'Was wir als Einzelne tun können',
       'Dezentral entscheiden, analog leben',
+    ],
+    weiterfuehrend: [
+      {
+        label: 'freistattsmart.de',
+        url: 'https://freistattsmart.de',
+        beschreibung:
+          'Plattform zu Folgen der Digitalisierung und Zentralisierung mit Alltagstipps für analoge Resilienz.',
+      },
     ],
   },
 ];

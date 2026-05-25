@@ -72,13 +72,13 @@ Umgesetzt in dieser Runde:
     und WHO/UN-Influencer), zwei für Kap. 6 (Digitalisierung/Zentrali-
     sierung/Meinungskontrolle und Teile-und-herrsche-Gegenmaßnahmen).
 
-Offen / Klärung mit Ralph nötig:
+Nachgezogen:
 
-- freistattsmart.de als Akteur für Kapitel 6: passt semantisch nicht
-  ins aktuelle Akteurs-Schema (das ist für Wahrheitskomplex-Akteure
-  mit Kernkritik gedacht). Vorschlag in der Antwort an Norbert: als
-  externer Link / Ressource in Kap. 6 ausweisen, statt als
-  Porträt-Karte.
+- freistattsmart.de wird statt als Akteur als externer Link in einer
+  neuen „Weiterführend"-Spalte unter Kapitel 6 aufgeführt. Dazu hat
+  das `Kapitel`-Schema in `src/data/buch.ts` ein optionales Feld
+  `weiterfuehrend?: Array<{label, url, beschreibung?}>` bekommen. Das
+  Akteur-Schema bleibt sauber für Wahrheitskomplex-Kritik reserviert.
 
 ### 25.5.2026 – Norbert-Runde 2 (5 E-Mails, 23.5.–24.5.)
 
