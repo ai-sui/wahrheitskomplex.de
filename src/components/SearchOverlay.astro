@@ -246,9 +246,22 @@
         a.href = e.url;
         a.className = 'search-result';
         a.setAttribute('role', 'option');
+        // Externe Treffer (Tiefenartikel auf norberthaering.de,
+        // freistattsmart.de etc.) gehen in einen neuen Tab, damit
+        // der Nutzer durch die Site-Suche nicht ungewollt von der
+        // Site weggetragen wird (Ralph 25.5.: "die Suche nach
+        // freistattsmart.de wirft mich auch direkt auf diese Seite ab").
+        const isExternal = /^https?:\/\//i.test(e.url);
+        if (isExternal) {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+        const externalBadge = isExternal
+          ? '<span class="badge ml-1" style="background:var(--paper);color:var(--muted)">extern ↗</span>'
+          : '';
         a.innerHTML = `
           <div class="leading-snug">
-            <span class="badge">${typeLabels[e.type] ?? e.type}</span>
+            <span class="badge">${typeLabels[e.type] ?? e.type}</span>${externalBadge}
             <span class="font-serif">${highlight(e.title, tokens)}</span>
           </div>
           ${e.meta ? `<div class="meta">${escapeHtml(e.meta)}</div>` : ''}
