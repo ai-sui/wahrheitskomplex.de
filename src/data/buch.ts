@@ -110,7 +110,7 @@ export const kapitel: Kapitel[] = [
         label: 'freistattsmart.de',
         url: 'https://freistattsmart.de',
         beschreibung:
-          'Plattform zu Folgen der Digitalisierung und Zentralisierung mit Alltagstipps für analoge Resilienz.',
+          'Norbert Härings zweite Webseite zu Folgen der Digitalisierung und Zentralisierung, mit Alltagstipps für analoge Resilienz.',
       },
     ],
   },
