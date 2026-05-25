@@ -32,3 +32,20 @@
 - `OPERATIONS.md`: Setup und Wartung (DNS, OAuth, Secrets, Rollback).
 - `BEDIENUNGSANLEITUNG-NORBERT.md`: Für Norbert, wie er Inhalte pflegt.
 - `README.md`: Allgemeine Projekt-Übersicht.
+
+## Arbeitsanweisungen
+
+- **Suchindex immer nachziehen.** Jede neue Inhaltsquelle (neuer
+  Akteur, Faktencheck, Recherche, Chronik-Eintrag, Definition,
+  Buchkapitel, „Weiterführend"-Link u.ä.) MUSS auch in
+  `src/pages/search-index.json.ts` als Eintrag landen, sonst taucht
+  sie in der Site-Suche nicht auf. Bei neuen Inhalts-Schemas (z.B.
+  neues Feld in `buch.ts`) prüfen, ob die Suche erweitert werden
+  muss. Faustregel: alles, was an irgendeiner Stelle als Karte,
+  Listeneintrag oder Link gerendert wird, gehört in den Index.
+- **Backup-Tag vor jeder größeren Norbert-Runde**:
+  `backup-pre-<thema>-YYYYMMDD-HHMMSS` setzen und pushen, im
+  `CHANGELOG.md` referenzieren. Damit ist Rollback per
+  `git reset --hard <tag>` jederzeit möglich.
+- **CHANGELOG.md** wird pro Runde fortgeschrieben, mit Bezug zur
+  auslösenden E-Mail und dem korrespondierenden Backup-Tag.

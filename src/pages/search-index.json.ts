@@ -130,6 +130,22 @@ export const GET: APIRoute = async () => {
       url: `/buch#kapitel-${k.nr}`,
       meta: 'Buchkapitel',
     })),
+
+    // ----- Weiterfuehrende externe Quellen pro Kapitel -----
+    // freistattsmart.de und vergleichbare Eintraege, die unter
+    // "Weiterfuehrend" auf der Buch-Seite gefuehrt werden, sind
+    // auch ueber die Suche erreichbar.
+    ...kapitel.flatMap<SearchEntry>((k) =>
+      (k.weiterfuehrend ?? []).map((w) => ({
+        type: 'kapitel',
+        title: w.label,
+        snippet: [w.beschreibung ?? '', `Kapitel ${k.nr}: ${k.title}`]
+          .filter(Boolean)
+          .join(' '),
+        url: w.url,
+        meta: `Weiterführend · Kap. ${k.nr}`,
+      })),
+    ),
   ];
 
   return new Response(JSON.stringify(index), {
