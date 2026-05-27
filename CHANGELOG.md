@@ -29,6 +29,39 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 27.5.2026 – Norbert-Runde 4 (1 E-Mail, 27.5.)
+
+Backup-Tag: `backup-pre-chronik-mai26-20260527-164427`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (27.5., 10:48) – Zwei neue Tiefenartikel für die
+  Chronik (Landesmedienanstalten-Stempel und Westend-Boykott durch
+  32 frühere Autoren) plus Bitte, das Berliner-Zeitung-Interview
+  wegen Paywall zu entfernen.
+
+Umgesetzt in dieser Runde:
+
+- **Chronik um zwei Einträge erweitert** (`src/data/chronik.ts`):
+  - 26.5.2026, DE: „Landesmedienanstalten wollen Stempel für
+    ‚verbreitungsfähige' Inhalte vergeben" mit Härings Befund als
+    Zuspitzung und Screenshot aus dem Diskussionspapier als Thumb.
+  - 26.5.2026, DE: „Westend-Verlag gerät ins Visier der Selbstgerechten"
+    zum offenen Brief von 32 früheren Westend-Autoren. Bild: Ulrike
+    Herrmann (Wikimedia Commons, CC BY-SA 2.0, boellstiftung).
+- **Chronik-Schema erweitert**: neue optionale Felder `imageCredit`
+  und `imageCreditUrl` in `ChronikEintrag`, gerendert als
+  `<figcaption>` unter dem Thumb in `TimelineEvent.astro`. Dadurch
+  wird der bislang nicht angezeigte WHO-Thumb auf der Chronik-Seite
+  jetzt ebenfalls sichtbar.
+- **Berliner-Zeitung-Interview entfernt**
+  („Wie EU und Militär heimlich die Meinungskontrolle organisieren",
+  Francesco Becchi, 6.5.2026). Norbert: „Das Interview in der
+  Berliner Zeitung kann gern raus. Wenn sie auf eine Paywall treffen,
+  finden die Leute das nicht so toll."
+  Gelöscht: `src/content/medien/berliner-zeitung-becchi-interview.md`
+  und der dazugehörige Aufmacher unter `public/article-thumbs/`.
+
 ### 25.5.2026 – Norbert-Runde 3 (2 E-Mails, 25.5.)
 
 Backup-Tag: `backup-pre-norbert-runde3-20260525-121313`

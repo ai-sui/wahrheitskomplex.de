@@ -64,6 +64,33 @@ if (parts.length === 3) {
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-2">
       {eintrag.title}
     </h3>
+    {eintrag.thumb && (
+      <figure class="mb-3 max-w-md">
+        <img
+          src={withBase(eintrag.thumb)}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          class="w-full h-auto rounded border border-line bg-paper"
+        />
+        {eintrag.imageCredit && (
+          <figcaption class="mt-1 text-xs text-muted">
+            {eintrag.imageCreditUrl ? (
+              <a
+                href={eintrag.imageCreditUrl}
+                rel="noopener nofollow"
+                target="_blank"
+                class="underline decoration-line hover:decoration-accent hover:text-accent"
+              >
+                {eintrag.imageCredit}
+              </a>
+            ) : (
+              eintrag.imageCredit
+            )}
+          </figcaption>
+        )}
+      </figure>
+    )}
     {!compact && eintrag.description && (
       <p class="text-ink-soft leading-relaxed mb-3 max-w-2xl">
         {eintrag.description}

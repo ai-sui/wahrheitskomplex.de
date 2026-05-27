@@ -18,6 +18,8 @@ export type ChronikEintrag = {
   haeringLink?: string;
   sourceLink?: string;
   thumb?: string; // optionales Vorschaubild (z.B. /chronik-thumbs/who-cover.jpg)
+  imageCredit?: string; // Bildunterschrift / Nennung (z.B. "Foto: XY (CC BY-SA 4.0)")
+  imageCreditUrl?: string; // Link auf Quell-/Lizenzseite (z.B. Wikimedia-Datei)
 };
 
 export const chronik: ChronikEintrag[] = [
@@ -304,5 +306,28 @@ export const chronik: ChronikEintrag[] = [
       'Ein Untersuchungsbericht der kanadischen Armee belegt: Mehrere Armee-Teams durchforsteten 2020 soziale Medien und erstellten Stimmungsberichte zur Bevölkerung und Opposition in Sachen Covid-19. Militärexperte Wesley Wark (CBC News): Das Militär wollte Möglichkeiten erproben, das Denken der Bevölkerung zu beeinflussen, die Unterstützung für das Militär zu steigern und russischen Informationsaktivitäten zu begegnen.',
     themen: ['Pandemie', 'Ukraine & NATO'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/kanadas-armee-covid/',
+  },
+  {
+    date: '2026-05-26',
+    region: 'DE',
+    title: 'Landesmedienanstalten wollen Stempel für „verbreitungsfähige" Inhalte vergeben',
+    description:
+      'Die Landesmedienanstalten wollen großen Plattformen vorschreiben, Inhalte mit ihrem Zuverlässigkeitsstempel bevorzugt zu verbreiten und im Umkehrschluss nicht behördlich zertifizierte Inhalte weniger sichtbar zu machen. Härings Befund: „Der Wahrheitskomplex verliert fast jede Scheu bei der Annäherung an ein offenes Zensursystem."',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/public-value-angebote/',
+    thumb: '/chronik-thumbs/landesmedienanstalten-stempel.jpg',
+    imageCredit: 'Screenshot aus dem Diskussionspapier der Landesmedienanstalten',
+  },
+  {
+    date: '2026-05-26',
+    region: 'DE',
+    title: 'Westend-Verlag gerät ins Visier der Selbstgerechten',
+    description:
+      '32 frühere Westend-Autoren aus dem sich linksliberal nennenden Milieu kündigen dem Verlag in einem offenen Brief die Zusammenarbeit auf, weil er angeblich nach rechts driftet. Westend hat Härings „Wahrheitskomplex" verlegt.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/westend-offener-brief/',
+    thumb: '/chronik-thumbs/westend-offener-brief.jpg',
+    imageCredit: 'Ulrike Herrmann, Foto: boellstiftung / Heinrich-Böll-Stiftung, CC BY-SA 2.0',
+    imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Ulrike-herrmann-ausschnitt.jpg',
   },
 ];

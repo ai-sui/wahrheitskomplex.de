@@ -3,7 +3,6 @@
 export const thumbManifest = {
   "articleThumbs": [
     "barucker-video.jpg",
-    "berliner-zeitung-becchi-interview.jpg",
     "freie-medienakademie-buttkereit-rezension.jpg",
     "multipolar-schreyer-rezension.jpg",
     "nachdenkseiten-gosch-rezension.jpg",
@@ -30,6 +29,8 @@ export const thumbManifest = {
     "jmKAuP1E2jA.jpg"
   ],
   "chronikThumbs": [
+    "landesmedienanstalten-stempel.jpg",
+    "westend-offener-brief.jpg",
     "who-climate-health.jpg"
   ]
 } as const;
