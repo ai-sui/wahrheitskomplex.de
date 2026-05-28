@@ -29,6 +29,22 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 28.5.2026 – Norbert-Runde 5 (Kurzhinweis, 28.5.)
+
+Kein Backup-Tag (einzelne Textkorrektur).
+
+Eingeflossene Mail:
+
+- **Re: Wahrheitskomplex** (28.5.) – Korrekturhinweis: Auf der
+  Recherchen-Seite stand in der Unterzeile „im Porträts der Akteure",
+  Überbleibsel der Umbenennung Atlas → Porträts.
+
+Umgesetzt:
+
+- [`src/pages/recherchen.astro:22`](src/pages/recherchen.astro:22):
+  „im Porträts der Akteure" → „in Porträts der Akteure" (Norberts
+  Formulierung übernommen).
+
 ### 27.5.2026 – Norbert-Runde 4 (1 E-Mail, 27.5.)
 
 Backup-Tag: `backup-pre-chronik-mai26-20260527-164427`
