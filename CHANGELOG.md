@@ -29,6 +29,44 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 31.5.2026 – Norbert-Runde 6 (1 E-Mail, 31.5.)
+
+Backup-Tag: `backup-pre-norbert-runde6-20260531-141924`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex.de** (31.5., 12:53) – Drei neue Beiträge
+  (Matuschek-Rezension, APA-Rotoren-Faktencheck, Lapuente-Overton-Video)
+  plus Chronik-Korrekturen: präzise Daten und Quellen-Links für drei
+  Mai-Einträge, deren Reihenfolge in der Rendering-Ansicht durch das
+  generische „2026-05" verrutscht war.
+
+Umgesetzt in dieser Runde:
+
+- **Neue Rezension** „Die privatisierte Inquisition" (Milosz Matuschek,
+  Freischwebende Intelligenz, 31.5.2026). Themen: DSA & NetzDG, Hass
+  und Hetze. Aufmacher: „Matuschek Panoptikum.png" aus der Mail.
+  Datei: [`src/content/medien/freischwebende-matuschek-rezension.md`](src/content/medien/freischwebende-matuschek-rezension.md).
+- **Neuer Faktencheck** „APA weist Vorwurf arglistiger Täuschung von
+  Schülern zurück" (APA, 31.5.2026, Thema Klima, Drei-Block-Form).
+  Aufmacher: „Rotorblätter.png" aus der Mail.
+  Datei: [`src/content/faktenchecks/apa-rotoren.md`](src/content/faktenchecks/apa-rotoren.md).
+- **Neues Video** „Wer lenkt das Internet, Herr Häring?" (Roberto De
+  Lapuente, Overton Magazin, YouTube-ID `djWyHDn9mW8`). Themen: Ukraine
+  & NATO, DSA & NetzDG. Thumb: „Overton-Video1.png" aus der Mail (mit
+  Buch im Bild), als `public/yt-thumbs/djWyHDn9mW8.jpg` abgelegt.
+  Datei: [`src/content/medien/overton-haering-internet-lenkung.md`](src/content/medien/overton-haering-internet-lenkung.md).
+- **Chronik-Korrekturen** in [`src/data/chronik.ts`](src/data/chronik.ts):
+  - WHO-Klima: `2026-05` → `2026-05-17`.
+  - SPD, Grüne, Linke verlassen X: `2026-05` → `2026-05-04`, mit
+    `sourceLink` auf tagesschau.de.
+  - Weimer YouTube-Regulierung: `2026-05` → `2026-05-13`, mit
+    `sourceLink` auf archive.is/welt.de (Norberts Vorschlag wegen der
+    Welt-Paywall).
+  - Damit stimmt auch die Reihenfolge in der gerenderten Chronik. Die
+    drei Einträge hingen vorher fälschlich oben, weil die Datums-Pad-Logik
+    `2026-05` zu `2026-05-31` ergänzt.
+
 ### 28.5.2026 – Norbert-Runde 5 (Kurzhinweis, 28.5.)
 
 Kein Backup-Tag (einzelne Textkorrektur).

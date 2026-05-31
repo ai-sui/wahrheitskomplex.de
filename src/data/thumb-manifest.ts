@@ -4,6 +4,7 @@ export const thumbManifest = {
   "articleThumbs": [
     "barucker-video.jpg",
     "freie-medienakademie-buttkereit-rezension.jpg",
+    "freischwebende-matuschek-rezension.jpg",
     "multipolar-schreyer-rezension.jpg",
     "nachdenkseiten-gosch-rezension.jpg",
     "overton-delapuente-interview.jpg",
@@ -13,6 +14,7 @@ export const thumbManifest = {
   ],
   "faktencheckThumbs": [
     "afp-aufmacher.jpg",
+    "apa-rotoren.jpg",
     "ard-faktenfinder-merz.jpg",
     "dpa-gerichtsurteil.jpg",
     "dw-ndr-rostock.jpg",
@@ -26,6 +28,7 @@ export const thumbManifest = {
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",
+    "djWyHDn9mW8.jpg",
     "jmKAuP1E2jA.jpg"
   ],
   "chronikThumbs": [
