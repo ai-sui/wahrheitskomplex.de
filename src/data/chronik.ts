@@ -289,7 +289,7 @@ export const chronik: ChronikEintrag[] = [
     title: 'Weimer will YouTube wie Fernsehen regulieren',
     description: 'Bevorzugte Ausspielung ausgewählter Inhalte, Landesmedien als Vielfaltswächter. SPD-Chef Klingbeil unterstützt.',
     themen: ['DSA & NetzDG'],
-    sourceLink: 'https://archive.is/20260511090841/https://www.welt.de/debatte/plus69fd75d87e3ff373d429dbd6/kulturstaatsminister-wenn-youtube-das-neue-fernsehen-ist-braucht-es-neue-regeln.html',
+    sourceLink: 'https://www.welt.de/debatte/plus69fd75d87e3ff373d429dbd6/kulturstaatsminister-wenn-youtube-das-neue-fernsehen-ist-braucht-es-neue-regeln.html',
   },
   {
     date: '2026-05-17',

@@ -61,8 +61,8 @@ Umgesetzt in dieser Runde:
   - SPD, Grüne, Linke verlassen X: `2026-05` → `2026-05-04`, mit
     `sourceLink` auf tagesschau.de.
   - Weimer YouTube-Regulierung: `2026-05` → `2026-05-13`, mit
-    `sourceLink` auf archive.is/welt.de (Norberts Vorschlag wegen der
-    Welt-Paywall).
+    `sourceLink` direkt auf welt.de (Originalbeitrag, wie Norbert
+    gewünscht).
   - Damit stimmt auch die Reihenfolge in der gerenderten Chronik. Die
     drei Einträge hingen vorher fälschlich oben, weil die Datums-Pad-Logik
     `2026-05` zu `2026-05-31` ergänzt.
