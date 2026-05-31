@@ -57,21 +57,13 @@ const newsFeed: FeedItem[] = [
       : withBase(`/article-thumbs/${m.id}.jpg`),
     paywall: m.data.paywall,
   })),
-  ...faktenchecks.map((fc) => ({
-    date: fc.data.date,
-    badge: 'Faktencheck',
-    title: fc.data.title,
-    // Im "Neues"-Karussell soll die Quelle der Tiefenartikel sein
-    // (norberthaering.de), nicht der kritisierte Faktenchecker.
-    source: 'norberthaering.de',
-    url: fc.data.url,
-    thumb: fc.data.thumbOverride
-      ? withBase(fc.data.thumbOverride)
-      : withBase(`/faktencheck-thumbs/${fc.id}.jpg`),
-  })),
-  // Chronik-Einträge gehen NICHT mehr ins "Neues"-Karussell — sie haben
-  // ihren eigenen Block "Was seither geschah" weiter unten. So bleibt
-  // jede Sektion thematisch eindeutig.
+  // Faktenchecks gehen NICHT ins "Neues"-Karussell. Sie haben ihren
+  // eigenen Block "Faktenchecker-Check" weiter unten auf der Startseite,
+  // sonst taucht jeder Faktencheck zweimal direkt untereinander auf
+  // (Norbert-Hinweis vom 31.5.2026 zum APA-Rotoren-Check).
+  //
+  // Chronik-Einträge sind aus demselben Grund ausgeschlossen und haben
+  // ihren eigenen Block "Was seither geschah".
 ];
 
 const recentNews = newsFeed

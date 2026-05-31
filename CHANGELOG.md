@@ -29,6 +29,20 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 31.5.2026 – Doppelung Faktenchecks auf der Startseite
+
+Norbert-Hinweis kurz nach Runde 6: „Den APA-Rotoren-Beitrag haben wir
+zweimal auf der Seite." Stimmte: auf der Startseite tauchte jeder
+Faktencheck einmal im oberen „Neues aus dem Wahrheitskomplex"-Karussell
+und einmal im darunter liegenden „Faktenchecker-Check"-Karussell auf.
+
+Fix in [`src/pages/index.astro`](src/pages/index.astro): Faktenchecks
+sind aus dem `newsFeed` für das Top-Karussell entfernt, analog zu den
+Chronik-Einträgen, die seit längerer Zeit schon aus demselben Grund
+ausgeschlossen sind. Das Top-Karussell zeigt jetzt nur noch Medien
+(Videos, Podcasts, Interviews, Rezensionen). Faktenchecker-Check und
+Chronik haben ihre eigenen Blöcke weiter unten.
+
 ### 31.5.2026 – Norbert-Runde 6 (1 E-Mail, 31.5.)
 
 Backup-Tag: `backup-pre-norbert-runde6-20260531-141924`
