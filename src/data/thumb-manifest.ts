@@ -2,6 +2,7 @@
 // Don't edit by hand.
 export const thumbManifest = {
   "articleThumbs": [
+    "auf1-eglinski-interview.jpg",
     "barucker-video.jpg",
     "freie-medienakademie-buttkereit-rezension.jpg",
     "freischwebende-matuschek-rezension.jpg",

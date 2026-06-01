@@ -29,6 +29,33 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 1.6.2026 – Norbert-Runde 7 (1 E-Mail, 31.5. Abend)
+
+Backup-Tag: `backup-pre-norbert-runde7-20260601-084832`
+
+Eingeflossene Mail:
+
+- **Re: Wahrheitskomplex.de** (31.5., 22:30) – Norbert stimmt der
+  Aufnahme des AUF1-Interviews zu („sehe das mit Auf1 auch so") und
+  bittet um den vorgeschlagenen Hinweis auf den Interview-Start.
+  Zusätzlich liefert er einen konkreten Vorspann für den
+  APA-Rotoren-Faktencheck nach.
+
+Umgesetzt in dieser Runde:
+
+- **Neues Video** „Der Wahrheitskomplex – das System hinter Zensur &
+  Meinungsmacht" (Thomas Eglinski, AUF1, 30.5.2026). Themen: Ukraine
+  & NATO, DSA & NetzDG. Pullquote weist darauf hin, dass das Interview
+  mit Häring bei Minute 13:30 startet. Aufmacher: `Auf1.png` aus
+  Norberts Mail vom 31.5. Vormittag, als
+  `public/article-thumbs/auf1-eglinski-interview.jpg` abgelegt.
+  Datei: [`src/content/medien/auf1-eglinski-interview.md`](src/content/medien/auf1-eglinski-interview.md).
+- **APA-Rotoren-Faktencheck** auf Norberts Vorspann umgestellt
+  (`summary` statt der drei Blöcke). Karte zeigt jetzt seine
+  zusammenfassende Wertung als kompakte Form, analog zu
+  dpa-gerichtsurteil und pistorius-faktenfuchs.
+  Datei: [`src/content/faktenchecks/apa-rotoren.md`](src/content/faktenchecks/apa-rotoren.md).
+
 ### 31.5.2026 – Doppelung Faktenchecks auf der Startseite
 
 Norbert-Hinweis kurz nach Runde 6: „Den APA-Rotoren-Beitrag haben wir
