@@ -10,7 +10,5 @@ paywall: false
 themen:
   - "Ukraine & NATO"
   - "DSA & NetzDG"
-pullquote: >-
-  Das Interview mit Norbert Häring startet bei Minute 13:30,
-  davor läuft das reguläre Sendungsformat von AUF1.
+note: "Das Interview mit Norbert Häring startet bei Minute 13:30, davor läuft das reguläre AUF1-Sendungsformat."
 ---

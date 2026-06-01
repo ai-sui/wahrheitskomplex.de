@@ -78,7 +78,7 @@ export const GET: APIRoute = async () => {
     ...medien.map<SearchEntry>((m) => ({
       type: 'medien',
       title: m.data.title,
-      snippet: [m.data.host, m.data.outlet, m.data.pullquote ?? '']
+      snippet: [m.data.host, m.data.outlet, m.data.pullquote ?? '', m.data.note ?? '']
         .filter(Boolean)
         .join(' '),
       url: m.data.url,

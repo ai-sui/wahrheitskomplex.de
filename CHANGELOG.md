@@ -29,6 +29,28 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 1.6.2026 – Service-Notiz-Feld + AUF1-Hinweis sauber positionieren
+
+Ralph-Hinweis nach Runde 7: Norberts „Interview ab Minute 13:30" steckte
+zunächst im `pullquote`, das in der MediaCard mit Anführungszeichen und
+kursiv gerendert wird, also wie ein Zitat. Service-Info passt nicht
+ins Zitat-Gewand.
+
+Umgesetzt:
+
+- **Schema-Erweiterung** in [`src/content.config.ts`](src/content.config.ts):
+  Neues optionales Feld `note` für die `medien`-Collection. Gedacht
+  für kurze Service-Notizen (Zeitmarken, Paywall-Workarounds u.ä.),
+  ausdrücklich kein Zitat-Stil.
+- **Rendering** in [`src/components/MediaCard.astro`](src/components/MediaCard.astro):
+  `note` wird unter dem Pullquote als kleiner accent-farbiger Absatz
+  ohne Anführungszeichen gerendert.
+- **AUF1-Eintrag** auf das neue Feld umgestellt: Pullquote raus, der
+  13:30-Hinweis steht jetzt im `note`-Feld.
+- **Suchindex** in [`src/pages/search-index.json.ts`](src/pages/search-index.json.ts):
+  `note` ins Snippet aufgenommen, damit der Hinweis auch über die
+  Site-Suche gefunden wird.
+
 ### 1.6.2026 – Norbert-Runde 7 (1 E-Mail, 31.5. Abend)
 
 Backup-Tag: `backup-pre-norbert-runde7-20260601-084832`

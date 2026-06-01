@@ -56,6 +56,10 @@ const medien = defineCollection({
     paywall: z.boolean().default(false),
     themen: z.array(z.string()).default([]),
     pullquote: z.string().optional(),
+    // Kurze Service-Notiz (kein Zitat), z.B. „Interview ab Minute 13:30."
+    // Wird in MediaCard separat unter dem Pullquote gerendert, ohne
+    // Anführungszeichen und ohne Kursiv-Stil.
+    note: z.string().optional(),
     language: z.enum(['de', 'en']).default('de'),
   }),
 });
