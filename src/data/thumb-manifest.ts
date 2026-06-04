@@ -18,6 +18,7 @@ export const thumbManifest = {
     "apa-rotoren.jpg",
     "ard-faktenfinder-merz.jpg",
     "dpa-gerichtsurteil.jpg",
+    "dpa-wahl-prebunking.jpg",
     "dw-ndr-rostock.jpg",
     "ganser-guerot-krone.jpg",
     "pflanzensprengstoff.jpg",
@@ -29,6 +30,7 @@ export const thumbManifest = {
   ],
   "ytThumbs": [
     "VqPFYDL9s3s.jpg",
+    "cPsTgxiShmk.jpg",
     "djWyHDn9mW8.jpg",
     "jmKAuP1E2jA.jpg"
   ],

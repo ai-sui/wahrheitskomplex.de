@@ -29,6 +29,32 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 4.6.2026 – Norbert-Runde 8 (1 E-Mail, 4.6.)
+
+Backup-Tag: `backup-pre-norbert-runde8-20260604-133801`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex.de** (4.6., 11:14) – Zwei neue Beiträge: ein
+  Faktencheck zur dpa und ihr „Wahl-Prebunking"-Whitepaper, plus die
+  Videoaufzeichnung einer Autorenlesung bei den Frankfurter
+  FriedensGesprächen.
+
+Umgesetzt in dieser Runde:
+
+- **Neuer Faktencheck** „Nachrichtenagentur dpa veröffentlicht
+  Anleitung zur vorsorglichen Diskreditierung von Kritik an Wahlen"
+  (dpa, 3.6.2026, Themen Wahlen + DSA & NetzDG, summary-Variante).
+  Aufmacher: Bildschirmfoto-Anhang als
+  `public/faktencheck-thumbs/dpa-wahl-prebunking.jpg`.
+  Datei: [`src/content/faktenchecks/dpa-wahl-prebunking.md`](src/content/faktenchecks/dpa-wahl-prebunking.md).
+- **Neuer Vortrag** „Autorenlesung „Der Wahrheitskomplex""
+  (Frankfurter FriedensGespräche, 2.6.2026, 76 Min). Erster Eintrag
+  mit `type: vortrag` und `host: Norbert Häring` (Lesender statt
+  Interviewer). Thumb: YouTube-Auto-Bild über `youtubeId`,
+  abgelegt als `public/yt-thumbs/cPsTgxiShmk.jpg`.
+  Datei: [`src/content/medien/frankfurter-friedensgespraeche-lesung.md`](src/content/medien/frankfurter-friedensgespraeche-lesung.md).
+
 ### 1.6.2026 – Service-Notiz-Feld + AUF1-Hinweis sauber positionieren
 
 Ralph-Hinweis nach Runde 7: Norberts „Interview ab Minute 13:30" steckte
