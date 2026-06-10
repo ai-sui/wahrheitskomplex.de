@@ -31,7 +31,6 @@ const actors = defineCollection({
     finanzierung: z.string(),
     reichweite: z.string().optional(),
     kernkritik: z.string(),
-    stellungnahme: z.string().optional(),
     buchKapitel: z.string().optional(),
     haeringLink: z.string().url().optional(),
     libernetLink: z.string().url().optional(),

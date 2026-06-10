@@ -22,9 +22,6 @@ kernkritik: >-
   gleichzeitiger Stiftungsfinanzierung. Kritisch wird vor allem die
   intransparente Themenauswahl und die enge Verflechtung mit staatsnahen
   Mittelgebern gesehen.
-stellungnahme: >-
-  Auf wiederholte Anfrage verweist Correctiv auf öffentlich einsehbare
-  Geschäftsberichte und die Methodik-Seiten des Faktencheck-Bereichs.
 buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/correctiv/"
 libernetLink: "https://liber-net.org/germany"

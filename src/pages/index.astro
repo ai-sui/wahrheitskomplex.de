@@ -23,9 +23,11 @@ const medien = await getCollection('medien');
 const faktenchecks = await getCollection('faktenchecks');
 
 // --- Daten fürs Akteurs-Karussell ---
-const actors = (await getCollection('actors'))
+const allActors = await getCollection('actors');
+const actors = allActors
   .filter((a) => a.data.fulltext)
   .sort((a, b) => (a.data.order ?? 100) - (b.data.order ?? 100));
+const weitereActorsCount = allActors.length - actors.length;
 
 type FeedItem = {
   date: string;
@@ -147,7 +149,7 @@ const bookSchema = {
   <section class="container-page py-10 md:py-16 border-t border-line">
     <div class="flex items-baseline justify-between mb-6 pb-4 border-b border-line gap-4">
       <h2 class="font-serif text-2xl md:text-3xl leading-tight min-w-0">
-        {actors.length} wichtige NGOs des Wahrheitskomplexes.
+        {allActors.length} wichtige NGOs des Wahrheitskomplexes.
       </h2>
       <a
         href={withBase('/portraits')}
@@ -169,7 +171,7 @@ const bookSchema = {
           haeringLink={a.data.haeringLink}
         />
       ))}
-      <SpinnenImNetzCard />
+      <SpinnenImNetzCard count={weitereActorsCount} />
     </Carousel>
   </section>
 

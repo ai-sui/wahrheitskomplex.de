@@ -18,9 +18,6 @@ kernkritik: >-
   Politischer Arm des Militärbündnisses NATO. In den Gremien sitzen
   ehemalige US-Geheimdienstkoordinatoren, NATO-Generalsekretäre und
   Spitzenmanager der weltgrößten Konzerne.
-stellungnahme: >-
-  Auf Anfrage keine inhaltliche Antwort. Verweis auf öffentliche
-  Publikationen des Council.
 buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/atlantic-council/"
 libernetLink: "https://liber-net.org/germany"

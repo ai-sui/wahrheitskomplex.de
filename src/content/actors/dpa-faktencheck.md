@@ -31,11 +31,6 @@ kernkritik: >-
   Millionenhöhe und kooperiert eng mit Behörden und EU. Kritik an diesen
   Geldgebern und Kooperationspartnern klassifiziert dpa-Faktencheck oft
   als Desinformation.
-stellungnahme: >-
-  Die dpa verweist auf ihre Faktencheck-Methodik und auf das
-  IFCN-Code-of-Principles-Verfahren als externen Prüfrahmen. Zur
-  Programmförderung aus Steuermitteln betont sie, zur Wahrung der
-  Unabhängigkeit keine staatliche Förderung anzunehmen.
 buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/propaganda-zensur/dpa-gerichtsurteil/"
 libernetLink: "https://liber-net.org/germany"

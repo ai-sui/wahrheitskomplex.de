@@ -23,15 +23,12 @@ kernkritik: >-
   Datenlieferant für DSA-Vollzug dient. Hier liegt eine im
   Mediendiskurs untergewichtete Interessenkollision zwischen Auftraggeber
   und Prüfgegenstand.
-stellungnahme: >-
-  EDMO verweist auf seine Charta, die akademische Anbindung der Hubs und
-  auf veröffentlichte Methodiken.
 buchKapitel: "Kapitel 3 — Die EU baut ihren Wahrheitskomplex auf"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/edmo/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
-  EU-finanziertes Dachnetzwerk aus Faktencheckern und Behörden im
-  unmittelbaren Umfeld der DSA-Umsetzung.
+  EU-finanziertes Dachnetzwerk aus Instituten, Unternehmen,
+  Faktencheckern und anderen NGOs im Umfeld der DSA-Umsetzung.
 fulltext: true
 order: 60
 quellen:

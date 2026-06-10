@@ -22,10 +22,6 @@ kernkritik: >-
   global die Klima-Berichterstattung mit — über Stipendien, Trainings und
   Themenvorschläge. Hier zeigt sich eine in westlichen Medien selten
   thematisierte Form weicher Steuerung internationaler Berichterstattung.
-stellungnahme: >-
-  Internews verweist auf öffentliche Förderübersichten, die Unabhängigkeit
-  redaktioneller Entscheidungen der Stipendiat:innen und auf eigene
-  Transparenz-Charta.
 buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
 haeringLink: "https://norberthaering.de/propaganda-zensur/internews/"
 libernetLink: "https://liber-net.org/germany"

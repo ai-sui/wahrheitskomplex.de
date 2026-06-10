@@ -19,8 +19,6 @@ kernkritik: >-
   Ursprünglich für Terrorbekämpfung geschaffen, heute zentrale
   Lobbyorganisation des Wahrheitskomplexes. Enge Verbindungen zu
   Geheimdiensten.
-stellungnahme: >-
-  ISD verweist auf eigene Methodik-Dokumente und Beam-Whitepaper.
 buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
 haeringLink: "https://norberthaering.de/spinnen-im-netz/isd/"
 libernetLink: "https://liber-net.org/germany"

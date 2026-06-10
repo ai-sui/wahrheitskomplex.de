@@ -328,8 +328,23 @@ export const chronik: ChronikEintrag[] = [
       '32 frühere Westend-Autoren aus dem sich linksliberal nennenden Milieu kündigen dem Verlag in einem offenen Brief die Zusammenarbeit auf, weil er angeblich nach rechts driftet. Westend hat Härings „Wahrheitskomplex" verlegt.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/westend-offener-brief/',
-    thumb: '/chronik-thumbs/westend-offener-brief.jpg',
-    imageCredit: 'Ulrike Herrmann, Foto: boellstiftung / Heinrich-Böll-Stiftung, CC BY-SA 2.0',
-    imageCreditUrl: 'https://commons.wikimedia.org/wiki/File:Ulrike-herrmann-ausschnitt.jpg',
+  },
+  {
+    date: '2026-05-31',
+    region: 'DE',
+    title: 'Tichys juristischer Sieg gegen die Schlapphüte',
+    description:
+      'Der Verfassungsschutz durfte das Magazin Tichys Einblick nicht öffentlich als Putin-Helfer framen, nur weil russische Medien seine Berichte manchmal weiterverbreiteten.',
+    themen: ['Ukraine & NATO', 'Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/tichy-vs-verfassungsschutz/',
+  },
+  {
+    date: '2026-06-05',
+    region: 'DE',
+    title: 'Stadtbücherei Münster nimmt Buch, vor dem es nicht mehr warnen darf, aus dem Leihprogramm',
+    description:
+      'Das Oberlandesgericht NRW hatte der Bücherei verboten, einen Warnhinweis im Buch „Putin, Herr des Geschehens?" von Jacques Baud anzubringen. Nun ist das Buch dort nicht mehr im Leihprogramm.',
+    themen: ['Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/muenster-jacques-baud/',
   },
 ];

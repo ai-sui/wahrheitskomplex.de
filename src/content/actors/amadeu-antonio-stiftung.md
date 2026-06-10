@@ -16,17 +16,12 @@ finanzierung: >-
 reichweite: >-
   Eine der einflussreichsten zivilgesellschaftlichen Stiftungen
   Deutschlands im Themenfeld Rechtsextremismus, Rassismus und Antisemitismus.
-  Beratet Bundes- und Landesregierungen, betreibt mehrere Monitoring- und
-  Bildungsprojekte.
+  Betreibt mehrere Monitoring- und Bildungsprojekte.
 kernkritik: >-
   Pionierin der gesetzgeberischen Logik, die ins Netzwerkdurchsetzungsgesetz
   (NetzDG, 2017) und später in EU-Vorgaben (DSA) mündete. Kritisiert wird
   die enge Verflechtung mit Bundesmitteln und die Rolle als Themen­agenda­setterin
   bei gleichzeitiger Selbstdarstellung als unabhängige Zivilgesellschaft.
-stellungnahme: >-
-  Die Stiftung verweist auf öffentlich zugängliche Jahresberichte, die
-  Programmbeschreibungen unter „Demokratie leben!" und ihre Stellungnahmen
-  zu Gesetzgebungsvorhaben.
 buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
 haeringLink: "https://norberthaering.de/wahrheitskomplex/finanzierer/"
 libernetLink: "https://liber-net.org/germany"

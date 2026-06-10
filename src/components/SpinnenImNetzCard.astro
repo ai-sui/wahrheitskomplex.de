@@ -1,26 +1,33 @@
 ---
-// Brücken-Karte vom Akteurs-Karussell zur größeren Profil-Sammlung
-// auf norberthaering.de/spinnen-im-netz/.
+// Brücke vom 8er-Karussell zu den weiteren Porträts auf der eigenen
+// /portraits-Seite. Norbert (Re-Mail vom 10.6.2026): „Alle Links sollten
+// dann auf die Porträts unter wahrheitskomplex.de/porträts zeigen."
+import { withBase } from '../utils/url';
+
+interface Props {
+  count: number;
+}
+
+const { count } = Astro.props;
 ---
 
 <a
-  href="https://norberthaering.de/spinnen-im-netz/"
-  rel="noopener" target="_blank"
+  href={withBase('/portraits')}
   class="group h-full flex flex-col bg-ink text-paper border border-ink rounded-sm p-6 md:p-7 no-underline transition-colors hover:bg-accent hover:border-accent"
 >
-  <p class="meta-label text-paper/70 mb-4">Weitere Profile</p>
+  <p class="meta-label text-paper/70 mb-4">Weitere Porträts</p>
 
   <h3 class="font-serif text-xl md:text-2xl leading-tight mb-3">
-    Spinnen im Netz
+    Im Porträt
   </h3>
 
   <p class="text-sm text-paper/85 leading-relaxed flex-1 mb-5">
-    19 weitere Akteurs-Porträts auf norberthaering.de — darunter HateAid,
+    {count} weitere Porträts auf wahrheitskomplex.de — darunter HateAid,
     NewsGuard, Global Disinformation Index, DFRLab, CASM Technology, EFCSN,
-    GADMO, DRI, Respect, SNC, SOMA.
+    GADMO, DRI, Respect, SOMA, IFCN.
   </p>
 
   <p class="text-sm text-paper/95 font-medium border-t border-paper/30 pt-4 mt-auto">
-    Zu den Profilen <span class="inline-block ml-1" aria-hidden="true">↗</span>
+    Zu allen Porträts <span class="inline-block ml-1" aria-hidden="true">→</span>
   </p>
 </a>

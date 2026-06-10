@@ -11,7 +11,6 @@ interface Props {
   finanzierung: string;
   reichweite?: string;
   kernkritik: string;
-  stellungnahme?: string;
   buchKapitel?: string;
   haeringLink?: string;
   libernetLink?: string;
@@ -28,7 +27,6 @@ const {
   finanzierung,
   reichweite,
   kernkritik,
-  stellungnahme,
   buchKapitel,
   haeringLink,
   libernetLink,
@@ -78,13 +76,6 @@ const dachzeile = portraetMap[akteurstyp] ?? 'Im Porträt';
         <slot />
       </div>
     </section>
-
-    {stellungnahme && (
-      <section class="prose-section mt-12 border-l-2 border-line pl-5 py-1">
-        <p class="meta-label mb-2">Stellungnahme</p>
-        <p class="text-ink-soft leading-relaxed italic">{stellungnahme}</p>
-      </section>
-    )}
 
     {quellen.length > 0 && (
       <section class="mt-14 border-t border-line pt-8">

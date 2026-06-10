@@ -29,6 +29,73 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 10.6.2026 – Norbert-Runde 9A (große Mail, 10.6.)
+
+Backup-Tag: `backup-pre-norbert-runde9a-20260610-185841`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex.de** (10.6., 16:09) – Norberts umfangreichste Mail
+  bisher. Chronik-Ergänzungen, neue Meyen-Rezension, mehrere Korrekturen
+  an den Porträts (AAS, EDMO, „Stellungnahme"-Feld raus, doppelter
+  Porträt-Strang vereinheitlichen), neues IFCN-Porträt sowie eine
+  geänderte Zählung im schwarzen Kasten.
+
+Runde 9A deckt die kleineren und mittleren Punkte ab. Das größere
+Refactor (Häring-Porträt-Texte für 15 Akteure in die wahrheitskomplex.de-
+Porträts übernehmen, Steckbrief in die Seitenleiste verschieben) folgt
+in Runde 9B.
+
+Umgesetzt:
+
+- **Chronik** in [`src/data/chronik.ts`](src/data/chronik.ts):
+  - Neuer Eintrag 31.5.2026 DE „Tichys juristischer Sieg gegen die
+    Schlapphüte", Themen Ukraine & NATO + Hass und Hetze.
+  - Neuer Eintrag 5.6.2026 DE „Stadtbücherei Münster nimmt Buch, vor
+    dem es nicht mehr warnen darf, aus dem Leihprogramm", Thema Hass
+    und Hetze.
+  - Beim Westend-Eintrag (26.5.2026) wurde das Ulrike-Herrmann-Foto
+    inkl. `imageCredit` entfernt (Norbert: „könnte man vielleicht
+    rausnehmen"). Die Datei `public/chronik-thumbs/westend-offener-brief.jpg`
+    bleibt vorerst im Repo, falls die Entscheidung später anders ausfällt.
+- **Neue Rezension** „Der Wahrheitskomplex" von Michael Meyen auf der
+  Freien Akademie für Medien & Journalismus (4.6.2026), Pullquote: „In
+  Sachen Recherche macht Norbert Häring niemand etwas vor. In keinem
+  anderen Buch gibt es eine solche Fülle an Material zum Thema."
+  Datei: [`src/content/medien/freie-medienakademie-meyen-rezension.md`](src/content/medien/freie-medienakademie-meyen-rezension.md).
+- **AAS-Porträt** ([`src/content/actors/amadeu-antonio-stiftung.md`](src/content/actors/amadeu-antonio-stiftung.md)):
+  „Beratet Bundes- und Landesregierungen" aus `reichweite` gestrichen
+  (Norbert: fehlerhaft, keine Korrektur-Vorlage geliefert).
+- **EDMO-Porträt** ([`src/content/actors/edmo.md`](src/content/actors/edmo.md)):
+  `kurzbeschreibung` auf Norberts Wortlaut umgestellt („Instituten,
+  Unternehmen, Faktencheckern und anderen NGOs"), „Behörden" raus.
+- **„Stellungnahme"-Feld komplett entfernt** aus dem Akteurs-Schema und
+  aus allen 8 Porträt-Dateien, die es hatten. Norbert: „Wort erweckt
+  den falschen Eindruck, es wären explizite Stellungnahmen auf Anfrage."
+  Geändert: [`src/content.config.ts`](src/content.config.ts),
+  [`src/components/ActorDetail.astro`](src/components/ActorDetail.astro),
+  [`src/pages/portraits/[slug].astro`](src/pages/portraits/[slug].astro)
+  und die 8 betroffenen `.md`-Dateien.
+- **Neues IFCN-Porträt** als 20. Akteur,
+  [`src/content/actors/ifcn.md`](src/content/actors/ifcn.md). Erstmal
+  als Kurzporträt (`fulltext: false`); Norbert hat angekündigt, das
+  selbst zu überarbeiten, sobald er mit AAS, dpa, Respect und Internews
+  durch ist.
+- **Startseite-Karussell**: Headline-Zähler zeigt jetzt
+  `allActors.length` statt nur die `fulltext`-Akteure (also „20" statt
+  „8"). Der schwarze Kasten am Ende des Karussells (vormals
+  `SpinnenImNetzCard`, jetzt eine interne Brücke):
+  - Text auf „N weitere Porträts auf wahrheitskomplex.de" umgestellt,
+    Zähler dynamisch aus `allActors.length − actors.length` berechnet
+    (aktuell 12).
+  - Link zeigt jetzt auf [`/portraits`](src/pages/portraits/index.astro),
+    nicht mehr nach norberthaering.de. Damit ist Norberts „zwei
+    konkurrierende Stränge"-Punkt für diese Stelle gelöst.
+
+Offen für Runde 9B (Häring-Porträt-Texte für die 15 Akteure mit
+Tiefenartikel auf norberthaering.de/spinnen-im-netz, Steckbrief in die
+Seitenleiste, alle weiteren Porträt-Links auf eigene Seite zeigen lassen).
+
 ### 4.6.2026 – Norbert-Runde 8 (1 E-Mail, 4.6.)
 
 Backup-Tag: `backup-pre-norbert-runde8-20260604-133801`

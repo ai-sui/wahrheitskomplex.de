@@ -18,9 +18,6 @@ kernkritik: >-
   Vorausgewählte Experten-Zitate erscheinen oft gleichlautend in Dutzenden
   Redaktionen. Die Auswahl der Expert:innen bleibt für das Publikum
   unsichtbar.
-stellungnahme: >-
-  SMC Germany wurde von der Redaktion um eine Einschätzung gebeten.
-  Eine Antwort lag bis Redaktionsschluss nicht vor.
 buchKapitel: "Kapitel 1 — Der Wahrheitskomplex bei der Arbeit"
 haeringLink: "https://norberthaering.de/propaganda-zensur/science-media-center/"
 libernetLink: "https://liber-net.org/germany"
