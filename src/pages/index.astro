@@ -23,10 +23,17 @@ const medien = await getCollection('medien');
 const faktenchecks = await getCollection('faktenchecks');
 
 // --- Daten fürs Akteurs-Karussell ---
+// Norbert (Mail vom 10.6.2026): 8 Hauptkarten + N weitere im schwarzen
+// Kasten. Wir zeigen die 8 Akteure mit der niedrigsten `order`-Zahl
+// als Hauptkarten; der Rest landet im schwarzen Kasten und auf der
+// /portraits-Übersicht. (Vorher war der Filter `fulltext: true`, das
+// hat nach Runde 9B alle 18 Volltext-Profile ins Karussell geschoben.)
 const allActors = await getCollection('actors');
-const actors = allActors
-  .filter((a) => a.data.fulltext)
-  .sort((a, b) => (a.data.order ?? 100) - (b.data.order ?? 100));
+const HAUPTKARTEN = 8;
+const sortedActors = allActors.sort(
+  (a, b) => (a.data.order ?? 100) - (b.data.order ?? 100),
+);
+const actors = sortedActors.slice(0, HAUPTKARTEN);
 const weitereActorsCount = allActors.length - actors.length;
 
 type FeedItem = {
