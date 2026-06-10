@@ -16,7 +16,6 @@ kernkritik: >-
   an Plattformen zur Löschung gemeldet.
 kurzbeschreibung: >-
   Staatlich finanzierte Hass-Meldestelle, seit 2024 mit DSA-Privilegien-Status.
-haeringLink: "https://norberthaering.de/spinnen-im-netz/respect/"
 fulltext: false
 order: 130
 ---

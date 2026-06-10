@@ -32,7 +32,6 @@ kernkritik: >-
   Geldgebern und Kooperationspartnern klassifiziert dpa-Faktencheck oft
   als Desinformation.
 buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
-haeringLink: "https://norberthaering.de/propaganda-zensur/dpa-gerichtsurteil/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Faktencheck-Sparte der Deutschen Presse-Agentur, Mitglied im

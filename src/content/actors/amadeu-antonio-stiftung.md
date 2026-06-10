@@ -23,7 +23,6 @@ kernkritik: >-
   die enge Verflechtung mit Bundesmitteln und die Rolle als Themen­agenda­setterin
   bei gleichzeitiger Selbstdarstellung als unabhängige Zivilgesellschaft.
 buchKapitel: "Kapitel 2 — Die Errichtung des deutschen Wahrheitskomplexes"
-haeringLink: "https://norberthaering.de/wahrheitskomplex/finanzierer/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Stiftung, die ab den 2010er Jahren die Logik des NetzDG mitprägte und heute

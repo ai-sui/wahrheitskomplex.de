@@ -23,7 +23,6 @@ kernkritik: >-
   Themenvorschläge. Hier zeigt sich eine in westlichen Medien selten
   thematisierte Form weicher Steuerung internationaler Berichterstattung.
 buchKapitel: "Kapitel 5 — Wahrheitskontrolle im Dienste der NATO"
-haeringLink: "https://norberthaering.de/propaganda-zensur/internews/"
 libernetLink: "https://liber-net.org/germany"
 kurzbeschreibung: >-
   Staatsfinanzierte US-Medien-NGO, deren Earth Journalism Network rund

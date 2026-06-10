@@ -96,6 +96,24 @@ Offen für Runde 9B (Häring-Porträt-Texte für die 15 Akteure mit
 Tiefenartikel auf norberthaering.de/spinnen-im-netz, Steckbrief in die
 Seitenleiste, alle weiteren Porträt-Links auf eigene Seite zeigen lassen).
 
+#### Nachschlag (4 Punkte, nach Sorgfalts-Review)
+
+- **AAS-„Vollständiges Porträt"-Link** war Norberts erster konkret
+  benannter Bug („zeigt auf Porträt-Übersichtsseite, da es das Porträt
+  auf norberthaering.de noch nicht gibt"). `haeringLink` ist aus
+  `amadeu-antonio-stiftung.md` entfernt. Die ActorPortraitCard zeigt
+  jetzt für AAS „Profil ansehen →" und führt auf die interne Seite.
+  Der Häring-Finanzierer-Artikel bleibt im `quellen`-Block erhalten.
+- **Dieselbe Behandlung** für `dpa-faktencheck.md`,
+  `internews-earth-journalism-network.md` und `respect.md`. Norbert
+  nennt diese 4 explizit als Akteure ohne eigenständiges
+  Häring-Porträt auf norberthaering.de. Die Häring-Tiefenartikel
+  bleiben jeweils im `quellen`-Block bzw. (bei respect) in einer
+  künftigen Erweiterung durch Norbert ergänzbar.
+- **„Stellungnahme"-Erwähnung in [`src/pages/ueber.astro:74`](src/pages/ueber.astro:74)**
+  entfernt. Norberts Begründung gegen das Wort gilt überall, nicht nur
+  in den Porträt-Karten.
+
 ### 4.6.2026 – Norbert-Runde 8 (1 E-Mail, 4.6.)
 
 Backup-Tag: `backup-pre-norbert-runde8-20260604-133801`
