@@ -18,13 +18,12 @@ const metaLine = [akteurstyp, land, gegruendet]
   .filter((s) => s !== undefined && s !== '')
   .join(' · ');
 
-// Primärziel ist Norberts ausführliches Porträt auf norberthaering.de.
-// Falls keines hinterlegt ist, fällt die Karte auf das interne Profil zurück.
-const hasExternal = Boolean(haeringLink);
-const targetHref = hasExternal ? (haeringLink as string) : withBase(`/portraits/${slug}`);
-const ctaLabel = hasExternal
-  ? 'Vollständiges Porträt bei norberthaering.de →'
-  : 'Profil ansehen →';
+// Norbert-Mail vom 10.6.2026: Alle Karten-Links sollen auf die Porträts
+// unter wahrheitskomplex.de/porträts zeigen. Die externen Tiefenartikel
+// auf norberthaering.de werden nur noch im aside-„Vertiefungen"-Block
+// der Detail-Seite verlinkt.
+const targetHref = withBase(`/portraits/${slug}`);
+const ctaLabel = 'Profil ansehen →';
 ---
 
 {/*
@@ -37,7 +36,6 @@ const ctaLabel = hasExternal
 */}
 <a
   href={targetHref}
-  rel={hasExternal ? 'noopener' : undefined}
   class="group h-full flex flex-col bg-paper-soft border border-line border-l-4 border-l-accent rounded-sm p-6 md:p-7 no-underline transition-colors hover:border-accent"
 >
   <p class="meta-label text-muted mb-4 leading-tight">{metaLine}</p>

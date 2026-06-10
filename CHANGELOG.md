@@ -29,6 +29,48 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 10.6.2026 – Norbert-Runde 9B (Häring-Porträts integrieren)
+
+Backup-Tag: `backup-pre-norbert-runde9b-20260610-203402`
+
+Direkt im Anschluss an Runde 9A. Umsetzung des großen Refactorings,
+das Norbert in derselben Mail angestoßen hat: die 15 Häring-Tiefenporträts
+von norberthaering.de/spinnen-im-netz/ werden direkt in die internen
+Porträts auf wahrheitskomplex.de übernommen.
+
+Umgesetzt:
+
+- **15 Akteurs-Bodies durch Häring-Texte ersetzt**: correctiv, atlantic-council,
+  institute-for-strategic-dialogue, edmo, science-media-center-germany,
+  hateaid, newsguard, gdi, dfrlab, efcsn, casm-technology, dri, gadmo,
+  soma, can. Die Härings Steckbriefe und Aktivitäts-Abschnitte sind
+  Bestandteil des Bodies, der bestehende Schema-Steckbrief (Akteurstyp,
+  Land, Gegründet, Finanzierung, Reichweite, Buch-Kapitel) bleibt in
+  der Sidebar wie bisher.
+- **fulltext: true** für die 10 Akteure, die vorher als Kurzporträt
+  geführt waren (hateaid, newsguard, gdi, dfrlab, efcsn, casm-technology,
+  dri, gadmo, soma, can). Jeder bekommt jetzt eine eigene Detail-Seite
+  unter `/portraits/{slug}`. Die Site hat damit 18 Volltext-Profile
+  (alle außer IFCN und Respect, die Norbert später nachreicht).
+- **SMC-Porträt** `haeringLink` korrigiert: von `propaganda-zensur/science-media-center/`
+  auf `spinnen-im-netz/snc/` (Norberts Originalpfad).
+- **ActorPortraitCard** (`src/components/ActorPortraitCard.astro`):
+  Karten-Link verweist jetzt immer intern auf `/portraits/{slug}`,
+  nicht mehr extern auf `haeringLink`. Norbert: „Alle Links sollten dann
+  auf die Porträts unter wahrheitskomplex.de/porträts zeigen." Der
+  CTA-Text lautet einheitlich „Profil ansehen →".
+- **Externe Häring-Links bleiben sichtbar** im aside-Block der
+  Detail-Seite („Vertiefungen: Tiefenartikel auf norberthaering.de"),
+  damit der Leser jederzeit zum Original wechseln kann.
+
+Bewusst aufgeschoben: Die Steckbrief-Felder in der Sidebar (Schema-Felder
+`finanzierung`, `reichweite` etc.) wurden NICHT durch Härings detailliertere
+Steckbriefe ersetzt. Härings Steckbriefe sind heterogen strukturiert
+(jeder Akteur hat andere Schlüssel) und passen nicht in ein einheitliches
+Schema. Sie sind als `## Steckbrief`-Section im Body sichtbar, damit
+nichts verloren geht. Falls Norbert die Sidebar-Variante komplett raus
+will, kann das in einer Folge-Runde geschehen.
+
 ### 10.6.2026 – Norbert-Runde 9A (große Mail, 10.6.)
 
 Backup-Tag: `backup-pre-norbert-runde9a-20260610-185841`

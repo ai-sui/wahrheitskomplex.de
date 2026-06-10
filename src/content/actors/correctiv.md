@@ -40,22 +40,24 @@ quellen:
     url: "https://liber-net.org/germany"
     publisher: "Liber-Net"
 ---
+Die „Correctiv – Recherchen für die Gesellschaft gemeinnützige GmbH" hat einen kommerziellen Ableger „Correctiv – Verlag und Vertrieb für die Gesellschaft UG", der Bücher verlegt und Faktenchecken betreibt. Geschäftsführer ist jeweils David Schraven, ein Journalist aus dem Umfeld des SPD-Politikers Bodo Hombach.
 
-Correctiv wurde 2014 als gemeinnütziges Recherche-Zentrum gegründet und
-beschreibt sich selbst als erste explizit non-profit organisierte
-Investigativ-Redaktion Deutschlands. Neben klassischer investigativer
-Berichterstattung betreibt das Haus eine Faktencheck-Sparte, die für Meta
-deutschsprachige Inhalte prüft, sowie die „Reporterfabrik", einen Aus- und
-Weiterbildungsarm.
+Seit SPD-Minister Heiko Maas Facebook bedrängte, mit Faktencheckern zusammenzuarbeiten, gibt Correctiv-Faktencheck der Plattform X als kommerzieller Partner Hinweise auf Beiträge, vor denen sie warnen oder die sie löschen oder ausbremsen sollten. Correctiv ist zusammen mit den Nachrichtenagenturen dpa, APA und AFP Kernmitglied der deutsch-österreichischen Beobachtungsstelle für digitale Medien (GADMO), einem Stützpunkt von EDMO. EDMO ist eine von der EU-Kommission gegründete und indirekt finanzierte Organisation zur Koordination und Förderung der (regierungsnahen) europäischen Faktencheckerszene.
 
-In *Der Wahrheitskomplex* erfolgt der Zugriff auf Correctiv nicht über die
-einzelnen Recherchen, sondern über die Struktur: Wer eine Stelle für
-„richtige" Fakten finanziert — Stiftungen mit klaren politischen
-Programmen, ergänzt durch Mittel staatsnaher Geber — bekommt eine
-Auswahl, die diesen Programmen nicht zufällig entspricht. Die Qualität
-einzelner Recherchen, die hier nicht in Frage gestellt wird, schließt
-diese Struktur-Kritik nicht aus, sondern macht sie erst interessant.
+Besonders bekannt und wirkmächtig wurde Correctiv durch die Anfang 2024 veröffentlichte Recherche „Geheimplan gegen Deutschland", in deren Nachgang es wochenlang große Demonstrationen gegen „Rechts" in vielen deutschen Städten gab. Die Kernaussagen dieser Correctiv-Veröffentlichung, von einem rechten Treffen in Potsdam bleibe „ein Masterplan zur Ausweisung von deutschen Staatsbürgern" zurück und Teilnehmer Martin Sellner habe dort eine „Ausbürgerungsidee" geäußert, hat das Landgericht Berlin Correctiv im März 2026 untersagt.
 
-Die Doppelrolle — eigene Recherchen veröffentlichen *und* die Recherchen
-anderer als Faktencheck einordnen — verstärkt die Frage, wer hier die
-Maßstäbe setzt und wer die Maßstabsetzer kontrolliert.
+## Steckbrief
+
+- **Gegründet**: 2014
+- **Sitz:** Gesellschaft: Essen; Redaktion: Berlin
+- **Gründer**: David Schraven
+- **Gesellschafter**: David Schraven und Kuratoren
+- **Budget**: 9,4 Mio. (2024, Jahr der Geheimplan-Publikation), 4,8 Mio. Euro (2023)
+- **Staatliche Förderung**: 610.000 Euro (2024)
+- **Sonstige Geldgeber:** Auswahl, 2024: Schöpflin Stiftung (250.000 Euro); Mercator Stiftung (182.000 Euro); Adessium Foundation (157.000 Euro); European Climate Foundation (157.000 Euro); Allianz Foundation (100.000 Euro); 2023 außerdem Luminate (661.000 Euro)
+- **Mitarbeiter:** ca. 150 werden auf der Website aufgeführt, davon 15 bei Faktencheck
+- **Mitglied von:** Covering Climate Now (CCNow), German-Austrian Digital Media Observatory (GADMO); European Fact-Checking Standards Network (EFCSN); International Fact-Checking Network (IFCN)
+
+Der ehemalige SPD-Spitzenpolitiker Bodo Hombach sorgte als stellvertretender Vorsitzender der Brost-Stiftung für die Anschubfinanzierung von 3 Mio. Euro für David Schraven, dessen Chef bei der Verlagsgruppe WAZ er zuvor gewesen war. Zusätzliche Anschubfinanzierung kam von Open Society Foundations. Bis 2016 war Hombach Vorsitzender des Ethikbeirats von Correctiv. Personelle Verflechtungen bestanden vor allem in den Gründungsjahren von Correctiv-Faktencheck zur Amadeu Antonio Stiftung und zum Institute for Strategic Dialogue (ISD).
+
+Die guten Beziehungen zur SPD aus den Anfangsjahren blieben bis heute erhalten. So hat sich die Geschäftsführerin von Correctiv, Jeanette Gusko, kurz vor dem rechten Treffen in Potsdam, über das Correctiv so spektakulär berichtete, zwei Mal mit Vertretern der Bundesregierung getroffen, darunter einmal mit Bundeskanzler Olaf Scholz. Am 7. November traf sie im Bundeskanzleramt unter anderem den Ostbeauftragten der Bundesregierung, Carsten Schneider (SPD). Eine Begegnung des Bundeskanzlers mit Gusko habe „spontan am Rande der Konferenz Ostdeutschland 2030 am 17.11.2023" stattgefunden, antwortete die Regierung auf eine Abgeordnetenanfrage. Das Treffen in Potsdam fand am 25. November statt. Laut dem Nachrichtenportal _Nius_ hatte Correctiv zum Zeitpunkt der Gespräche mit den Regierungsvertretern bereits die Infiltration des Treffens in die Wege geleitet. Gespräche von Correctiv mit Regierungsvertretern gab es offenbar recht häufig.
