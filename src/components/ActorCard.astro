@@ -36,7 +36,7 @@ const isExternal = !fulltext && Boolean(haeringLink);
 ---
 
 <article
-  class="group flex flex-col bg-paper-soft border border-line rounded-sm p-6 transition-colors hover:border-accent"
+  class="relative group flex flex-col bg-paper-soft border border-line rounded-sm p-6 transition-colors hover:border-accent"
   data-actor-card
   data-akteurstyp={akteurstyp}
   data-themen={themenAttr}
@@ -58,7 +58,7 @@ const isExternal = !fulltext && Boolean(haeringLink);
       <a
         href={detailHref}
         rel={isExternal ? 'noopener' : undefined}
-        class="no-underline"
+        class="no-underline group-hover:text-accent transition-colors after:absolute after:inset-0 after:content-['']"
       >
         {name}
       </a>
@@ -78,18 +78,14 @@ const isExternal = !fulltext && Boolean(haeringLink);
   </div>
 
   <p class="meta-label text-muted border-t border-line pt-3 mt-auto">
-    {fulltext ? (
-      <a href={withBase(`/portraits/${slug}`)} class="text-accent no-underline hover:underline">
-        Profil ansehen →
-      </a>
-    ) : haeringLink ? (
-      <a
-        href={haeringLink}
-        rel="noopener" target="_blank"
-        class="text-accent no-underline hover:underline"
-      >
-        Profil auf norberthaering.de ↗
-      </a>
+    {/*
+      Kein eigener <a>-Tag mehr — der Stretched-Link am Titel deckt
+      die ganze Karte ab, auch diesen CTA-Bereich.
+    */}
+    {detailHref ? (
+      <span class="text-accent">
+        {isExternal ? 'Profil auf norberthaering.de ↗' : 'Profil ansehen →'}
+      </span>
     ) : (
       <span>Profil folgt</span>
     )}

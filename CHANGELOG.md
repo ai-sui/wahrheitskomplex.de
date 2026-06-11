@@ -52,8 +52,19 @@ Umgesetzt:
   das Bild, einer um die Überschrift). Klicks auf Datum, Quellzeile
   oder leeren Raum landeten nirgends. Jetzt ist die ganze Karte ein
   einziger `<a>`-Tag, ein Klick irgendwo auf der Karte folgt dem Link.
-  Hover-Wirkung für die Überschrift bleibt erhalten (jetzt via
-  `group-hover:text-accent` statt eigener `<a>`-Hover).
+- **Dasselbe Klick-Bug-Muster proaktiv auch in den anderen
+  Karten-Komponenten gefixt** (Norbert hatte nur „Neues" angesprochen,
+  aber das Muster war strukturell identisch). Verwendete Lösung:
+  Stretched-Link-Pattern – der Titel-Link bekommt ein
+  `::after`-Pseudoelement mit `absolute inset-0`, das die ganze Karte
+  abdeckt. Sekundäre Links (z.B. „Im Porträt →" auf einer Faktencheck-Karte)
+  sitzen mit `relative z-10` davor, bleiben also funktional.
+  Geändert: [`FaktencheckCard.astro`](src/components/FaktencheckCard.astro),
+  [`ActorCard.astro`](src/components/ActorCard.astro),
+  [`MediaCard.astro`](src/components/MediaCard.astro). Auswirkung:
+  Karten in „Faktenchecker-Check" (Startseite + `/faktenchecks`),
+  auf der `/portraits`-Übersicht und auf `/im-gespraech` sind jetzt
+  ebenfalls als Ganzes klickbar.
 
 ### 10.6.2026 – Norbert-Runde 9B (Häring-Porträts integrieren)
 

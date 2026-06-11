@@ -53,18 +53,21 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
 
 <article
   id={slug}
-  class="bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col scroll-mt-32"
+  class="relative bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col scroll-mt-32 group transition-colors hover:border-accent"
   data-faktencheck-card
   data-faktenchecker={faktenchecker}
   data-themen={themen.join('|')}
 >
+  {/*
+    Norbert (Mail 11.6.2026): „Die Links in den Karton ... sind nicht aktiv."
+    Lösung: Stretched-Link-Pattern. Der Titel-Link unten bekommt via
+    `after:absolute after:inset-0` ein Pseudoelement, das die ganze Karte
+    abdeckt. Damit ist jeder Klick auf die Karte ein Klick auf den Titel-Link.
+    Sekundäre Links (Akteurs-Porträt) bekommen `relative z-10`, damit sie
+    weiterhin separat funktionieren.
+  */}
   {thumb ? (
-    <a
-      href={url}
-      rel="noopener" target="_blank"
-      class="block aspect-video bg-ink relative overflow-hidden group no-underline"
-      aria-label={`Tiefenartikel auf norberthaering.de: ${title}`}
-    >
+    <div class="block aspect-video bg-ink relative overflow-hidden">
       <img
         src={thumb}
         alt={`Vorschau: ${title}`}
@@ -81,17 +84,13 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
       <span class="absolute bottom-3 right-3 text-[0.65rem] uppercase tracking-wider bg-paper/95 text-ink px-2 py-0.5 rounded-full">
         Tiefenartikel ↗
       </span>
-    </a>
+    </div>
   ) : (
-    <a
-      href={url}
-      rel="noopener" target="_blank"
-      class="block aspect-video bg-ink relative no-underline"
-    >
+    <div class="block aspect-video bg-ink relative">
       <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-xl px-6 text-center">
         {faktenchecker}
       </div>
-    </a>
+    </div>
   )}
 
   <div class="p-5 md:p-6 flex flex-col flex-1">
@@ -106,7 +105,11 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
     </div>
 
     <h3 class="font-serif text-lg md:text-xl leading-snug mb-4">
-      <a href={url} rel="noopener" target="_blank" class="no-underline hover:text-accent">
+      <a
+        href={url}
+        rel="noopener" target="_blank"
+        class="no-underline group-hover:text-accent transition-colors after:absolute after:inset-0 after:content-['']"
+      >
         {title}
       </a>
     </h3>
@@ -131,17 +134,18 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
     ) : null}
 
     <div class="mt-auto pt-4 border-t border-line flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-      <a
-        href={url}
-        rel="noopener" target="_blank"
-        class="text-accent font-medium underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
-      >
+      {/*
+        Der „Vollständiger Beitrag"-Text bleibt sichtbar als Hinweis,
+        kein eigener <a>-Tag mehr — der Stretched-Link am Titel deckt
+        ihn ohnehin ab. Akteur-Link sitzt mit relative z-10 darüber.
+      */}
+      <span class="text-accent font-medium underline decoration-accent/40 underline-offset-4">
         Vollständiger Beitrag bei norberthaering.de →
-      </a>
+      </span>
       {actorSlug && (
         <a
           href={withBase(`/portraits/${actorSlug}`)}
-          class="text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
+          class="relative z-10 text-ink-soft underline decoration-line hover:decoration-accent hover:text-accent"
         >
           Im Porträt →
         </a>
