@@ -5,6 +5,7 @@ export const thumbManifest = {
     "auf1-eglinski-interview.jpg",
     "barucker-video.jpg",
     "freie-medienakademie-buttkereit-rezension.jpg",
+    "freie-medienakademie-meyen-rezension.jpg",
     "freischwebende-matuschek-rezension.jpg",
     "multipolar-schreyer-rezension.jpg",
     "nachdenkseiten-gosch-rezension.jpg",

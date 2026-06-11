@@ -1,6 +1,11 @@
 ---
 // Einheitliche Karte für gemischten „Neues aus dem Wahrheitskomplex"-Feed.
 // Funktioniert für Medien-Einträge, Faktenchecks und Chronik-Einträge mit Häring-Link.
+//
+// Norbert (Mail vom 11.6.2026): „Die Links in den Karton von 'Neues aus dem
+// WK' sind nicht aktiv. Die Links hinter den jeweiligen Überschriften
+// schon." → Die ganze Karte ist jetzt ein einziger <a>-Tag, sodass auch
+// Klick auf Datum, Quellzeile oder leeren Raum den Link auslöst.
 interface Props {
   badge: string; // z.B. "Video", "Faktencheck", "Aktuell"
   title: string;
@@ -23,55 +28,55 @@ const dateLabel =
       : parts[0];
 ---
 
-<article class="bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col h-full">
+<article class="bg-paper-soft border border-line rounded-sm overflow-hidden flex flex-col h-full group transition-colors hover:border-accent">
   <a
     href={url}
     rel="noopener" target="_blank"
-    class="block aspect-video relative overflow-hidden group no-underline"
+    class="flex flex-col h-full no-underline"
     aria-label={`${badge}: ${title} (${source})`}
   >
-    {thumb ? (
-      <>
-        <div class="absolute inset-0 bg-ink"></div>
-        <img
-          src={thumb}
-          alt={`Vorschau: ${title}`}
-          width="1280"
-          height="720"
-          loading="lazy"
-          decoding="async"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          onerror="this.style.display='none'"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
-      </>
-    ) : (
-      <div class="absolute inset-0 bg-ink flex flex-col justify-between p-5 text-paper">
-        <span class="font-serif italic text-paper/60 text-sm leading-snug line-clamp-4">
-          {title}
-        </span>
-        <span class="meta-label text-paper/80 self-end">{source}</span>
-      </div>
-    )}
-    <span class="absolute top-3 left-3 text-[0.65rem] uppercase tracking-wider bg-accent text-paper px-2 py-0.5 rounded-full">
-      {badge}
-    </span>
-    {paywall && (
-      <span class="absolute top-3 right-3 text-[0.6rem] uppercase tracking-wider bg-ink text-paper px-2 py-0.5 rounded-full">
-        🔒
+    <div class="block aspect-video relative overflow-hidden">
+      {thumb ? (
+        <>
+          <div class="absolute inset-0 bg-ink"></div>
+          <img
+            src={thumb}
+            alt={`Vorschau: ${title}`}
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            onerror="this.style.display='none'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
+        </>
+      ) : (
+        <div class="absolute inset-0 bg-ink flex flex-col justify-between p-5 text-paper">
+          <span class="font-serif italic text-paper/60 text-sm leading-snug line-clamp-4">
+            {title}
+          </span>
+          <span class="meta-label text-paper/80 self-end">{source}</span>
+        </div>
+      )}
+      <span class="absolute top-3 left-3 text-[0.65rem] uppercase tracking-wider bg-accent text-paper px-2 py-0.5 rounded-full">
+        {badge}
       </span>
-    )}
-  </a>
+      {paywall && (
+        <span class="absolute top-3 right-3 text-[0.6rem] uppercase tracking-wider bg-ink text-paper px-2 py-0.5 rounded-full">
+          🔒
+        </span>
+      )}
+    </div>
 
-  <div class="p-5 flex flex-col flex-1">
-    <time class="meta-label text-muted mb-2" datetime={dateAttr}>{dateLabel}</time>
-    <h3 class="font-serif text-base md:text-lg leading-snug mb-2 flex-1">
-      <a href={url} rel="noopener" target="_blank" class="no-underline hover:text-accent">
+    <div class="p-5 flex flex-col flex-1">
+      <time class="meta-label text-muted mb-2" datetime={dateAttr}>{dateLabel}</time>
+      <h3 class="font-serif text-base md:text-lg leading-snug mb-2 flex-1 text-ink group-hover:text-accent transition-colors">
         {title}
-      </a>
-    </h3>
-    <p class="text-xs text-accent font-medium mt-auto">
-      {source} <span aria-hidden="true">→</span>
-    </p>
-  </div>
+      </h3>
+      <p class="text-xs text-accent font-medium mt-auto">
+        {source} <span aria-hidden="true">→</span>
+      </p>
+    </div>
+  </a>
 </article>

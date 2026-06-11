@@ -29,6 +29,32 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 11.6.2026 – Norbert-Runde 10 (Meyen-Foto + Klick-Bug, 11.6.)
+
+Backup-Tag: `backup-pre-norbert-runde10-20260611-063538`
+
+Eingeflossene Mail:
+
+- **Meyen und Links** (11.6., 06:18) – Foto von Michael Meyen für die
+  Rezension plus ein UX-Bug auf der Startseite: „Die Links in den
+  Karton von 'Neues aus dem WK' sind nicht aktiv. Die Links hinter den
+  jeweiligen Überschriften schon."
+
+Umgesetzt:
+
+- **Aufmacher Meyen-Rezension**: Foto aus dem Anhang als
+  `public/article-thumbs/freie-medienakademie-meyen-rezension.jpg`
+  abgelegt (243×207 px). Die Rezension erscheint dadurch automatisch
+  mit Bild in der `/im-gespraech`-Liste und im „Neues"-Karussell auf
+  der Startseite.
+- **Klick-Bug in [`src/components/UnifiedNewsCard.astro`](src/components/UnifiedNewsCard.astro)**
+  gefixt: vorher hatte die Karte zwei separate `<a>`-Tags (einer um
+  das Bild, einer um die Überschrift). Klicks auf Datum, Quellzeile
+  oder leeren Raum landeten nirgends. Jetzt ist die ganze Karte ein
+  einziger `<a>`-Tag, ein Klick irgendwo auf der Karte folgt dem Link.
+  Hover-Wirkung für die Überschrift bleibt erhalten (jetzt via
+  `group-hover:text-accent` statt eigener `<a>`-Hover).
+
 ### 10.6.2026 – Norbert-Runde 9B (Häring-Porträts integrieren)
 
 Backup-Tag: `backup-pre-norbert-runde9b-20260610-203402`
