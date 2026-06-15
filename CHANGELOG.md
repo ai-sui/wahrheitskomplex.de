@@ -29,6 +29,27 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 15.6.2026 – Norbert-Runde 11 (§188 + Friedrich-Interview, 15.6.)
+
+Backup-Tag: `backup-pre-norbert-runde11-20260615-124120`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (15.6., 12:18) – Chronik-Ergänzung zum
+  Justizministerbeschluss zu §188 plus neues Video-Interview mit Marc
+  Friedrich.
+
+Umgesetzt:
+
+- **Chronik-Eintrag** 13.6.2026 DE „Justizminister wollen §188
+  zurückstutzen". Themen Hass und Hetze + DSA & NetzDG. URL mit
+  URL-Encoding für das §-Zeichen (`%C2%A7`).
+- **Neues Video** „Sie entscheiden, was du denken darfst – Norbert
+  Häring packt aus" (Marc Friedrich, 11.6.2026, 69 Min, YouTube-ID
+  YcylSqzVTaI). Norberts Screenshot als Aufmacher unter
+  `public/article-thumbs/marc-friedrich-haering-interview.jpg`.
+  Datei: [`src/content/medien/marc-friedrich-haering-interview.md`](src/content/medien/marc-friedrich-haering-interview.md).
+
 ### 11.6.2026 – Norbert-Runde 10 (Meyen-Foto + Klick-Bug, 11.6.)
 
 Backup-Tag: `backup-pre-norbert-runde10-20260611-063538`

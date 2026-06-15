@@ -347,4 +347,13 @@ export const chronik: ChronikEintrag[] = [
     themen: ['Hass und Hetze'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/muenster-jacques-baud/',
   },
+  {
+    date: '2026-06-13',
+    region: 'DE',
+    title: 'Justizminister wollen §188 zurückstutzen',
+    description:
+      'Auf Antrag Sachsens und Baden-Württembergs (Heimatland der Meldestelle REspect!) hat sich die Justizministerkonferenz dafür ausgesprochen, den besonderen Beleidigungsschutz nach §188 StGB künftig nur noch Kommunalpolitikern zu gewähren.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/%C2%A7188/',
+  },
 ];

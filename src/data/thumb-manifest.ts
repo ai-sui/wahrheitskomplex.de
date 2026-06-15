@@ -7,6 +7,7 @@ export const thumbManifest = {
     "freie-medienakademie-buttkereit-rezension.jpg",
     "freie-medienakademie-meyen-rezension.jpg",
     "freischwebende-matuschek-rezension.jpg",
+    "marc-friedrich-haering-interview.jpg",
     "multipolar-schreyer-rezension.jpg",
     "nachdenkseiten-gosch-rezension.jpg",
     "overton-delapuente-interview.jpg",
