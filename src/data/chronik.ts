@@ -330,6 +330,24 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/westend-offener-brief/',
   },
   {
+    date: '2026-05',
+    region: 'DE',
+    title: 'Neudefinition von „hybrider Bedrohung": Regierungskritiker werden zu Staatsfeinden',
+    description:
+      'Die Bundesregierung streicht das Erfordernis ausländischer Einflussnahme aus der Definition von „Desinformation als hybride Bedrohung".',
+    themen: ['Ukraine & NATO', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/hybrider-krieg/',
+  },
+  {
+    date: '2026-05-23',
+    region: 'DE',
+    title: 'Verfassungsschutz deklariert Kritik an Mächtigen als antisemitisch',
+    description:
+      'Das Bundesamt für Verfassungsschutz veröffentlicht eine Broschüre zu „Antisemitische Codes und Chiffren", welche die Definition von Antisemitismus massiv auf Kritik an mächtigen, nichtjüdischen Menschen und Institutionen ausweitet.',
+    themen: ['Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/bfv-antisemitismus/',
+  },
+  {
     date: '2026-05-31',
     region: 'DE',
     title: 'Tichys juristischer Sieg gegen die Schlapphüte',
@@ -355,5 +373,14 @@ export const chronik: ChronikEintrag[] = [
       'Auf Antrag Sachsens und Baden-Württembergs (Heimatland der Meldestelle REspect!) hat sich die Justizministerkonferenz dafür ausgesprochen, den besonderen Beleidigungsschutz nach §188 StGB künftig nur noch Kommunalpolitikern zu gewähren.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/%C2%A7188/',
+  },
+  {
+    date: '2026-06-18',
+    region: 'DE',
+    title: 'Broschüre aus dem ver.di-Umfeld ruft Buchhändler und Verlage zum Boykott nicht genehmer Meinungen auf',
+    description:
+      'Ein Aktionsbündnis namens „Verlage gegen Rechts" mit enger Verbindung zur Gewerkschaft ver.di ruft Verlage und Buchhändler kaum verhohlen dazu auf, ideologisch nicht genehme Autoren, Bücher und Magazine zu boykottieren.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/verlage-gegen-rechts/',
   },
 ];

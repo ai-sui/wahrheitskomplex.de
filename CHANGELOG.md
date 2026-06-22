@@ -29,6 +29,39 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 22.6.2026 – Norbert-Runde 12 (EDMO + 3 Chronik-Einträge, 21.6.)
+
+Backup-Tag: `backup-pre-norbert-runde12-20260622-120654`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex.de** (21.6., 19:58) – Norbert meldet zwei
+  EDMO-Korrekturen und drei neue Chronik-Einträge (zwei Mai, einer Juni).
+
+Umgesetzt:
+
+- **EDMO-Aufgabenliste lesbar**: Die Bullet-Liste in EDMOs „Aufgaben"-
+  Abschnitt war zwar als `<ul><li>` korrekt gerendert, der Tailwind-
+  Default `list-style: none` ließ die Bullets aber verschwinden. Fix
+  in [`ActorDetail.astro`](src/components/ActorDetail.astro): die
+  slot-Section bekommt einheitliches Styling für `ul`/`ol`/`h2`/`h3`/
+  `blockquote`. Wirkt rückwirkend für alle Akteurs-Profile, die solche
+  Elemente im Body verwenden.
+- **„slovakische" / GLOBSEC**: Den von Norbert markierten Tippfehler
+  haben wir nicht auf unserer Seite, der GLOBSEC-Absatz wurde in
+  Runde 9B beim Kürzen des Häring-Texts ohnehin ausgelassen. Norbert
+  in der Antwortmail darauf hingewiesen, dass der Fehler nur auf
+  norberthaering.de/spinnen-im-netz/edmo/ steht.
+- **Drei neue Chronik-Einträge** in [`src/data/chronik.ts`](src/data/chronik.ts):
+  - 2026-05 DE „Neudefinition von ‚hybrider Bedrohung': Regierungskritiker
+    werden zu Staatsfeinden" (monat-genau, weil Norbert „Mai" sagt und
+    sein Artikel erst vom 17.6. ist).
+  - 2026-05-23 DE „Verfassungsschutz deklariert Kritik an Mächtigen als
+    antisemitisch" (Häring-Artikel-Datum).
+  - 2026-06-18 DE „Broschüre aus dem ver.di-Umfeld ruft Buchhändler und
+    Verlage zum Boykott nicht genehmer Meinungen auf" (Häring-Artikel-
+    Datum, Norberts Originaltitel übernommen).
+
 ### 15.6.2026 – Norbert-Runde 11 (§188 + Friedrich-Interview, 15.6.)
 
 Backup-Tag: `backup-pre-norbert-runde11-20260615-124120`
