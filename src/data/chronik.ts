@@ -330,7 +330,7 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/westend-offener-brief/',
   },
   {
-    date: '2026-05',
+    date: '2026-05-15',
     region: 'DE',
     title: 'Neudefinition von „hybrider Bedrohung": Regierungskritiker werden zu Staatsfeinden',
     description:
