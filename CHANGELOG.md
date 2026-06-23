@@ -29,6 +29,28 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 23.6.2026 – Norbert-Runde 13 (Flyer zum Buch, 23.6.)
+
+Backup-Tag: `backup-pre-norbert-runde13-20260623-200307`
+
+Eingeflossene Mail:
+
+- **Flyer** (23.6., 15:21) – Westend stellt einen Flyer zum Buch
+  kostenlos zur Verfügung. Bestellung per Mail bei gruenhagen@westendverlag.de.
+
+Umgesetzt in [`src/pages/buch.astro`](src/pages/buch.astro):
+
+- **Neuer „Flyer zum Buch"-Block** am Ende der `/buch`-Seite vor dem
+  Disclaimer. Norberts Originaltext eins zu eins übernommen, der
+  Maillink öffnet eine vorausgefüllte Bestellnachricht (Subject „Flyer
+  Der Wahrheitskomplex").
+- **Vorder- und Rückseite** als Vorschau-Bilder nebeneinander angezeigt:
+  `public/buch-flyer-vorderseite.jpg` und `public/buch-flyer-rueckseite.jpg`
+  (jeweils 315×453 px aus Norberts Mail).
+- **Flyer als PDF zum direkten Download** zusätzlich angeboten:
+  `public/buch-flyer-wahrheitskomplex.pdf` (388 KB, Original aus Norberts
+  Mail).
+
 ### 22.6.2026 – Norbert-Runde 12 (EDMO + 3 Chronik-Einträge, 21.6.)
 
 Backup-Tag: `backup-pre-norbert-runde12-20260622-120654`

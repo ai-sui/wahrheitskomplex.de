@@ -223,6 +223,77 @@ function recherchenFor(matches: string) {
       })}
     </div>
 
+    {/*
+      Flyer-Block (Norbert-Mail vom 23.6.2026). Westend stellt einen
+      Flyer zum Buch kostenlos zur Verfügung, der per Mail bestellt
+      werden kann. Vorder- und Rückseite werden hier als Vorschau
+      gezeigt, plus ein PDF zum direkten Download.
+    */}
+    <section class="mt-16 rounded-sm border border-line border-l-4 border-l-accent bg-paper-soft p-6 md:p-8">
+      <p class="meta-label text-accent mb-3">Mitnehmen, weitergeben</p>
+      <h2 class="font-serif text-2xl md:text-3xl mb-4">Flyer zum Buch</h2>
+      <div class="grid md:grid-cols-[1fr_auto] gap-8 items-start">
+        <div class="text-ink-soft leading-relaxed">
+          <p class="mb-4">
+            Wenn Sie Ihre Mitmenschen über das Buch „Der Wahrheitskomplex"
+            von Norbert Häring informieren möchten, können Sie unter der
+            Mailadresse
+            {' '}
+            <a
+              href="mailto:gruenhagen@westendverlag.de?subject=Flyer%20Der%20Wahrheitskomplex"
+              class="text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+            >
+              gruenhagen@westendverlag.de
+            </a>
+            {' '}
+            kostenlos den rechts abgebildeten Flyer beziehen. Bitte geben Sie
+            an, wie viele Exemplare Sie sinnvoll zu diesem Zweck verwenden
+            können.
+          </p>
+          <p>
+            <a
+              href={withBase('/buch-flyer-wahrheitskomplex.pdf')}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-medium text-ink-soft no-underline hover:border-accent hover:text-accent transition-colors"
+            >
+              Flyer als PDF (388 KB) ↓
+            </a>
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 md:max-w-xs">
+          <figure class="m-0">
+            <img
+              src={withBase('/buch-flyer-vorderseite.jpg')}
+              alt="Flyer „Der Wahrheitskomplex", Vorderseite"
+              width="315"
+              height="453"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto rounded-sm border border-line"
+            />
+            <figcaption class="mt-1 text-[0.65rem] uppercase tracking-wider text-muted text-center">
+              Vorderseite
+            </figcaption>
+          </figure>
+          <figure class="m-0">
+            <img
+              src={withBase('/buch-flyer-rueckseite.jpg')}
+              alt="Flyer „Der Wahrheitskomplex", Rückseite"
+              width="315"
+              height="453"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto rounded-sm border border-line"
+            />
+            <figcaption class="mt-1 text-[0.65rem] uppercase tracking-wider text-muted text-center">
+              Rückseite
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <p class="mt-16 text-sm text-muted leading-relaxed border-t border-line pt-6">
       Diese Übersicht ist eine vereinfachte Karte des Buchs — sie ersetzt
       nicht die Lektüre. Für vollständige Unterabschnitte siehe das
