@@ -383,4 +383,13 @@ export const chronik: ChronikEintrag[] = [
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/verlage-gegen-rechts/',
   },
+  {
+    date: '2026-06-26',
+    region: 'DE',
+    title: 'Landesmedienanstalt NRW droht Ben Berndt',
+    description:
+      'Die Landesmedienanstalt NRW schickt dem Podcaster Ben Berndt einen Drohbrief mit der Aufforderung, „all seine Inhalte auf die Einhaltung journalistischer Grundsätze zu prüfen". Als nächster Schritt drohen kostenpflichtige Aufforderungen zur Löschung oder Änderung von Inhalten.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/news/ben-berndt-bekommt-drohbrief-von-der-landesmedienanstalt/',
+  },
 ];

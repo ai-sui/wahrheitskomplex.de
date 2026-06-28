@@ -29,6 +29,37 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 28.6.2026 – Norbert-Runde 14 (Chronik + AAS + IFCN, 28.6.)
+
+Backup-Tag: `backup-pre-norbert-runde14-20260628-211524`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (28.6.) – Drei Kleinigkeiten zur Pflege:
+  Chronik-Ergänzung, AAS-Schlussabsatz und das angekündigte
+  Häring-Porträt zu IFCN.
+
+Umgesetzt:
+
+- **Chronik-Eintrag** 26.6.2026 DE „Landesmedienanstalt NRW droht Ben
+  Berndt". Themen Hass und Hetze + DSA & NetzDG, Häring-Link auf den
+  Tiefenartikel.
+- **AAS-Porträt** ([`src/content/actors/amadeu-antonio-stiftung.md`](src/content/actors/amadeu-antonio-stiftung.md)):
+  Letzten Absatz („Im Buch wird nicht die inhaltliche Stiftungsarbeit
+  rekonstruiert, sondern die Geometrie ...") durch Norberts neue
+  Formulierung ersetzt (Correctiv- und ARD-Faktenfinder-Personal aus
+  AAS-Umfeld, ausgeweitete Antisemitismus-Definition). Zwei
+  offensichtliche Tippfehler in Norberts Vorlage stillschweigend
+  korrigiert: „zun Beispiel" → „zum Beispiel", „Antismeitismus" →
+  „Antisemitismus".
+- **IFCN-Porträt** ([`src/content/actors/ifcn.md`](src/content/actors/ifcn.md))
+  jetzt als Volltext-Profil. `fulltext: true`, Häring-Text aus
+  `spinnen-im-netz/ifcn-2/` als Body, `haeringLink` auf die neue URL
+  umgestellt, Quellen-Liste um Härings Profil ergänzt. Damit hat IFCN
+  eine eigene Detail-Seite unter `/portraits/ifcn`. Die Akteur-Zahl
+  bleibt bei 20, das Karussell zeigt weiterhin die ersten 8 nach
+  `order`.
+
 ### 23.6.2026 – Norbert-Runde 13 (Flyer zum Buch, 23.6.)
 
 Backup-Tag: `backup-pre-norbert-runde13-20260623-200307`

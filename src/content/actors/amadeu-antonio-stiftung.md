@@ -52,9 +52,10 @@ Debatte: Aus jahrelanger Argumentation gegen „Hass im Netz" wurde 2017 das
 löschen, dokumentieren — wurden später Bausteine des EU-Digital-Services-Act
 ([DSA](/glossar#dsa)).
 
-Im Buch wird nicht die inhaltliche Stiftungsarbeit rekonstruiert, sondern
-die Geometrie: Wer sich aus überwiegend öffentlichen Mitteln finanziert,
-gleichzeitig Gesetzesvorschläge prägt, deren Vollzug wiederum bei
-staatsnahen Stellen liegt — der ist nicht „Zivilgesellschaft", sondern
-Teil eines staatlich-zivilgesellschaftlichen Hybrid-Komplexes, dessen
-Trennlinien für Außenstehende unkenntlich werden.
+Sowohl der Faktencheck-Ableger von Correctiv als auch der ARD-Faktenfinder
+starteten mit Personal aus dem nahen Umfeld der Stiftung. Die Stiftung
+hatte maßgeblichen Einfluss darauf, dass die Definition von Antisemitismus,
+wie ihn heute zum Beispiel der Verfassungsschutz verwendet, massiv
+ausgeweitet wurde, sodass auch Kritik an Personen wie Bill Gates und
+Klaus Schwab und jede Art von „Verschwörungstheorie" als Antisemitismus
+bekämpft werden kann.
