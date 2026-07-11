@@ -78,8 +78,8 @@ export const chronik: ChronikEintrag[] = [
   { date: '2017-03', region: 'DE', title: 'Heiko Maas stellt Entwurf des NetzDG vor', description: 'Verabschiedung im Juni 2017, Inkrafttreten 1. Oktober.', themen: ['DSA & NetzDG'] },
   { date: '2017-04', region: 'EU', title: 'USA und acht EU-Länder unterzeichnen Memorandum: European Centre of Excellence for Countering Hybrid Threats in Helsinki', themen: ['Ukraine & NATO'] },
   { date: '2017-04', region: 'USA', title: 'Google und Washington Post vereinbaren Kooperation gegen Fake News', themen: ['DSA & NetzDG'] },
+  { date: '2017-05', region: 'DE', title: 'Meldestelle REspect! geht an den Start', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
   { date: '2017-09', region: 'USA / EU', title: 'StratCom-DC-Konferenz des US-Militärs in Washington — mit europäischen Teilnehmern', themen: ['Ukraine & NATO'] },
-  { date: '2017', region: 'DE', title: 'Meldestelle REspect! geht an den Start', themen: ['Hass und Hetze', 'DSA & NetzDG'] },
 
   // ---------- 2018 ----------
   { date: '2018-02', region: 'USA / EU', title: 'Atlantic Council fordert Verhaltenskodex gegen Desinformation und ein Netzwerk von Faktencheckern', themen: ['DSA & NetzDG'], actorSlug: 'atlantic-council' },
@@ -262,14 +262,6 @@ export const chronik: ChronikEintrag[] = [
     thumb: '/chronik-thumbs/truth-on-stage.jpg',
   },
   {
-    date: '2026-04-15',
-    region: 'DE',
-    title: 'LG Berlin kassiert Correctivs „Masterplan"-Narrativ',
-    description: 'Correctiv darf nicht behaupten, vom Potsdamer Treffen 11/2023 bleibe ein „Masterplan zur Ausweisung deutscher Staatsbürger" zurück. Correctiv geht in Berufung.',
-    themen: ['Hass und Hetze'],
-    actorSlug: 'correctiv',
-  },
-  {
     date: '2026-04',
     region: 'USA',
     title: 'Werbekonzerne legen Kartell-Klage bei',
@@ -295,6 +287,14 @@ export const chronik: ChronikEintrag[] = [
     region: 'DE',
     title: 'VG Berlin: Weimer darf Buchladen-Betreiber nicht „Extremisten" nennen',
     themen: ['Hass und Hetze'],
+  },
+  {
+    date: '2026-04-15',
+    region: 'DE',
+    title: 'LG Berlin kassiert Correctivs „Masterplan"-Narrativ',
+    description: 'Correctiv darf nicht behaupten, vom Potsdamer Treffen 11/2023 bleibe ein „Masterplan zur Ausweisung deutscher Staatsbürger" zurück. Correctiv geht in Berufung.',
+    themen: ['Hass und Hetze'],
+    actorSlug: 'correctiv',
   },
   {
     date: '2026-05-04',
