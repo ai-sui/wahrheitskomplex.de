@@ -20,6 +20,7 @@ export type ChronikEintrag = {
   thumb?: string; // optionales Vorschaubild (z.B. /chronik-thumbs/who-cover.jpg)
   imageCredit?: string; // Bildunterschrift / Nennung (z.B. "Foto: XY (CC BY-SA 4.0)")
   imageCreditUrl?: string; // Link auf Quell-/Lizenzseite (z.B. Wikimedia-Datei)
+  featured?: boolean; // zusätzliches Auftauchen im "Neues aus dem Wahrheitskomplex"-Karussell
 };
 
 export const chronik: ChronikEintrag[] = [
@@ -260,6 +261,7 @@ export const chronik: ChronikEintrag[] = [
     actorSlug: 'correctiv',
     haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
     thumb: '/chronik-thumbs/truth-on-stage.jpg',
+    featured: true,
   },
   {
     date: '2026-04',
@@ -441,6 +443,7 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/eugh-rtdeutsch/',
     thumb: '/chronik-thumbs/eugh-rtdeutsch.jpg',
     imageCredit: 'Screenshot aus dem saarländischen Beschlagnahme-Bescheid',
+    featured: true,
   },
   {
     date: '2026-07-06',

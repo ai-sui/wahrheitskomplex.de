@@ -64,10 +64,32 @@ Umgesetzt:
   - 2026-07-06 DE: INSA-Umfrage zur Meinungsfreiheit.
 - **Duplikat**: Norberts Vorschlag „26.5.2026 Landesmedienanstalten
   Stempel" war bereits als Runde-4-Eintrag drin, nicht dupliziert.
-- **„Neues"-Vorschläge** (truth-on-stage, eugh-rtdeutsch): keinen
-  separaten Content-Typ angelegt, weil beide bereits als Chronik-
-  Einträge mit Aufmacherbild abgedeckt sind. Über die Chronik-Suche
-  auffindbar.
+- **„Neues"-Vorschläge** (truth-on-stage, eugh-rtdeutsch): zunächst nur
+  als Chronik-Einträge angelegt. Nach Ralph-Sorgfaltsprüfung nachgezogen
+  (siehe unten), damit sie wie von Norbert gewünscht im „Neues"-Karussell
+  auf der Startseite auftauchen.
+
+#### Nachschlag: Featured-Chronik-Einträge im „Neues"-Karussell
+
+Backup-Tag: `backup-pre-norbert-runde15b-20260711-234047`
+
+Norbert hatte die zwei Häring-Artikel unter „Neues aus dem Wahrheits-
+komplex" verortet, also im Karussell auf der Startseite. Die erste
+Umsetzung als reine Chronik-Einträge hatte sie nicht dorthin gebracht.
+Nachgezogen:
+
+- **Schema-Erweiterung** in [`src/data/chronik.ts`](src/data/chronik.ts):
+  Neues optionales Feld `featured: boolean` in `ChronikEintrag`.
+  Markiert Einträge, die zusätzlich im „Neues"-Karussell erscheinen
+  sollen.
+- **Startseite** ([`src/pages/index.astro`](src/pages/index.astro)):
+  Featured-Chronik-Einträge werden im „Neues"-Karussell vorne
+  angepinnt, damit sie sicher in die Top 10 fallen, unabhängig von
+  Datum. Das Chronik-Element bleibt zusätzlich im „Was seither geschah"-
+  Block sichtbar (2 unterschiedliche Kontexte, keine Doppelung im selben
+  Kontext).
+- **Anwendung**: `featured: true` bei den zwei Einträgen 2026-03-30
+  Truth-on-Stage und 2026-07-02 EuGH-RT-Deutsch.
 
 ### 28.6.2026 – Norbert-Runde 14 (Chronik + AAS + IFCN, 28.6.)
 

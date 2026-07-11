@@ -54,34 +54,50 @@ const typeLabels: Record<string, string> = {
   vortrag: 'Vortrag',
 };
 
-const newsFeed: FeedItem[] = [
-  ...medien.map((m) => ({
-    date: m.data.date,
-    badge: typeLabels[m.data.type] ?? 'Beitrag',
-    title: m.data.title,
-    source: m.data.outlet,
-    url: m.data.url,
-    thumb: m.data.youtubeId
-      ? withBase(`/yt-thumbs/${m.data.youtubeId}.jpg`)
-      : withBase(`/article-thumbs/${m.id}.jpg`),
-    paywall: m.data.paywall,
-  })),
-  // Faktenchecks gehen NICHT ins "Neues"-Karussell. Sie haben ihren
-  // eigenen Block "Faktenchecker-Check" weiter unten auf der Startseite,
-  // sonst taucht jeder Faktencheck zweimal direkt untereinander auf
-  // (Norbert-Hinweis vom 31.5.2026 zum APA-Rotoren-Check).
-  //
-  // Chronik-Einträge sind aus demselben Grund ausgeschlossen und haben
-  // ihren eigenen Block "Was seither geschah".
-];
+// Faktenchecks gehen NICHT ins "Neues"-Karussell. Sie haben ihren
+// eigenen Block "Faktenchecker-Check" weiter unten auf der Startseite,
+// sonst taucht jeder Faktencheck zweimal direkt untereinander auf
+// (Norbert-Hinweis vom 31.5.2026 zum APA-Rotoren-Check).
+//
+// Chronik-Einträge sind standardmäßig ausgeschlossen und haben ihren
+// eigenen Block "Was seither geschah". Ausnahme: mit `featured: true`
+// markierte Chronik-Einträge werden fest im "Neues"-Karussell an-
+// gepinnt (Norbert-Mail vom 10.7.2026: zwei Häring-Artikel sollten
+// prominent im "Neues"-Bereich sichtbar sein).
+const featuredChronik: FeedItem[] = chronik
+  .filter((e) => e.featured && e.haeringLink)
+  .map((e) => ({
+    date: e.date,
+    badge: 'Recherche',
+    title: e.title,
+    source: 'norberthaering.de',
+    url: e.haeringLink!,
+    thumb: e.thumb ? withBase(e.thumb) : undefined,
+  }));
 
-const recentNews = newsFeed
-  .sort((a, b) => {
-    const pad = (d: string) =>
-      d.split('-').length === 3 ? d : d.split('-').length === 2 ? `${d}-15` : `${d}-12-31`;
-    return pad(b.date).localeCompare(pad(a.date));
-  })
-  .slice(0, 10);
+const newsFeed: FeedItem[] = medien.map((m) => ({
+  date: m.data.date,
+  badge: typeLabels[m.data.type] ?? 'Beitrag',
+  title: m.data.title,
+  source: m.data.outlet,
+  url: m.data.url,
+  thumb: m.data.youtubeId
+    ? withBase(`/yt-thumbs/${m.data.youtubeId}.jpg`)
+    : withBase(`/article-thumbs/${m.id}.jpg`),
+  paywall: m.data.paywall,
+}));
+
+const pad = (d: string) =>
+  d.split('-').length === 3 ? d : d.split('-').length === 2 ? `${d}-15` : `${d}-12-31`;
+const dateDesc = (a: { date: string }, b: { date: string }) =>
+  pad(b.date).localeCompare(pad(a.date));
+
+// Featured Chronik-Einträge kommen zuerst (nach Datum sortiert), damit
+// sie garantiert im Karussell landen. Danach die neuesten Medien-Beiträge.
+const recentNews = [
+  ...featuredChronik.sort(dateDesc),
+  ...newsFeed.sort(dateDesc),
+].slice(0, 10);
 
 // --- Faktenchecks-Karussell ---
 // `order` (falls gesetzt) übersteuert das echte Datum für Sortierzwecke.
