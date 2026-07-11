@@ -152,16 +152,6 @@ export const chronik: ChronikEintrag[] = [
 
   // ---------- 2025 ----------
   { date: '2025-01', region: 'DE', title: '„Grünbuch ZMZ 4.0" zur zivil-militärischen Zusammenarbeit gegen „hybride Bedrohungslagen"', themen: ['Ukraine & NATO'] },
-  {
-    date: '2025-09-10',
-    region: 'DE',
-    title: 'Schauspiel Köln und Correctiv vereinbaren langfristige Kooperation',
-    description:
-      'Das Schauspiel Köln unter Kay Voges und Correctiv verkünden eine auf mindestens fünf Jahre angelegte Zusammenarbeit, um Correctiv-Recherchen als szenische Lesungen auf die Bühne zu bringen. Auftakt: eine positive Nachbetrachtung der „Geheimplan"-Recherche.',
-    themen: ['Hass und Hetze'],
-    actorSlug: 'correctiv',
-    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
-  },
   { date: '2025-01', region: 'USA', title: 'Facebook beendet in den USA Zusammenarbeit mit externen Faktencheckern', themen: ['DSA & NetzDG'] },
   { date: '2025-02', region: 'EU', title: 'Kommission nimmt Verhaltenskodex für Desinformation in DSA auf', themen: ['DSA & NetzDG'] },
   { date: '2025-02', region: 'USA / EU', title: 'US-Vizepräsident Vance kritisiert auf Münchner Sicherheitskonferenz fehlende Meinungsfreiheit in EU', themen: ['DSA & NetzDG'] },
@@ -174,6 +164,16 @@ export const chronik: ChronikEintrag[] = [
   { date: '2025-08', region: 'USA', title: 'Trump verbietet Banken, Konten aus politischen oder religiösen Gründen zu kündigen', themen: ['Hass und Hetze'] },
   { date: '2025-09', region: 'USA', title: 'Global Disinformation Index nimmt Schwarze Liste vom Markt', themen: ['DSA & NetzDG'] },
   { date: '2025-09', region: 'USA', title: 'YouTube lässt in den USA gesperrte „Corona-/Wahl-Desinfo"-Kanäle wieder zu', description: 'Zusammenarbeit mit externen Faktencheckern wird eingestellt.', themen: ['Pandemie', 'DSA & NetzDG'] },
+  {
+    date: '2025-09-10',
+    region: 'DE',
+    title: 'Schauspiel Köln und Correctiv vereinbaren langfristige Kooperation',
+    description:
+      'Das Schauspiel Köln unter Kay Voges und Correctiv verkünden eine auf mindestens fünf Jahre angelegte Zusammenarbeit, um Correctiv-Recherchen als szenische Lesungen auf die Bühne zu bringen. Auftakt: eine positive Nachbetrachtung der „Geheimplan"-Recherche.',
+    themen: ['Hass und Hetze'],
+    actorSlug: 'correctiv',
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
+  },
   { date: '2025-10', region: 'EU', title: 'EU-Kommission ermittelt gegen Facebook, Instagram und TikTok wegen unzureichender Datenoffenlegung', themen: ['DSA & NetzDG'] },
   { date: '2025-11', region: 'EU', title: 'EU-Kommission stellt „Europäischen Schutzschild für die Demokratie" vor', themen: ['DSA & NetzDG'] },
   { date: '2025-12', region: 'DE', title: 'Hessen stutzt Meldestelle „HessenGegenHetze" zurück', description: 'Im Februar 2026 werden Name und Begriff „Meldestelle" von einschlägigen Webseiten getilgt.', themen: ['Hass und Hetze'] },
@@ -251,6 +251,17 @@ export const chronik: ChronikEintrag[] = [
     themen: ['Wahlen', 'Ukraine & NATO'],
   },
   {
+    date: '2026-03-30',
+    region: 'EU',
+    title: 'Schauspiel Köln gibt EU-gefördertes europäisches Journalismus-Theater-Projekt auf Basis der Kooperation mit Correctiv bekannt',
+    description:
+      'Schauspiel Köln und die EU-finanzierte European Theatre Convention (ETC) verkünden das EU-geförderte Projekt Truth on Stage (TRUST). Nach dem erklärten Vorbild der Geheimplan-Bühnenstücke sollen neun große europäische Theater investigativjournalistische Recherchen auf die Bühne bringen.',
+    themen: ['Hass und Hetze'],
+    actorSlug: 'correctiv',
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
+    thumb: '/chronik-thumbs/truth-on-stage.jpg',
+  },
+  {
     date: '2026-04-15',
     region: 'DE',
     title: 'LG Berlin kassiert Correctivs „Masterplan"-Narrativ',
@@ -302,6 +313,15 @@ export const chronik: ChronikEintrag[] = [
     sourceLink: 'https://www.welt.de/debatte/plus69fd75d87e3ff373d429dbd6/kulturstaatsminister-wenn-youtube-das-neue-fernsehen-ist-braucht-es-neue-regeln.html',
   },
   {
+    date: '2026-05-15',
+    region: 'DE',
+    title: 'Neudefinition von „hybrider Bedrohung": Regierungskritiker werden zu Staatsfeinden',
+    description:
+      'Die Bundesregierung streicht das Erfordernis ausländischer Einflussnahme aus der Definition von „Desinformation als hybride Bedrohung".',
+    themen: ['Ukraine & NATO', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/hybrider-krieg/',
+  },
+  {
     date: '2026-05-17',
     region: 'INT',
     title: 'WHO-Kommission fordert „Klima-Gesundheitsnotstand"',
@@ -318,6 +338,15 @@ export const chronik: ChronikEintrag[] = [
       'Ein Untersuchungsbericht der kanadischen Armee belegt: Mehrere Armee-Teams durchforsteten 2020 soziale Medien und erstellten Stimmungsberichte zur Bevölkerung und Opposition in Sachen Covid-19. Militärexperte Wesley Wark (CBC News): Das Militär wollte Möglichkeiten erproben, das Denken der Bevölkerung zu beeinflussen, die Unterstützung für das Militär zu steigern und russischen Informationsaktivitäten zu begegnen.',
     themen: ['Pandemie', 'Ukraine & NATO'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/kanadas-armee-covid/',
+  },
+  {
+    date: '2026-05-23',
+    region: 'DE',
+    title: 'Verfassungsschutz deklariert Kritik an Mächtigen als antisemitisch',
+    description:
+      'Das Bundesamt für Verfassungsschutz veröffentlicht eine Broschüre zu „Antisemitische Codes und Chiffren", welche die Definition von Antisemitismus massiv auf Kritik an mächtigen, nichtjüdischen Menschen und Institutionen ausweitet.',
+    themen: ['Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/bfv-antisemitismus/',
   },
   {
     date: '2026-05-26',
@@ -338,24 +367,6 @@ export const chronik: ChronikEintrag[] = [
       '32 frühere Westend-Autoren aus dem sich linksliberal nennenden Milieu kündigen dem Verlag in einem offenen Brief die Zusammenarbeit auf, weil er angeblich nach rechts driftet. Westend hat Härings „Wahrheitskomplex" verlegt.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/westend-offener-brief/',
-  },
-  {
-    date: '2026-05-15',
-    region: 'DE',
-    title: 'Neudefinition von „hybrider Bedrohung": Regierungskritiker werden zu Staatsfeinden',
-    description:
-      'Die Bundesregierung streicht das Erfordernis ausländischer Einflussnahme aus der Definition von „Desinformation als hybride Bedrohung".',
-    themen: ['Ukraine & NATO', 'DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/propaganda-zensur/hybrider-krieg/',
-  },
-  {
-    date: '2026-05-23',
-    region: 'DE',
-    title: 'Verfassungsschutz deklariert Kritik an Mächtigen als antisemitisch',
-    description:
-      'Das Bundesamt für Verfassungsschutz veröffentlicht eine Broschüre zu „Antisemitische Codes und Chiffren", welche die Definition von Antisemitismus massiv auf Kritik an mächtigen, nichtjüdischen Menschen und Institutionen ausweitet.',
-    themen: ['Hass und Hetze'],
-    haeringLink: 'https://norberthaering.de/propaganda-zensur/bfv-antisemitismus/',
   },
   {
     date: '2026-05-31',
@@ -394,26 +405,6 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/verlage-gegen-rechts/',
   },
   {
-    date: '2026-06-26',
-    region: 'DE',
-    title: 'Landesmedienanstalt NRW droht Ben Berndt',
-    description:
-      'Die Landesmedienanstalt NRW schickt dem Podcaster Ben Berndt einen Drohbrief mit der Aufforderung, „all seine Inhalte auf die Einhaltung journalistischer Grundsätze zu prüfen". Als nächster Schritt drohen kostenpflichtige Aufforderungen zur Löschung oder Änderung von Inhalten.',
-    themen: ['Hass und Hetze', 'DSA & NetzDG'],
-    haeringLink: 'https://norberthaering.de/news/ben-berndt-bekommt-drohbrief-von-der-landesmedienanstalt/',
-  },
-  {
-    date: '2026-03-30',
-    region: 'EU',
-    title: 'Schauspiel Köln gibt EU-gefördertes europäisches Journalismus-Theater-Projekt auf Basis der Kooperation mit Correctiv bekannt',
-    description:
-      'Schauspiel Köln und die EU-finanzierte European Theatre Convention (ETC) verkünden das EU-geförderte Projekt Truth on Stage (TRUST). Nach dem erklärten Vorbild der Geheimplan-Bühnenstücke sollen neun große europäische Theater investigativjournalistische Recherchen auf die Bühne bringen.',
-    themen: ['Hass und Hetze'],
-    actorSlug: 'correctiv',
-    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
-    thumb: '/chronik-thumbs/truth-on-stage.jpg',
-  },
-  {
     date: '2026-06-18',
     region: 'INT',
     title: 'Faktencheckerbranche beklagt auf der GlobalFact 2026 ihren Niedergang',
@@ -430,6 +421,15 @@ export const chronik: ChronikEintrag[] = [
       'Die britische Regierung will digitalen Plattformen vorschreiben, öffentlich-rechtliche und andere „Public-Service"-Inhalte bevorzugt auszuspielen und ihre Auffindbarkeit gegenüber anderen Inhalten zu verbessern.',
     themen: ['DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/public-value/',
+  },
+  {
+    date: '2026-06-26',
+    region: 'DE',
+    title: 'Landesmedienanstalt NRW droht Ben Berndt',
+    description:
+      'Die Landesmedienanstalt NRW schickt dem Podcaster Ben Berndt einen Drohbrief mit der Aufforderung, „all seine Inhalte auf die Einhaltung journalistischer Grundsätze zu prüfen". Als nächster Schritt drohen kostenpflichtige Aufforderungen zur Löschung oder Änderung von Inhalten.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/news/ben-berndt-bekommt-drohbrief-von-der-landesmedienanstalt/',
   },
   {
     date: '2026-07-02',
