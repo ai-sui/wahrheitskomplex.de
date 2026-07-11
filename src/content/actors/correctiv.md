@@ -46,6 +46,8 @@ Seit SPD-Minister Heiko Maas Facebook bedrängte, mit Faktencheckern zusammenzua
 
 Besonders bekannt und wirkmächtig wurde Correctiv durch die Anfang 2024 veröffentlichte Recherche „Geheimplan gegen Deutschland", in deren Nachgang es wochenlang große Demonstrationen gegen „Rechts" in vielen deutschen Städten gab. Die Kernaussagen dieser Correctiv-Veröffentlichung, von einem rechten Treffen in Potsdam bleibe „ein Masterplan zur Ausweisung von deutschen Staatsbürgern" zurück und Teilnehmer Martin Sellner habe dort eine „Ausbürgerungsidee" geäußert, hat das Landgericht Berlin Correctiv im März 2026 untersagt.
 
+Wenige Tage nach Veröffentlichung der Geheimplan-Recherche brachte das Berliner Ensemble unter Kay Voges diese als szenische Lesung auf die Bühne und via Aufzeichnung in die digitalen Medien. Im September 2025 verkündeten das Schauspiel Köln unter Voges und Correctiv eine auf mindestens fünf Jahre angelegte Zusammenarbeit, um Correctiv-Recherchen auf die Bühne zu bringen. Den Auftakt machte das Schauspiel mit einer (positiven) Nachbetrachtung der Geheimplan-Recherche im Lichte der bis dahin ergangenen Gerichtsurteile. Ende März 2026 verkündeten Schauspiel Köln und die EU-finanzierte European Theatre Convention (ETC) als Projektleiter das EU-geförderte Projekt Truth on Stage (TRUST). Nach dem erklärten Vorbild der Geheimplan-Bühnenstücke wollen in dessen Rahmen neun große europäische Theater investigativjournalistische Recherchen auf die Bühne bringen.
+
 ## Steckbrief
 
 - **Gegründet**: 2014

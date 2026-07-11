@@ -29,6 +29,46 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 11.7.2026 – Norbert-Runde 15 (Chronik-Paket + Correctiv, 10.7.)
+
+Backup-Tag: `backup-pre-norbert-runde15-20260711-225037`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex.de** (10.7., 15:30) – Norberts gebündeltes Update
+  mit Chronik-Ergänzungen, Correctiv-Porträt-Ergänzung und zwei
+  Häring-Artikeln, die er im „Neues"-Bereich sehen wollte.
+
+Umgesetzt:
+
+- **Correctiv-Porträt** ([`src/content/actors/correctiv.md`](src/content/actors/correctiv.md)):
+  Neuer Absatz zwischen Geheimplan-Absatz und Steckbrief eingefügt.
+  Er beschreibt die Bühnen-Nachverwertung durch Berliner Ensemble und
+  Schauspiel Köln (Kay Voges), die 5-Jahres-Kooperation und das
+  EU-geförderte Truth-on-Stage-Projekt der European Theatre Convention.
+  Ein fehlendes Komma („Zusammenarbeit um" → „Zusammenarbeit, um") in
+  Norberts Vorlage stillschweigend ergänzt.
+- **Chronik**: sechs neue Einträge in [`src/data/chronik.ts`](src/data/chronik.ts):
+  - 2025-09-10 DE: Schauspiel Köln und Correctiv vereinbaren
+    langfristige Kooperation.
+  - 2026-03-30 EU: Truth on Stage (TRUST), EU-gefördertes
+    Journalismus-Theater-Projekt vorgestellt. Mit Thumb aus Härings
+    Aufmacher-Bild.
+  - 2026-06-18 INT: Faktencheckerbranche beklagt auf der GlobalFact
+    2026 ihren Niedergang.
+  - 2026-06-23 UK: Britische Regierung stellt Pläne für verpflichtende
+    Priorisierung von Public-Service-Medien vor.
+  - 2026-07-02 EU: EuGH erklärt gelegentliche Weiterverbreitung von
+    RT-Beiträgen durch Privatpersonen zur Straftat. Thumb aus Norberts
+    Anhang (Saarland-Beschlagnahme-Screenshot).
+  - 2026-07-06 DE: INSA-Umfrage zur Meinungsfreiheit.
+- **Duplikat**: Norberts Vorschlag „26.5.2026 Landesmedienanstalten
+  Stempel" war bereits als Runde-4-Eintrag drin, nicht dupliziert.
+- **„Neues"-Vorschläge** (truth-on-stage, eugh-rtdeutsch): keinen
+  separaten Content-Typ angelegt, weil beide bereits als Chronik-
+  Einträge mit Aufmacherbild abgedeckt sind. Über die Chronik-Suche
+  auffindbar.
+
 ### 28.6.2026 – Norbert-Runde 14 (Chronik + AAS + IFCN, 28.6.)
 
 Backup-Tag: `backup-pre-norbert-runde14-20260628-211524`

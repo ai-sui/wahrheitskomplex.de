@@ -152,6 +152,16 @@ export const chronik: ChronikEintrag[] = [
 
   // ---------- 2025 ----------
   { date: '2025-01', region: 'DE', title: '„Grünbuch ZMZ 4.0" zur zivil-militärischen Zusammenarbeit gegen „hybride Bedrohungslagen"', themen: ['Ukraine & NATO'] },
+  {
+    date: '2025-09-10',
+    region: 'DE',
+    title: 'Schauspiel Köln und Correctiv vereinbaren langfristige Kooperation',
+    description:
+      'Das Schauspiel Köln unter Kay Voges und Correctiv verkünden eine auf mindestens fünf Jahre angelegte Zusammenarbeit, um Correctiv-Recherchen als szenische Lesungen auf die Bühne zu bringen. Auftakt: eine positive Nachbetrachtung der „Geheimplan"-Recherche.',
+    themen: ['Hass und Hetze'],
+    actorSlug: 'correctiv',
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
+  },
   { date: '2025-01', region: 'USA', title: 'Facebook beendet in den USA Zusammenarbeit mit externen Faktencheckern', themen: ['DSA & NetzDG'] },
   { date: '2025-02', region: 'EU', title: 'Kommission nimmt Verhaltenskodex für Desinformation in DSA auf', themen: ['DSA & NetzDG'] },
   { date: '2025-02', region: 'USA / EU', title: 'US-Vizepräsident Vance kritisiert auf Münchner Sicherheitskonferenz fehlende Meinungsfreiheit in EU', themen: ['DSA & NetzDG'] },
@@ -391,5 +401,54 @@ export const chronik: ChronikEintrag[] = [
       'Die Landesmedienanstalt NRW schickt dem Podcaster Ben Berndt einen Drohbrief mit der Aufforderung, „all seine Inhalte auf die Einhaltung journalistischer Grundsätze zu prüfen". Als nächster Schritt drohen kostenpflichtige Aufforderungen zur Löschung oder Änderung von Inhalten.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/news/ben-berndt-bekommt-drohbrief-von-der-landesmedienanstalt/',
+  },
+  {
+    date: '2026-03-30',
+    region: 'EU',
+    title: 'Schauspiel Köln gibt EU-gefördertes europäisches Journalismus-Theater-Projekt auf Basis der Kooperation mit Correctiv bekannt',
+    description:
+      'Schauspiel Köln und die EU-finanzierte European Theatre Convention (ETC) verkünden das EU-geförderte Projekt Truth on Stage (TRUST). Nach dem erklärten Vorbild der Geheimplan-Bühnenstücke sollen neun große europäische Theater investigativjournalistische Recherchen auf die Bühne bringen.',
+    themen: ['Hass und Hetze'],
+    actorSlug: 'correctiv',
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/truth-on-stage/',
+    thumb: '/chronik-thumbs/truth-on-stage.jpg',
+  },
+  {
+    date: '2026-06-18',
+    region: 'INT',
+    title: 'Faktencheckerbranche beklagt auf der GlobalFact 2026 ihren Niedergang',
+    description:
+      'Auf der GlobalFact-Konferenz des International Fact-Checking Network dokumentiert die Branche selbst ihren Bedeutungsverlust: Meta hat das externe Faktencheck-Programm in den USA beendet, Google fährt die Förderung zurück, und die Zahl der Mitgliedsorganisationen stagniert.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/news/globalfact-2026/',
+  },
+  {
+    date: '2026-06-23',
+    region: 'UK',
+    title: 'Britische Regierung stellt Pläne für verpflichtende Priorisierung von Public-Service-Medien vor',
+    description:
+      'Die britische Regierung will digitalen Plattformen vorschreiben, öffentlich-rechtliche und andere „Public-Service"-Inhalte bevorzugt auszuspielen und ihre Auffindbarkeit gegenüber anderen Inhalten zu verbessern.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/public-value/',
+  },
+  {
+    date: '2026-07-02',
+    region: 'EU',
+    title: 'Europäischer Gerichtshof erklärt selbst gelegentliche Weiterverbreitung von RT-Beiträgen durch Privatpersonen zur Straftat',
+    description:
+      'Der EuGH entscheidet: Privatpersonen, die Inhalte des sanktionierten Senders RT Deutsch weiterverbreiten, können auch bei nicht-kommerzieller Nutzung ohne fremden Einfluss strafrechtlich verfolgt werden. Das Gericht stellt die Wirksamkeit der Sanktionen über den Schutz der Meinungsfreiheit.',
+    themen: ['Ukraine & NATO', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/eugh-rtdeutsch/',
+    thumb: '/chronik-thumbs/eugh-rtdeutsch.jpg',
+    imageCredit: 'Screenshot aus dem saarländischen Beschlagnahme-Bescheid',
+  },
+  {
+    date: '2026-07-06',
+    region: 'DE',
+    title: 'Große Mehrheit der Deutschen macht sich Sorgen um die Meinungsfreiheit',
+    description:
+      'Eine INSA-Umfrage im Auftrag von Häring ergibt: Die Mehrheit der Befragten sieht die Meinungsfreiheit in Deutschland in Gefahr. Über alle Alters- und Bildungsgruppen hinweg zeigen sich hohe Zustimmungswerte zu dieser Einschätzung.',
+    themen: ['DSA & NetzDG', 'Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/news/insa-meinungsfreiheit/',
   },
 ];

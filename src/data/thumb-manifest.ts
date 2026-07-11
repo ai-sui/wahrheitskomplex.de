@@ -37,7 +37,9 @@ export const thumbManifest = {
     "jmKAuP1E2jA.jpg"
   ],
   "chronikThumbs": [
+    "eugh-rtdeutsch.jpg",
     "landesmedienanstalten-stempel.jpg",
+    "truth-on-stage.jpg",
     "westend-offener-brief.jpg",
     "who-climate-health.jpg"
   ]
