@@ -446,6 +446,15 @@ export const chronik: ChronikEintrag[] = [
     featured: true,
   },
   {
+    date: '2026-07-05',
+    region: 'DE',
+    title:
+      'Gesetz zur Nachrichtendienstreform: Mit BND und Verfassungsschutz gegen aufmüpfige Publizisten und Parteien',
+    themen: ['DSA & NetzDG', 'Hass und Hetze'],
+    haeringLink:
+      'https://norberthaering.de/propaganda-zensur/nachrichtendiensreform/',
+  },
+  {
     date: '2026-07-06',
     region: 'DE',
     title: 'Große Mehrheit der Deutschen macht sich Sorgen um die Meinungsfreiheit',

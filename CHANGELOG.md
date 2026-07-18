@@ -29,6 +29,35 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 18.7.2026 – Norbert-Runde 16 (Chronik + Stöcker-dTeam, 18.7.)
+
+Backup-Tag: `backup-pre-norbert-runde4-20260718-100710`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (18.7., 10:01) – zwei Ergänzungen vor Norberts
+  Abfahrt Richtung Chiemgau: ein Chronik-Eintrag zur
+  Nachrichtendienstreform und ein Faktenchecker-Check zur
+  Spiegel/FAZ/t-online-Serie zum dTeam.
+
+Umgesetzt:
+
+- **Chronik**
+  - Neuer Eintrag 5.7.2026: „Gesetz zur Nachrichtendienstreform: Mit
+    BND und Verfassungsschutz gegen aufmüpfige Publizisten und
+    Parteien". Themen: DSA & NetzDG, Hass und Hetze. Häring-Link auf
+    den Tiefenartikel.
+- **Faktenchecker-Check**
+  - Neue Karte „Spiegel, FAZ und t-online betätigen sich als heimliche
+    Verkündungsorgane der Geheimdienste" (13.7.2026). Vorspann aus
+    Norberts Zusammenfassung, Themen: Ukraine & NATO, Wahlen.
+    Faktenchecker-Feld: „Spiegel / FAZ / t-online". Kein Aufmacherbild
+    angehängt, Karte nutzt bis auf Weiteres den typografischen
+    Fallback.
+
+Suchindex ist mit beiden Einträgen automatisch bestückt
+(Build-Output verifiziert).
+
 ### 11.7.2026 – Norbert-Runde 15 (Chronik-Paket + Correctiv, 10.7.)
 
 Backup-Tag: `backup-pre-norbert-runde15-20260711-225037`
