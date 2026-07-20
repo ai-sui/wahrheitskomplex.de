@@ -29,6 +29,24 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 20.7.2026 – Runde 16 Nachschlag (Aufmacherbild dTeam)
+
+Backup-Tag: `backup-pre-norbert-runde17-20260720-222636`
+
+Eingeflossene Mail:
+
+- **Re: Wahrheitskomplex** (20.7., 10:12) – Norbert schickt vom
+  Chiemsee ein Bildvorschlag als Aufmacher für die dTeam-Karte
+  („Stöcker square.png"), plus Link zum Original-Spiegel-Artikel
+  als Fallback.
+
+Umgesetzt:
+
+- Bild als `public/faktencheck-thumbs/spiegel-stoecker-dteam.jpg`
+  eingebaut (656×447, wird durch den 16:9-Container mit
+  `object-cover` leicht zugeschnitten). `thumbOverride` in der
+  Karte explizit gesetzt.
+
 ### 18.7.2026 – Norbert-Runde 16 (Chronik + Stöcker-dTeam, 18.7.)
 
 Backup-Tag: `backup-pre-norbert-runde4-20260718-100710`

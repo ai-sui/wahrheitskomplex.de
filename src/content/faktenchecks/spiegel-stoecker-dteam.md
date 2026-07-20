@@ -13,6 +13,7 @@ summary: >-
   wahrscheinliche Tarneinheiten von Militärs oder Geheimdiensten
   lesen, die die Landtagswahlen beeinflussen wollen.
 url: "https://norberthaering.de/propaganda-zensur/christian-stoecker-dteam/"
+thumbOverride: "/faktencheck-thumbs/spiegel-stoecker-dteam.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---
