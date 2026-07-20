@@ -6,8 +6,9 @@ themen:
   - "Ukraine & NATO"
   - "Wahlen"
 summary: >-
-  In einer Serie von Kolumnen und Berichten beschreiben Spiegel, FAZ
-  und t-online angebliche Aktivitäten russischer Botnetze zur
+  In einer Serie von Kolumnen und Berichten (Christian Stöcker im
+  Spiegel, dazu FAZ und t-online) beschreiben große
+  Mainstream-Medien angebliche Aktivitäten russischer Botnetze zur
   Bewerbung von AfD und BSW. Die Quellen (unter anderem das obskure
   „dTeam") sind im Netz kaum auffindbar und lassen sich als
   wahrscheinliche Tarneinheiten von Militärs oder Geheimdiensten
