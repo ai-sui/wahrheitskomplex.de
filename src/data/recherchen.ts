@@ -130,7 +130,7 @@ export const recherchen: Recherche[] = [
     mainstream:
       'Polarisierungs-Debatten enden meist mit dem Appell, „im Gespräch zu bleiben" oder Algorithmen schuld zu geben.',
     recherche:
-      'Häring plädiert für drei Hebel im Alltag: Bargeld benutzen, statt sich auf digitale Spuren zu verlassen; lokale, analoge Strukturen pflegen, in denen man Nachbarn unabhängig vom politischen Lager begegnet; Quellen jenseits der lizenzierten Faktenchecker prüfen, statt fremde Etikettierungen zu übernehmen. Das verschiebt die Aufmerksamkeit zurück auf konkrete Macht und weg vom Streit über Identitäten.',
+      'Häring plädiert für drei Hebel im Alltag: Bargeld benutzen, statt digitale Spuren zu hinterlassen; lokale, analoge Strukturen pflegen, in denen man Nachbarn unabhängig vom politischen Lager begegnet; Quellen jenseits der lizenzierten Faktenchecker prüfen, statt fremde Etikettierungen zu übernehmen. Das verschiebt die Aufmerksamkeit zurück auf konkrete Macht und weg vom Streit über Identitäten.',
     quelle: 'Buch „Der Wahrheitskomplex", Kap. 6',
     buchKapitel: 'Kapitel 6',
   },

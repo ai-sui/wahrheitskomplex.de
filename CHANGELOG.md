@@ -29,6 +29,29 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 28.7.2026 – Leser-Korrektur (Bargeld-Satz)
+
+Backup-Tag: `backup-pre-thomas-seng-fix-20260728-205132`
+
+Eingeflossene Mail:
+
+- **Fwd: Wk** (28.7., 20:46) – Norbert leitet eine Leser-Mail von
+  Thomas Seng weiter: unter /recherchen in der Kap.-6-Frage zur
+  Teile-und-herrsche-Strategie stand ein sprachlich verunglückter
+  Satz.
+
+Umgesetzt:
+
+- `src/data/recherchen.ts`, Recherche
+  `teile-und-herrsche-gegenmassnahmen`: erster Hebel korrigiert.
+  Vorher: „Bargeld benutzen, statt sich auf digitale Spuren zu
+  verlassen". Neu: „Bargeld benutzen, statt digitale Spuren zu
+  hinterlassen." Fehler stammt aus meiner Runde-3-Formulierung
+  vom 25.5.
+
+Suchindex wird beim Build automatisch aktualisiert (Snippet
+verifiziert).
+
 ### 20.7.2026 – Runde 16 Nachschlag (Aufmacherbild dTeam)
 
 Backup-Tag: `backup-pre-norbert-runde17-20260720-222636`
