@@ -33,22 +33,37 @@ export const GET: APIRoute = async () => {
 
   const index: SearchEntry[] = [
     // ----- Akteure (Volltext + Stubs) -----
-    ...actors.map<SearchEntry>((a) => ({
-      type: 'akteur',
-      title: a.data.name,
-      snippet: [a.data.kurzbeschreibung, a.data.kernkritik]
-        .filter(Boolean)
-        .join(' '),
-      // Volltext-Profile haben eigene Detail-Seite, Stubs verweisen auf
-      // Härings Tiefenartikel (oder als Fallback auf das Atlas-Grid).
-      url: a.data.fulltext
-        ? `/portraits/${a.id}`
-        : (a.data.haeringLink ?? `/portraits#${a.id}`),
-      meta:
-        `${a.data.kategorie} · ${a.data.land}` +
-        (a.data.fulltext ? '' : ' · Stub'),
-      tags: a.data.themen,
-    })),
+    // Bei Volltext-Portraets fliesst zusaetzlich der rohe Markdown-Body
+    // ins Snippet, sonst waeren Detail-Inhalte (Steckbrief, Statistiken,
+    // Zitate) ueber die Suche unsichtbar. Regel aus CLAUDE.md: alles,
+    // was gerendert wird, gehoert in den Index. Markdown-Klammern und
+    // Links werden aus dem Snippet gestrippt, damit die Highlight-
+    // Funktion sauber greift.
+    ...actors.map<SearchEntry>((a) => {
+      const bodyText = a.data.fulltext
+        ? (a.body ?? '')
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // [text](url) -> text
+            .replace(/[#*_`>-]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim()
+        : '';
+      return {
+        type: 'akteur',
+        title: a.data.name,
+        snippet: [a.data.kurzbeschreibung, a.data.kernkritik, bodyText]
+          .filter(Boolean)
+          .join(' '),
+        // Volltext-Profile haben eigene Detail-Seite, Stubs verweisen auf
+        // Härings Tiefenartikel (oder als Fallback auf das Atlas-Grid).
+        url: a.data.fulltext
+          ? `/portraits/${a.id}`
+          : (a.data.haeringLink ?? `/portraits#${a.id}`),
+        meta:
+          `${a.data.kategorie} · ${a.data.land}` +
+          (a.data.fulltext ? '' : ' · Stub'),
+        tags: a.data.themen,
+      };
+    }),
 
     // ----- Faktenchecks -----
     // Wichtig: sowohl die Drei-Block-Felder (alte Form) als auch das

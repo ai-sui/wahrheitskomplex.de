@@ -29,6 +29,44 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 29.7.2026 – Norbert-Runde 17 (REspect-Porträt, 28.7.)
+
+Backup-Tag: `backup-pre-respect-portraet-20260729-061756`
+
+Eingeflossene Mail:
+
+- **Respect im netz** (28.7., 22:19) – Norbert schickt das komplette
+  Volltext-Porträt für die Meldestelle „REspect! Im Netz". Auf
+  wahrheitskomplex.de stand die Karte bisher als Stub mit „Profil
+  folgt".
+
+Umgesetzt:
+
+- `src/content/actors/respect.md`
+  - Name auf „REspect! Im Netz" gesetzt (Norberts Schreibweise mit
+    großem „E").
+  - Volltext-Body eingebaut (Norberts HTML zu Markdown konvertiert,
+    Steckbrief-Liste, Melde- und Löschbitten-Statistiken, Trusted-
+    Flagger-Kanal, Leitfaden-Depublizierung).
+  - `fulltext: true`.
+  - Kernkritik, kurzbeschreibung, finanzierung und reichweite an
+    Norberts Aussagen angepasst (Task-Force, Verfassungsschutz,
+    Jugendstiftung Baden-Württemberg, Bundesprogramm „Demokratie
+    Leben!" plus Bayerische Staatsregierung).
+  - haeringLink auf
+    `https://norberthaering.de/spinnen-im-netz/respect/`.
+- `src/pages/search-index.json.ts`
+  - Struktureller Fix: bei Akteuren mit `fulltext: true` fließt jetzt
+    zusätzlich der rohe Markdown-Body ins Snippet. Ohne diesen Fix
+    wären Detail-Inhalte (Trusted Flagger, Statistiken, Zitate) über
+    die Site-Suche unsichtbar geblieben. Wirkt rückwirkend auch für
+    Atlantic Council, ISD, EDMO, SMC, Amadeu Antonio, Correctiv,
+    dpa-Faktencheck und Internews.
+
+Verifikation im Build-Output: Suche nach „REspect", „Trusted Flagger",
+„Baden-Württemberg", „Jugendstiftung", „Task-Force", „Löschbitten"
+und „Phänomenbereichen" liefert jetzt den korrekten Treffer.
+
 ### 28.7.2026 – Leser-Korrektur (Bargeld-Satz)
 
 Backup-Tag: `backup-pre-thomas-seng-fix-20260728-205132`
