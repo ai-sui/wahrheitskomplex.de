@@ -29,6 +29,27 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 31.7.2026 – Chronik-Nachschlag Xenia Fjodorowa
+
+Backup-Tag: `backup-pre-xenia-fjodorowa-20260731-165951`
+
+Eingeflossene Mail:
+
+- **Chronik** (31.7., 15:13) – Norbert schickt einen weiteren
+  Chronik-Eintrag: Frankreichs Regierung weist die russische
+  Journalistin Xenia Fjodorowa wegen russlandfreundlicher
+  Berichterstattung des Landes.
+
+Umgesetzt:
+
+- Chronik-Eintrag `2026-07-31`, Region FR, Themen „Ukraine & NATO".
+  Titel und Kurzbeschreibung wörtlich nach Norberts Mail. Häring-
+  Link auf den Tiefenartikel. Datum aus Norberts Blog übernommen
+  (Beitrag ist vom 31.7.2026).
+
+Suchindex trifft „Fjodorowa", „Xenia" und „Ausweisung"
+(Build-Output verifiziert).
+
 ### 31.7.2026 – Leser-Korrektur (Komma ISD-Steckbrief)
 
 Backup-Tag: `backup-pre-isd-komma-fix-20260731-093603`

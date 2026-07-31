@@ -463,4 +463,14 @@ export const chronik: ChronikEintrag[] = [
     themen: ['DSA & NetzDG', 'Hass und Hetze'],
     haeringLink: 'https://norberthaering.de/news/insa-meinungsfreiheit/',
   },
+  {
+    date: '2026-07-31',
+    region: 'FR',
+    title:
+      'Frankreich sieht sich durch russische Journalistin bedroht und weist sie aus',
+    description:
+      'Frankreichs Regierung weist die russische Journalistin Xenia Fjodorowa wegen russlandfreundlicher Berichterstattung des Landes.',
+    themen: ['Ukraine & NATO'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/xenia-fjodorowa/',
+  },
 ];
