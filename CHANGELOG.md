@@ -29,6 +29,23 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 31.7.2026 – Leser-Korrektur (Komma ISD-Steckbrief)
+
+Backup-Tag: `backup-pre-isd-komma-fix-20260731-093603`
+
+Eingeflossene Mail:
+
+- **Kleiner Fehler** (30.7., 21:09) – Norbert leitet erneut eine
+  Leser-Mail von Thomas Seng weiter: im ISD-Porträt fehlt im
+  Steckbrief-Absatz zu Havlicek ein Komma zwischen „NewsGuard" und
+  „Global Coalition on Internet Safety".
+
+Umgesetzt:
+
+- `src/content/actors/institute-for-strategic-dialogue.md`: Komma
+  zwischen „NewsGuard" und „Global Coalition on Internet Safety des
+  World Economic Forum" ergänzt. Ansonsten unverändert.
+
 ### 29.7.2026 – Norbert-Runde 17 (REspect-Porträt, 28.7.)
 
 Backup-Tag: `backup-pre-respect-portraet-20260729-061756`
