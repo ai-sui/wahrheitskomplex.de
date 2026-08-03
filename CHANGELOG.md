@@ -29,6 +29,27 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 3.8.2026 – SEO-Meta /faktenchecks dynamisch
+
+Backup-Tag: `backup-pre-faktenchecks-meta-20260803-105850`
+
+Auslöser:
+
+- Ralph 3.8.: Screenshot einer Link-Vorschau zeigt widersprüchliche
+  Zahlen. Titel „10 dokumentierte Fehlgriffe", Description „18 Fälle".
+  Beide waren fest verdrahtet und veraltet.
+
+Umgesetzt:
+
+- `src/pages/faktenchecks.astro`: `title` und `description` beziehen
+  die Anzahl jetzt aus `faktenchecks.length`. Beide Felder bleiben
+  damit automatisch konsistent, wenn Karten dazukommen oder wegfallen.
+  Nebenbei ausgemistet: „Verdict" (Anglizismus) raus, statt „Aktenlage"
+  jetzt „Vorspann und Quellen" — deckt das aktuelle Karten-Layout.
+
+Verifikation im Build: aktuelle Zahl 14 erscheint konsistent in
+`<title>` und `<meta name="description">`.
+
 ### 31.7.2026 – Chronik-Nachschlag Xenia Fjodorowa
 
 Backup-Tag: `backup-pre-xenia-fjodorowa-20260731-165951`

@@ -61,8 +61,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Faktenchecker-Check — 10 dokumentierte Fehlgriffe"
-  description="18 Fälle, in denen Faktenchecker deutscher und internationaler Medien danebenlagen — recherchiert und dokumentiert von Norbert Häring. Mit Verdict, Aktenlage und Quellen."
+  title={`Faktenchecker-Check: ${faktenchecks.length} dokumentierte Fehlgriffe`}
+  description={`${faktenchecks.length} Fälle, in denen Faktenchecker deutscher und internationaler Medien danebenlagen. Recherchiert und dokumentiert von Norbert Häring, aufbereitet mit Vorspann, Quellen und Verweis auf den Tiefenartikel.`}
   jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <section class="container-page py-12 md:py-16">
