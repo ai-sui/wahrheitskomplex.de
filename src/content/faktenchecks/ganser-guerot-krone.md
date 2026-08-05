@@ -10,6 +10,9 @@ summary: >-
   Dilettantismus berüchtigte Faktenchecker Siggelkow darf die beiden
   für die ARD als fachfremde Ignoranten entlarven.
 url: "https://norberthaering.de/propaganda-zensur/ganser-guerot-krone/"
+thumbOverride: "/faktencheck-thumbs/ganser-guerot-krone.jpg"
+credit: "Foto: Dirk Wächter, CC BY-SA 4.0"
+creditUrl: "https://commons.wikimedia.org/wiki/File:Dr._Daniele_Ganser_(cropped)_JD.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

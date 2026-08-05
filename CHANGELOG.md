@@ -29,6 +29,42 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 5.8.2026 – Wikimedia-Bilder für 6 Karten
+
+Backup-Tag: `backup-pre-wikimedia-thumbs-20260805-202642`
+
+Auslöser:
+
+- Nach dem Copyright-Cleanup fehlten 9 Karten die Aufmacher. Ralph
+  wollte einen Weg, der attraktiv aussieht ohne Konto oder Kosten:
+  Wikimedia Commons unter freier Lizenz mit Fotograf-Attribution.
+
+Umgesetzt:
+
+- **6 Karten mit Wikimedia-Bildern bebildert**:
+  ard-faktenfinder-merz (Steffen Prößdorf, CC BY-SA 4.0),
+  pistorius-faktenfuchs (Daniel Biskup, CC BY-SA 3.0),
+  ganser-guerot-krone (Dirk Wächter, CC BY-SA 4.0),
+  apa-rotoren (Gunther Tschuch, CC BY-SA 4.0),
+  dpa-wahl-prebunking (Daniel Schwen, CC BY-SA 4.0),
+  afp-faktencheck (Impfin, CC BY-SA 3.0). Alle heruntergeladen mit
+  User-Agent-Header, auf 1280×720 zugeschnitten (16:9), Center-Crop
+  je nach Original-Orientierung.
+- **Schema erweitert** (`src/content.config.ts`): `credit` und
+  `creditUrl` als optionale Felder für Fakten­check-Frontmatter.
+- **FaktencheckCard** rendert die Attribution als kleine, halb-
+  transparente Textzeile unten links im Bild-Overlay. Wenn
+  `creditUrl` gesetzt ist, wird das Credit als Link auf die
+  Commons-Seite ausgeführt.
+- **`faktenchecks.astro` und `index.astro`**: `credit` und
+  `creditUrl` aus dem Frontmatter an die Karte weitergegeben.
+- **Verbleibende drei ohne Bild**: pflanzensprengstoff,
+  dw-ndr-rostock, siggelkow-rechtsextremismus. Auf Wikimedia gibt
+  es dazu keine sinnvollen freien Alternativen. Karten laufen auf
+  den typografischen Fallback.
+
+Verifikation im Build: alle sechs Credits erscheinen im HTML.
+
 ### 5.8.2026 – Copyright-Cleanup nach dpa-Abmahnung
 
 Backup-Tag: `backup-pre-copyright-cleanup-20260805-201454`

@@ -14,6 +14,9 @@ summary: >-
   das Papier angeblich schützen will, wird so geschwächt statt
   gestärkt.
 url: "https://norberthaering.de/propaganda-zensur/dpa-wahl-prebunking/"
+thumbOverride: "/faktencheck-thumbs/dpa-wahl-prebunking.jpg"
+credit: "Foto: Daniel Schwen, CC BY-SA 4.0"
+creditUrl: "https://commons.wikimedia.org/wiki/File:Reichstag_pano.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

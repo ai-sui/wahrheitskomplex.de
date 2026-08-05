@@ -11,6 +11,9 @@ summary: >-
   manipulativen Methoden offengelegt, mit denen die Faktenchecker dabei
   arbeiteten.
 url: "https://norberthaering.de/news/afp-faktencheck/"
+thumbOverride: "/faktencheck-thumbs/afp-faktencheck.jpg"
+credit: "Foto: Impfin, CC BY-SA 3.0"
+creditUrl: "https://commons.wikimedia.org/wiki/File:Corona_Impfung_Impfbus_Feuerwehr_Hannover.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "Wissenschaftler-Replik (im Artikel verlinkt)"

@@ -81,6 +81,12 @@ const faktenchecks = defineCollection({
     quellen: z.array(z.string()).default([]),
     // Override des automatisch geholten og:image (Pfad unter /public)
     thumbOverride: z.string().optional(),
+    // Bild-Attribution (nur bei Wikimedia-Commons oder anderen freien
+    // Bildern noetig). credit = kurzer Text ("Foto: Vorname Nachname,
+    // CC BY-SA 4.0"). creditUrl = optionaler Link zur Quellseite auf
+    // Commons.
+    credit: z.string().optional(),
+    creditUrl: z.string().url().optional(),
     // Optionaler Sortier-Override. Karten werden nach Datum sortiert
     // (neueste zuerst). Bei gewünschten Reihenfolge-Abweichungen kann
     // `order` ein Datum-String (YYYY-MM-DD) sein, der das echte Datum

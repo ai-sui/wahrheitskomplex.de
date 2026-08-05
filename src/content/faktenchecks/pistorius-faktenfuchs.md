@@ -11,6 +11,9 @@ summary: >-
   habe das behauptet. Das ist weit weg von der Wahrheit und von dem,
   was die Faktenchecker vorher geschrieben hatten.
 url: "https://norberthaering.de/propaganda-zensur/pistorius-faktenfuchs/"
+thumbOverride: "/faktencheck-thumbs/pistorius-faktenfuchs.jpg"
+credit: "Foto: Daniel Biskup, CC BY-SA 3.0"
+creditUrl: "https://commons.wikimedia.org/wiki/File:Boris_Pistorius_(2019)_(cropped).jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---
