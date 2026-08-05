@@ -15,16 +15,7 @@ export const thumbManifest = {
     "weltwoche-zeller-video.jpg"
   ],
   "faktencheckThumbs": [
-    "afp-aufmacher.jpg",
-    "apa-rotoren.jpg",
-    "ard-faktenfinder-merz.jpg",
     "dpa-gerichtsurteil.jpg",
-    "dpa-wahl-prebunking.jpg",
-    "dw-ndr-rostock.jpg",
-    "ganser-guerot-krone.jpg",
-    "pflanzensprengstoff.jpg",
-    "pistorius-faktenfuchs.jpg",
-    "siggelkow-rechtsextremismus.jpg",
     "spiegel-stoecker-dteam.jpg",
     "tagesschau-vitamin-d.jpg",
     "transgender-gesetz-tagesschau.jpg",

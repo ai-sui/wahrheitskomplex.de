@@ -14,7 +14,6 @@ summary: >-
   das Papier angeblich schützen will, wird so geschwächt statt
   gestärkt.
 url: "https://norberthaering.de/propaganda-zensur/dpa-wahl-prebunking/"
-thumbOverride: "/faktencheck-thumbs/dpa-wahl-prebunking.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

@@ -11,7 +11,6 @@ summary: >-
   habe das behauptet. Das ist weit weg von der Wahrheit und von dem,
   was die Faktenchecker vorher geschrieben hatten.
 url: "https://norberthaering.de/propaganda-zensur/pistorius-faktenfuchs/"
-thumbOverride: "/faktencheck-thumbs/pistorius-faktenfuchs.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

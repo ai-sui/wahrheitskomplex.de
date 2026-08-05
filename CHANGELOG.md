@@ -29,6 +29,44 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 5.8.2026 – Copyright-Cleanup nach dpa-Abmahnung
+
+Backup-Tag: `backup-pre-copyright-cleanup-20260805-201454`
+
+Auslöser:
+
+- **Fwd: dpa Picture-Alliance GmbH gegen Sie YV2619839** (5.8.,
+  13:30) – KSP-Kanzlei mahnt Norbert für ein Bild auf
+  `/faktenchecks/` ab, konkret
+  `transgender-gesetz-tagesschau.jpg`. Norbert zahlt und bittet, die
+  Bilder von Merz und Ganser zu prüfen. Analyse zeigt: alle diese
+  Bilder stammen aus derselben Auto-Fetch-Runde des enrich-Skripts
+  vom 20.5., das og:images von Tagesschau (mit Agentur-Bildern) heruntergeladen hatte. Damit systemisches Risiko.
+
+Umgesetzt (Variante C):
+
+- **9 riskante Bilder gelöscht** aus `public/faktencheck-thumbs/`:
+  ard-faktenfinder-merz, ganser-guerot-krone, pflanzensprengstoff,
+  pistorius-faktenfuchs, siggelkow-rechtsextremismus, dw-ndr-rostock,
+  apa-rotoren, dpa-wahl-prebunking, afp-aufmacher. Zugehörige
+  `thumbOverride:`-Zeilen aus den md-Dateien entfernt.
+- **enrich-Skript deaktiviert**: `scripts/enrich-faktencheck-thumbs.mjs`
+  wirft jetzt beim Start eine Fehlermeldung mit Begründung. Header
+  dokumentiert das Warum.
+- **FaktencheckCard-Fallback aufgewertet**: statt zentriertem
+  Faktenchecker-Namen jetzt eine ruhige Text-Komposition (Sektions-
+  Label oben, Faktenchecker-Name groß mittig, Datum unten), sanfter
+  Akzent-Verlauf oben rechts für Textur, Hover-Badge „Tiefenartikel
+  ↗". Ganze Fallback-Fläche ist jetzt Link. Kein weiteres Bild.
+- **Verbleibende freigegebene Bilder**: dpa-gerichtsurteil (Achgut,
+  von Norbert freigegeben), spiegel-stoecker-dteam,
+  tagesschau-vitamin-d, zdf-nordstream (alle drei von Norbert selbst
+  geschickt), transgender-gesetz-tagesschau (bezahlt).
+
+Verifikation im Build: Suche greift weiter (Ganser, Merz,
+Pflanzensprengstoff), Manifest zeigt nur die 5 freigegebenen
+Bilder, Build fehlerfrei.
+
 ### 3.8.2026 – SEO-Meta /faktenchecks dynamisch
 
 Backup-Tag: `backup-pre-faktenchecks-meta-20260803-105850`

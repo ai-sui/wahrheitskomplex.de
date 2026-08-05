@@ -1,13 +1,23 @@
-// Einmaliges Script (kein Build-Hook): durchsucht für jeden Faktencheck-
-// Eintrag Härings Artikel nach Links zu bekannten Faktenchecker-Domains,
-// holt das og:image dort und speichert es als Thumb. Aktualisiert die
-// MD-Datei mit thumbOverride.
+// DEAKTIVIERT seit 5.8.2026 (dpa-Abmahnung fuer transgender-Bild).
 //
-// Aufruf:
-//   node scripts/enrich-faktencheck-thumbs.mjs
+// Dieses Script lud aus Haerings verlinktem Tiefenartikel jeweils das
+// og:image bei der externen Faktenchecker-Domain (tagesschau.de,
+// dpa-factchecking.com etc.) herunter. Diese Domains verwenden aber
+// regelmaessig Agentur-Bilder (dpa, Reuters, AFP), die wir dann selbst
+// hosteten. Genau daraus entstand die Abmahnung.
 //
-// Idempotent: Einträge, die bereits `thumbOverride` haben, werden
-// übersprungen.
+// Ab jetzt gilt: nur Norberts eigene Bilder oder freie Quellen (z.B.
+// Achgut, wenn Norbert das freigibt) landen als Aufmacher auf den
+// Karten. Wo kein Bild vorliegt, greift der typografische Fallback
+// in FaktencheckCard.astro.
+//
+// Wer das Script trotzdem laufen lassen will (fuer eine explizit
+// freigegebene Quelle), muss die folgende Zeile entfernen.
+throw new Error(
+  'enrich-faktencheck-thumbs.mjs ist deaktiviert. Grund: dpa-Abmahnung ' +
+  'wegen auto-gefetchter Agenturbilder. Siehe Header-Kommentar.',
+);
+
 import sharp from 'sharp';
 import { createHash } from 'node:crypto';
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';

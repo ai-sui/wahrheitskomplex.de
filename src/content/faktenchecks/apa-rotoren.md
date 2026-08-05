@@ -12,7 +12,6 @@ summary: >-
   lassen, und desinformieren damit Lehrer und Schüler, die sie
   angeblich beim Erkennen von Desinformation anleiten wollen.
 url: "https://norberthaering.de/propaganda-zensur/apa-rotoren/"
-thumbOverride: "/faktencheck-thumbs/apa-rotoren.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

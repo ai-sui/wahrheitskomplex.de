@@ -10,7 +10,6 @@ summary: >-
   ARD-Faktenfinder als Rechtspopulist markiert, der russische Narrative
   verbreitet.
 url: "https://norberthaering.de/propaganda-zensur/ard-faktenfinder-merz/"
-thumbOverride: "/faktencheck-thumbs/ard-faktenfinder-merz.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

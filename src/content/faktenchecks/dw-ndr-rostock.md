@@ -10,7 +10,6 @@ summary: >-
   zeigt, der Sender und der von ihm zitierte Experte sind auf einen
   irreführenden „Faktencheck" der Deutschen Welle hereingefallen.
 url: "https://norberthaering.de/propaganda-zensur/dw-ndr-rostock/"
-thumbOverride: "/faktencheck-thumbs/dw-ndr-rostock.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

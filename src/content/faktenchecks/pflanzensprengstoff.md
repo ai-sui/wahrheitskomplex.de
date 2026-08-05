@@ -11,7 +11,6 @@ summary: >-
   veröffentlichten Artikel der Konkurrenz. Das treibt immer wieder sehr
   peinliche Blüten.
 url: "https://norberthaering.de/propaganda-zensur/pflanzensprengstoff/"
-thumbOverride: "/faktencheck-thumbs/pflanzensprengstoff.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

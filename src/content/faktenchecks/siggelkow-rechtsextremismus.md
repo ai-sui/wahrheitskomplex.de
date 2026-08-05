@@ -11,7 +11,6 @@ summary: >-
   nachträglich unter Auslassung wichtiger Details und ohne den
   gebotenen Korrekturhinweis.
 url: "https://norberthaering.de/propaganda-zensur/siggelkow-rechtsextremismus/"
-thumbOverride: "/faktencheck-thumbs/siggelkow-rechtsextremismus.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

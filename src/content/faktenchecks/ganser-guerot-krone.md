@@ -10,7 +10,6 @@ summary: >-
   Dilettantismus berüchtigte Faktenchecker Siggelkow darf die beiden
   für die ARD als fachfremde Ignoranten entlarven.
 url: "https://norberthaering.de/propaganda-zensur/ganser-guerot-krone/"
-thumbOverride: "/faktencheck-thumbs/ganser-guerot-krone.jpg"
 quellen:
   - "Norbert Häring (norberthaering.de)"
 ---

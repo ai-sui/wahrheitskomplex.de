@@ -14,5 +14,4 @@ url: "https://norberthaering.de/news/afp-faktencheck/"
 quellen:
   - "Norbert Häring (norberthaering.de)"
   - "Wissenschaftler-Replik (im Artikel verlinkt)"
-thumbOverride: "/faktencheck-thumbs/afp-aufmacher.jpg"
 ---

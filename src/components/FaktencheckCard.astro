@@ -86,11 +86,38 @@ const hasThreeBlocks = Boolean(behauptung && urteil && realitaet);
       </span>
     </div>
   ) : (
-    <div class="block aspect-video bg-ink relative">
-      <div class="absolute inset-0 flex items-center justify-center text-paper/80 font-serif text-xl px-6 text-center">
-        {faktenchecker}
+    <a
+      href={url}
+      rel="noopener"
+      target="_blank"
+      class="block aspect-video bg-ink relative overflow-hidden no-underline group"
+      aria-label={`Tiefenartikel auf norberthaering.de: ${title}`}
+    >
+      {/* Fallback ohne Aufmacherbild. Aus Copyright-Grunden hosten wir
+          keine Agenturbilder mehr; wo kein eigenes Bild vorliegt, wird
+          diese typografische Karte gerendert. Statt nur zentrierter
+          Faktenchecker-Name jetzt eine ruhige Text-Komposition:
+          Sektions-Label oben, grosser Faktenchecker-Name mittig, Datum
+          unten. Sanfter Akzent-Verlauf oben rechts fuer Textur, aber
+          ohne bunt zu wirken. */}
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/25 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 flex flex-col justify-between p-5 md:p-6">
+        <p class="text-[0.65rem] uppercase tracking-wider text-paper/60">
+          Faktenchecker-Check
+        </p>
+        <p class="font-serif text-2xl md:text-3xl leading-tight text-paper text-balance">
+          {faktenchecker}
+        </p>
+        <div class="flex items-baseline justify-between gap-3">
+          <p class="text-[0.65rem] uppercase tracking-wider text-paper/60">
+            {dateFmt}
+          </p>
+          <span class="text-[0.65rem] uppercase tracking-wider bg-paper/95 text-ink px-2 py-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            Tiefenartikel ↗
+          </span>
+        </div>
       </div>
-    </div>
+    </a>
   )}
 
   <div class="p-5 md:p-6 flex flex-col flex-1">
