@@ -29,6 +29,37 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 8.8.2026 – Norbert-Runde 18 (DISARM + Das NETTZ + Correctiv-Absatz)
+
+Backup-Tag: `backup-pre-norbert-runde16-20260808-075914` (Tag-Name aus
+lokaler Zählung; im CHANGELOG korrekt Runde 18, da 17 bereits vergeben).
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (7.8.) – Norbert hat zwei neue Häring-Porträts
+  fertig (DISARM Foundation, Das NETTZ) und einen weiteren Absatz für
+  das Correctiv-Porträt geschrieben.
+
+Umgesetzt:
+
+- **DISARM Foundation** als neuer Volltext-Akteur
+  [`src/content/actors/disarm-foundation.md`](src/content/actors/disarm-foundation.md).
+  Häring-Text 1:1 übernommen, `order: 160`, `fulltext: true`.
+- **Das NETTZ** als neuer Volltext-Akteur
+  [`src/content/actors/das-nettz.md`](src/content/actors/das-nettz.md).
+  Häring-Text 1:1 übernommen, `order: 165`, `fulltext: true`.
+- **Correctiv-Porträt**
+  ([`src/content/actors/correctiv.md`](src/content/actors/correctiv.md)):
+  Norberts neuer Absatz zur „Allianz für eine resiliente
+  Informationsgesellschaft" am Ende des Hintergrund-Blocks eingefügt,
+  mit sauberen Markdown-Links auf die Allianz-Seite und das Grundsatz-
+  papier. Drei kleine Textfehler in Norberts Vorlage stillschweigend
+  korrigiert (doppeltes Leerzeichen, „teilnehmenden NGOs, zur" →
+  „teilnehmende NGOs zur").
+- **SpinnenImNetzCard-Textzeile** um DISARM Foundation und Das NETTZ
+  erweitert. Der dynamische Zähler „N weitere Porträts" springt
+  automatisch nach oben, weil `allActors.length` um 2 zunimmt.
+
 ### 5.8.2026 – Wikimedia-Bilder für 6 Karten
 
 Backup-Tag: `backup-pre-wikimedia-thumbs-20260805-202642`
