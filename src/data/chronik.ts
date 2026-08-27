@@ -473,4 +473,13 @@ export const chronik: ChronikEintrag[] = [
     themen: ['Ukraine & NATO'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/xenia-fjodorowa/',
   },
+  {
+    date: '2026-08-24',
+    region: 'DE',
+    title: 'Campact organisiert Werbeboykott',
+    description:
+      'Die Kampagnenorganisation Campact hat eine schwarze Liste von politisch missliebigen YouTube-Kanälen erstellt und ausgeforscht, wessen Werbung dort zu sehen war. Auf die betreffenden Unternehmen macht die NGO Druck, sich an einem Werbeboykott gegen die gelisteten Kanäle zu beteiligen.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/campact-werbeboykott/',
+  },
 ];

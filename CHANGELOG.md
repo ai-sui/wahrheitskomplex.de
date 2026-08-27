@@ -29,6 +29,26 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 27.8.2026 – Chronik-Nachschlag Campact-Werbeboykott
+
+Backup-Tag: `backup-pre-campact-20260827-110123`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (27.8., 08:48) – Norbert schickt einen neuen
+  Chronik-Eintrag: die Kampagnenorganisation Campact hat eine
+  schwarze Liste politisch missliebiger YouTube-Kanäle erstellt und
+  organisiert einen Werbeboykott. Datumsvorgabe von Norbert: 24.8.
+
+Umgesetzt:
+
+- Chronik-Eintrag `2026-08-24`, Region DE, Themen „Hass und Hetze"
+  und „DSA & NetzDG". Titel und Kurzbeschreibung wörtlich nach
+  Norberts Mail. Häring-Link auf den Tiefenartikel.
+
+Suchindex trifft „Campact", „Werbeboykott" und „YouTube"
+(Build-Output verifiziert).
+
 ### 8.8.2026 – Norbert-Runde 18 (DISARM + Das NETTZ + Correctiv-Absatz)
 
 Backup-Tag: `backup-pre-norbert-runde16-20260808-075914` (Tag-Name aus
