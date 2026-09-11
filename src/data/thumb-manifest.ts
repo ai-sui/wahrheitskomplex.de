@@ -28,6 +28,7 @@ export const thumbManifest = {
     "zdf-nordstream.jpg"
   ],
   "ytThumbs": [
+    "DIFfFFCvn1c.jpg",
     "VqPFYDL9s3s.jpg",
     "YcylSqzVTaI.jpg",
     "cPsTgxiShmk.jpg",

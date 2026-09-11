@@ -29,6 +29,33 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 11.9.2026 – Norbert-Runde 19 (Baab-Interview „Gegen den Strom")
+
+Backup-Tag: `backup-pre-norbert-runde19-20260911-205401`
+
+Eingeflossene Mail:
+
+- **Neues Video-Interview** (11.9., 20:28) – Patrik Baab hat im Rahmen
+  seiner Podcast-Reihe „Gegen den Strom" ein anderthalbstündiges
+  Videointerview mit Norbert Häring zum Wahrheitskomplex und der NATO
+  veröffentlicht. Drei Fotos zur Auswahl.
+
+Umgesetzt:
+
+- **Neuer Medien-Eintrag**
+  [`src/content/medien/patrik-baab-gegen-den-strom.md`](src/content/medien/patrik-baab-gegen-den-strom.md):
+  Titel „Der Wahrheitskomplex: Wer im Hintergrund die Narrative
+  steuert" (YouTube-Titel gekürzt), `type: video`, Host Patrik Baab,
+  Outlet „Gegen den Strom", 10.9.2026, 92 Minuten, YouTube-ID
+  `DIFfFFCvn1c`, Themen Ukraine & NATO + DSA & NetzDG.
+- **Aufmacher-Foto**: Bild 3 aus Norberts drei Vorschlägen (das
+  Show-Intro-Logo „GEGEN DEN STROM" auf Straßenszene) statt eines
+  weiteren Häring-Portraits. Ralph-Entscheidung, weil das „Neues"-
+  Karussell bereits mehrere Häring-Porträts zeigt und die Show-Marke
+  visuell klarer heraussticht. Abgelegt als
+  `public/yt-thumbs/DIFfFFCvn1c.jpg` (überschreibt das automatische
+  YouTube-Thumb im Karussell).
+
 ### 27.8.2026 – Chronik-Nachschlag Campact-Werbeboykott
 
 Backup-Tag: `backup-pre-campact-20260827-110123`
