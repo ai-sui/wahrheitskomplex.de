@@ -29,6 +29,26 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 25.9.2026 – Chronik-Nachschlag Medienanstalt NRW / Ben Berndt
+
+Backup-Tag: `backup-pre-berndt-20260925-192031`
+
+Eingeflossene Mail:
+
+- **Chronik** (25.9., 15:38) – Norbert schickt Link zum neuen
+  Tiefenartikel „Medienanstalt NRW streicht im Streit mit Ben Berndt
+  die Segel", ohne weiteren Text.
+
+Umgesetzt:
+
+- Titel, Datum und Kurzfassung direkt aus dem Blog-Artikel gezogen
+  (25.9.2026). Chronik-Eintrag `2026-09-25`, Region DE, Themen
+  „DSA & NetzDG" (Medienaufsicht) und „Hass und Hetze" (Anlass war
+  ein Höcke-Zitat). Häring-Link auf den Tiefenartikel.
+
+Suchindex trifft „Berndt", „Medienanstalt" und „ungeskripted"
+(Build-Output verifiziert).
+
 ### 11.9.2026 – Norbert-Runde 19 (Baab-Interview „Gegen den Strom")
 
 Backup-Tag: `backup-pre-norbert-runde19-20260911-205401`

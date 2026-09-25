@@ -482,4 +482,13 @@ export const chronik: ChronikEintrag[] = [
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/campact-werbeboykott/',
   },
+  {
+    date: '2026-09-25',
+    region: 'DE',
+    title: 'Medienanstalt NRW streicht im Streit mit Ben Berndt die Segel',
+    description:
+      'Nach einem Drohbrief Ende Juni, mit dem die Medienanstalt NRW den Podcaster Ben Berndt („ungeskripted by Ben") aufgefordert hatte, eine Aussage von Björn Höcke im Video-Gespräch nachträglich richtigzustellen, zieht sie zurück. Berndt hatte sich geweigert und den Vorgang öffentlich gemacht.',
+    themen: ['DSA & NetzDG', 'Hass und Hetze'],
+    haeringLink: 'https://norberthaering.de/news/medienanstalt-ben-berndt/',
+  },
 ];
