@@ -491,4 +491,14 @@ export const chronik: ChronikEintrag[] = [
     themen: ['DSA & NetzDG', 'Hass und Hetze'],
     haeringLink: 'https://norberthaering.de/news/medienanstalt-ben-berndt/',
   },
+  {
+    date: '2026-09-28',
+    region: 'DE',
+    title:
+      'Landtag Rheinland-Pfalz veröffentlicht Entwurf für Neunten Medienstaatsvertrag',
+    description:
+      'Der Entwurf soll den Landesmedienanstalten nachträglich eine gesetzliche Grundlage geben für ihre seit 2021 laufende, anlasslose Internetdurchforstung per KI und die Weiterleitung von Auffälligem an Polizei und Verfassungsschutz.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/medienstaatsvertrag/',
+  },
 ];

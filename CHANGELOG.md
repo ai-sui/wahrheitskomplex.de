@@ -29,6 +29,36 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 29.9.2026 – Neuntes MStV: Neues-Karte + Chronik-Eintrag
+
+Backup-Tag: `backup-pre-medienstaatsvertrag-20260929-150624`
+
+Eingeflossene Mail:
+
+- **Wahrheitskomplex** (29.9., 14:59) – Norbert schickt zwei
+  Ergänzungen zum Neunten Medienstaatsvertrag: einen entschärften
+  Titel plus Vorspann für einen „Neues"-Eintrag und einen
+  Chronik-Eintrag zur Entwurfs-Veröffentlichung.
+
+Umgesetzt:
+
+- **Neues-Karte** (`src/content/faktenchecks/medienstaatsvertrag.md`):
+  Norberts entschärften Titel „Medienstaatsvertrag soll
+  Medienanstalten Rechtsgrundlage für Internetdurchforstung mit KI
+  geben" mit dem gelieferten Vorspann. faktenchecker-Feld auf
+  „Landesmedienanstalten" gesetzt, weil das die kritisierte
+  Institution ist. Thema „DSA & NetzDG", Datum 28.9.2026,
+  Häring-Link zum Tiefenartikel.
+- **Chronik-Eintrag** `2026-09-28`, Region DE, Thema „DSA & NetzDG":
+  „Landtag Rheinland-Pfalz veröffentlicht Entwurf für Neunten
+  Medienstaatsvertrag". Kurzfassung erklärt den Kern der
+  Nachträglichkeit (Legalisierung der seit 2021 laufenden KI-
+  Durchforstung).
+
+Suchindex trifft „Medienstaatsvertrag", „Internetdurchforstung",
+„Landesmedienanstalten" und „Rheinland-Pfalz" (Build-Output
+verifiziert).
+
 ### 25.9.2026 – Chronik-Nachschlag Medienanstalt NRW / Ben Berndt
 
 Backup-Tag: `backup-pre-berndt-20260925-192031`
