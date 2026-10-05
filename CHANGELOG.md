@@ -29,6 +29,31 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 5.10.2026 – Chronik-Descriptions wieder sichtbar
+
+Backup-Tag: `backup-pre-chronik-descriptions-20261005-121126`
+
+Auslöser:
+
+- **Re: Chronik** (5.10., 11:31) – Norbert fragt zurück, wo die
+  Kurzfassung der Chronik-Einträge zu sehen sei. Antwort: aktuell
+  nirgends. Seit 24.5. läuft die Chronik auf `compact=true`, was
+  die Description-Zeile ausblendet. Entscheidung von damals bezog
+  sich auf „magere" Unterzeilen des Launch-Stands; die inzwischen
+  gepflegten Kurzfassungen tragen echten Inhalt.
+
+Umgesetzt:
+
+- `src/pages/chronik.astro`: `compact`-Prop vom `<TimelineEvent>`
+  entfernt. Alle Chronik-Einträge zeigen jetzt wieder ihre
+  Description direkt unter dem Titel.
+- `src/components/TimelineEvent.astro`: Kommentar an der neuen
+  Rolle des `compact`-Flags justiert (bleibt für die Homepage-
+  Übersicht Default, auf der Chronik-Seite ausgeschaltet).
+
+Build-Output verifiziert: Description der neuen Gesinnungsjustiz-
+Karte und älterer Einträge erscheint in `dist/chronik/index.html`.
+
 ### 5.10.2026 – Chronik-Nachschlag Gesinnungsjustiz / §130 StGB
 
 Backup-Tag: `backup-pre-gesinnungsjustiz-20261005-095739`

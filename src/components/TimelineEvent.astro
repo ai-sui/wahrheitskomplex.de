@@ -5,11 +5,13 @@ import { withBase } from '../utils/url';
 interface Props {
   eintrag: ChronikEintrag;
   showLine?: boolean;
-  // versteckt Description und Themen-Tags. Auf der Homepage-Übersicht
-  // war das schon immer Default. Auf der Chronik-Seite zusätzlich seit
-  // Norberts Hinweis vom 20.5.2026: "ohne magere Unterzeile und
-  // Schlagwörter. Dann wird das kompakter und der Leser braucht sich
-  // nicht durch mehrere Ebenen zu lesen, um einen Überblick zu bekommen."
+  // Blendet die Description aus. Auf der Homepage-Übersicht ist das
+  // Default (dort nur Titel pro Eintrag), auf der Chronik-Seite seit
+  // Norberts Nachfrage vom 5.10.2026 wieder false, weil er die
+  // Kurzfassungen explizit sucht. Die ursprüngliche Vorgabe vom
+  // 20.5.2026 („ohne magere Unterzeile und Schlagwörter") bezog sich
+  // auf die kurzen, austauschbaren Zeilen des Launch-Stands; die
+  // aktuellen Descriptions tragen echten Inhalt.
   compact?: boolean;
 }
 
