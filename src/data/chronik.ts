@@ -501,4 +501,14 @@ export const chronik: ChronikEintrag[] = [
     themen: ['DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/medienstaatsvertrag/',
   },
+  {
+    date: '2026-09-30',
+    region: 'DE',
+    title:
+      'Kabinett versteckt verschärfte Gesinnungsjustiz in Gesetzentwurf zum Schutz von Sanitätern und Feuerwehrleuten',
+    description:
+      'In einem Gesetzentwurf, der laut Regierung und Medien dem Schutz von Feuerwehrleuten und Sanitätern vor Übergriffen dient, beschließt das Bundeskabinett eine Verschärfung des Volksverhetzungs-Paragrafen 130 StGB. Dessen weiche Begriffe sind nach Härings Lesart politisch einseitig gegen Kritiker der Regierung auslegbar.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/130/',
+  },
 ];

@@ -29,6 +29,29 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 5.10.2026 – Chronik-Nachschlag Gesinnungsjustiz / §130 StGB
+
+Backup-Tag: `backup-pre-gesinnungsjustiz-20261005-095739`
+
+Eingeflossene Mail:
+
+- **Chronik** (5.10., 09:52) – Norbert schickt einen Chronik-
+  Vorschlag zum Kabinettsbeschluss vom 30.9.: „Kabinett versteckt
+  verschärfte Gesinnungsjustiz in Gesetzentwurf zum Schutz von
+  Sanitätern und Feuerwehrleuten".
+
+Umgesetzt:
+
+- Chronik-Eintrag `2026-09-30`, Region DE, Themen „Hass und Hetze"
+  und „DSA & NetzDG". Titel wortgleich zu Norberts Vorschlag.
+  Kurzfassung aus dem ersten Absatz seines Tiefenartikels
+  destilliert (Kern: Verschärfung des Volksverhetzungs-Paragrafen
+  130 StGB versteckt im Sanitäter-Schutz-Gesetz). Häring-Link auf
+  den Tiefenartikel.
+
+Suchindex trifft „Gesinnungsjustiz", „Volksverhetzung", „Sanitäter"
+und „Feuerwehrleute" (Build-Output verifiziert).
+
 ### 29.9.2026 – Neuntes MStV: Neues-Karte + Chronik-Eintrag
 
 Backup-Tag: `backup-pre-medienstaatsvertrag-20260929-150624`
