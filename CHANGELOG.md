@@ -29,6 +29,33 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 10.10.2026 – Norbert-Runde 20 (GDI: CAF Canada ist nicht die kanadische Armee)
+
+Backup-Tag: `backup-pre-norbert-runde20-20261010-082138`
+
+Eingeflossene Mail:
+
+- **Fwd: Eintrag GDI Wahrheitskomplex** (10.10., 06:33) – Norbert
+  leitet einen Hinweis von Leser Philipp Fess weiter: der GDI-Eintrag
+  bezeichnet CAF Canada fälschlich als „kanadische Armee". Laut
+  cafcanada.ca handelt es sich um den kanadischen Ableger der
+  karitativen Charities Aid Foundation, nicht um das Militär.
+
+Umgesetzt in [`src/content/actors/gdi.md`](src/content/actors/gdi.md):
+
+- **Steckbrief**: Zeile „Staatliche Förderung: Kanadische Armee (CAF
+  Canada); früher USA, GB, EU, D u.a." → „keine aktuell; früher USA,
+  GB, EU, D u.a." Der Eintrag „Kanadische Armee (CAF Canada)" ist
+  entfernt wie von Norbert gefordert; der nachgelagerte Hinweis auf
+  die früheren Staatsgeldgeber bleibt stehen.
+- **Hintergrund-Fließtext**: „... das gesamte, nur noch schmale Budget
+  von der kanadischen Armee" → „... von der Organisation CAF Canada".
+
+Keine weiteren Erwähnungen in Chronik oder anderen Porträts
+betroffen (Chronik 24.1.2022 verweist korrekt auf die tatsächliche
+kanadische Armee, DRI-Portrait auf die kanadische Botschaft Berlin,
+nichts davon ändert sich).
+
 ### 5.10.2026 – Chronik-Descriptions wieder sichtbar
 
 Backup-Tag: `backup-pre-chronik-descriptions-20261005-121126`

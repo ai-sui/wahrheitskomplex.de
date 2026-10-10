@@ -22,7 +22,7 @@ haeringLink: "https://norberthaering.de/spinnen-im-netz/gdi/"
 fulltext: true
 order: 110
 ---
-Global Disinformation Index ltd. ist eine in Großbritannien eingetragene Gesellschaft ohne Erwerbszweck, bei der man gute Beziehungen zu den Geheimdiensten stark vermuten darf. Seine mächtigste Waffe gegen „Desinformation" war eine ständig aktualisierte, weltweite schwarze Liste von Websites, auf denen Werbetreibende keine Werbung schalten sollten. Nach Klagen beendeten die britische und US-Regierung 2023 die Mitfinanzierung und GDI stellte 2025 seine schwarze Liste ein. 2025 kam nach den Angaben bei lobbyfacts.eu das gesamte, nur noch schmale Budget von der kanadischen Armee. Neuer Aufgabenschwerpunkt ist von Datenanalysen getriebenes Lobbying für schärfere Regeln gegen „Desinformation". Im Dezember 2025 verhängte US-Präsident Trump ein Einreiseverbot über Gründerin Clare Melford.
+Global Disinformation Index ltd. ist eine in Großbritannien eingetragene Gesellschaft ohne Erwerbszweck, bei der man gute Beziehungen zu den Geheimdiensten stark vermuten darf. Seine mächtigste Waffe gegen „Desinformation" war eine ständig aktualisierte, weltweite schwarze Liste von Websites, auf denen Werbetreibende keine Werbung schalten sollten. Nach Klagen beendeten die britische und US-Regierung 2023 die Mitfinanzierung und GDI stellte 2025 seine schwarze Liste ein. 2025 kam nach den Angaben bei lobbyfacts.eu das gesamte, nur noch schmale Budget von der Organisation CAF Canada. Neuer Aufgabenschwerpunkt ist von Datenanalysen getriebenes Lobbying für schärfere Regeln gegen „Desinformation". Im Dezember 2025 verhängte US-Präsident Trump ein Einreiseverbot über Gründerin Clare Melford.
 
 ## Steckbrief
 
@@ -30,7 +30,7 @@ Global Disinformation Index ltd. ist eine in Großbritannien eingetragene Gesell
 - **Sitz**: London
 - **Gründer:** Clare Melford (vorher Open Society Foundations); Daniel Rogers (Ex-Geheimdienstler)
 - **Budget:** 2,3 Mio. Euro (2021); 1,5 Mio. Euro (2024); 153.000 Euro (2025)
-- **Staatliche Förderung:** Kanadische Armee (CAF Canada); früher USA, GB, EU, D u.a.
+- **Staatliche Förderung:** keine aktuell; früher USA, GB, EU, D u.a.
 - **Sonstige Geldgeber**: früher: Open Society Foundations; Knight Foundation; Bosch Stiftung; Luminate u.a.
 - **Mitarbeiter**: unbekannt
 - **Mitgliedschaften**: Conscious Advertising Network (CAN); Unterzeichner des Verhaltenskodex gegen Desinformation der EU
