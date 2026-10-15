@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // Site ist 100% statisch — kein Hoster-spezifischer Adapter nötig.
 // Wir deployen auf GitHub Pages (siehe .github/workflows/deploy-pages.yml).
 //
@@ -29,6 +31,7 @@ export default defineConfig({
   site,
   base,
   output: 'static',
+
   // trailingSlash: 'always' garantiert, dass interne Links und Sitemap
   // konsistent mit / generiert werden. Vorher gab es eine Kette
   //   /atlas → /atlas/ → meta refresh /portraits → /portraits/
@@ -37,7 +40,9 @@ export default defineConfig({
   // Zielen in den Redirects bleibt nur noch ein einziger Hop:
   //   /atlas/ → meta refresh /portraits/
   trailingSlash: 'always',
+
   integrations: [sitemap()],
+
   // /atlas/* → /portraits/* (Atlas wurde im Mai 2026 umbenannt; Norbert
   // hatte den Begriff zu kartografisch gefunden). Astro generiert
   // statische Meta-Refresh-HTML-Dateien für beide Pfade, sodass alte
@@ -46,7 +51,10 @@ export default defineConfig({
     '/atlas': '/portraits',
     '/atlas/[slug]': '/portraits/[slug]',
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
