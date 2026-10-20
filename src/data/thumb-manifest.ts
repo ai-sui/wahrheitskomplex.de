@@ -18,6 +18,7 @@ export const thumbManifest = {
     "afp-faktencheck.jpg",
     "apa-rotoren.jpg",
     "ard-faktenfinder-merz.jpg",
+    "bbc-regierungsautoren.jpg",
     "dpa-gerichtsurteil.jpg",
     "dpa-wahl-prebunking.jpg",
     "ganser-guerot-krone.jpg",

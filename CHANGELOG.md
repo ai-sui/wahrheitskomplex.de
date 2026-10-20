@@ -29,6 +29,35 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 20.10.2026 – Neues-Karte BBC / Regierungsautoren
+
+Backup-Tag: `backup-pre-wahrheit-20261020-212831`
+
+Eingeflossene Mail:
+
+- **Wahrheit** (20.10., 19:50) – Norbert schickt einen „Neues"-
+  Beitrag zum Telegraph-Bericht über die BBC. Volltext (HTML)
+  dabei plus ein Screenshot als Illustrationsvorschlag.
+
+Umgesetzt:
+
+- **Neues-Karte** (`src/content/faktenchecks/bbc-regierungsautoren.md`):
+  Titel „BBC lässt Regierungsmitarbeiter zu sensiblen Themen Texte
+  schreiben und Fakten checken". Datum 20.10.2026,
+  faktenchecker-Feld „BBC Verify" (die kritisierte Instanz),
+  Thema „DSA & NetzDG", Häring-Link, Quellen zusätzlich zu
+  norberthaering.de auch Telegraph und Reclaim the Net.
+- **Vorspann** aus Norberts erstem Absatz destilliert, inklusive
+  der Aussetzung des Programms am 18.10.
+- **Aufmacherbild**: Norberts PNG-Screenshot auf 1280×720 im
+  16:9-Center-Crop gebracht, mit sips auf JPG-Qualität 60 reduziert
+  (ca. 187 KB).
+- Blog-URL mit Tippfehler im Slug („giovernment" statt „government")
+  1:1 übernommen, weil nur die funktioniert.
+
+Suchindex trifft „BBC", „Telegraph", „Regierungsmitarbeiter" und
+„BBC Verify" (Build-Output verifiziert).
+
 ### 10.10.2026 – Norbert-Runde 20 (GDI: CAF Canada ist nicht die kanadische Armee)
 
 Backup-Tag: `backup-pre-norbert-runde20-20261010-082138`
