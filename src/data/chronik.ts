@@ -483,6 +483,16 @@ export const chronik: ChronikEintrag[] = [
     haeringLink: 'https://norberthaering.de/propaganda-zensur/campact-werbeboykott/',
   },
   {
+    date: '2026-09-16',
+    region: 'DE',
+    title:
+      'Rundfunkkommission der Länder beschließt Entwurf zur Privilegierung ausgewählter Medien auf Plattformen',
+    description:
+      'Teil 2 des Digitale-Medien-Staatsvertrags (10. Medienänderungsstaatsvertrag) soll Plattformen und KI-Anbieter verpflichten, mindestens 20 Prozent ihrer algorithmischen Empfehlungen aus dem Pool „vielfaltsfördernder Anbieter" zu ziehen. Darüber entscheiden Landesmedienanstalten und Presserat. Die Verbändeanhörung läuft, das Inkrafttreten hängt an der Zustimmung aller Landtage.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/dmstv/',
+  },
+  {
     date: '2026-09-25',
     region: 'DE',
     title: 'Medienanstalt NRW streicht im Streit mit Ben Berndt die Segel',
@@ -510,5 +520,50 @@ export const chronik: ChronikEintrag[] = [
       'In einem Gesetzentwurf, der laut Regierung und Medien dem Schutz von Feuerwehrleuten und Sanitätern vor Übergriffen dient, beschließt das Bundeskabinett eine Verschärfung des Volksverhetzungs-Paragrafen 130 StGB. Dessen weiche Begriffe sind nach Härings Lesart politisch einseitig gegen Kritiker der Regierung auslegbar.',
     themen: ['Hass und Hetze', 'DSA & NetzDG'],
     haeringLink: 'https://norberthaering.de/propaganda-zensur/130/',
+  },
+  {
+    date: '2026-10-15',
+    region: 'EU',
+    title:
+      'EU-Rat lehnt Hüseyin Dogrus Antrag auf Sanktionsaufhebung ab',
+    description:
+      'Der Rat antwortet, die seit Juni 2025 gegen den Journalisten verhängten Sanktionen seien „nicht strafrechtlicher Natur", eine Verletzung der Unschuldsvermutung sei damit ausgeschlossen. Die Meinungsfreiheit gelte nur für „im guten Glauben" Handelnde. Dogru war ohne Anklage und ohne Verfahren mit existenzvernichtenden Sanktionen belegt worden.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/news/schuldig-bis-zum-beweis-des-gegenteils/',
+  },
+  {
+    date: '2026-10-26',
+    region: 'DE',
+    title:
+      'Amtsgericht Berlin verurteilt C. J. Hopkins zu 4800 Euro Strafe',
+    description:
+      'Nach einem ersten Freispruch und dessen Aufhebung durch das Kammergericht verurteilt das Amtsgericht den Autor und Regisseur wegen Volksverhetzung. Vorwurf: Auf dem Cover seines Buchs „The Rise of the New Normal Reich" sei durch eine Corona-Maske ein Hakenkreuz erkennbar. Ein weiteres Verfahren wegen seines Folgebuchs läuft.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/strafmass-hopkins/',
+  },
+  {
+    date: '2026-10-28',
+    region: 'DE',
+    title:
+      'Publizist Paul Brandenburg kommt am Berliner Flughafen in Untersuchungshaft',
+    description:
+      'Verhaftet bei der Einreise, wegen Beleidigung des Berliner Oberbürgermeisters Kai Wegner in vier Fällen sowie Verunglimpfung eines Politikers nach §188 StGB. Der Haftrichter verlängert die Untersuchungshaft am 6. November um mindestens zwei Wochen. Als Fluchtgefahr gilt der Wohnsitz außerhalb Deutschlands.',
+    themen: ['Hass und Hetze', 'DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/brandenburg-in-haft/',
+    thumb: '/chronik-thumbs/brandenburg-haft.jpg',
+    imageCredit: 'Screenshot: x.com/docbrandenburg',
+    imageCreditUrl: 'https://x.com/docbrandenburg',
+  },
+  {
+    date: '2026-10-28',
+    region: 'DE',
+    title: 'Ben Berndt klagt gegen die Landesmedienanstalt NRW',
+    description:
+      'Nach dem Rückzug der Anstalt im Streit um das Höcke-Interview im September reicht Berndt vor dem Verwaltungsgericht Köln (6 K 7963/26) Klage ein. Er will den Bescheid komplett aufheben lassen und gerichtlich feststellen lassen, dass die Anstalt kein Recht hat, eine nachträgliche Richtigstellung von Interview-Aussagen zu verlangen.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/news/ben-berndt-klagt/',
+    thumb: '/chronik-thumbs/berndt-klage.jpg',
+    imageCredit: 'Screenshot: x.com/benungeskriptet',
+    imageCreditUrl: 'https://x.com/benungeskriptet',
   },
 ];

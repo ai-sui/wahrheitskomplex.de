@@ -29,6 +29,43 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 08.11.2026 – Chronik-Nachschlag Oktober plus Neues-Karte #Disinfo2026
+
+Backup-Tag: `backup-pre-wahrheit-20261108-161623`
+
+Eingeflossene Mail:
+
+- **Wahrheit** (08.11., 16:10) – Norberts gesammelte Oktober-Ergänzungen:
+  fünf Chronik-Einträge und eine neue „Neues"-Karte zum
+  EU-DisinfoLab-Konferenz-Konflikt. Drei PNG-Anhänge als Illustration.
+
+Umgesetzt:
+
+- **Neues-Karte** (`src/content/faktenchecks/disinfo2026-konflikt.md`):
+  Konferenz #Disinfo2026 des EU DisinfoLab in Vilnius (7./8.10.), Session
+  „USA as a FIMI threat" und die Druckwelle der Trump-Regierung auf die
+  Sponsoren. Themen „DSA & NetzDG" und „Ukraine & NATO", Thumb aus
+  Norberts Konferenz-Keyvisual (1280×720 mit grünem Padding).
+- **Chronik, fünf Einträge nachgetragen** (`src/data/chronik.ts`):
+  - 16.09.2026 – Rundfunkkommission beschließt Entwurf zur
+    Plattform-Privilegierung (10. Medienänderungsstaatsvertrag). Separat
+    vom bereits eingetragenen 9. MStV (KI-Durchforstung, 28.09.).
+  - 15.10.2026 – EU-Rat lehnt Hüseyin Dogrus Antrag auf Aufhebung der
+    Sanktionen ab, Meinungsfreiheit gilt nur „im guten Glauben".
+  - 26.10.2026 – Amtsgericht Berlin verurteilt C. J. Hopkins zu
+    4800 Euro nach Aufhebung des Freispruchs.
+  - 28.10.2026 – Paul Brandenburg in Untersuchungshaft am Berliner
+    Flughafen, mit Thumb (Screenshot X-Profil, Attribution).
+  - 28.10.2026 – Ben Berndt klagt vor dem Verwaltungsgericht Köln gegen
+    die Landesmedienanstalt NRW, mit Thumb (Screenshot X-Profil).
+- **Bildstrategie**: die drei kleinen PNGs (385×385, 460×465, 216×234)
+  zentriert auf 1280×720 gesetzt mit Hintergrundfarbe aus dem Original
+  gesampelt, ImageMagick mit Lanczos-Filter.
+
+Suchindex trifft „Brandenburg", „Berndt", „Hopkins", „Dogru",
+„DisinfoLab", „Disinfo2026", „Vilnius" und „Kai Wegner" (Build-Output
+verifiziert).
+
 ### 20.10.2026 – Neues-Karte BBC / Regierungsautoren
 
 Backup-Tag: `backup-pre-wahrheit-20261020-212831`

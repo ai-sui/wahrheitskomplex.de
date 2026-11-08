@@ -19,6 +19,7 @@ export const thumbManifest = {
     "apa-rotoren.jpg",
     "ard-faktenfinder-merz.jpg",
     "bbc-regierungsautoren.jpg",
+    "disinfo2026-konflikt.jpg",
     "dpa-gerichtsurteil.jpg",
     "dpa-wahl-prebunking.jpg",
     "ganser-guerot-krone.jpg",
@@ -37,6 +38,8 @@ export const thumbManifest = {
     "jmKAuP1E2jA.jpg"
   ],
   "chronikThumbs": [
+    "berndt-klage.jpg",
+    "brandenburg-haft.jpg",
     "eugh-rtdeutsch.jpg",
     "landesmedienanstalten-stempel.jpg",
     "truth-on-stage.jpg",
