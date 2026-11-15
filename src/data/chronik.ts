@@ -566,4 +566,14 @@ export const chronik: ChronikEintrag[] = [
     imageCredit: 'Screenshot: x.com/benungeskriptet',
     imageCreditUrl: 'https://x.com/benungeskriptet',
   },
+  {
+    date: '2026-11-09',
+    region: 'DE',
+    title: 'Häring-Stellungnahme vor dem Landtag Thüringen zum 9. Medienstaatsvertrag',
+    description:
+      'Der Medienausschuss des Thüringer Landtags lädt Norbert Häring zur Anhörung über den Entwurf des Neunten Medienänderungsstaatsvertrags (Digitale-Medien-Staatsvertrag, Teil 1). Härings Langfassung zu § 109a MStV: Der Entwurf legalisiert nachträglich die seit 2021 laufende KI-gestützte Internetdurchforstung der Landesmedienanstalten (KIVI) und die Weiterleitung von Auffälligem an Polizei und Verfassungsschutz. Beispielfälle: Multipolar, Ben Berndt, Alexander Wallasch; Prüfkosten von 800 Euro pro Artikel bei Apolut; dreimonatige Speicherung geprüfter Beiträge in Hessen auch ohne Verstoß. Forderungen: Inhalte ohne festgestellten Verstoß sofort löschen, keine Meldungen an Verfassungsschutzbehörden, Ermächtigung auf nur für Erwachsene zugängliche Inhalte wie Pornografie und drastische Gewalt begrenzen.',
+    themen: ['DSA & NetzDG'],
+    haeringLink: 'https://norberthaering.de/propaganda-zensur/lt-thueringen-lang/',
+    featured: true,
+  },
 ];

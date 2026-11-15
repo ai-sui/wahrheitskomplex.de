@@ -29,6 +29,42 @@ zwischenzeitlich gepushten Commits anderer.
 
 ## Runden
 
+### 15.11.2026 – Norbert-Runde 21 (CIR, EU DisinfoLab, Thüringen-Stellungnahme)
+
+Backup-Tag: `backup-pre-norbert-runde21-20261115-203201`
+
+Eingeflossene Mail (15.11., 15:43): Norbert liefert zwei neue
+Porträts und eine optionale Stellungnahme vor dem Landtag Thüringen.
+Ralph-Entscheidung: alle drei aufnehmen, Stellungnahme als featured
+Chronik-Eintrag.
+
+Umgesetzt:
+
+- **Neues Akteurs-Porträt CIR** [`src/content/actors/cir.md`](src/content/actors/cir.md),
+  `order: 170`, fulltext: true, Themen Ukraine & NATO + DSA & NetzDG.
+  Centre for Information Resilience, London, gegr. Juni 2020, Budget
+  6 Mio. Pfund (2023), staatlich finanziert von GB, USA, Kanada, D,
+  NL, AUS. Gegründet von zwei Ex-Beamten des Foreign Office. Beirat
+  mit Ex-CIA, Toomas Ilves, Ex-Downing-Street-Sprecher, AEI, NATO und
+  MI. Liefert OSINT-Recherchen an AP, BBC, CNN, Guardian, FT,
+  Washington Post.
+- **Neues Akteurs-Porträt EU DisinfoLab** [`src/content/actors/eu-disinfolab.md`](src/content/actors/eu-disinfolab.md),
+  `order: 180`, fulltext: true, Themen DSA & NetzDG + Ukraine & NATO.
+  Brüssel, gegr. Dezember 2017, Budget 960.000 Euro (2024). Maßgeblich
+  EU-finanziert, als Zivilgesellschaft behandelt. Projekte vera.ai,
+  EDMO-Belux; Klimadesinformations-Bericht 2025; Jahreskonferenz
+  #Disinfo (2026 in Vilnius). Aufsichtsrat Andy Pryce (CEPA) und
+  Emma Winberg (Weißhelme-Umfeld).
+- **Chronik-Eintrag 9.11.2026** zur Thüringen-Stellungnahme in
+  [`src/data/chronik.ts`](src/data/chronik.ts) mit `featured: true` →
+  erscheint auf der Startseite im „Neues"-Karussell. Zusammenfassung:
+  Anhörung des Medienausschusses, Härings Langfassung zu § 109a MStV
+  (KIVI-Legalisierung, Beispielfälle Multipolar, Berndt, Wallasch,
+  800 Euro Prüfkosten bei Apolut, dreimonatige Speicherung in Hessen).
+  Forderungen: sofortige Löschung ohne Verstoß, keine Meldungen an
+  Verfassungsschutz, Ermächtigung auf nicht-jugendfreie Inhalte
+  begrenzen.
+
 ### 08.11.2026 – Chronik-Nachschlag Oktober plus Neues-Karte #Disinfo2026
 
 Backup-Tag: `backup-pre-wahrheit-20261108-161623`
